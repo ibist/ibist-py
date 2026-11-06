@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "name": "depress",
+  "title": "Depression, insomnia, and stress dataset (Kalmbach et al., 2018)",
+  "description": "This dataset is derived from a longitudinal study examining the role of insomnia and cognitive intrusions in predicting future depression. It includes participants who were not depressed at baseline and who met inclusion criteria on age, missingness, and stress exposure.",
+  "source": [
+    "Kalmbach, D. A., Pillai, V., and Drake, C. L. (2018). Nocturnal insomnia symptoms and stress-induced cognitive intrusions in risk for depression: a 2-year prospective study. PLOS ONE, 13(2), e0192088."
+  ],
+  "notes": [
+    "The dataset is constructed by applying the following criteria: Baseline depression score < 10. Age >= 18. Non-missing gender, cognitive intrusion (IES), and WASO. At least one stressor in the past year. Exclusion of extreme nocturnal wakefulness (> 90 minutes). The resulting dataset (n = 1730) includes all three cognitive intrusion tertiles. In the original paper, the analytic sample was further restricted by removing observations with missing IEStert, which effectively excludes the middle tertile (coded as IESgrp = 1), yielding a smaller sample (n = 1126). This optional restriction is not applied here but can be reproduced by subsetting: depress_paper <- subset(depress, !is.na(IEStert)) Variable definitions follow the original study documentation provided in the supplementary spreadsheet (S1 Table)."
+  ],
+  "nrows": 1730,
+  "ncols": 9,
+  "columns": [
+    {
+      "name": "age",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Age in years.",
+      "label": "A Age",
+      "units": "years",
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "gender",
+      "type": "number",
+      "r_class": ["haven_labelled", "vctrs_vctr", "double"],
+      "description": "Gender of the participant (coded per original survey).",
+      "label": "A Gender",
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": [
+        {
+          "value": 0,
+          "label": "Male"
+        },
+        {
+          "value": 1,
+          "label": "Female"
+        }
+      ]
+    },
+    {
+      "name": "stressorA",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Indicator for experiencing at least one stressor in the past year.",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "depress1yr",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Depression status at 1-year follow-up.",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "depress2yr",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Depression status at 2-year follow-up.",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 499,
+      "value_labels": []
+    },
+    {
+      "name": "depress1or2yr",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Depression at either 1 or 2 years.",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "IEStert",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Tertile of cognitive intrusion score based on the Impact of Event Scale (IES).",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 604,
+      "value_labels": []
+    },
+    {
+      "name": "IESgrp",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Grouped cognitive intrusion: 0 = lowest tertile, 1 = middle tertile, 2 = highest tertile.",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "insom",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Insomnia indicator defined as: sleep onset latency (SOL) > 30 minutes or wake after sleep onset (WASO) > 30 minutes.",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    }
+  ],
+  "provenance": {
+    "repository": "https://github.com/ibist/ibist-R",
+    "r_revision": "fd58164b8f1dc95c9c4916aa9dab4c6f3ddd436d",
+    "r_version": "4.5.2",
+    "package_version": "0.1-1",
+    "uncommitted_preparation_changes": false,
+    "prepared_file": "data/depress.rda",
+    "prepared_md5": "b26c5d5414c823a76c8b0dd6cc423a32",
+    "preparation_script": "data-raw/depress.R",
+    "preparation_md5": "a66e357cdf8c01d499774e6859c156ec",
+    "documentation_file": "man/depress.Rd",
+    "documentation_md5": "df905ed5f76048510cb40671cac146d4",
+    "exporter": "data-raw/export-python.R",
+    "exporter_md5": "bef7478778684be846d3f3c8d95d4173",
+    "raw_inputs": [
+      {
+        "path": "data-raw/kalmbach2018.zip",
+        "available": false,
+        "md5": null
+      },
+      {
+        "path": "data-raw/S1 dataset.sav",
+        "available": false,
+        "md5": null
+      }
+    ],
+    "data_md5": "364f81f4be3efdf844f9f17ca4895ccf"
+  }
+}

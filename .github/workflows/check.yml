@@ -17,13 +17,15 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install packaging tools
-        run: python -m pip install build twine
+        run: python -m pip install build twine pytest
       - name: Build distributions
         run: python -m build
       - name: Check metadata
         run: python -m twine check dist/*
       - name: Install wheel
-        run: python -m pip install --no-deps dist/*.whl
+        run: python -m pip install dist/*.whl
+      - name: Run statistical and dataset checks
+        run: python -m pytest -q
       - name: Verify installed import
         working-directory: ${{ runner.temp }}
         run: |

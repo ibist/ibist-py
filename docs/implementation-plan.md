@@ -9,7 +9,9 @@ define the policy. This document tracks the Python implementation sequence.
 The repository uses a `src/ibist/` layout, distribution name `ibist`, and
 import name `ibist`. The initial version is `0.1.0.dev0`. Packaging checks
 build both source and wheel distributions and verify an installed import.
-No statistical methods or prepared datasets are included yet.
+All seven prepared R datasets are bundled with metadata and DataFrame
+output. NumPy, SciPy, and pandas are regular dependencies.
+Statistical methods are the next implementation step.
 
 ## First complete implementation
 

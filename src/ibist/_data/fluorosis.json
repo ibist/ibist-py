@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "name": "fluorosis",
+  "title": "Dental Fluorosis Study Data",
+  "description": "These data arise from a prospective study examining the association between dental fluorosis and amoxicillin use during early childhood.",
+  "source": [
+    "Hong L, Levy SM, Warren JJ, Dawson DV, Bergus GR, Wefel JS (2005). Association of amoxicillin use during early childhood with developmental tooth enamel defects. Archives of Pediatrics & Adolescent Medicine, 159(10), 943--948."
+  ],
+  "notes": [
+    "Dental fluorosis --- a developmental defect of tooth enamel --- was assessed as a binary outcome (presence or absence) when participants were approximately 9 years old. Information on fluoride intake, infections, and amoxicillin use during early childhood (birth to 32 months) was collected as part of the Iowa Fluoride Study. The dataset is provided in aggregated form as a four-way contingency table with cell counts. The data have a 2 x 3 x 2 x 2 factorial structure: otitis media status (2 levels), fluoride level (3 levels), amoxicillin use (2 levels), and fluorosis status (2 levels). The counts sum to 308 subjects."
+  ],
+  "nrows": 24,
+  "ncols": 5,
+  "columns": [
+    {
+      "name": "om",
+      "type": "category",
+      "r_class": ["factor"],
+      "description": "Otitis media during early childhood (factor: 0 = no, 1 = yes)",
+      "label": null,
+      "units": null,
+      "levels": ["0", "1"],
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "fl_lev",
+      "type": "category",
+      "r_class": ["factor"],
+      "description": "Fluoride level (factor with levels 1, 2, 3)",
+      "label": null,
+      "units": null,
+      "levels": ["1", "2", "3"],
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "amox",
+      "type": "category",
+      "r_class": ["factor"],
+      "description": "Amoxicillin use during early childhood (factor: 0 = no, 1 = yes)",
+      "label": null,
+      "units": null,
+      "levels": ["0", "1"],
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "fluorosis",
+      "type": "category",
+      "r_class": ["factor"],
+      "description": "Dental fluorosis status (factor: 0 = absent, 1 = present)",
+      "label": null,
+      "units": null,
+      "levels": ["0", "1"],
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Number of subjects in the corresponding cell",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    }
+  ],
+  "provenance": {
+    "repository": "https://github.com/ibist/ibist-R",
+    "r_revision": "fd58164b8f1dc95c9c4916aa9dab4c6f3ddd436d",
+    "r_version": "4.5.2",
+    "package_version": "0.1-1",
+    "uncommitted_preparation_changes": false,
+    "prepared_file": "data/fluorosis.rda",
+    "prepared_md5": "036c4e9dce013752935427583f97a4fd",
+    "preparation_script": "data-raw/fluorosis.R",
+    "preparation_md5": "ef8f106e561e57c4b74fae39e65e9eb1",
+    "documentation_file": "man/fluorosis.Rd",
+    "documentation_md5": "e6bc52c7bb5b91f922d7c43e7ff3bc0a",
+    "exporter": "data-raw/export-python.R",
+    "exporter_md5": "bef7478778684be846d3f3c8d95d4173",
+    "raw_inputs": [],
+    "data_md5": "dd6081eb652be43918808ac30be71382"
+  }
+}

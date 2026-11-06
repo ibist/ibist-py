@@ -26,7 +26,8 @@ portable exports and metadata. Python users must not need R at runtime.
 - Validate methods independently against formulas, published results, or
   established software with matching assumptions, then compare with R.
 - Add dependencies when required by implemented functionality. NumPy and
-  SciPy are the planned numerical foundations.
+  SciPy provide the numerical foundations. pandas is a regular dependency so
+  teaching examples and DataFrame output work with a standard installation.
 
 ## Changes and checks
 

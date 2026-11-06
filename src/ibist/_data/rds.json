@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "name": "rds",
+  "title": "Neonatal Respiratory Distress Syndrome Data",
+  "description": "Aggregated counts of neonatal outcomes by birth weight, surfactant use, and survival status.",
+  "source": [
+    "Classical neonatal RDS dataset (exact source to be specified)."
+  ],
+  "notes": [
+    "The data are presented in aggregated form. Each row corresponds to a combination of birth weight category, surfactant use, and outcome, with count indicating the number of observations. Analyses should account for the grouped structure, e.g., via weighted models or binomial responses."
+  ],
+  "nrows": 16,
+  "ncols": 4,
+  "columns": [
+    {
+      "name": "bwt",
+      "type": "category",
+      "r_class": ["factor"],
+      "description": "Birth weight category in grams (factor with 4 levels).",
+      "label": null,
+      "units": "grams",
+      "levels": ["500-749g", "750-999g", "1000-1249g", "1250-1500g"],
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "surf",
+      "type": "category",
+      "r_class": ["factor"],
+      "description": "Surfactant use (Yes/No).",
+      "label": null,
+      "units": null,
+      "levels": ["No", "Yes"],
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "death",
+      "type": "integer",
+      "r_class": ["integer"],
+      "description": "Outcome (1 = death; 0 = alive).",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "count",
+      "type": "integer",
+      "r_class": ["integer"],
+      "description": "Number of infants in each group.",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    }
+  ],
+  "provenance": {
+    "repository": "https://github.com/ibist/ibist-R",
+    "r_revision": "fd58164b8f1dc95c9c4916aa9dab4c6f3ddd436d",
+    "r_version": "4.5.2",
+    "package_version": "0.1-1",
+    "uncommitted_preparation_changes": false,
+    "prepared_file": "data/rds.rda",
+    "prepared_md5": "f50643674fcef58d30631408f814fa72",
+    "preparation_script": "data-raw/rds.R",
+    "preparation_md5": "0d4a556d85ff2e1ddf65d2556892eae0",
+    "documentation_file": "man/rds.Rd",
+    "documentation_md5": "85c56dbca5f2258beb8e3750d04f6f39",
+    "exporter": "data-raw/export-python.R",
+    "exporter_md5": "bef7478778684be846d3f3c8d95d4173",
+    "raw_inputs": [
+      {
+        "path": "data-raw/rds.tab",
+        "available": false,
+        "md5": null
+      }
+    ],
+    "data_md5": "19421437b1d7e117d3430c0ed5a7677c"
+  }
+}

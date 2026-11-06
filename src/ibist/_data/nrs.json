@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "name": "nrs",
+  "title": "Non-restorative sleep and physical activity (Japan cohort study)",
+  "description": "A large observational dataset from a cohort study conducted in Japan to examine the association between non-restorative sleep (NRS) and physical activity, gender, and age. The data are used to illustrate logistic regression modeling for a binary outcome in a large-sample setting.",
+  "source": [
+    "Hidaka et al. (2019)."
+  ],
+  "notes": [
+    "Non-restorative sleep (NRS) is defined as a subjective feeling of lack of refreshment on awakening and reflects qualitative aspects of sleep. Hidaka et al. (2019) analyzed these data using logistic regression to assess whether the probability of NRS is associated with physical activity, gender, and age in a large cohort of adult subjects in Japan. Within this package, the dataset is provided for methodological illustration of binary regression models rather than for substantive epidemiological inference. Missing values are represented as NA, which are present in `ex`, `pa`, and `nrs`."
+  ],
+  "nrows": 91795,
+  "ncols": 6,
+  "columns": [
+    {
+      "name": "id",
+      "type": "integer",
+      "r_class": ["integer"],
+      "description": "Subject identifier.",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "gender",
+      "type": "category",
+      "r_class": ["factor"],
+      "description": "Gender of the subject (F = Female; M = Male).",
+      "label": null,
+      "units": null,
+      "levels": ["M", "F"],
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "age",
+      "type": "integer",
+      "r_class": ["integer"],
+      "description": "Age in years in 2013.",
+      "label": null,
+      "units": "years",
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "ex",
+      "type": "integer",
+      "r_class": ["integer"],
+      "description": "Indicator of regular exercise in 2013 (integer-coded).",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 1405,
+      "value_labels": []
+    },
+    {
+      "name": "pa",
+      "type": "integer",
+      "r_class": ["integer"],
+      "description": "Physical activity measure in 2013 (integer-coded).",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 1445,
+      "value_labels": []
+    },
+    {
+      "name": "nrs",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Indicator of non-restorative sleep in 2013 (1 = presence; 0 = absence).",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 1480,
+      "value_labels": []
+    }
+  ],
+  "provenance": {
+    "repository": "https://github.com/ibist/ibist-R",
+    "r_revision": "fd58164b8f1dc95c9c4916aa9dab4c6f3ddd436d",
+    "r_version": "4.5.2",
+    "package_version": "0.1-1",
+    "uncommitted_preparation_changes": false,
+    "prepared_file": "data/nrs.rda",
+    "prepared_md5": "ab7485efb9e77cd9ed00853b702c7db9",
+    "preparation_script": "data-raw/nrs.R",
+    "preparation_md5": "948137ce414f26f28b5828ec3b48bf18",
+    "documentation_file": "man/nrs.Rd",
+    "documentation_md5": "a13e3a9e36cca471e30ef3fe0c8ec526",
+    "exporter": "data-raw/export-python.R",
+    "exporter_md5": "bef7478778684be846d3f3c8d95d4173",
+    "raw_inputs": [
+      {
+        "path": "data-raw/nrs.csv",
+        "available": false,
+        "md5": null
+      }
+    ],
+    "data_md5": "adefcd6cc2874253d34003a2ecea7770"
+  }
+}

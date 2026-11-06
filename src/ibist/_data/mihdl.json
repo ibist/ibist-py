@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "name": "mihdl",
+  "title": "HDL Cholesterol and Event Counts by Gender",
+  "description": "Aggregated data on event counts and person-years by HDL cholesterol category and gender. Suitable for Poisson rate modeling and incidence rate comparisons.",
+  "source": [],
+  "notes": [
+    "The dataset provides grouped count data for modeling rates using Poisson regression with an offset for log person-years."
+  ],
+  "nrows": 24,
+  "ncols": 4,
+  "columns": [
+    {
+      "name": "hdl",
+      "type": "integer",
+      "r_class": ["integer"],
+      "description": "HDL category (integer, 1--12)",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "gender",
+      "type": "category",
+      "r_class": ["factor"],
+      "description": "Gender (factor: Men, Women)",
+      "label": null,
+      "units": null,
+      "levels": ["Men", "Women"],
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "cases",
+      "type": "integer",
+      "r_class": ["integer"],
+      "description": "Number of events",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "pyears",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Person-years at risk",
+      "label": null,
+      "units": "person-years",
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    }
+  ],
+  "provenance": {
+    "repository": "https://github.com/ibist/ibist-R",
+    "r_revision": "fd58164b8f1dc95c9c4916aa9dab4c6f3ddd436d",
+    "r_version": "4.5.2",
+    "package_version": "0.1-1",
+    "uncommitted_preparation_changes": false,
+    "prepared_file": "data/mihdl.rda",
+    "prepared_md5": "e35c360e76588a708e0181727d55d1b6",
+    "preparation_script": "data-raw/mihdl.R",
+    "preparation_md5": "0dea8fd3c474ee41962f60efc0b421fa",
+    "documentation_file": "man/mihdl.Rd",
+    "documentation_md5": "850a5c64fd12c1396ae279abff1e3740",
+    "exporter": "data-raw/export-python.R",
+    "exporter_md5": "bef7478778684be846d3f3c8d95d4173",
+    "raw_inputs": [
+      {
+        "path": "data-raw/mihdl.csv",
+        "available": true,
+        "md5": "cd7306277c701fbc46691c061524db43"
+      }
+    ],
+    "data_md5": "e6a4f85a6b1bde0a742e7d636a4eccfa"
+  }
+}

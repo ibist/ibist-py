@@ -6,8 +6,9 @@ Elizabeth Schifano and Jun Yan.
 
 ## Status
 
-This repository establishes the package structure. Statistical functions and
-datasets have not yet been implemented. No release has been published on PyPI.
+The package includes all seven teaching datasets with metadata and
+DataFrame output. Statistical methods are under development.
+No release has been published on PyPI.
 The distribution and import names are both `ibist`; the GitHub repository
 remains `ibist/ibist-py`. PyPI had no project named `ibist` when checked on
 2026-11-06; the name has not been reserved.
@@ -19,7 +20,7 @@ Use Python 3.10 or later and an isolated environment:
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e .
+python -m pip install -e ".[dev]"
 ```
 
 The package can then be imported without an R installation:
@@ -28,7 +29,13 @@ The package can then be imported without an R installation:
 import ibist
 
 print(ibist.__version__)
+
+fluorosis = ibist.datasets.load("fluorosis")
+frame = fluorosis.to_frame()
 ```
+
+NumPy, SciPy, and pandas are regular dependencies.
+The `dev` extra provides testing and packaging tools.
 
 To build and inspect the distribution:
 
@@ -52,3 +59,5 @@ See the [implementation plan](docs/implementation-plan.md) for the first stages.
 Copyright (C) 2026 Elizabeth Schifano and Jun Yan.
 
 GNU General Public License, version 3 or later; see [LICENSE](LICENSE).
+
+See [dataset preparation](docs/datasets.md) for the shared R export workflow.

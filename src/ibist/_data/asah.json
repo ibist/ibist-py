@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "name": "asah",
+  "title": "Observer Ratings for Aneurysmal Subarachnoid Hemorrhage Scales",
+  "description": "Reconstructed paired observer ratings for three clinical grading scales used after aneurysmal subarachnoid hemorrhage: WFNS, Hunt and Hess (HH), and PAASH.",
+  "source": [
+    "Degen, L. A. R., Dorhout Mees, S. M., Algra, A., and Rinkel, G. J. E. (2011). Interobserver variability of grading scales for aneurysmal subarachnoid hemorrhage. Stroke, 42(6), 1546--1549. https://doi.org/10.1161/STROKEAHA.110.601211"
+  ],
+  "notes": [
+    "The paired ratings are expanded from the published cross-tabulations. They reproduce the observed cell counts for each scale and can be used to illustrate agreement summaries such as kappa. The original participant-level records are not available here; generated rows cannot be linked across scales."
+  ],
+  "nrows": 309,
+  "ncols": 4,
+  "columns": [
+    {
+      "name": "scale",
+      "type": "category",
+      "r_class": ["factor"],
+      "description": "Grading scale: WFNS, HH, or PAASH.",
+      "label": null,
+      "units": null,
+      "levels": ["WFNS", "HH", "PAASH"],
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "assessment",
+      "type": "integer",
+      "r_class": ["integer"],
+      "description": "Sequential row number within scale. These numbers are generated for the reconstructed data and are not study participant IDs.",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "observer1",
+      "type": "category",
+      "r_class": ["ordered", "factor"],
+      "description": "Ordered factor giving the first observer's grade (1--5).",
+      "label": null,
+      "units": null,
+      "levels": ["1", "2", "3", "4", "5"],
+      "ordered": true,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "observer2",
+      "type": "category",
+      "r_class": ["ordered", "factor"],
+      "description": "Ordered factor giving the second observer's grade (1--5).",
+      "label": null,
+      "units": null,
+      "levels": ["1", "2", "3", "4", "5"],
+      "ordered": true,
+      "missing_count": 0,
+      "value_labels": []
+    }
+  ],
+  "provenance": {
+    "repository": "https://github.com/ibist/ibist-R",
+    "r_revision": "fd58164b8f1dc95c9c4916aa9dab4c6f3ddd436d",
+    "r_version": "4.5.2",
+    "package_version": "0.1-1",
+    "uncommitted_preparation_changes": false,
+    "prepared_file": "data/asah.rda",
+    "prepared_md5": "7a251f7e2e5865c7467f00611248c78a",
+    "preparation_script": "data-raw/asah.R",
+    "preparation_md5": "bcb8a70d4b5d66d98728dd74bd56001f",
+    "documentation_file": "man/asah.Rd",
+    "documentation_md5": "cd9450ac9e9f49a53f5292532f31d2ef",
+    "exporter": "data-raw/export-python.R",
+    "exporter_md5": "bef7478778684be846d3f3c8d95d4173",
+    "raw_inputs": [],
+    "data_md5": "cfc71b69409f8cf43a38464be9cd7692"
+  }
+}

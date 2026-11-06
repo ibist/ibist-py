@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "name": "midbp",
+  "title": "Blood Pressure Cohort Data (midbp)",
+  "description": "Aggregated data of cases and person-years by diastolic blood pressure category and gender.",
+  "source": [],
+  "notes": [
+    "The dataset is aggregated by DBP category and gender, suitable for rate modeling (e.g., Poisson regression with offset). The DBP categories are coded as: 1 = <70 mmHg, 2 = 70--74 mmHg, 3 = 75--79 mmHg, 4 = 80--84 mmHg, 5 = 85--89 mmHg, 6 = 90--94 mmHg, 7 = 95--99 mmHg, and 8 = >=100 mmHg."
+  ],
+  "nrows": 16,
+  "ncols": 4,
+  "columns": [
+    {
+      "name": "dbp",
+      "type": "integer",
+      "r_class": ["integer"],
+      "description": "Diastolic blood pressure category (1--8).",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "gender",
+      "type": "category",
+      "r_class": ["factor"],
+      "description": "Gender (Men, Women).",
+      "label": null,
+      "units": null,
+      "levels": ["Men", "Women"],
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "cases",
+      "type": "integer",
+      "r_class": ["integer"],
+      "description": "Number of observed cases.",
+      "label": null,
+      "units": null,
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    },
+    {
+      "name": "pyears",
+      "type": "number",
+      "r_class": ["numeric"],
+      "description": "Person-years of follow-up.",
+      "label": null,
+      "units": "person-years",
+      "levels": null,
+      "ordered": false,
+      "missing_count": 0,
+      "value_labels": []
+    }
+  ],
+  "provenance": {
+    "repository": "https://github.com/ibist/ibist-R",
+    "r_revision": "fd58164b8f1dc95c9c4916aa9dab4c6f3ddd436d",
+    "r_version": "4.5.2",
+    "package_version": "0.1-1",
+    "uncommitted_preparation_changes": false,
+    "prepared_file": "data/midbp.rda",
+    "prepared_md5": "db5af7f472d942855883302aa92427c6",
+    "preparation_script": "data-raw/midbp.R",
+    "preparation_md5": "c6457575212ae9d8ce4800fd898a7b97",
+    "documentation_file": "man/midbp.Rd",
+    "documentation_md5": "31eea70dedcaa8bf5afb0aa414485f59",
+    "exporter": "data-raw/export-python.R",
+    "exporter_md5": "bef7478778684be846d3f3c8d95d4173",
+    "raw_inputs": [
+      {
+        "path": "data-raw/midbp.csv",
+        "available": true,
+        "md5": "c1ff34d4c54c61e9dc45fb63a4172c7c"
+      }
+    ],
+    "data_md5": "4f704a70e017c84ada26be43064a9683"
+  }
+}

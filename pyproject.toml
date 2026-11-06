@@ -10,17 +10,21 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = "GPL-3.0-or-later"
 license-files = ["LICENSE"]
+dependencies = ["numpy>=1.24", "scipy>=1.10", "pandas>=2.0"]
 authors = [
     {name = "Elizabeth Schifano"},
     {name = "Jun Yan", email = "jun.yan@uconn.edu"},
 ]
 classifiers = [
-    "Development Status :: 1 - Planning",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Education",
     "Intended Audience :: Science/Research",
     "Programming Language :: Python :: 3",
     "Topic :: Scientific/Engineering :: Mathematics",
 ]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "build>=1", "twine>=6"]
 
 [project.urls]
 Repository = "https://github.com/ibist/ibist-py"
@@ -32,3 +36,9 @@ where = ["src"]
 
 [tool.setuptools.dynamic]
 version = {attr = "ibist.__version__"}
+
+[tool.setuptools.package-data]
+ibist = ["_data/*.json", "_data/*.json.gz"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
