@@ -8,11 +8,21 @@ Elizabeth Schifano and Jun Yan.
 
 The first implementation includes all seven teaching datasets and
 `or_2x2_ci()` with Wald, Gart, Cornfield, and Baptista--Pike intervals,
-including exact and mid-p conditional options. No release has been published
-on PyPI.
+including exact and mid-p conditional options. This is an early alpha;
+public interfaces may change during development.
 The distribution and import names are both `ibist`; the GitHub repository
-remains `ibist/ibist-py`. PyPI had no project named `ibist` when checked on
-2026-11-06; the name has not been reserved.
+remains `ibist/ibist-py`.
+
+## Installation
+
+After publication, install the first alpha from PyPI with:
+
+```sh
+python -m pip install "ibist==0.1.0a1"
+```
+
+NumPy, SciPy, and pandas are installed automatically. See the
+[changelog](https://github.com/ibist/ibist-py/blob/main/CHANGELOG.md) for the release scope.
 
 ## Development
 
@@ -71,6 +81,8 @@ The [dataset format and preparation](https://github.com/ibist/ibist-py/blob/main
 [odds-ratio interface and validation](https://github.com/ibist/ibist-py/blob/main/docs/odds-ratio.md) describe this implementation.
 See [TestPyPI publishing](https://github.com/ibist/ibist-py/blob/main/docs/publishing.md) for the manual release workflow
 and installation checks.
+The separate [PyPI publishing guide](https://github.com/ibist/ibist-py/blob/main/docs/pypi-publishing.md)
+describes production releases.
 
 ## License
 

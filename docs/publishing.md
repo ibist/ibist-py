@@ -4,7 +4,8 @@ The manually triggered workflow `.github/workflows/publish-testpypi.yml`
 builds and tests the package, checks the distribution metadata, and passes
 the checked wheel and source archive to a separate publishing job. It publishes
 only from `main`, using the GitHub environment `testpypi` and Trusted Publishing.
-The upload destination is TestPyPI; production PyPI publishing is not configured.
+The upload destination is TestPyPI; use the separate
+[production workflow](pypi-publishing.md) for PyPI releases.
 
 ## Account configuration
 
@@ -36,9 +37,9 @@ no API token or password is needed in repository secrets.
 4. Confirm that the version appears on
    [TestPyPI](https://test.pypi.org/project/ibist/).
 
-The first trial version is `0.1.0.dev0`, read from `ibist.__version__` through
-the package metadata. Subsequent changed trial builds need a new version,
-such as `0.1.0.dev1`; existing distribution filenames cannot be overwritten.
+The first trial used `0.1.0.dev0`. The workflow reads the current version
+from `ibist.__version__` through the package metadata. Changed trial builds
+need a new version; existing distribution filenames cannot be overwritten.
 The workflow deliberately reports an error for an existing upload instead of
 silently skipping it. A pending publisher creates the project on the first
 successful upload; it does not reserve the project name beforehand.

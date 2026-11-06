@@ -1,0 +1,73 @@
+name: Publish to PyPI
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pypi
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install packaging and test tools
+        run: python -m pip install build twine pytest
+      - name: Build distributions
+        run: python -m build
+      - name: Check metadata
+        run: python -m twine check dist/*
+      - name: Install wheel and dependencies
+        run: python -m pip install dist/*.whl
+      - name: Test installed package
+        run: python -m pytest -q
+      - name: Verify installed examples
+        working-directory: ${{ runner.temp }}
+        run: |
+          python - <<'PY'
+          from importlib.metadata import version
+          import ibist
+
+          assert ibist.__version__ == version("ibist")
+          result = ibist.or_2x2_ci([[7, 27], [1, 33]], method="cornfield")
+          assert result.to_frame().shape == (1, 2)
+          for name in ibist.datasets.available():
+              dataset = ibist.datasets.load(name)
+              assert len(dataset.to_frame()) == len(dataset)
+          print(result)
+          PY
+      - name: Save checked distributions
+        uses: actions/upload-artifact@v6
+        with:
+          name: pypi-distributions
+          path: dist/
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: pypi
+      url: https://pypi.org/project/ibist/
+    permissions:
+      id-token: write
+    steps:
+      - name: Download checked distributions
+        uses: actions/download-artifact@v7
+        with:
+          name: pypi-distributions
+          path: dist/
+      - name: Publish distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://upload.pypi.org/legacy/
