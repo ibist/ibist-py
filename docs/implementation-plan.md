@@ -7,7 +7,8 @@ define the policy. This document tracks the Python implementation sequence.
 ## Package foundation
 
 The repository uses a `src/ibist/` layout, distribution name `ibist`, and
-import name `ibist`. The initial version is `0.1.0.dev0`. Packaging checks
+import name `ibist`. The initial TestPyPI version was `0.1.0.dev0`; the first
+production alpha is prepared as `0.1.0a1`. Packaging checks
 build both source and wheel distributions and verify an installed import.
 All seven prepared R datasets are bundled with metadata. The first method,
 `or_2x2_ci()`, returns structured results and supports all four R interval
