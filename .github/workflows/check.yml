@@ -31,6 +31,6 @@ jobs:
           import ibist
           from importlib.metadata import version
 
-          assert ibist.__version__ == version("ibist-py")
+          assert ibist.__version__ == version("ibist")
           print(ibist.__version__)
           PY

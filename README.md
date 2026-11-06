@@ -1,4 +1,4 @@
-# ibist-py
+# ibist for Python
 
 Python sister package to [ibist for R](https://github.com/ibist/ibist-R),
 supporting *Biostatistical Analysis of Proportions and Rates with R* by
@@ -8,8 +8,9 @@ Elizabeth Schifano and Jun Yan.
 
 This repository establishes the package structure. Statistical functions and
 datasets have not yet been implemented. No release has been published on PyPI.
-The development distribution is named `ibist-py` and is imported as `ibist`.
-PyPI name availability must be checked before publication.
+The distribution and import names are both `ibist`; the GitHub repository
+remains `ibist/ibist-py`. PyPI had no project named `ibist` when checked on
+2026-11-06; the name has not been reserved.
 
 ## Development
 

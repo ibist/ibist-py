@@ -3,7 +3,7 @@ requires = ["setuptools>=77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ibist-py"
+name = "ibist"
 dynamic = ["version"]
 description = "Teaching data and biostatistical inference for proportions and rates"
 readme = "README.md"

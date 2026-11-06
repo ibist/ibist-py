@@ -6,7 +6,7 @@ define the policy. This document tracks the Python implementation sequence.
 
 ## Package foundation
 
-The repository uses a `src/ibist/` layout, distribution name `ibist-py`, and
+The repository uses a `src/ibist/` layout, distribution name `ibist`, and
 import name `ibist`. The initial version is `0.1.0.dev0`. Packaging checks
 build both source and wheel distributions and verify an installed import.
 No statistical methods or prepared datasets are included yet.
@@ -33,4 +33,5 @@ correspondence between public R and Python interfaces as methods are added.
 
 Add dependencies and compiled bindings when an implemented feature requires
 them. Record any feature or option available in only one language. Check
-Python distribution and import-name availability before a PyPI release.
+PyPI name availability again before a release; the 2026-11-06 check found no
+project named `ibist`, but did not reserve the name.
