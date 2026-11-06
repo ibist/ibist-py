@@ -6,9 +6,10 @@ Elizabeth Schifano and Jun Yan.
 
 ## Status
 
-The package includes all seven teaching datasets with metadata and
-DataFrame output. Statistical methods are under development.
-No release has been published on PyPI.
+The first implementation includes all seven teaching datasets and
+`or_2x2_ci()` with Wald, Gart, Cornfield, and Baptista--Pike intervals,
+including exact and mid-p conditional options. No release has been published
+on PyPI.
 The distribution and import names are both `ibist`; the GitHub repository
 remains `ibist/ibist-py`. PyPI had no project named `ibist` when checked on
 2026-11-06; the name has not been reserved.
@@ -30,12 +31,23 @@ import ibist
 
 print(ibist.__version__)
 
+result = ibist.or_2x2_ci([[7, 27], [1, 33]],
+                         method=["wald", "gart", "cornfield", "bp"])
+print(result)
+print(result.to_frame())
+
+midp = ibist.or_2x2_ci([[7, 27], [1, 33]], method=["cornfield", "bp"], midp=True)
+print(midp)
+
 fluorosis = ibist.datasets.load("fluorosis")
+print(fluorosis)
 frame = fluorosis.to_frame()
 ```
 
-NumPy, SciPy, and pandas are regular dependencies.
-The `dev` extra provides testing and packaging tools.
+NumPy, SciPy, and pandas are runtime dependencies, so a standard installation
+supports all examples and DataFrame output. The `dev` extra provides testing
+and packaging tools. Printed
+summaries round for readability; stored values retain full precision.
 
 To build and inspect the distribution:
 
@@ -43,6 +55,7 @@ To build and inspect the distribution:
 python -m pip install build twine
 python -m build
 python -m twine check dist/*
+python -m pytest -q
 ```
 
 The shared
@@ -50,14 +63,15 @@ The shared
 govern statistical specifications, native interfaces, common data preparation,
 and validation. R is initially the reference implementation; future features
 may start in either language. Dataset preparation remains in the R package's
-`data-raw/` workflow and will generate distribution files for both packages.
+`data-raw/` workflow; its export step reads the prepared R datasets and produces
+the portable files bundled here.
 
 See the [implementation plan](docs/implementation-plan.md) for the first stages.
+The [dataset format and preparation](docs/datasets.md) and
+[odds-ratio interface and validation](docs/odds-ratio.md) describe this implementation.
 
 ## License
 
 Copyright (C) 2026 Elizabeth Schifano and Jun Yan.
 
 GNU General Public License, version 3 or later; see [LICENSE](LICENSE).
-
-See [dataset preparation](docs/datasets.md) for the shared R export workflow.

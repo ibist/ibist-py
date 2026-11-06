@@ -9,22 +9,25 @@ define the policy. This document tracks the Python implementation sequence.
 The repository uses a `src/ibist/` layout, distribution name `ibist`, and
 import name `ibist`. The initial version is `0.1.0.dev0`. Packaging checks
 build both source and wheel distributions and verify an installed import.
-All seven prepared R datasets are bundled with metadata and DataFrame
-output. NumPy, SciPy, and pandas are regular dependencies.
-Statistical methods are the next implementation step.
+All seven prepared R datasets are bundled with metadata. The first method,
+`or_2x2_ci()`, returns structured results and supports all four R interval
+methods, including exact and mid-p conditional intervals.
+NumPy, SciPy, and pandas are regular dependencies, so introductory examples
+and DataFrame output work with a standard installation.
 
 ## First complete implementation
 
-Establish dataset loading and structured result objects, then implement
-`or_2x2_ci()` with the agreed R methods and mid-p options. Extend the existing
-R `data-raw/` workflow to produce portable data with metadata rather than
-duplicating the cleaning logic. Select and document the export format,
-metadata schema, and shared validation-case format during this stage.
+Dataset loading, structured interval results, and `or_2x2_ci()` are implemented.
+The R `data-raw/export-python.R` step exports the existing prepared datasets
+as compressed JSON column arrays with JSON metadata, without duplicating
+cleaning logic. See [dataset preparation](datasets.md) for the schema and
+provenance, including raw inputs missing from the current R checkout.
 
-Check the first method against direct formulas and published reference cases,
-then compare its estimates and confidence limits with `ibist::or.2x2.ci()`.
-Cover sparse and zero-cell tables and exact versus mid-p behavior. Record the
-correspondence between public R and Python interfaces as methods are added.
+Validation includes direct formulas, Fagerland's published example, SciPy
+conditional intervals, enumerated coverage, and 60 R comparison cases. See
+[odds-ratio validation](odds-ratio.md) for the interface correspondence,
+test scope, and numerical differences. Additional intervals are the next
+implementation work; this first step does not provide the remaining R methods.
 
 ## Subsequent stages
 

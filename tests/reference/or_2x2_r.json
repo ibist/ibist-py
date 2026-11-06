@@ -1,0 +1,1750 @@
+{
+  "source": "R source in ibist-R; independently checked in Python tests",
+  "r_revision": "fd58164b8f1dc95c9c4916aa9dab4c6f3ddd436d",
+  "source_md5": {
+    "R/or_2x2_ci.R": "65465fd2969d9a96e834bb4801d54705",
+    "R/ci.R": "56e12bc8c7aef9d2603ffc0855980376"
+  },
+  "cases": [
+    {
+      "name": "fagerland",
+      "table": [
+        [7, 27],
+        [1, 33]
+      ],
+      "conf_level": 0.9,
+      "midp": false,
+      "estimate": 8.55555555555556,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 1.4008713201391,
+          "upper": 52.2514308144515
+        },
+        {
+          "method": "gart",
+          "lower": 1.31774450521984,
+          "upper": 28.1535406953032
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 1.23248884907775,
+          "upper": 195.492113954763
+        },
+        {
+          "method": "bp-exact",
+          "lower": 1.32765364342081,
+          "upper": 94.7088925909431
+        }
+      ]
+    },
+    {
+      "name": "fagerland",
+      "table": [
+        [7, 27],
+        [1, 33]
+      ],
+      "conf_level": 0.9,
+      "midp": true,
+      "estimate": 8.55555555555556,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 1.4008713201391,
+          "upper": 52.2514308144515
+        },
+        {
+          "method": "gart",
+          "lower": 1.31774450521984,
+          "upper": 28.1535406953032
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 1.54032130845273,
+          "upper": 98.8359386755067
+        },
+        {
+          "method": "bp-midp",
+          "lower": 1.73700665264849,
+          "upper": 48.3876279431134
+        }
+      ]
+    },
+    {
+      "name": "fagerland",
+      "table": [
+        [7, 27],
+        [1, 33]
+      ],
+      "conf_level": 0.95,
+      "midp": false,
+      "estimate": 8.55555555555556,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.990490281653991,
+          "upper": 73.9003019211527
+        },
+        {
+          "method": "gart",
+          "lower": 0.98279605130805,
+          "upper": 37.7485985056024
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.973273632882454,
+          "upper": 396.994002170917
+        },
+        {
+          "method": "bp-exact",
+          "lower": 1.00000000873386,
+          "upper": 195.492113953136
+        }
+      ]
+    },
+    {
+      "name": "fagerland",
+      "table": [
+        [7, 27],
+        [1, 33]
+      ],
+      "conf_level": 0.95,
+      "midp": true,
+      "estimate": 8.55555555555556,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.990490281653991,
+          "upper": 73.9003019211527
+        },
+        {
+          "method": "gart",
+          "lower": 0.98279605130805,
+          "upper": 37.7485985056024
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 1.18858678830996,
+          "upper": 199.616645737188
+        },
+        {
+          "method": "bp-midp",
+          "lower": 1.32765363698482,
+          "upper": 98.8359386753805
+        }
+      ]
+    },
+    {
+      "name": "fagerland",
+      "table": [
+        [7, 27],
+        [1, 33]
+      ],
+      "conf_level": 0.99,
+      "midp": false,
+      "estimate": 8.55555555555556,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.503051725642478,
+          "upper": 145.506967043424
+        },
+        {
+          "method": "gart",
+          "lower": 0.554026121102605,
+          "upper": 66.9628599458189
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.616598400604899,
+          "upper": 2008.86180379836
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.718927306258187,
+          "upper": 1001.45043944773
+        }
+      ]
+    },
+    {
+      "name": "fagerland",
+      "table": [
+        [7, 27],
+        [1, 33]
+      ],
+      "conf_level": 0.99,
+      "midp": true,
+      "estimate": 8.55555555555556,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.503051725642478,
+          "upper": 145.506967043424
+        },
+        {
+          "method": "gart",
+          "lower": 0.554026121102605,
+          "upper": 66.9628599458189
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0.728267195646582,
+          "upper": 1005.57511224931
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0.718927316494398,
+          "upper": 501.863222720688
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "table": [
+        [10, 10],
+        [10, 10]
+      ],
+      "conf_level": 0.9,
+      "midp": false,
+      "estimate": 1,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.353349800743927,
+          "upper": 2.83005678196123
+        },
+        {
+          "method": "gart",
+          "lower": 0.362320645071675,
+          "upper": 2.75998625417046
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.297510302174765,
+          "upper": 3.36122814132668
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.321472170528631,
+          "upper": 3.11068917091208
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "table": [
+        [10, 10],
+        [10, 10]
+      ],
+      "conf_level": 0.9,
+      "midp": true,
+      "estimate": 1,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.353349800743927,
+          "upper": 2.83005678196123
+        },
+        {
+          "method": "gart",
+          "lower": 0.362320645071675,
+          "upper": 2.75998625417046
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0.34497426298763,
+          "upper": 2.8987669729237
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0.371140270172624,
+          "upper": 2.69439905275604
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "table": [
+        [10, 10],
+        [10, 10]
+      ],
+      "conf_level": 0.95,
+      "midp": false,
+      "estimate": 1,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.289502871089946,
+          "upper": 3.45419717681939
+        },
+        {
+          "method": "gart",
+          "lower": 0.298281969199823,
+          "upper": 3.35253251372391
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.243878544464284,
+          "upper": 4.10040170691016
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.277697239622521,
+          "upper": 3.60104408893219
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "table": [
+        [10, 10],
+        [10, 10]
+      ],
+      "conf_level": 0.95,
+      "midp": true,
+      "estimate": 1,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.289502871089946,
+          "upper": 3.45419717681939
+        },
+        {
+          "method": "gart",
+          "lower": 0.298281969199823,
+          "upper": 3.35253251372391
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0.280717808204772,
+          "upper": 3.56229625972789
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0.297097093136374,
+          "upper": 3.36590295605202
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "table": [
+        [10, 10],
+        [10, 10]
+      ],
+      "conf_level": 0.99,
+      "midp": false,
+      "estimate": 1,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.196106481834913,
+          "upper": 5.09927051183257
+        },
+        {
+          "method": "gart",
+          "lower": 0.203958984469925,
+          "upper": 4.90294655368544
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.164514286274726,
+          "upper": 6.07849945827918
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.179076560805137,
+          "upper": 5.58420351843403
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "table": [
+        [10, 10],
+        [10, 10]
+      ],
+      "conf_level": 0.99,
+      "midp": true,
+      "estimate": 1,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.196106481834913,
+          "upper": 5.09927051183257
+        },
+        {
+          "method": "gart",
+          "lower": 0.203958984469925,
+          "upper": 4.90294655368544
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0.186931380694217,
+          "upper": 5.34955657038615
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0.179076573730653,
+          "upper": 5.58420351313898
+        }
+      ]
+    },
+    {
+      "name": "fluorosis",
+      "table": [
+        [38, 267],
+        [62, 717]
+      ],
+      "conf_level": 0.9,
+      "midp": false,
+      "estimate": 1.64588619064879,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 1.1496659406539,
+          "upper": 2.35628564505234
+        },
+        {
+          "method": "gart",
+          "lower": 1.15620967343708,
+          "upper": 2.36113633134812
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 1.11876025037782,
+          "upper": 2.40293170970844
+        },
+        {
+          "method": "bp-exact",
+          "lower": 1.13441419263182,
+          "upper": 2.38246625683898
+        }
+      ]
+    },
+    {
+      "name": "fluorosis",
+      "table": [
+        [38, 267],
+        [62, 717]
+      ],
+      "conf_level": 0.9,
+      "midp": true,
+      "estimate": 1.64588619064879,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 1.1496659406539,
+          "upper": 2.35628564505234
+        },
+        {
+          "method": "gart",
+          "lower": 1.15620967343708,
+          "upper": 2.36113633134812
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 1.1442139807721,
+          "upper": 2.35292008447151
+        },
+        {
+          "method": "bp-midp",
+          "lower": 1.16509273626631,
+          "upper": 2.32931696076743
+        }
+      ]
+    },
+    {
+      "name": "fluorosis",
+      "table": [
+        [38, 267],
+        [62, 717]
+      ],
+      "conf_level": 0.95,
+      "midp": false,
+      "estimate": 1.64588619064879,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 1.07329504600937,
+          "upper": 2.52394843583832
+        },
+        {
+          "method": "gart",
+          "lower": 1.07977835201725,
+          "upper": 2.52826764076932
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 1.04217323023241,
+          "upper": 2.57010975874813
+        },
+        {
+          "method": "bp-exact",
+          "lower": 1.06682690368964,
+          "upper": 2.54944856528635
+        }
+      ]
+    },
+    {
+      "name": "fluorosis",
+      "table": [
+        [38, 267],
+        [62, 717]
+      ],
+      "conf_level": 0.95,
+      "midp": true,
+      "estimate": 1.64588619064879,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 1.07329504600937,
+          "upper": 2.52394843583832
+        },
+        {
+          "method": "gart",
+          "lower": 1.07977835201725,
+          "upper": 2.52826764076932
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 1.0656557424209,
+          "upper": 2.51774342278415
+        },
+        {
+          "method": "bp-midp",
+          "lower": 1.07340099417889,
+          "upper": 2.49248252420146
+        }
+      ]
+    },
+    {
+      "name": "fluorosis",
+      "table": [
+        [38, 267],
+        [62, 717]
+      ],
+      "conf_level": 0.99,
+      "midp": false,
+      "estimate": 1.64588619064879,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.938369811655751,
+          "upper": 2.88685901754283
+        },
+        {
+          "method": "gart",
+          "lower": 0.944677946023149,
+          "upper": 2.88984058334473
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.90594959923808,
+          "upper": 2.93039571437526
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.926618522179214,
+          "upper": 2.92225117615315
+        }
+      ]
+    },
+    {
+      "name": "fluorosis",
+      "table": [
+        [38, 267],
+        [62, 717]
+      ],
+      "conf_level": 0.99,
+      "midp": true,
+      "estimate": 1.64588619064879,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.938369811655751,
+          "upper": 2.88685901754283
+        },
+        {
+          "method": "gart",
+          "lower": 0.944677946023149,
+          "upper": 2.88984058334473
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0.925992285618692,
+          "upper": 2.87305952504374
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0.926618528795366,
+          "upper": 2.85610607861956
+        }
+      ]
+    },
+    {
+      "name": "sparse",
+      "table": [
+        [1, 4],
+        [3, 2]
+      ],
+      "conf_level": 0.9,
+      "midp": false,
+      "estimate": 0.166666666666667,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.0155157261361953,
+          "upper": 1.79029827762797
+        },
+        {
+          "method": "gart",
+          "lower": 0.0302245921033702,
+          "upper": 1.87560322434614
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.00520875416296652,
+          "upper": 3.17216211822433
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.0108733661406246,
+          "upper": 2.15443469131049
+        }
+      ]
+    },
+    {
+      "name": "sparse",
+      "table": [
+        [1, 4],
+        [3, 2]
+      ],
+      "conf_level": 0.9,
+      "midp": true,
+      "estimate": 0.166666666666667,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.0155157261361953,
+          "upper": 1.79029827762797
+        },
+        {
+          "method": "gart",
+          "lower": 0.0302245921033702,
+          "upper": 1.87560322434614
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0.010631353277376,
+          "upper": 2.145969245207
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0.0226625847615582,
+          "upper": 2.15443468694366
+        }
+      ]
+    },
+    {
+      "name": "sparse",
+      "table": [
+        [1, 4],
+        [3, 2]
+      ],
+      "conf_level": 0.95,
+      "midp": false,
+      "estimate": 0.166666666666667,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.00984566714414581,
+          "upper": 2.82132001530179
+        },
+        {
+          "method": "gart",
+          "lower": 0.0203533468479087,
+          "upper": 2.7852589958419
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.00255107004087483,
+          "upper": 4.58611434226265
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.00520875427152743,
+          "upper": 3.17216211822434
+        }
+      ]
+    },
+    {
+      "name": "sparse",
+      "table": [
+        [1, 4],
+        [3, 2]
+      ],
+      "conf_level": 0.95,
+      "midp": true,
+      "estimate": 0.166666666666667,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.00984566714414581,
+          "upper": 2.82132001530179
+        },
+        {
+          "method": "gart",
+          "lower": 0.0203533468479087,
+          "upper": 2.7852589958419
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0.00515383278953803,
+          "upper": 3.22537467069022
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0.0106313506110013,
+          "upper": 2.15443469173201
+        }
+      ]
+    },
+    {
+      "name": "sparse",
+      "table": [
+        [1, 4],
+        [3, 2]
+      ],
+      "conf_level": 0.99,
+      "midp": false,
+      "estimate": 0.166666666666667,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.00404752852974707,
+          "upper": 6.86289857468
+        },
+        {
+          "method": "gart",
+          "lower": 0.00939744548341826,
+          "upper": 6.03242045975751
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.000502006746843536,
+          "upper": 9.62520922379695
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.00100806747314076,
+          "upper": 7.09978635549407
+        }
+      ]
+    },
+    {
+      "name": "sparse",
+      "table": [
+        [1, 4],
+        [3, 2]
+      ],
+      "conf_level": 0.99,
+      "midp": true,
+      "estimate": 0.166666666666667,
+      "intervals": [
+        {
+          "method": "wald",
+          "lower": 0.00404752852974707,
+          "upper": 6.86289857468
+        },
+        {
+          "method": "gart",
+          "lower": 0.00939744548341826,
+          "upper": 6.03242045975751
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0.0010060300621313,
+          "upper": 7.14400544290745
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0.00202424209354833,
+          "upper": 5.17130966236881
+        }
+      ]
+    },
+    {
+      "name": "zero_a",
+      "table": [
+        [0, 5],
+        [4, 6]
+      ],
+      "conf_level": 0.9,
+      "midp": false,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.00945842191124515,
+          "upper": 1.82304602364579
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0,
+          "upper": 2.02899284651662
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0,
+          "upper": 1.43382058013236
+        }
+      ]
+    },
+    {
+      "name": "zero_a",
+      "table": [
+        [0, 5],
+        [4, 6]
+      ],
+      "conf_level": 0.9,
+      "midp": true,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.00945842191124515,
+          "upper": 1.82304602364579
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0,
+          "upper": 1.34885056749641
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0,
+          "upper": 1.2805791697275
+        }
+      ]
+    },
+    {
+      "name": "zero_a",
+      "table": [
+        [0, 5],
+        [4, 6]
+      ],
+      "conf_level": 0.95,
+      "midp": false,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.00571410190449541,
+          "upper": 3.01764629743374
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0,
+          "upper": 2.87947175300544
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0,
+          "upper": 2.54572989369713
+        }
+      ]
+    },
+    {
+      "name": "zero_a",
+      "table": [
+        [0, 5],
+        [4, 6]
+      ],
+      "conf_level": 0.95,
+      "midp": true,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.00571410190449541,
+          "upper": 3.01764629743374
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0,
+          "upper": 2.02899284651662
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0,
+          "upper": 1.59282397712208
+        }
+      ]
+    },
+    {
+      "name": "zero_a",
+      "table": [
+        [0, 5],
+        [4, 6]
+      ],
+      "conf_level": 0.99,
+      "midp": false,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.00213391743110844,
+          "upper": 8.08050874128853
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0,
+          "upper": 5.69750689074498
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0,
+          "upper": 4.31968690935633
+        }
+      ]
+    },
+    {
+      "name": "zero_a",
+      "table": [
+        [0, 5],
+        [4, 6]
+      ],
+      "conf_level": 0.99,
+      "midp": true,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.00213391743110844,
+          "upper": 8.08050874128853
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0,
+          "upper": 4.31968690935633
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0,
+          "upper": 3.1945696326998
+        }
+      ]
+    },
+    {
+      "name": "zero_b",
+      "table": [
+        [4, 0],
+        [2, 5]
+      ],
+      "conf_level": 0.9,
+      "midp": false,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 1.26027539025608,
+          "upper": 311.074867470308
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 1.05438289119599,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-exact",
+          "lower": 1.55200784029219,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_b",
+      "table": [
+        [4, 0],
+        [2, 5]
+      ],
+      "conf_level": 0.9,
+      "midp": true,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 1.26027539025608,
+          "upper": 311.074867470308
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 1.61072855057062,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-midp",
+          "lower": 1.58740105012526,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_b",
+      "table": [
+        [4, 0],
+        [2, 5]
+      ],
+      "conf_level": 0.95,
+      "midp": false,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.743541635286263,
+          "upper": 527.260319254436
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.73316463185302,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.759835687554898,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_b",
+      "table": [
+        [4, 0],
+        [2, 5]
+      ],
+      "conf_level": 0.95,
+      "midp": true,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.743541635286263,
+          "upper": 527.260319254436
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 1.05438289119599,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-midp",
+          "lower": 1.47800571017891,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_b",
+      "table": [
+        [4, 0],
+        [2, 5]
+      ],
+      "conf_level": 0.99,
+      "midp": false,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.265109171194283,
+          "upper": 1478.78701530358
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.361609680831807,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.481524569681778,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_b",
+      "table": [
+        [4, 0],
+        [2, 5]
+      ],
+      "conf_level": 0.99,
+      "midp": true,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.265109171194283,
+          "upper": 1478.78701530358
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0.481524569722527,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0.658293135726258,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_c",
+      "table": [
+        [4, 2],
+        [0, 5]
+      ],
+      "conf_level": 0.9,
+      "midp": false,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 1.26027539025608,
+          "upper": 311.074867470308
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 1.05438289119599,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-exact",
+          "lower": 1.55200784029219,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_c",
+      "table": [
+        [4, 2],
+        [0, 5]
+      ],
+      "conf_level": 0.9,
+      "midp": true,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 1.26027539025608,
+          "upper": 311.074867470308
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 1.61072855057062,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-midp",
+          "lower": 1.58740105012526,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_c",
+      "table": [
+        [4, 2],
+        [0, 5]
+      ],
+      "conf_level": 0.95,
+      "midp": false,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.743541635286263,
+          "upper": 527.260319254436
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.73316463185302,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.759835687554898,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_c",
+      "table": [
+        [4, 2],
+        [0, 5]
+      ],
+      "conf_level": 0.95,
+      "midp": true,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.743541635286263,
+          "upper": 527.260319254436
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 1.05438289119599,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-midp",
+          "lower": 1.47800571017891,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_c",
+      "table": [
+        [4, 2],
+        [0, 5]
+      ],
+      "conf_level": 0.99,
+      "midp": false,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.265109171194283,
+          "upper": 1478.78701530358
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0.361609680831807,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0.481524569681778,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_c",
+      "table": [
+        [4, 2],
+        [0, 5]
+      ],
+      "conf_level": 0.99,
+      "midp": true,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.265109171194283,
+          "upper": 1478.78701530358
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0.481524569722527,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0.658293135726259,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "zero_d",
+      "table": [
+        [4, 2],
+        [5, 0]
+      ],
+      "conf_level": 0.9,
+      "midp": false,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.0104154990930254,
+          "upper": 2.57086667330833
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0,
+          "upper": 4.04526825320471
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0,
+          "upper": 2.4686269666207
+        }
+      ]
+    },
+    {
+      "name": "zero_d",
+      "table": [
+        [4, 2],
+        [5, 0]
+      ],
+      "conf_level": 0.9,
+      "midp": true,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.0104154990930254,
+          "upper": 2.57086667330833
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0,
+          "upper": 2.4686269666207
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0,
+          "upper": 1.37228132326535
+        }
+      ]
+    },
+    {
+      "name": "zero_d",
+      "table": [
+        [4, 2],
+        [5, 0]
+      ],
+      "conf_level": 0.95,
+      "midp": false,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.00614497219244846,
+          "upper": 4.35752329962343
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0,
+          "upper": 6.29422863405994
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0,
+          "upper": 4.04526825320471
+        }
+      ]
+    },
+    {
+      "name": "zero_d",
+      "table": [
+        [4, 2],
+        [5, 0]
+      ],
+      "conf_level": 0.95,
+      "midp": true,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.00614497219244846,
+          "upper": 4.35752329962343
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0,
+          "upper": 4.04526825320471
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0,
+          "upper": 2.4686269666207
+        }
+      ]
+    },
+    {
+      "name": "zero_d",
+      "table": [
+        [4, 2],
+        [5, 0]
+      ],
+      "conf_level": 0.99,
+      "midp": false,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.00219098488590317,
+          "upper": 12.2213802917651
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0,
+          "upper": 15.8421451960251
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0,
+          "upper": 10.7780291578087
+        }
+      ]
+    },
+    {
+      "name": "zero_d",
+      "table": [
+        [4, 2],
+        [5, 0]
+      ],
+      "conf_level": 0.99,
+      "midp": true,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.00219098488590317,
+          "upper": 12.2213802917651
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0,
+          "upper": 10.7780291578087
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0,
+          "upper": 7.20344759391785
+        }
+      ]
+    },
+    {
+      "name": "diagonal",
+      "table": [
+        [5, 0],
+        [0, 6]
+      ],
+      "conf_level": 0.9,
+      "midp": false,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 4.65474881900263,
+          "upper": 4393.14790016566
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 4.14932127861449,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-exact",
+          "lower": 5.84803547386224,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "diagonal",
+      "table": [
+        [5, 0],
+        [0, 6]
+      ],
+      "conf_level": 0.9,
+      "midp": true,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 4.65474881900263,
+          "upper": 4393.14790016566
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 6.47084526226542,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-midp",
+          "lower": 5.84803548239916,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "diagonal",
+      "table": [
+        [5, 0],
+        [0, 6]
+      ],
+      "conf_level": 0.95,
+      "midp": false,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 2.41513945169502,
+          "upper": 8467.00590545537
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 2.84279917749583,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-exact",
+          "lower": 2.94283095772522,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "diagonal",
+      "table": [
+        [5, 0],
+        [0, 6]
+      ],
+      "conf_level": 0.95,
+      "midp": true,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 2.41513945169502,
+          "upper": 8467.00590545537
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 4.14932127861449,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-midp",
+          "lower": 5.84803547286237,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "diagonal",
+      "table": [
+        [5, 0],
+        [0, 6]
+      ],
+      "conf_level": 0.99,
+      "midp": false,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.66990884032951,
+          "upper": 30525.0487363948
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 1.37856819240604,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-exact",
+          "lower": 1.43096908490203,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "diagonal",
+      "table": [
+        [5, 0],
+        [0, 6]
+      ],
+      "conf_level": 0.99,
+      "midp": true,
+      "estimate": "inf",
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.66990884032951,
+          "upper": 30525.0487363948
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 1.84438184017292,
+          "upper": "inf"
+        },
+        {
+          "method": "bp-midp",
+          "lower": 2.36475415431943,
+          "upper": "inf"
+        }
+      ]
+    },
+    {
+      "name": "antidiagonal",
+      "table": [
+        [0, 5],
+        [6, 0]
+      ],
+      "conf_level": 0.9,
+      "midp": false,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.000227627210083751,
+          "upper": 0.214834363546661
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0,
+          "upper": 0.241003271375551
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0,
+          "upper": 0.170997596254808
+        }
+      ]
+    },
+    {
+      "name": "antidiagonal",
+      "table": [
+        [0, 5],
+        [6, 0]
+      ],
+      "conf_level": 0.9,
+      "midp": true,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.000227627210083751,
+          "upper": 0.214834363546661
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0,
+          "upper": 0.154539315916001
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0,
+          "upper": 0.170997589974128
+        }
+      ]
+    },
+    {
+      "name": "antidiagonal",
+      "table": [
+        [0, 5],
+        [6, 0]
+      ],
+      "conf_level": 0.95,
+      "midp": false,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.000118105504019513,
+          "upper": 0.414054765780986
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0,
+          "upper": 0.351765966436195
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0,
+          "upper": 0.339808845452721
+        }
+      ]
+    },
+    {
+      "name": "antidiagonal",
+      "table": [
+        [0, 5],
+        [6, 0]
+      ],
+      "conf_level": 0.95,
+      "midp": true,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 0.000118105504019513,
+          "upper": 0.414054765780986
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0,
+          "upper": 0.241003271375551
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0,
+          "upper": 0.170997595934544
+        }
+      ]
+    },
+    {
+      "name": "antidiagonal",
+      "table": [
+        [0, 5],
+        [6, 0]
+      ],
+      "conf_level": 0.99,
+      "midp": false,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 3.2759980455255e-05,
+          "upper": 1.4927404145139
+        },
+        {
+          "method": "cornfield-exact",
+          "lower": 0,
+          "upper": 0.725390303843344
+        },
+        {
+          "method": "bp-exact",
+          "lower": 0,
+          "upper": 0.698827116146854
+        }
+      ]
+    },
+    {
+      "name": "antidiagonal",
+      "table": [
+        [0, 5],
+        [6, 0]
+      ],
+      "conf_level": 0.99,
+      "midp": true,
+      "estimate": 0,
+      "intervals": [
+        {
+          "method": "gart",
+          "lower": 3.2759980455255e-05,
+          "upper": 1.4927404145139
+        },
+        {
+          "method": "cornfield-midp",
+          "lower": 0,
+          "upper": 0.54218707782792
+        },
+        {
+          "method": "bp-midp",
+          "lower": 0,
+          "upper": 0.422876939392318
+        }
+      ]
+    }
+  ]
+}
