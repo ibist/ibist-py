@@ -66,12 +66,14 @@ may start in either language. Dataset preparation remains in the R package's
 `data-raw/` workflow; its export step reads the prepared R datasets and produces
 the portable files bundled here.
 
-See the [implementation plan](docs/implementation-plan.md) for the first stages.
-The [dataset format and preparation](docs/datasets.md) and
-[odds-ratio interface and validation](docs/odds-ratio.md) describe this implementation.
+See the [implementation plan](https://github.com/ibist/ibist-py/blob/main/docs/implementation-plan.md) for the first stages.
+The [dataset format and preparation](https://github.com/ibist/ibist-py/blob/main/docs/datasets.md) and
+[odds-ratio interface and validation](https://github.com/ibist/ibist-py/blob/main/docs/odds-ratio.md) describe this implementation.
+See [TestPyPI publishing](https://github.com/ibist/ibist-py/blob/main/docs/publishing.md) for the manual release workflow
+and installation checks.
 
 ## License
 
 Copyright (C) 2026 Elizabeth Schifano and Jun Yan.
 
-GNU General Public License, version 3 or later; see [LICENSE](LICENSE).
+GNU General Public License, version 3 or later; see [LICENSE](https://github.com/ibist/ibist-py/blob/main/LICENSE).
