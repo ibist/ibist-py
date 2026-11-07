@@ -6,10 +6,15 @@ Elizabeth Schifano and Jun Yan.
 
 ## Status
 
-The first implementation includes all seven teaching datasets and
+The released alpha includes all seven teaching datasets and
 `or_2x2_ci()` with Wald, Gart, Cornfield, and Baptista--Pike intervals,
 including exact and mid-p conditional options. This is an early alpha;
 public interfaces may change during development.
+The development checkout additionally provides `indep_test()`,
+`nominal_assoc()`, and `or_homogeneity_test()` for contingency tables.
+These additions are unreleased; use the editable development installation
+below to try them. See [contingency-table methods](docs/contingency-tables.md)
+for options, validation, and exact-computation limits.
 The distribution and import names are both `ibist`; the GitHub repository
 remains `ibist/ibist-py`.
 
@@ -52,6 +57,20 @@ print(midp)
 fluorosis = ibist.datasets.load("fluorosis")
 print(fluorosis)
 frame = fluorosis.to_frame()
+```
+
+The development checkout also supports:
+
+```python
+table = [[109, 68, 14], [72, 79, 37], [9, 42, 139]]
+print(ibist.indep_test(table, method="lr"))
+print(ibist.nominal_assoc(table).to_frame())
+
+small = [[7, 77], [2, 90]]
+print(ibist.indep_test(small, method="fisher", alternative="greater"))
+
+strata = [[[30, 20], [20, 30]], [[20, 30], [30, 20]]]
+print(ibist.or_homogeneity_test(strata, method="breslow-day"))
 ```
 
 NumPy, SciPy, and pandas are runtime dependencies, so a standard installation

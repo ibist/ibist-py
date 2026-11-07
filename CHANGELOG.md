@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+- Add `indep_test()` with Pearson, likelihood-ratio, and Fisher tests,
+  including general fixed-margin exact enumeration and seeded Monte Carlo.
+- Add `nominal_assoc()` for Phi, contingency coefficient, and Cramer's V.
+- Add `or_homogeneity_test()` with Zelen exact, Breslow--Day, Tarone-adjusted
+  Breslow--Day, and Woolf tests.
+- Preserve DataFrame category labels, full-precision results, and readable
+  summaries. Validate with direct formulas, small exact enumerations, a
+  published StatXact example, and 260 explicitly exported R comparison cases.
+
 ## 0.1.0a1
 
 First alpha release. Public interfaces may change during development.

@@ -3,7 +3,12 @@
 __version__ = "0.1.0a1"
 
 from . import datasets
+from .contingency import (NominalAssociationResult, TestResult, indep_test,
+                          nominal_assoc)
+from .homogeneity import or_homogeneity_test
 from .odds_ratio import or_2x2_ci
 from .results import CIResult, ConfidenceInterval
 
-__all__ = ["CIResult", "ConfidenceInterval", "datasets", "or_2x2_ci"]
+__all__ = ["CIResult", "ConfidenceInterval", "NominalAssociationResult",
+           "TestResult", "datasets", "indep_test", "nominal_assoc",
+           "or_2x2_ci", "or_homogeneity_test"]
