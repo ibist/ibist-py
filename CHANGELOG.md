@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Add `ordinal_assoc()` with all seven R measures, multinomial standard
+  errors, Wald confidence intervals, tests, score handling, and a native
+  `OrdinalAssociationResult`. Check independent formulas, the published SAS
+  example, and 222 R comparison cases.
+
 - Standardize public statistical docstrings with parameters, return fields,
   notes, related functions, references, and executable examples. Expand
   dataset-loading help and add an API index mapping Python functions to R.
