@@ -1,0 +1,5987 @@
+{
+  "source": "R CI interface; supplemental to independent formula tests",
+  "r_revision": "33125308502c6d23f36d1e4badf13af8aaf989d9",
+  "source_md5": {
+    "R/ci.R": "64851bf438d2c71762919b63e45bcfca",
+    "R/prop_1s_ci.R": "509514cbb35670a60a71397fabf2617e",
+    "R/prop_2s_ci.R": "4a72c1e28a9191411cb76fd1c93b255d",
+    "R/rr_2x2_ci.R": "393dc1a924678617760a71521ecfb76c",
+    "R/or_2x2_ci.R": "42a012d81b1c948e1fd0598054a0601e",
+    "R/rate_1s_ci.R": "edc6cc9f060829bc527f813f69a4247f",
+    "R/rate_2s_ci.R": "54c4dd893e799bd9522055185a3b01c2",
+    "R/or_paired_ci.R": "46b9a8295bf3c34804b09ef1410071d7",
+    "R/prop_paired_ci.R": "bd403625c8a8e5e437a6dee4976485fb",
+    "R/or_common.R": "5fb03d958ceab442568524be0fdc75d9"
+  },
+  "defaults": [
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40
+      },
+      "method": "wilson",
+      "side": "two.sided",
+      "conf_level": 0.95,
+      "parameter": "binomial proportion",
+      "null_value": null
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40]
+      },
+      "method": "newcombe",
+      "side": "two.sided",
+      "conf_level": 0.95,
+      "parameter": "difference of independent proportions",
+      "null_value": 0
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ]
+      },
+      "method": "koopman",
+      "side": "two.sided",
+      "conf_level": 0.95,
+      "parameter": "risk ratio",
+      "null_value": 1
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ]
+      },
+      "method": "wald",
+      "side": "two.sided",
+      "conf_level": 0.95,
+      "parameter": "odds ratio",
+      "null_value": 1
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10
+      },
+      "method": "exact",
+      "side": "two.sided",
+      "conf_level": 0.95,
+      "parameter": "Poisson rate",
+      "null_value": null
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7]
+      },
+      "method": "log",
+      "side": "two.sided",
+      "conf_level": 0.95,
+      "parameter": "Poisson rate ratio",
+      "null_value": null
+    },
+    {
+      "function_name": "or_paired_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ]
+      },
+      "method": "wald",
+      "side": "two.sided",
+      "conf_level": 0.95,
+      "parameter": "matched-pair odds ratio",
+      "null_value": 1
+    },
+    {
+      "function_name": "prop_paired_ci",
+      "options": {
+        "b": 8,
+        "c": 25,
+        "n": 180
+      },
+      "method": "score",
+      "side": "two.sided",
+      "conf_level": 0.95,
+      "parameter": "paired proportion difference",
+      "null_value": 0
+    },
+    {
+      "function_name": "or_common_ci",
+      "options": {
+        "x": [
+          [
+            [7, 27],
+            [1, 33]
+          ],
+          [
+            [7, 27],
+            [1, 33]
+          ]
+        ]
+      },
+      "method": "exact",
+      "side": "two.sided",
+      "conf_level": 0.95,
+      "parameter": "common odds ratio",
+      "null_value": 1
+    }
+  ],
+  "cases": [
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "wilson"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0.112349921190773, 0.138851614951676]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.111752162873004, 0.138247837126996]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "agresti-coull"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0.112336331139726, 0.138865205002723]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "clopper-pearson"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0.103519783833161, 0.154744251610853]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "blaker"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0.111811414823302, 0.152822387287344]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "wilson"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0.175635155025996, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.169009427725797, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "agresti-coull"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0.176106843440249, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "clopper-pearson"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0.162327592847582, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "blaker"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0.162327592847582, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "wilson"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0, 0.0874148711940733]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 0.0809905722742028]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "agresti-coull"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0, 0.0869431827798202]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "clopper-pearson"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0, 0.0990147231632293]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "blaker"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.2,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0, 0.0990147231632293]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "wilson"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0.0724662099826932, 0.207113775036466]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.0579860645729168, 0.192013935427083]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "agresti-coull"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0.0709233945250356, 0.208656590494124]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "clopper-pearson"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0.0620681377590325, 0.219580190989403]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "blaker"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0.0699388594639393, 0.211650581373177]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "wilson"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0.0874148711940733, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.0809905722742028, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "agresti-coull"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0.0869431827798202, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "clopper-pearson"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0.0781650981975716, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "blaker"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0.0781650981975716, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "wilson"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0, 0.175635155025996]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 0.169009427725797]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "agresti-coull"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0, 0.176106843440249]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "clopper-pearson"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0, 0.190463788405037]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "blaker"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.8,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0, 0.190463788405037]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "wilson"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0.054595002509454, 0.261121198388511]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.0225110300430554, 0.227488969956945]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "agresti-coull"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0.0499307124423955, 0.265785488455569]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "clopper-pearson"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0.0418596261386167, 0.26803291736172]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "blaker"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0.0505703283408259, 0.257858489112135]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "wilson"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0.0621913586981113, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.038988545051882, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "agresti-coull"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0.0591898751951052, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "clopper-pearson"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0.0505703283408259, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "blaker"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0.0505703283408259, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "wilson"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0, 0.235323727785982]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 0.211011454948118]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "agresti-coull"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0, 0.238325211288988]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "clopper-pearson"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0, 0.245030512649712]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "blaker"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.95,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0, 0.245030512649712]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "wilson"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0.0426777809773199, 0.314027129153368]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 0.259693338340904]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "agresti-coull"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0.0339602005679016, 0.322744709562787]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "clopper-pearson"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0.0279905426464454, 0.315121998952158]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "blaker"
+      },
+      "side": "two.sided",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0.0331278586811264, 0.307216958248576]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "wilson"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0.0470858077512773, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.00335235787359374, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "agresti-coull"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0.0401100043569679, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "clopper-pearson"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0.0331278586811264, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "blaker"
+      },
+      "side": "lower",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0.0331278586811264, 1]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "wilson"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "wilson"
+      ],
+      "conf_int": [
+        [0, 0.292294317745428]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 0.246647642126406]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "agresti-coull"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "agresti-coull"
+      ],
+      "conf_int": [
+        [0, 0.299270121139737]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "clopper-pearson"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "clopper-pearson"
+      ],
+      "conf_int": [
+        [0, 0.295738483873837]
+      ]
+    },
+    {
+      "function_name": "prop_1s_ci",
+      "options": {
+        "x": 5,
+        "n": 40,
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "blaker"
+      },
+      "side": "upper",
+      "estimate": 0.125,
+      "conf_level": 0.99,
+      "methods": [
+        "blaker"
+      ],
+      "conf_int": [
+        [0, 0.295738483873837]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "newcombe"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [0.177970547831134, 0.221862877162463]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.17805949727092, 0.22194050272908]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "miettinen-nurminen"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [0.177944868005014, 0.222118106656198]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "mee"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [0.178083057984144, 0.221979154670361]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "agresti-caffo"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [0.168410873787797, 0.212541507164584]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "brown-li"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [0.17283182861332, 0.217412073825704]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "newcombe"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [0.27213337860708, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.272886536863854, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "miettinen-nurminen"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [0.273863281897343, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "mee"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [0.273396728554509, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "agresti-caffo"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [0.263777360375531, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "brown-li"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [0.26916992829174, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "newcombe"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [-1, 0.125979694407054]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [-1, 0.127113463136146]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "miettinen-nurminen"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [-1, 0.126616144262128]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "mee"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [-1, 0.127079527116181]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "agresti-caffo"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [-1, 0.11717502057685]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "brown-li"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.2,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [-1, 0.121073974147284]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "newcombe"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [0.0861681693489612, 0.309319311951243]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.0890143787978657, 0.310985621202134]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "miettinen-nurminen"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [0.0875889471493458, 0.3128602703214]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "mee"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [0.0883102661926154, 0.312146959401129]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "agresti-caffo"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [0.0788592002037934, 0.302093180748588]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "brown-li"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [0.0823677844318429, 0.307876118007182]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "newcombe"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [0.125979694407054, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.127113463136146, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "miettinen-nurminen"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [0.126616144262128, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "mee"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [0.127079527116181, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "agresti-caffo"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [0.11717502057685, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "brown-li"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [0.121073974147284, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "newcombe"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [-1, 0.27213337860708]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [-1, 0.272886536863854]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "miettinen-nurminen"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [-1, 0.273863281897343]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "mee"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [-1, 0.273396728554509]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "agresti-caffo"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [-1, 0.263777360375531]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "brown-li"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.8,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [-1, 0.26916992829174]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "newcombe"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [0.023206857348973, 0.365708121186159]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.0302621398885743, 0.369737860111426]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "miettinen-nurminen"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [0.0250969896302833, 0.372921715767127]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "mee"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [0.0262600533838595, 0.371840541013271]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "agresti-caffo"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [0.019772734697811, 0.36117964625457]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "brown-li"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [0.0226793340418399, 0.367564568397184]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "newcombe"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [0.0526643900219217, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.0575514973553053, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "miettinen-nurminen"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [0.0545425415382654, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "mee"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [0.0554932475413266, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "agresti-caffo"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [0.0472173344028178, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "brown-li"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [0.0504035448900912, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "newcombe"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [-1, 0.339696867480558]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [-1, 0.342448502644695]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "miettinen-nurminen"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [-1, 0.345093645204812]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "mee"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [-1, 0.344180048469894]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "agresti-caffo"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [-1, 0.333735046549563]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "brown-li"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.95,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [-1, 0.339840357548933]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "newcombe"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [-0.0350019325430859, 0.415247191923577]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [-0.0230733612685726, 0.423073361268573]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "miettinen-nurminen"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [-0.0347304597866898, 0.426419066656134]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "mee"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [-0.0331251540914809, 0.42503788205535]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "agresti-caffo"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [-0.0338661786078002, 0.414818559560181]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "brown-li"
+      },
+      "side": "two.sided",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [-0.0315060633820673, 0.421749965821092]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "newcombe"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [-0.011367321615108, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [-0.00146763569592898, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "miettinen-nurminen"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [-0.0101405499550071, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "mee"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [-0.00871736017460335, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "agresti-caffo"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [-0.012137543538238, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "brown-li"
+      },
+      "side": "lower",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [-0.00955605257526537, 1]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "newcombe"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "newcombe"
+      ],
+      "conf_int": [
+        [-1, 0.395422143982457]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [-1, 0.401467635695929]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "miettinen-nurminen"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "miettinen-nurminen"
+      ],
+      "conf_int": [
+        [-1, 0.404936469491948]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "mee"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "mee"
+      ],
+      "conf_int": [
+        [-1, 0.403671579743524]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "agresti-caffo"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "agresti-caffo"
+      ],
+      "conf_int": [
+        [-1, 0.393089924490619]
+      ]
+    },
+    {
+      "function_name": "prop_2s_ci",
+      "options": {
+        "x": [12, 4],
+        "n": [40, 40],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "brown-li"
+      },
+      "side": "upper",
+      "estimate": 0.2,
+      "conf_level": 0.99,
+      "methods": [
+        "brown-li"
+      ],
+      "conf_int": [
+        [-1, 0.39979995501429]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "koopman"
+      },
+      "side": "two.sided",
+      "estimate": 7,
+      "conf_level": 0.2,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [5.38547182789935, 9.11203349973779]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "katz"
+      },
+      "side": "two.sided",
+      "estimate": 7,
+      "conf_level": 0.2,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [5.37701243576143, 9.11286715167532]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "koopman"
+      },
+      "side": "lower",
+      "estimate": 7,
+      "conf_level": 0.2,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [16.4709739565736, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "katz"
+      },
+      "side": "lower",
+      "estimate": 7,
+      "conf_level": 0.2,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [16.8134705063191, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "koopman"
+      },
+      "side": "upper",
+      "estimate": 7,
+      "conf_level": 0.2,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [0, 3.02017081559261]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "katz"
+      },
+      "side": "upper",
+      "estimate": 7,
+      "conf_level": 0.2,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [0, 2.91432991074532]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "koopman"
+      },
+      "side": "two.sided",
+      "estimate": 7,
+      "conf_level": 0.8,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [2.04831159891062, 24.6862670506609]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "katz"
+      },
+      "side": "two.sided",
+      "estimate": 7,
+      "conf_level": 0.8,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [1.84337464822339, 26.5816827020081]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "koopman"
+      },
+      "side": "lower",
+      "estimate": 7,
+      "conf_level": 0.8,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [3.02017081559261, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "katz"
+      },
+      "side": "lower",
+      "estimate": 7,
+      "conf_level": 0.8,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [2.91432991074532, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "koopman"
+      },
+      "side": "upper",
+      "estimate": 7,
+      "conf_level": 0.8,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [0, 16.4709739565736]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "katz"
+      },
+      "side": "upper",
+      "estimate": 7,
+      "conf_level": 0.8,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [0, 16.8134705063191]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "koopman"
+      },
+      "side": "two.sided",
+      "estimate": 7,
+      "conf_level": 0.95,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [1.2208528535148, 42.575717608471]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "katz"
+      },
+      "side": "two.sided",
+      "estimate": 7,
+      "conf_level": 0.95,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [0.909605511842077, 53.8695064641464]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "koopman"
+      },
+      "side": "lower",
+      "estimate": 7,
+      "conf_level": 0.95,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [1.5344449802284, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "katz"
+      },
+      "side": "lower",
+      "estimate": 7,
+      "conf_level": 0.95,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [1.2628094600025, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "koopman"
+      },
+      "side": "upper",
+      "estimate": 7,
+      "conf_level": 0.95,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [0, 33.4476612165384]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "katz"
+      },
+      "side": "upper",
+      "estimate": 7,
+      "conf_level": 0.95,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [0, 38.8023700740275]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "koopman"
+      },
+      "side": "two.sided",
+      "estimate": 7,
+      "conf_level": 0.99,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [0.821765552125179, 64.6594501910885]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "katz"
+      },
+      "side": "two.sided",
+      "estimate": 7,
+      "conf_level": 0.99,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [0.479043261081465, 102.287212827877]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "koopman"
+      },
+      "side": "lower",
+      "estimate": 7,
+      "conf_level": 0.99,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [0.957541248851797, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "katz"
+      },
+      "side": "lower",
+      "estimate": 7,
+      "conf_level": 0.99,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [0.62113181774558, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "koopman"
+      },
+      "side": "upper",
+      "estimate": 7,
+      "conf_level": 0.99,
+      "methods": [
+        "koopman"
+      ],
+      "conf_int": [
+        [0, 55.0286852165438]
+      ]
+    },
+    {
+      "function_name": "rr_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "katz"
+      },
+      "side": "upper",
+      "estimate": 7,
+      "conf_level": 0.99,
+      "methods": [
+        "katz"
+      ],
+      "conf_int": [
+        [0, 78.8882465848348]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [6.47453196584598, 11.3054551665393]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "gart"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [4.81148408955345, 7.71054686313264]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "cornfield"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [3.71516817737651, 18.8358449269498]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "bp"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [4.12499999815788, 10.0740740770034]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [21.5945213678756, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "gart"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [13.3310993924905, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "cornfield"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [10.2087587958172, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "bp"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [10.2087587958172, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 3.38963432517137]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "gart"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [0, 2.78290427979384]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "cornfield"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [0, 5.42602597500543]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "bp"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.2,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [0, 5.42602597500543]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [2.08915410068959, 35.0369227622014]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "gart"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [1.84789862780995, 20.0764116577582]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "cornfield"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [1.62510332103811, 94.7088925910211]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "bp"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [1.73700665710705, 44.2460155957234]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [3.38963432517137, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "gart"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [2.78290427979384, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "cornfield"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [2.29231185168844, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "bp"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [2.29231185168844, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 21.5945213678756]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "gart"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [0, 13.3310993924905]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "cornfield"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [0, 44.2460155943338]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "bp"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.8,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [0, 44.2460155943338]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.99049028165399, 73.9003019211527]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "gart"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [0.98279605130805, 37.7485985056024]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "cornfield"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [0.973273632882455, 396.994002170917]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "bp"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [1.00000000873386, 195.492113953136]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [1.4008713201391, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "gart"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [1.31774450521984, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "cornfield"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [1.23248884907775, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "bp"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [1.23248884907775, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 52.2514308144515]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "gart"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [0, 28.1535406953032]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "cornfield"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [0, 195.492113954761]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "bp"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.95,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [0, 195.492113954761]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.503051725642478, 145.506967043424]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "gart"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [0.554026121102605, 66.9628599458189]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "cornfield"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [0.616598400604899, 2008.86180379836]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "bp"
+      },
+      "side": "two.sided",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [0.718927306258188, 1001.45043944773]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.661920153360958, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "gart"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [0.698828803574695, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "cornfield"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [0.741523942444145, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "bp"
+      },
+      "side": "lower",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [0.741523942444145, "Inf"]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 110.583626276569]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "gart"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "gart"
+      ],
+      "conf_int": [
+        [0, 53.0876423008709]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "cornfield"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "cornfield-exact"
+      ],
+      "conf_int": [
+        [0, 1001.45043944634]
+      ]
+    },
+    {
+      "function_name": "or_2x2_ci",
+      "options": {
+        "x": [
+          [7, 27],
+          [1, 33]
+        ],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "bp"
+      },
+      "side": "upper",
+      "estimate": 8.55555555555556,
+      "conf_level": 0.99,
+      "methods": [
+        "bp-exact"
+      ],
+      "conf_int": [
+        [0, 1001.45043944634]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "exact"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0.414773588047054, 0.629191898330875]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "score"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0.39937046762429, 0.612711008408958]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "wh"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0.462367323707014, 0.576496281134239]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.396256963613613, 0.609415162262688]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "log"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0.446441257503524, 0.559984087039775]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "exact"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0.672097878748656, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "score"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0.667430047783069, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "wh"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0.730894262029204, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.628534824434998, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "log"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0.728503592025397, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "exact"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0, 0.39036638393305]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "score"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0, 0.384886362376955]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "wh"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0, 0.350044581852418]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 0.352622325112378]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "log"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.2,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0, 0.343169207038425]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "exact"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0.243259102596266, 0.927467389335162]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "score"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0.248128698079601, 0.943685851777576]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "wh"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0.279121663840847, 0.862829077072327]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.178141859268953, 0.850550483002839]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "log"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0.281879821434029, 0.886902789735554]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "exact"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0.308953962801969, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "score"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0.30340258229701, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "wh"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0.350044581852418, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.271465175565002, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "log"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0.343169207038425, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "exact"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0, 0.790599311094848]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "score"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0, 0.785946267703124]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "wh"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0, 0.730894262029204]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 0.747377674887622]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "log"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.8,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0, 0.728503592025397]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "exact"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0.162348639011842, 1.16683320793227]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "score"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0.184079860727856, 1.24024183791196]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "wh"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0.189638763044309, 1.09595587506604]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.0342288526950968, 1.00965229808865]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "log"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0.208113906631863, 1.20126523040207]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "exact"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0.197014956805953, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "score"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0.211045467889038, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "wh"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0.228346471926959, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0.101073853896998, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "log"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0.239608704251249, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "exact"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0, 1.05130349087415]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "score"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0, 1.09406171672551]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "wh"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0, 0.983050327422392]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 0.935752368722796]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "log"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.95,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0, 1.0433677723905]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "exact"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0.107792824065232, 1.4149759411023]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "score"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0.142507018816805, 1.5709283653461]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "wh"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0.127116044483525, 1.34094557321721]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "wald"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 1.15408551799904]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "log"
+      },
+      "side": "two.sided",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0.158010614979992, 1.5821721852779]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "exact"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0.12791060800936, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "score"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0.15778324980606, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "wh"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0.150448694116725, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "wald"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "log"
+      },
+      "side": "lower",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0.176661187154193, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "exact"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0, 1.31084836527679]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "score"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0, 1.42959036771136]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "wh"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "wh"
+      ],
+      "conf_int": [
+        [0, 1.23772658655587]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "wald"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "wald"
+      ],
+      "conf_int": [
+        [0, 1.09557693656164]
+      ]
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "options": {
+        "x": 5,
+        "exposure": 10,
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "log"
+      },
+      "side": "upper",
+      "estimate": 0.5,
+      "conf_level": 0.99,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0, 1.41513823170336]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "log"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.2,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [2.34753378600457, 2.9352612691158]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "score"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.2,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [2.34766997602338, 2.93509099250472]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.2,
+        "side": "two.sided",
+        "method": "exact"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.2,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [2.14214863751391, 3.23609172343442]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "log"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.2,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [3.80456239342404, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "score"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.2,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [3.79659096022088, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.2,
+        "side": "lower",
+        "method": "exact"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.2,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [3.45458385950619, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "log"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.2,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0, 1.81114785025212]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "score"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.2,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0, 1.8149505891462]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.2,
+        "side": "upper",
+        "method": "exact"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.2,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0, 2.00806821934141]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "log"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.8,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [1.49177960581407, 4.6190636828285]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "score"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.8,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [1.50265166345585, 4.58564361094353]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.8,
+        "side": "two.sided",
+        "method": "exact"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.8,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [1.3462627898498, 5.04627698198289]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "log"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.8,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [1.81114785025212, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "score"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.8,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [1.8149505891462, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.8,
+        "side": "lower",
+        "method": "exact"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.8,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [1.64660424114284, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "log"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.8,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0, 3.80456239342404]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "score"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.8,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0, 3.79659096022088]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.8,
+        "side": "upper",
+        "method": "exact"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.8,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0, 4.17154161898883]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "log"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.95,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [1.10607533516101, 6.22979717651593]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "score"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.95,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [1.13391839007981, 6.07682621631615]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.95,
+        "side": "two.sided",
+        "method": "exact"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.95,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0.976830300342944, 6.78787504677513]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "log"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.95,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [1.2709550461608, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "score"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.95,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [1.29019594649723, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.95,
+        "side": "lower",
+        "method": "exact"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.95,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [1.13572744041506, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "log"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.95,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0, 5.42161189793033]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "score"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.95,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0, 5.34075852486397]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.95,
+        "side": "upper",
+        "method": "exact"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.95,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0, 5.91110325036568]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "log"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.99,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0.843029722624587, 8.17364419672839]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "score"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.99,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0.889443642659336, 7.74711816411191]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.99,
+        "side": "two.sided",
+        "method": "exact"
+      },
+      "side": "two.sided",
+      "estimate": 2.625,
+      "conf_level": 0.99,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0.720277566015407, 8.93193666029312]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "log"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.99,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0.941065915422977, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "score"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.99,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0.979826568446214, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.99,
+        "side": "lower",
+        "method": "exact"
+      },
+      "side": "lower",
+      "estimate": 2.625,
+      "conf_level": 0.99,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0.816312620845819, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "log"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.99,
+      "methods": [
+        "log"
+      ],
+      "conf_int": [
+        [0, 7.32214915774832]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "score"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.99,
+      "methods": [
+        "score"
+      ],
+      "conf_int": [
+        [0, 7.03249454740444]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "options": {
+        "x": [9, 12],
+        "exposure": [2, 7],
+        "conf_level": 0.99,
+        "side": "upper",
+        "method": "exact"
+      },
+      "side": "upper",
+      "estimate": 2.625,
+      "conf_level": 0.99,
+      "methods": [
+        "exact"
+      ],
+      "conf_int": [
+        [0, 7.98582526773632]
+      ]
+    }
+  ]
+}

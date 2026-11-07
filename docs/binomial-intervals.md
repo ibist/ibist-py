@@ -7,10 +7,15 @@ defines the statistical methods; this guide documents the Python interface.
 
 ```python
 ibist.prop_1s_ci(x, n, conf_level=0.95, method="wilson", correct=False,
-                midp=False, alternative="two.sided", tol=1e-8)
+                midp=False, side=None, alternative=None, tol=1e-8)
 ```
 
 ## Inputs and options
+
+The common CI argument is `side`: `"two.sided"` (default), `"lower"`, or
+`"upper"`. Omitted `side` or `None` selects two-sided limits. `alternative`
+remains a compatibility alias; greater means lower and less means upper.
+Conflicting arguments are errors, matching R.
 
 `x` contains successes and `n` trials. Both can be scalars or one-dimensional
 numeric arrays. Trial counts are positive integers; successes are nonnegative
@@ -46,8 +51,8 @@ Wilson correction uses `(x-0.5)/n` in the lower-limit equation and
 `0.5/n` to its margin. These use the full half-count correction; they do not
 apply the null-dependent correction cap used by R's `prop.test()`.
 
-`alternative="greater"` returns a lower confidence bound and upper limit one;
-`alternative="less"` returns an upper bound and lower limit zero. Each uses
+`side="lower"` returns a lower confidence bound and upper limit one;
+`side="upper"` returns an upper bound and lower limit zero. Each uses
 the full error probability, while two-sided central intervals divide it
 between their two tails. These options change the interval direction but
 supply no hypothesis test or p-value. Vector intervals are pointwise;
@@ -90,7 +95,7 @@ The result is the existing `CIResult` with:
   `clopper-pearson-midp` where applicable.
 - `inputs`: a fresh DataFrame with one row per interval, containing the
   zero-based input index, success count `x`, and trial count `n`.
-- `conf_level`, `alternative`, `correct`, and `midp`: the requested settings.
+- `conf_level`, `side`, `correct`, and `midp`: the requested settings.
 
 `to_frame()` keeps the existing method index for one input. For vectors it
 uses a `(input, method)` MultiIndex and the same `lower` and `upper` columns.
@@ -109,7 +114,7 @@ print(vector.to_frame())
 print(vector.inputs)
 
 midp = ibist.prop_1s_ci(5, 40, method="clopper-pearson", midp=True)
-lower = ibist.prop_1s_ci(5, 40, alternative="greater")
+lower = ibist.prop_1s_ci(5, 40, side="lower")
 ```
 
 Printing uses three decimal places by default and scientific notation for
@@ -122,7 +127,7 @@ also records the flag passed to `or_2x2_ci()`.
 
 ```python
 ibist.prop_2s_ci(x, n=None, conf_level=0.95, method="newcombe", correct=False,
-                alternative="two.sided", tol=1e-8)
+                side=None, alternative=None, tol=1e-8, nuisance_tol=1e-10)
 ```
 
 Provide two success counts `x` and two trial counts `n`. A scalar `n` is
@@ -132,7 +137,7 @@ The reported estimate is the first proportion minus the second. All-zero
 success or failure columns are valid; each sample must still have positive
 trials. Each trial count is restricted to `2**53-1`, as for `prop_1s_ci()`.
 
-All six implemented methods are **approximate**:
+The six approximate methods are:
 
 | Method | Construction |
 | --- | --- |
@@ -156,11 +161,11 @@ n+1 or posterior variances, and is not a posterior-quantile interval.
 Agresti--Caffo and Brown--Li use adjusted centers internally, while reporting
 the observed difference as their common point estimate.
 
-`alternative="greater"` gives a lower confidence bound with upper endpoint
-one; `alternative="less"` gives an upper bound with lower endpoint minus
+`side="lower"` gives a lower confidence bound with upper endpoint
+one; `side="upper"` gives an upper bound with lower endpoint minus
 one. All limits are restricted to [-1,1]. Method sequences preserve order
 and repetitions. The return value is `CIResult`, with a scalar `estimate`,
-one interval per requested method, `alternative`, `correct`, and a
+one interval per requested method, `side`, `correct`, and a
 `null_value` of zero for reference. It supplies no test statistic or p-value.
 
 `sample_proportions` is a fresh two-element NumPy array, and `samples` is a
@@ -190,9 +195,15 @@ accuracy for narrow intervals; floating-point precision still limits the
 attainable endpoint accuracy. Independent likelihood maximization and
 closed-form zero-event limits check this construction.
 
-Chan--Zhang exact intervals remain available only in R. Python explicitly
-rejects `method="chan-zhang"`; it never substitutes an approximate method.
-There is no mid-p option for the approximate difference intervals.
+Chan--Zhang exact intervals are available with `method="chan-zhang"`.
+They invert inclusive unconditional score tails with global nuisance
+maximization. An enclosing outer search retains disconnected acceptance
+regions. `nuisance_tol=1e-10` controls probability ambiguity, retained
+conservatively; `tol=1e-8` controls outward endpoint precision. Enumeration
+requires at most one million possible tables and can be expensive. No
+approximate method is substituted. See
+[paired and exact intervals](paired-and-exact-intervals.md) for validation.
+There is no mid-p option for independent-difference intervals.
 
 ## Validation
 

@@ -33,10 +33,14 @@ homogeneity tests; see [contingency-table methods](contingency-tables.md).
 `prop_1s_ci()` now implements the one-proportion interval family, including
 vector inputs and multiple methods; see [binomial intervals](binomial-intervals.md).
 `prop_2s_ci()` now provides six approximate independent-proportion interval
-methods, including score inversion and one-sided bounds. Chan--Zhang exact
-intervals and risk-ratio intervals remain pending in Python. Complete risk
-ratios and basic one- and two-sample rate methods before the more expensive
-Chan--Zhang port.
+methods, including score inversion and one-sided bounds. `rr_2x2_ci()` now
+provides Katz and Koopman risk-ratio intervals. Basic Poisson-rate intervals
+and normal-approximation tests are available through `rate_1s_ci()`,
+`rate_2s_ci()`, and `rate_test()`; see
+[risk ratios and rates](risk-ratios-and-rates.md). Chan--Zhang exact
+independent-difference intervals, paired intervals, and common odds-ratio
+intervals are now implemented. Wang uses the shared C++ core with native
+Python bindings. See [paired and exact methods](paired-and-exact-intervals.md).
 
 ## Subsequent stages
 

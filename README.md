@@ -14,6 +14,11 @@ The development checkout additionally provides `prop_1s_ci()` for scalar
 and vector binomial counts, `prop_2s_ci()` for independent-proportion
 differences, plus `indep_test()`, `nominal_assoc()`, and
 `or_homogeneity_test()` for contingency tables.
+It also provides `rr_2x2_ci()` for risk ratios, `rate_1s_ci()` and
+`rate_2s_ci()` for Poisson rate intervals, and `rate_test()` for one- and
+two-sample normal-approximation rate tests. See the
+[risk-ratio and rate guide](docs/risk-ratios-and-rates.md) for methods,
+result metadata, and the documented zero-count WH difference from R.
 These additions are unreleased; use the editable development installation
 below to try them. See [contingency-table methods](docs/contingency-tables.md)
 for options, validation, and exact-computation limits. The
@@ -118,3 +123,16 @@ describes production releases.
 Copyright (C) 2026 Elizabeth Schifano and Jun Yan.
 
 GNU General Public License, version 3 or later; see [LICENSE](https://github.com/ibist/ibist-py/blob/main/LICENSE).
+
+CI functions share R's `side` argument: `"two.sided"` (default), `"lower"`,
+or `"upper"`. Omitted `side` or `None` selects two-sided limits. For example,
+`ibist.rate_1s_ci(5, exposure=10, side="lower")` returns a lower bound.
+`alternative` remains available as a compatibility alias; conflicting
+arguments are rejected. Hypothesis tests retain `alternative`.
+
+Paired and stratified intervals are available as `prop_paired_ci()`,
+`or_paired_ci()`, and `or_common_ci()`. `prop_2s_ci(method="chan-zhang")`
+provides exact unconditional difference intervals. All use the shared `side`
+convention. Wang runs the C++ core shared with R through a native binding;
+source installs need a C++ compiler, and R is not required. See
+[paired and exact intervals](docs/paired-and-exact-intervals.md).

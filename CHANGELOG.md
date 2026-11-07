@@ -2,6 +2,31 @@
 
 ## Unreleased
 
+- Add `prop_paired_ci()` and `or_paired_ci()` with all R methods and CI sides.
+- Add `or_common_ci()` with exact limits and conditional MLEs, supporting
+  network and convolution algorithms.
+- Add Chan--Zhang exact intervals to `prop_2s_ci()`, including global
+  nuisance maximization and disconnected-acceptance searches.
+- Compile Wang's shared C++ core with thin native R/Python bindings. Bundle
+  generated source and provenance; check synchronization and platform builds.
+- Add independent formula/coverage checks and 545 further R reference cases.
+
+- Align CI entry points with R: `side` selects `two.sided` (default),
+  `lower`, or `upper`; preserve `alternative` as a compatibility alias and
+  reject conflicting values. Expose `CIResult.side` and export it as metadata.
+- Add one-sided conditional odds-ratio bounds and preserve repeated methods.
+- Compare shared CI arguments, metadata, and limits with R reference cases.
+
+- Add `rr_2x2_ci()` with Katz and Koopman intervals, one-sided bounds,
+  zero-event handling, and group metadata.
+- Add `rate_1s_ci()`, `rate_2s_ci()`, and `rate_test()` with the R methods
+  and correction conventions. Expose one-sided intervals explicitly and
+  keep scalar inference targets separate from sample rates and exposures.
+- Clip negative Wilson--Hilferty rate limits to zero; record the current R
+  behavior and proposed fix in a separate author-review note.
+- Add independent formula and likelihood checks plus 459 R reference cases
+  for risk-ratio intervals and basic rate functions.
+
 - Add `prop_2s_ci()` with Newcombe, Wald, Agresti--Caffo,
   Miettinen--Nurminen, Mee, and Brown--Li intervals for independent samples.
   Support count vectors, 2x2 tables, one-sided bounds, and applicable
