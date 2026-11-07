@@ -196,7 +196,8 @@ def test_invalid_counts_and_ambiguous_table_arguments(x, n):
         prop_2s_ci(x, n)
 
 
-@pytest.mark.parametrize("kwargs", [dict(method="chan-zhang"), dict(method="unknown"),
+@pytest.mark.parametrize("kwargs", [dict(nuisance_tol=0),
+                                    dict(method="unknown"),
                                     dict(method=[]), dict(method=None),
                                     dict(method="mee", correct=True),
                                     dict(method="brown-li", correct=True),

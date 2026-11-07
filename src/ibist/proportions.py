@@ -11,14 +11,14 @@ from scipy.stats import beta, binom, norm
 
 from .contingency import _flag
 from .odds_ratio import _probability, _validate_table
-from .results import CIResult, ConfidenceInterval
+from .results import CIResult, ConfidenceInterval, _ci_orientation
 
 
 _METHODS = ("wilson", "wald", "agresti-coull", "clopper-pearson", "blaker")
 
 
 def prop_1s_ci(x, n, *, conf_level=0.95, method="wilson", correct=False,
-               midp=False, alternative="two.sided", tol=1e-8) -> CIResult:
+               midp=False, alternative=None, side=None, tol=1e-8) -> CIResult:
     """Estimate binomial probabilities with one or more interval constructions.
 
     Parameters
@@ -40,7 +40,10 @@ def prop_1s_ci(x, n, *, conf_level=0.95, method="wilson", correct=False,
     midp : bool, default False
         Use mid-p tails for Clopper--Pearson only. Other methods in a mixed
         request are unchanged. Mid-p is not coverage-exact.
-    alternative : {"two.sided", "less", "greater"}, default "two.sided"
+    side : {"two.sided", "lower", "upper"}, optional
+        Omitted or None selects two-sided limits.
+    alternative : {"two.sided", "less", "greater"}, optional
+        Compatibility alias; conflicting values with side are rejected.
         Two limits, an upper bound with lower limit zero, or a lower bound
         with upper limit one. A one-sided bound uses the full tail error.
     tol : float, default 1e-8
@@ -52,7 +55,7 @@ def prop_1s_ci(x, n, *, conf_level=0.95, method="wilson", correct=False,
     -------
     CIResult
         The observed estimate x/n (a float or one-dimensional NumPy array),
-        full-precision conf_int, method labels, alternative, correct, midp,
+        full-precision conf_int, method labels, side, correct, midp,
         and per-interval inputs. Rows follow input order and then method order.
         Scalar to_frame() output retains the method index; vectors have a
         zero-based (input, method) MultiIndex. No hypothesis test is fabricated.
@@ -101,6 +104,7 @@ def prop_1s_ci(x, n, *, conf_level=0.95, method="wilson", correct=False,
     >>> prop_1s_ci([0, 5, 40], 40).inputs["input"].tolist()
     [0, 1, 2]
     """
+    side, alternative = _ci_orientation(side, alternative)
     successes, trials = _binomial_counts(x, n)
     conf_level = _probability(conf_level, "conf_level")
     correct, midp = _flag(correct, "correct"), _flag(midp, "midp")
@@ -278,11 +282,12 @@ def _blaker_lower(x, n, alpha, tol):
 
 
 _DIFFERENCE_METHODS = ("newcombe", "wald", "miettinen-nurminen", "mee",
-                       "agresti-caffo", "brown-li")
+                       "agresti-caffo", "brown-li", "chan-zhang")
 
 
 def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
-               alternative="two.sided", tol=1e-8) -> CIResult:
+               alternative=None, side=None, tol=1e-8,
+               nuisance_tol=1e-10) -> CIResult:
     """Estimate the first independent population proportion minus the second.
 
     Parameters
@@ -298,12 +303,15 @@ def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
         Confidence level strictly between zero and one.
     method : str or sequence of str, default "newcombe"
         "newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo",
-        or "brown-li". Preserve requested order and repetitions.
+        "brown-li", or "chan-zhang". Preserve order and repetitions.
     correct : bool, default False
         Full continuity correction for Newcombe and Wald only. Other
         selected methods are unchanged. An entirely inapplicable flag is
         an error; this flag never switches Mee and Miettinen--Nurminen.
-    alternative : {"two.sided", "less", "greater"}, default "two.sided"
+    side : {"two.sided", "lower", "upper"}, optional
+        Omitted or None selects two-sided limits.
+    alternative : {"two.sided", "less", "greater"}, optional
+        Compatibility alias; conflicting values with side are rejected.
         Two limits, an upper bound with lower limit -1, or a lower bound
         with upper limit 1, respectively.
     tol : float, default 1e-8
@@ -313,18 +321,25 @@ def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
         accuracy is also limited by floating-point precision. Constrained
         likelihood fits use a tighter tolerance.
 
+    nuisance_tol : float, default 1e-10
+        Probability tolerance for Chan--Zhang global nuisance maximization.
+        Ambiguous regions are retained conservatively. Enumeration is limited
+        to one million possible tables and may be computationally expensive.
+        The outer search encloses disconnected acceptance sets; it does not
+        assume monotone tails or use a fixed nuisance grid.
+
     Returns
     -------
     CIResult
         The observed proportion difference, full-precision conf_int,
-        method labels, alternative, correct, null_value=0, and fresh
+        method labels, side, correct, null_value=0, and fresh
         sample_proportions and samples tables. Each interval row represents
         one requested method. No statistic or p-value is manufactured.
 
     Notes
     -----
-    All six methods are approximate; exact Chan--Zhang intervals are not yet
-    available in Python. Newcombe combines separate Wilson distances in
+    The six approximate methods and Chan--Zhang exact unconditional tail
+    intervals match R. Newcombe combines separate Wilson distances in
     quadrature, using corrected Wilson limits if requested. It does not
     invert the pooled score test for equality. Wald uses the unpooled
     binomial variance; correction adds 1/(2*n1)+1/(2*n2) to the margin.
@@ -349,6 +364,7 @@ def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
     Miettinen and Nurminen (1985), Statistics in Medicine 4, 213--226.
     Mee (1984), Biometrics 40, 1175--1176.
     Agresti and Caffo (2000), The American Statistician 54, 280--288.
+    Chan and Zhang (1999), Biometrics 55, 1202--1209.
     Brown and Li (2005), Journal of Statistical Planning and Inference 130,
     359--375, doi:10.1016/j.jspi.2003.09.039.
 
@@ -360,6 +376,7 @@ def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
     >>> prop_2s_ci([[9, 1], [3, 7]]).sample_proportions.tolist()
     [0.9, 0.3]
     """
+    side, alternative = _ci_orientation(side, alternative)
     counts, sizes = _independent_counts(x, n)
     conf_level = _probability(conf_level, "conf_level")
     correct = _flag(correct, "correct")
@@ -374,20 +391,24 @@ def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
         methods = list(method)
     else:
         raise ValueError("method must be a name or sequence of names.")
-    if "chan-zhang" in methods:
-        raise ValueError("Chan-Zhang exact intervals are not yet implemented in Python.")
     if not methods or any(not isinstance(m, str) or m not in _DIFFERENCE_METHODS
                           for m in methods):
         raise ValueError(f"method must select one or more of {_DIFFERENCE_METHODS}.")
     if correct and not any(m in ("newcombe", "wald") for m in methods):
         raise ValueError("correct applies only to Newcombe and Wald intervals.")
+    nuisance_tol = _probability(nuisance_tol, "nuisance_tol")
     proportions = counts / sizes
     estimate = float(proportions[0] - proportions[1])
     tail = (1 - conf_level) / (2 if alternative == "two.sided" else 1)
     z = float(norm.isf(tail))
     intervals = []
     for name in methods:
-        if name == "newcombe":
+        if name == "chan-zhang":
+            from ._independent_exact import _independent_exact_limits
+            limits = _independent_exact_limits(counts, sizes, tail,
+                                                alternative, tol,
+                                                nuisance_tol)
+        elif name == "newcombe":
             one = np.array(_binomial_limits(int(counts[0]), int(sizes[0]), "wilson",
                                              tail, z, correct, False, "two.sided", tol))
             two = np.array(_binomial_limits(int(counts[1]), int(sizes[1]), "wilson",

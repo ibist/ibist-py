@@ -204,7 +204,7 @@ def test_invalid_counts_are_rejected(x, n):
                                       dict(tol=0), dict(tol=1), dict(tol=np.inf),
                                       dict(correct=1), dict(midp=1),
                                       dict(alternative="two-sided"),
-                                      dict(alternative=None), dict(method=None)])
+                                      dict(alternative=[]), dict(method=None)])
 def test_invalid_options_are_rejected(options):
     with pytest.raises(ValueError):
         prop_1s_ci(5, 40, **options)

@@ -39,6 +39,20 @@ class CIResult:
     midp: bool = False
     _input_data: tuple[tuple[int, int, int], ...] = ()
     _sample_counts: tuple[tuple[int, int], ...] = ()
+    _rate_data: tuple[tuple[int, float], ...] = ()
+
+    @property
+    def side(self) -> str:
+        """Interval form: two.sided, lower, or upper."""
+        return {"two.sided": "two.sided", "greater": "lower",
+                "less": "upper"}[self.alternative]
+
+    @property
+    def sample_rates(self) -> np.ndarray | None:
+        """Fresh event rates for a Poisson-rate result."""
+        if not self._rate_data:
+            return None
+        return np.array([x / exposure for x, exposure in self._rate_data])
 
     @property
     def sample_proportions(self) -> np.ndarray | None:
@@ -49,7 +63,11 @@ class CIResult:
 
     @property
     def samples(self) -> pd.DataFrame | None:
-        """Fresh group counts and trial sizes, in the reported comparison order."""
+        """Fresh counts and binomial trial sizes or Poisson exposures."""
+        if self._rate_data:
+            frame = pd.DataFrame(self._rate_data, columns=["x", "exposure"])
+            frame.index.name = "sample"
+            return frame
         if not self._sample_counts:
             return None
         frame = pd.DataFrame(self._sample_counts, columns=["x", "n"])
@@ -85,6 +103,7 @@ class CIResult:
         frame = pd.DataFrame(self.conf_int, index=index, columns=["lower", "upper"])
         estimate = tuple(float(v) for v in self.estimate) if vector else self.estimate
         frame.attrs.update(estimate=estimate, conf_level=self.conf_level,
+                           side=self.side,
                            parameter=self.parameter, null_value=self.null_value)
         if self._input_data:
             frame.attrs.update(alternative=self.alternative, correct=self.correct,
@@ -92,6 +111,9 @@ class CIResult:
         if self._sample_counts:
             frame.attrs.update(alternative=self.alternative, correct=self.correct,
                                samples=self._sample_counts)
+        if self._rate_data:
+            frame.attrs.update(alternative=self.alternative,
+                               correct=self.correct, samples=self._rate_data)
         return frame
 
     def summary(self, digits: int = 3) -> str:
@@ -115,6 +137,10 @@ class CIResult:
             counts = tuple(x for x, _ in self._sample_counts)
             trials = tuple(n for _, n in self._sample_counts)
             headers.append(f"Data: x={counts}, n={trials}")
+        if self._rate_data:
+            counts = tuple(x for x, _ in self._rate_data)
+            exposure = tuple(t for _, t in self._rate_data)
+            headers.append(f"Data: x={counts}, exposure={exposure}")
         if self.alternative != "two.sided":
             bound = "lower" if self.alternative == "greater" else "upper"
             headers.append(f"Bound: {bound}")
@@ -139,3 +165,22 @@ class CIResult:
 
     def __repr__(self) -> str:
         return self.summary()
+
+
+def _ci_orientation(side=None, alternative=None):
+    """Resolve the CI argument and its compatibility alias without guessing."""
+    choices = ("two.sided", "lower", "upper")
+    aliases = {"two.sided": "two.sided", "greater": "lower", "less": "upper"}
+    if side is not None and (not isinstance(side, str) or side not in choices):
+        raise ValueError("side must be two.sided, lower, or upper.")
+    if alternative is not None:
+        if not isinstance(alternative, str) or alternative not in aliases:
+            raise ValueError("alternative must be two.sided, less, or greater.")
+        legacy = aliases[alternative]
+        if side is not None and side != legacy:
+            raise ValueError(
+                "side and alternative specify conflicting intervals.")
+        side = legacy
+    side = "two.sided" if side is None else side
+    inverse = {value: key for key, value in aliases.items()}
+    return side, inverse[side]

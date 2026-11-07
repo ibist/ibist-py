@@ -9,12 +9,12 @@ from scipy.optimize import brentq
 from scipy.special import logsumexp
 from scipy.stats import norm
 
-from .results import CIResult, ConfidenceInterval
+from .results import CIResult, ConfidenceInterval, _ci_orientation
 
 
 def or_2x2_ci(x, *, conf_level: float = 0.95,
               method: str | Sequence[str] = "wald", midp: bool = False,
-              tol: float = 1e-8) -> CIResult:
+              tol: float = 1e-8, side=None, alternative=None) -> CIResult:
     """Estimate an odds ratio and calculate one or more confidence intervals.
 
     Parameters
@@ -34,6 +34,12 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
         subtracts half the observed-table probability from each tail. BP
         includes half the mass of the entire group tied with the observed
         table. This option does not change Wald or Gart intervals.
+    side : {"two.sided", "lower", "upper"}, optional
+        Interval form; omitted or None selects two-sided limits. One-sided
+        BP uses the same ordered conditional tail as Cornfield.
+    alternative : {"two.sided", "less", "greater"}, optional
+        Compatibility alias; greater selects lower, less selects upper.
+        Conflicting side and alternative values are rejected.
     tol : float, default 1e-8
         Absolute root-finding tolerance on the log odds-ratio scale. BP
         limits can occur at jumps in the probability-ordered p-value.
@@ -73,6 +79,7 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
     >>> round(result.estimate, 3)
     8.556
     """
+    side, alternative = _ci_orientation(side, alternative)
     tab = _validate_table(x)
     conf_level = _probability(conf_level, "conf_level")
     if not isinstance(midp, (bool, np.bool_)):
@@ -95,12 +102,11 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
     if not methods or any(not isinstance(m, str) or m not in valid
                           for m in methods):
         raise ValueError(f"method must contain one or more of {valid}.")
-    methods = list(dict.fromkeys(methods))
     a, b, c, d = (float(v) for v in tab.ravel())
     numerator, denominator = a * d, b * c
     estimate = (numerator / denominator if denominator else
                 math.inf if numerator else math.nan)
-    z = norm.isf((1 - conf_level) / 2)
+    z = norm.isf((1 - conf_level) / (2 if side == "two.sided" else 1))
     conditional = None
     intervals = []
     for name in methods:
@@ -116,11 +122,16 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
         else:
             if conditional is None:
                 conditional = _ConditionalTable(tab)
-            lower, upper = conditional.interval(name, conf_level, midp, tol)
+            lower, upper = conditional.interval(
+                name, conf_level, midp, tol, side=side)
             label = f"{name}-{'midp' if midp else 'exact'}"
+        if side == "lower":
+            upper = math.inf
+        if side == "upper":
+            lower = 0.0
         intervals.append(ConfidenceInterval(label, float(lower), float(upper)))
     return CIResult(estimate, tuple(intervals), conf_level, "odds ratio", 1.0,
-                    midp=bool(midp))
+                    midp=bool(midp), alternative=alternative)
 
 
 def _validate_table(x):
@@ -195,10 +206,17 @@ class _ConditionalTable:
         return float(prob[(difference < 0) & ~tied].sum()
                      + (0.5 if midp else 1.0) * prob[tied].sum())
 
-    def interval(self, method, conf_level, midp, tol):
+    def interval(self, method, conf_level, midp, tol, side="two.sided"):
+        if side != "two.sided":
+            method = "cornfield"
         target = (1 - conf_level) / (2 if method == "cornfield" else 1)
+        if side != "two.sided":
+            target = 1 - conf_level
         limits = []
         for lower in (True, False):
+            if (lower and side == "upper") or (not lower and side == "lower"):
+                limits.append(0.0 if lower else math.inf)
+                continue
             if lower and self.observed == self.support[0]:
                 limits.append(0.0)
                 continue
