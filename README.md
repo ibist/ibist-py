@@ -136,3 +136,8 @@ provides exact unconditional difference intervals. All use the shared `side`
 convention. Wang runs the C++ core shared with R through a native binding;
 source installs need a C++ compiler, and R is not required. See
 [paired and exact intervals](docs/paired-and-exact-intervals.md).
+
+`or_common_test(tables, theta=1, alternative="two.sided")` tests a specified
+common null odds ratio, using the same fixed-margin distribution as
+`or_common_ci()`. Its two-sided p-value doubles the smaller inclusive tail;
+see [paired and exact intervals](docs/paired-and-exact-intervals.md).

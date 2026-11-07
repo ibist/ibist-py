@@ -40,7 +40,9 @@ and normal-approximation tests are available through `rate_1s_ci()`,
 [risk ratios and rates](risk-ratios-and-rates.md). Chan--Zhang exact
 independent-difference intervals, paired intervals, and common odds-ratio
 intervals are now implemented. Wang uses the shared C++ core with native
-Python bindings. See [paired and exact methods](paired-and-exact-intervals.md).
+Python bindings. `or_common_test()` completes the common-OR test/CI pair,
+including non-unit null odds ratios and all alternatives. See
+[paired and exact methods](paired-and-exact-intervals.md).
 
 ## Subsequent stages
 

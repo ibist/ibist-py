@@ -1,11 +1,13 @@
-"""Exact conditional confidence intervals for a common odds ratio."""
+"""Exact conditional tests and confidence intervals for a common odds ratio."""
 
 import math
+from numbers import Real
 
 import numpy as np
 from scipy.optimize import brentq
 from scipy.special import logsumexp
 
+from .contingency import TestResult
 from .odds_ratio import _ConditionalTable, _exp, _probability, _validate_table
 from .results import CIResult, ConfidenceInterval, _ci_orientation
 
@@ -48,14 +50,7 @@ def or_common_ci(x, *, conf_level=0.95, algorithm="network", side=None,
         raise ValueError("algorithm must be network or convolution.")
     distribution = _CommonOdds(x)
     observed = distribution.observed
-    if observed == 0:
-        estimate = 0.0
-    elif observed == distribution.width:
-        estimate = math.inf
-    else:
-        eta = brentq(lambda value: distribution.mean(value) - observed,
-                     -700, 700, xtol=1e-10, rtol=1e-14)
-        estimate = _exp(eta)
+    estimate = distribution.mle()
     tail = (1 - conf_level) / (2 if side == "two.sided" else 1)
 
     def limit(lower):
@@ -76,6 +71,84 @@ def or_common_ci(x, *, conf_level=0.95, algorithm="network", side=None,
                     null_value=1.0, alternative=alternative)
 
 
+def or_common_test(x, *, theta=1.0, alternative="two.sided") -> TestResult:
+    """Exact conditional test of a specified common null odds ratio.
+
+    Parameters
+    ----------
+    x : list of 2 by 2 tables or NumPy array of shape (2,2,K)
+        Independent strata, with groups in rows and outcomes in columns.
+        Wrap a single table in a list. Counts are nonnegative integers and
+        deterministic strata, including empty margins, are retained.
+    theta : positive finite number, default 1
+        Null odds ratio in every stratum. Unit odds ratios test conditional
+        independence of groups and outcomes within strata.
+    alternative : {"two.sided", "greater", "less"}, default "two.sided"
+        Inclusive upper or lower tail of the sum of upper-left counts.
+        Two-sided inference doubles the smaller tail and caps it at one.
+
+    Returns
+    -------
+    TestResult
+        statistic is the integer sum of observed upper-left counts; p_value
+        is exact conditional on every stratum's margins. estimate is the
+        conditional common-OR MLE, independent of theta. null_value stores
+        theta, also reported as parameter in R. df is None; n_strata records
+        the number of strata. Obtain confidence limits with or_common_ci().
+        R's convention reports estimate zero for a singleton total support,
+        where the common OR is unidentified and every p-value is one.
+
+    Notes
+    -----
+    This follows ibist-R or.common.test(). The network algorithm combines
+    fixed-margin noncentral hypergeometric distributions. Log-space tails
+    retain very small representable p-values. At most one million total
+    support points are allowed; exceeding this limit raises an error.
+
+    The doubled-smaller-tail rule can give a different two-sided p-value
+    from probability-ordered Fisher inference in indep_test(). With one
+    stratum, the one-sided tails agree with Fisher's conditional test.
+    Homogeneity of unspecified stratum ORs is assessed by
+    or_homogeneity_test(); this function tests their specified null value.
+    At non-unit theta, ibist uses the noncentral hypergeometric extension.
+
+    References
+    ----------
+    Jung, S.-H. (2014), Biometrical Journal 56(1), 129--140,
+    doi:10.1002/bimj.201300048. Stratified Fisher testing and tail rules.
+
+    Examples
+    --------
+    >>> result = or_common_test([[[3, 1], [1, 8]]])
+    >>> round(result.p_value, 4)
+    0.1035
+    """
+    if isinstance(theta, (bool, np.bool_)) or not isinstance(theta, Real):
+        raise ValueError("theta must be a positive finite number.")
+    try:
+        theta = float(theta)
+    except (OverflowError, ValueError):
+        raise ValueError("theta must be a positive finite number.") from None
+    if not math.isfinite(theta) or theta <= 0:
+        raise ValueError("theta must be a positive finite number.")
+    if not isinstance(alternative, str) or alternative not in (
+            "two.sided", "greater", "less"):
+        raise ValueError("alternative must be two.sided, greater, or less.")
+    distribution = _CommonOdds(x)
+    observed = distribution.observed
+    log_prob = distribution.log_probabilities(math.log(theta))
+    less = min(0.0, float(logsumexp(log_prob[:observed + 1])))
+    greater = min(0.0, float(logsumexp(log_prob[observed:])))
+    log_value = {"less": less, "greater": greater,
+                 "two.sided": min(0.0, math.log(2) + min(less, greater))}[
+                     alternative]
+    return TestResult(
+        statistic=distribution.minimum + observed, p_value=_exp(log_value),
+        method="Exact conditional test for a common odds ratio",
+        alternative=alternative, estimate=distribution.mle(), null_value=theta,
+        n_strata=len(distribution.bases), estimate_name="Common odds ratio")
+
+
 class _CommonOdds:
     def __init__(self, x):
         if isinstance(x, np.ndarray) and x.ndim == 3 and x.shape[:2] == (2, 2):
@@ -88,7 +161,7 @@ class _CommonOdds:
         if not items:
             raise ValueError("x must contain at least one stratum.")
         self.bases = []
-        self.observed, self.width = 0, 0
+        self.minimum, self.observed, self.width = 0, 0, 0
         for item in items:
             tab = _validate_table(item)
             if any(isinstance(v, (bool, np.bool_))
@@ -100,6 +173,7 @@ class _CommonOdds:
             self.width += high - low
             if self.width + 1 > 1000000:
                 raise ValueError("Common OR support exceeds 1,000,000 points.")
+            self.minimum += low
             self.observed += int(tab[0, 0]) - low
             base = (np.array([0.0]) if low == high else
                     _ConditionalTable(tab).base.copy())
@@ -107,6 +181,15 @@ class _CommonOdds:
             base -= base.max()
             self.bases.append(base)
         self.coefficients = None
+
+    def mle(self):
+        if self.observed == 0:
+            return 0.0
+        if self.observed == self.width:
+            return math.inf
+        eta = brentq(lambda value: self.mean(value) - self.observed,
+                     -700, 700, xtol=1e-10, rtol=1e-14)
+        return _exp(eta)
 
     def mean(self, eta):
         value = 0.0
@@ -124,6 +207,9 @@ class _CommonOdds:
                 weights = base + np.arange(len(base)) * eta
                 prob = np.convolve(prob, np.exp(weights - logsumexp(weights)))
             return prob / prob.sum()
+        return np.exp(self.log_probabilities(eta))
+
+    def log_probabilities(self, eta):
         if self.coefficients is None:
             coefficients = np.array([0.0])
             for base in self.bases:
@@ -134,4 +220,4 @@ class _CommonOdds:
                 coefficients = combined - combined.max()
             self.coefficients = coefficients
         weights = self.coefficients + np.arange(self.width + 1) * eta
-        return np.exp(weights - logsumexp(weights))
+        return weights - logsumexp(weights)

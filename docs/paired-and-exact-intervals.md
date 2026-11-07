@@ -73,6 +73,54 @@ support, R's convention is estimate zero and interval `[0, inf]`; the
 parameter is unidentified. Python limits the total support to one million
 points. This is inference about a common OR, separate from homogeneity tests.
 
+## Common odds-ratio tests
+
+```python
+from ibist import or_common_test
+
+result = or_common_test(tables, theta=1, alternative="greater")
+print(result.p_value)
+print(result.estimate)
+```
+
+`or_common_test()` mirrors R's `or.common.test()`. It tests a specified
+positive finite null odds ratio in every stratum, default `theta=1`.
+Alternatives are `"two.sided"` (default), `"greater"`, and `"less"`.
+Conditioning fixes each table's margins. The statistic is the sum of the
+observed upper-left counts, including any nonzero support minima.
+
+One-sided p-values include the observed count. Two-sided p-values double
+the smaller tail and cap the result at one, following Jung (2014). This
+can differ from probability-ordered two-sided Fisher inference: for
+`[[3,1],[1,8]]`, `or_common_test([table])` returns `74/715`, while
+probability ordering returns `37/715`. One-sided single-stratum tails agree.
+For non-unit `theta`, ibist uses noncentral hypergeometric distributions,
+following the R implementation. Log-space tail sums retain probabilities
+near `1e-300` without subtracting a CDF from one.
+
+The result is `TestResult`, with `statistic`, `p_value`, `alternative`,
+`null_value`, conditional common-OR `estimate`, and `n_strata`. R's
+`parameter` repeats the null OR; Python stores it in `null_value`, leaving
+`df=None`. Confidence limits are obtained from `or_common_ci()`. The test
+addresses the specified null value; `or_homogeneity_test()` assesses equality
+of unspecified stratum ORs. Deterministic strata are retained. With a
+singleton total support, all p-values are one and R's estimate convention
+is zero, although the OR is unidentified. The existing one-million-point
+support limit applies.
+
+Independent validation includes direct full-allocation enumeration,
+conditional hypergeometric tails, exact null rejection probabilities,
+CI/test inversion, reversal, and tiny-tail formulas. The example in
+[Jung's primary paper][jung] (Table 2) gives the reported one-sided
+p-value `0.1563`. An additional 456 R references check statistics, p-values,
+conditional estimates, null parameters, and all alternatives. P-values use
+`2e-10` relative tolerance with no absolute allowance for zero substitution;
+conditional MLE comparisons allow `2e-9` relative or `1e-10` absolute error.
+
+Jung, S.-H. (2014). Stratified Fisher's exact test and its sample size
+calculation. Biometrical Journal, 56(1), 129--140.
+DOI: `10.1002/bimj.201300048`.
+
 ## Native source and builds
 
 The authoritative source and synchronization policy are in
@@ -125,3 +173,5 @@ have distinct sampling assumptions and interval constructions.
   https://github.com/ibist/ibist-R/blob/main/CROSS_LANGUAGE_DEVELOPMENT.md
 [extensions]:
   https://setuptools.pypa.io/en/latest/userguide/ext_modules.html
+
+[jung]: https://pmc.ncbi.nlm.nih.gov/articles/PMC3884832/

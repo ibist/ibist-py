@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Add `or_common_test()` with R's common-null odds ratio, inclusive one-sided
+  tails, doubled-smaller-tail two-sided p-values, and conditional MLE.
+  Validate using direct enumeration, exact null rejection probabilities,
+  primary-paper examples, tiny tails, and 456 R comparison cases.
+
 - Add `prop_paired_ci()` and `or_paired_ci()` with all R methods and CI sides.
 - Add `or_common_ci()` with exact limits and conditional MLEs, supporting
   network and convolution algorithms.
