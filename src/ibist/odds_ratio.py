@@ -119,7 +119,8 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
             lower, upper = conditional.interval(name, conf_level, midp, tol)
             label = f"{name}-{'midp' if midp else 'exact'}"
         intervals.append(ConfidenceInterval(label, float(lower), float(upper)))
-    return CIResult(estimate, tuple(intervals), conf_level, "odds ratio", 1.0)
+    return CIResult(estimate, tuple(intervals), conf_level, "odds ratio", 1.0,
+                    midp=bool(midp))
 
 
 def _validate_table(x):

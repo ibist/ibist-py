@@ -14,6 +14,7 @@ def test_multiple_method_table_preserves_values_and_labels():
     np.testing.assert_array_equal(frame.to_numpy(), result.conf_int)
     assert frame.attrs["estimate"] == result.estimate
     assert frame.attrs["conf_level"] == .95
+    assert result.midp is True
 
 
 def test_summary_rounds_presentation_only():

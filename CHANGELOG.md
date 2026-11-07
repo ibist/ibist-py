@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Add `prop_1s_ci()` with Wilson, Wald, Agresti--Coull, Clopper--Pearson,
+  mid-p, and Blaker intervals, including correction and one-sided options.
+- Extend `CIResult` for vector binomial inputs with explicit input metadata
+  and DataFrame indexing, preserving scalar summaries and stored precision.
+- Validate binomial intervals against published SAS limits, SciPy, enumerated
+  Blaker acceptance sets and coverage, and 358 R comparison cases.
+
 - Add `indep_test()` with Pearson, likelihood-ratio, and Fisher tests,
   including general fixed-margin exact enumeration and seeded Monte Carlo.
 - Add `nominal_assoc()` for Phi, contingency coefficient, and Cramer's V.

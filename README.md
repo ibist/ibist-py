@@ -10,11 +10,14 @@ The released alpha includes all seven teaching datasets and
 `or_2x2_ci()` with Wald, Gart, Cornfield, and Baptista--Pike intervals,
 including exact and mid-p conditional options. This is an early alpha;
 public interfaces may change during development.
-The development checkout additionally provides `indep_test()`,
-`nominal_assoc()`, and `or_homogeneity_test()` for contingency tables.
+The development checkout additionally provides `prop_1s_ci()` for scalar
+and vector binomial counts, plus `indep_test()`, `nominal_assoc()`, and
+`or_homogeneity_test()` for contingency tables.
 These additions are unreleased; use the editable development installation
 below to try them. See [contingency-table methods](docs/contingency-tables.md)
-for options, validation, and exact-computation limits.
+for options, validation, and exact-computation limits. The
+[binomial interval guide](docs/binomial-intervals.md) covers proportion methods,
+vector output, and correction options.
 The distribution and import names are both `ibist`; the GitHub repository
 remains `ibist/ibist-py`.
 
@@ -62,6 +65,10 @@ frame = fluorosis.to_frame()
 The development checkout also supports:
 
 ```python
+result = ibist.prop_1s_ci(5, 40, method=["wilson", "clopper-pearson", "blaker"])
+print(result)
+print(ibist.prop_1s_ci([0, 5, 40], 40, method=["wilson", "wald"]).to_frame())
+
 table = [[109, 68, 14], [72, 79, 37], [9, 42, 139]]
 print(ibist.indep_test(table, method="lr"))
 print(ibist.nominal_assoc(table).to_frame())

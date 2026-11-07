@@ -27,10 +27,13 @@ provenance, including raw inputs missing from the current R checkout.
 Validation includes direct formulas, Fagerland's published example, SciPy
 conditional intervals, enumerated coverage, and 60 R comparison cases. See
 [odds-ratio validation](odds-ratio.md) for the interface correspondence,
-test scope, and numerical differences. The development checkout now also implements contingency-table independence,
-nominal association, and odds-ratio homogeneity tests; see
-[contingency-table methods](contingency-tables.md). The proportion and risk-ratio
-interval families in the shared specification remain pending in Python.
+test scope, and numerical differences. The development checkout also
+implements contingency-table independence, nominal association, and odds-ratio
+homogeneity tests; see [contingency-table methods](contingency-tables.md).
+`prop_1s_ci()` now implements the one-proportion interval family, including
+vector inputs and multiple methods; see [binomial intervals](binomial-intervals.md).
+Independent-proportion differences and risk-ratio intervals remain pending
+in Python.
 
 ## Subsequent stages
 
