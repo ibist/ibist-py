@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Standardize public statistical docstrings with parameters, return fields,
+  notes, related functions, references, and executable examples. Expand
+  dataset-loading help and add an API index mapping Python functions to R.
+
 - Add `or_common_test()` with R's common-null odds ratio, inclusive one-sided
   tails, doubled-smaller-tail two-sided p-values, and conditional MLE.
   Validate using direct enumeration, exact null rejection probabilities,

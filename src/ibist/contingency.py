@@ -190,6 +190,24 @@ def indep_test(x, *, method="pearson", correct=False, **options):
         conditional maximum likelihood odds ratio and optional exact
         confidence limits for 2 by 2 counts; these are not proportion limits.
 
+    Raises
+    ------
+    ValueError
+        If counts, margins, or options are invalid, or exact Fisher
+        enumeration exceeds max_tables.
+
+    Warns
+    -----
+    RuntimeWarning
+        For Pearson and likelihood-ratio tests when any expected count
+        is below five.
+
+    See Also
+    --------
+    nominal_assoc : Descriptive nominal association measures.
+    or_2x2_ci : Odds-ratio intervals with several constructions.
+    or_common_test : Exact conditional test of a specified common null OR.
+
     Notes
     -----
     Pearson and LR warn if any expected count is below five. LR uses
@@ -262,16 +280,62 @@ def indep_test(x, *, method="pearson", correct=False, **options):
 def nominal_assoc(x, *, measure=("phi", "contingency", "cramer-v")):
     """Compute unadjusted Phi, Pearson contingency coefficient, and Cramer's V.
 
-    ``measure`` is a name or sequence of names; preserve order and remove
-    duplicates. All three are returned by default. Using uncorrected Pearson
-    X-square, n counts, and d=min(rows, columns), the estimates are respectively
-    sqrt(X2/n), sqrt(X2/(X2+n)), and sqrt(X2/(n*(d-1))). Phi is nonnegative,
-    even for a binary table, and can exceed one when d>2. No confidence
-    intervals, tests, bias correction, or sparse-count warnings are produced.
-    Input validation and DataFrame labels follow indep_test().
+    Parameters
+    ----------
+    x : array_like or pandas.DataFrame
+        Two-dimensional nonnegative integer count table with at least two
+        rows and columns and positive margins. Totals above 2**53-1 are
+        rejected. DataFrame row and column labels are preserved.
+    measure : str or sequence of str, default all three measures
+        "phi", "contingency", or "cramer-v". Requested order is retained
+        and duplicates are removed. Category ordering has no effect.
 
-    References: SAS Institute (2016), SAS/STAT 14.2 FREQ, p. 2764;
-    Cramer (1946), Mathematical Methods of Statistics, Princeton UP.
+    Returns
+    -------
+    NominalAssociationResult
+        estimate is a named pandas Series; measures records its order.
+        Also includes uncorrected Pearson statistic, total n, and observed
+        and expected DataFrames. to_frame() returns a fresh estimate table;
+        summary() rounds display values without changing stored precision.
+
+    Raises
+    ------
+    ValueError
+        If the count table, margins, or requested measure is invalid.
+
+    See Also
+    --------
+    indep_test : Independence tests and Pearson residual diagnostics.
+
+    Notes
+    -----
+    For Pearson X2, total n, and d=min(rows, columns), the estimates are
+    sqrt(X2/n), sqrt(X2/(X2+n)), and sqrt(X2/(n*(d-1))), respectively.
+    Phi is nonnegative even for binary tables and can exceed one for d>2;
+    its maximum is sqrt(d-1). The contingency coefficient has maximum
+    sqrt((d-1)/d). Cramer's V lies in [0, 1] and equals Phi when d=2.
+
+    These unadjusted definitions match R nominal.assoc() and DescTools'
+    defaults. The cited SAS formulas retain the sign of Phi and V for
+    2 by 2 tables; ibist returns their absolute values. Empty margins are
+    rejected, not dropped. No confidence intervals, hypothesis tests, bias
+    corrections, or sparse-count warnings are produced. Use indep_test()
+    for independence tests and chi-square approximation warnings.
+
+    References
+    ----------
+    SAS Institute Inc. (2016). SAS/STAT 14.2 User's Guide, The FREQ
+    Procedure, p. 2764: Phi Coefficient, Contingency Coefficient, and
+    Cramer's V.
+    https://support.sas.com/documentation/onlinedoc/stat/142/freq.pdf
+
+    Examples
+    --------
+    >>> tumor = [[109, 68, 14], [72, 79, 37], [9, 42, 139]]
+    >>> nominal_assoc(tumor).measures
+    ('phi', 'contingency', 'cramer-v')
+    >>> nominal_assoc(tumor, measure="cramer-v").measures
+    ('cramer-v',)
     """
     tab, observed = _table(x)
     try:

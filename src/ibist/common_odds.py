@@ -16,32 +16,71 @@ def or_common_ci(x, *, conf_level=0.95, algorithm="network", side=None,
                  alternative=None) -> CIResult:
     """Estimate a common odds ratio and invert exact conditional tails.
 
-    x is a list of 2 by 2 tables or a NumPy array of shape (2,2,K), with
-    independent strata on the last axis. Wrap a single table in a list.
-    Both algorithm="network" (default, log-space dynamic programming) and
-    "convolution" (direct probability convolution) combine the stratum
-    noncentral hypergeometric distributions conditional on their margins.
-    The estimate is the conditional MLE, not Mantel--Haenszel's estimate.
+    Parameters
+    ----------
+    x : list of 2 by 2 tables or NumPy array of shape (2, 2, K)
+        Nonnegative integer counts in independent strata. Groups are rows
+        and outcomes are columns; use the same orientation in every stratum.
+        The array's last axis indexes strata. Wrap a single table in a list.
+    conf_level : float, default 0.95
+        Confidence level strictly between zero and one.
+    algorithm : {"network", "convolution"}, default "network"
+        Log-space dynamic programming or direct probability convolution.
+        Both combine fixed-margin noncentral hypergeometric distributions.
+    side : {"two.sided", "lower", "upper"}, optional
+        Omitted or None selects two-sided limits. One-sided bounds use the
+        full error probability. Lower bounds have upper endpoint inf;
+        upper bounds have lower endpoint 0.
+    alternative : {"two.sided", "greater", "less"}, optional
+        Compatibility alias: greater selects lower, less selects upper.
+        Conflicting side and alternative values raise an error.
 
-    conf_level defaults to 0.95. side is two.sided (default), lower, or upper;
-    None selects the default. alternative is a compatibility alias (greater
-    means lower and less means upper); conflicting values are errors.
+    Returns
+    -------
+    CIResult
+        Conditional common-OR MLE in estimate, one exact interval in
+        conf_int, method label "exact", side, conf_level, and null_value=1.
+        Stored estimates and limits retain full numerical precision.
+
+    Raises
+    ------
+    ValueError
+        If tables or options are invalid, or the total conditional
+        support exceeds one million points.
+
+    See Also
+    --------
+    or_common_test : Exact conditional test of a specified common null OR.
+    or_homogeneity_test : Test equality of unspecified stratum ORs.
+
+    Notes
+    -----
+    The estimate is the conditional MLE, not the Mantel--Haenszel estimate.
     Inclusive tails use half the error probability for central limits and
-    the full error probability for one-sided bounds. Limits are 0/inf at
-    support boundaries. Deterministic strata, including empty margins, are
-    retained. If the total support is a singleton, all ORs are unidentified;
-    R's convention reports estimate 0 and interval [0,inf].
+    the full error probability for one-sided bounds. Limits are zero or
+    infinity at support boundaries. Deterministic strata, including empty
+    margins, are retained. If the total support is a singleton, the common
+    OR is unidentified; R's convention reports estimate 0 and [0, inf].
 
-    Returns CIResult with the conditional scalar estimate, one exact
-    interval, side, conf_level, and null_value=1. Network calculation is
-    stable in log space; convolution can underflow in extreme tails. An
-    allocation exceeding one million total support points raises an error.
-    There is no R runtime dependency. Definitions follow or.common.ci().
+    Network calculation is stable in log space; convolution can underflow
+    in extreme tails. A total support exceeding one million points raises
+    an error. There is no R runtime dependency. Statistical definitions
+    follow R or.common.ci(); test the specified OR with or_common_test()
+    and assess equality of unspecified ORs with or_homogeneity_test().
 
     References
     ----------
     Mehta, Patel and Gray (1985), Journal of the American Statistical
     Association 80, 969--973, doi:10.1080/01621459.1985.10478212.
+
+    Examples
+    --------
+    >>> tables = [[[7, 3], [2, 8]], [[4, 6], [1, 9]]]
+    >>> result = or_common_ci(tables)
+    >>> result.methods
+    ('exact',)
+    >>> float(or_common_ci(tables, side="lower").conf_int[0, 1])
+    inf
     """
     side, alternative = _ci_orientation(side, alternative)
     conf_level = _probability(conf_level, "conf_level")
@@ -72,11 +111,11 @@ def or_common_ci(x, *, conf_level=0.95, algorithm="network", side=None,
 
 
 def or_common_test(x, *, theta=1.0, alternative="two.sided") -> TestResult:
-    """Exact conditional test of a specified common null odds ratio.
+    """Perform an exact conditional test of a specified common null odds ratio.
 
     Parameters
     ----------
-    x : list of 2 by 2 tables or NumPy array of shape (2,2,K)
+    x : list of 2 by 2 tables or NumPy array of shape (2, 2, K)
         Independent strata, with groups in rows and outcomes in columns.
         Wrap a single table in a list. Counts are nonnegative integers and
         deterministic strata, including empty margins, are retained.
@@ -97,6 +136,17 @@ def or_common_test(x, *, theta=1.0, alternative="two.sided") -> TestResult:
         the number of strata. Obtain confidence limits with or_common_ci().
         R's convention reports estimate zero for a singleton total support,
         where the common OR is unidentified and every p-value is one.
+
+    Raises
+    ------
+    ValueError
+        If tables, theta, or alternative are invalid, or the total
+        conditional support exceeds one million points.
+
+    See Also
+    --------
+    or_common_ci : Confidence limits for a common odds ratio.
+    or_homogeneity_test : Test equality of unspecified stratum ORs.
 
     Notes
     -----

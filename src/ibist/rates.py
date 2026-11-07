@@ -36,13 +36,24 @@ def rate_1s_ci(x, exposure=1.0, *, conf_level=0.95, method="exact",
         Interval form; omitted or None selects two-sided limits. One-sided
         bounds use the full error probability.
     alternative : {"two.sided", "less", "greater"}, optional
-        Compatibility alias. Conflicting side and alternative values fail.
+        Compatibility alias: greater selects lower, less selects upper.
+        Conflicting side and alternative values raise an error.
 
     Returns
     -------
     CIResult
         Scalar rate estimate, intervals, and counts/exposure metadata in
         samples. sample_rates returns a fresh array of the observed rates.
+
+    Raises
+    ------
+    ValueError
+        If the count, exposure, confidence level, or method is invalid.
+
+    See Also
+    --------
+    rate_2s_ci : Confidence intervals for a ratio of independent rates.
+    rate_test : Normal-approximation test for one or two rates.
 
     Notes
     -----
@@ -92,31 +103,72 @@ def rate_2s_ci(x, exposure=(1.0, 1.0), *, conf_level=0.95, method="log",
                alternative=None, side=None) -> CIResult:
     """Estimate a ratio of two independent Poisson rates.
 
-    Counts and exposures must be length-two vectors. Methods are "log"
-    (default, log-Wald, requiring positive counts), "score" (transformed
-    Wilson), and "exact" (transformed Clopper--Pearson). Request a string
-    or a sequence of methods; order and repetitions are retained.
+    Parameters
+    ----------
+    x : length-two array_like of nonnegative integers
+        Independent event counts. At least one must be positive; counts
+        and their total must not exceed 2**53-1.
+    exposure : length-two array_like, default (1.0, 1.0)
+        Known positive finite exposures for the two groups. Scalar exposure
+        is not recycled. Use matching units, such as person-years.
+    conf_level : float, default 0.95
+        Confidence level strictly between zero and one.
+    method : str or sequence of str, default "log"
+        "log" (log-Wald), "score" (transformed Wilson), or "exact"
+        (transformed Clopper--Pearson). Log requires both counts positive.
+        Requested order and repetitions are retained.
+    side : {"two.sided", "lower", "upper"}, optional
+        Omitted or None selects two-sided limits. One-sided bounds use the
+        full error probability. Lower bounds have upper endpoint inf;
+        upper bounds have lower endpoint 0.
+    alternative : {"two.sided", "greater", "less"}, optional
+        Compatibility alias: greater selects lower, less selects upper.
+        Conflicting side and alternative values raise an error.
 
-    Both exposures must be positive and at least one count must be positive.
-    Scalar exposures are not recycled. Conditional methods use the binomial
-    count x1 given x1+x2, then transform its probability p into a rate ratio
-    p*T2/((1-p)*T1). They allow a zero count and give boundary limits of zero
-    or infinity. All counts and their total must not exceed 2**53-1.
+    Returns
+    -------
+    CIResult
+        Scalar ratio (x1/T1)/(x2/T2) in estimate, one conf_int row per
+        method, method labels, side, conf_level, and null_value=None.
+        samples contains copied counts and exposures; sample_rates contains
+        the two observed rates. R stores all three estimates in one vector.
 
-    conf_level defaults to 0.95. side is "two.sided" (default), "lower",
-    or "upper". One-sided bounds use the full error probability. None selects
-    two-sided limits. alternative is a compatibility alias: "greater" selects
-    lower, and "less" selects upper; conflicting arguments are errors.
+    Raises
+    ------
+    ValueError
+        If inputs or options are invalid, both event counts are zero,
+        or log-Wald is requested with a zero event count.
 
-    Returns a CIResult with a scalar ratio estimate, sample_rates, and
-    samples containing x and exposure. This separates the inference target
-    from the two group rates; R stores all three in its estimate vector.
+    See Also
+    --------
+    rate_1s_ci : Confidence intervals for a single Poisson rate.
+    rate_test : Normal-approximation test for one or two Poisson rates.
+
+    Notes
+    -----
+    Independent counts satisfy Xi ~ Poisson(lambda_i*Ti). Log-Wald limits
+    exponentiate log(estimate) +/- z*sqrt(1/x1+1/x2). Conditional methods
+    use x1 given x1+x2 as a binomial count, then transform probability p
+    into the rate ratio p*T2/((1-p)*T1). They permit a zero count, with a
+    boundary estimate and limits at zero or infinity. Definitions follow
+    R rate.2s.ci(). No continuity correction is applied.
 
     References
     ----------
     Clopper and Pearson (1934), Biometrika 26, 404--413, for the conditional
     exact binomial bounds. Wilson (1927), JASA 22, 209--212, for the score
     bounds. The exposure transformation follows ibist-R rate.2s.ci().
+
+    Examples
+    --------
+    >>> result = rate_2s_ci([12, 5], [100, 80])
+    >>> round(result.estimate, 2)
+    1.92
+    >>> rate_2s_ci([12, 5], [100, 80], method=["log", "score"]).methods
+    ('log', 'score')
+    >>> result = rate_2s_ci([0, 5], [100, 80], method="exact")
+    >>> float(result.conf_int[0, 0])
+    0.0
     """
     side, alternative = _ci_orientation(side, alternative)
     counts, exposures = _rate_inputs(x, exposure, lengths=(2,))
@@ -159,27 +211,81 @@ def rate_test(x, exposure=1.0, *, r=1.0, alternative="two.sided",
               conf_level=0.95, correct=True) -> TestResult:
     """Normal-approximation test for one or two Poisson rates.
 
-    x and exposure are matching scalars or length-one/two vectors. r is the
-    positive null unit rate for one sample, default 1; it is ignored for two
-    samples, whose null is equal rates. conf_level defaults to 0.95, correct
-    to True, and alternative to "two.sided"; "less" and "greater" are also
-    supported. Counts and their total must not exceed 2**53-1.
+    Parameters
+    ----------
+    x : nonnegative integer or length-one/two array_like
+        Event counts. One count specifies a one-sample test; two counts
+        specify independent samples. Counts and their total must not exceed
+        2**53-1. Two-sample inference requires both counts positive because
+        the reported log-Wald interval needs them.
+    exposure : positive finite scalar or length-one/two array_like, default 1
+        Known exposures with the same length as x. Scalar exposure is not
+        recycled for two counts. All exposures must use matching units.
+    r : positive finite float, default 1
+        Null rate per exposure unit for one sample. Ignored for two samples,
+        whose null hypothesis is equality of rates (rate ratio one).
+    alternative : {"two.sided", "greater", "less"}, default "two.sided"
+        Alternative for the unit rate or the first rate divided by the
+        second. Also determines the direction of the reported interval.
+    conf_level : float, default 0.95
+        Confidence level strictly between zero and one.
+    correct : bool, default True
+        Apply the directional half-count correction for one sample or
+        capped Yates correction for the two-sample conditional test.
 
-    One sample uses Z=(x-cc-r*T)/sqrt(r*T), with a directional half-count
-    correction when requested, and reports a matching score interval.
-    The correction is not capped, following R rate.test(). Two samples
-    use the conditional binomial Pearson statistic with the same capped
-    Yates correction as R prop.test(). Their interval is log-Wald for the
-    rate ratio and requires positive event counts in both groups. Correction
-    affects the two-sample test but not that interval. Test and interval
-    decisions can therefore differ. Small expected binomial cell counts
-    trigger a warning, matching R.
+    Returns
+    -------
+    TestResult
+        statistic is signed Z for one sample and chi-square for two;
+        df=1 follows R in both cases. Also includes p_value, method,
+        alternative, scalar estimate, null_value, conf_int, and conf_level.
+        The estimate and interval concern the unit rate for one sample or
+        rate ratio for two. samples and sample_rates expose copied group
+        metadata; R's two-sample estimate vector combines both group rates
+        and their ratio, whereas Python keeps the scalar target separate.
 
-    Returns TestResult with statistic (signed Z for one sample, chi-square
-    for two), p_value, df=1, scalar estimate, null_value, conf_int tuple,
-    conf_level, alternative, and fresh samples/sample_rates metadata.
-    No exact Poisson hypothesis test is substituted for the approximation.
-    The statistical formulas and correction rules follow ibist-R rate.test().
+    Raises
+    ------
+    ValueError
+        If inputs or options are invalid, including a zero event count
+        in a two-sample request requiring the log-Wald interval.
+
+    Warns
+    -----
+    UserWarning
+        For two samples when a null expected binomial cell count is
+        below five, following R prop.test().
+
+    See Also
+    --------
+    rate_1s_ci : Single-rate intervals, including Garwood exact limits.
+    rate_2s_ci : Rate-ratio intervals, including conditional exact limits.
+
+    Notes
+    -----
+    One sample uses Z=(x-cc-r*T)/sqrt(r*T) and a matching score interval.
+    The directional half-count correction is not capped, following R
+    rate.test(). Two samples use the Pearson statistic for the conditional
+    binomial count x1 given x1+x2, with null probability T1/(T1+T2).
+    Small expected binomial cell counts trigger a warning, matching R.
+
+    The two-sample interval is log-Wald for the rate ratio; correction
+    affects the test but not this interval. Test and interval decisions can
+    therefore differ. This is a normal approximation, not an exact Poisson
+    test. Statistical formulas and correction rules follow R rate.test().
+
+    References
+    ----------
+    R ibist rate.test(), Details; R stats prop.test(), Details, for the
+    conditional binomial score statistic and its continuity correction.
+
+    Examples
+    --------
+    >>> result = rate_test(411, 25800, r=0.0119, alternative="greater")
+    >>> result.alternative
+    'greater'
+    >>> round(rate_test([12, 5], [100, 80]).estimate, 2)
+    1.92
     """
     counts, exposures = _rate_inputs(x, exposure)
     conf_level = _probability(conf_level, "conf_level")

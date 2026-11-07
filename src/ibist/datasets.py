@@ -55,7 +55,27 @@ class Dataset:
 
 
 def available() -> tuple[str, ...]:
-    """Return the names of the seven bundled teaching datasets."""
+    """List the bundled teaching datasets.
+
+    Returns
+    -------
+    tuple of str
+        Dataset names accepted by load(), in the bundled index order.
+
+    Notes
+    -----
+    Reads the packaged index locally without R or network access. The
+    datasets are exported from the R data-preparation workflow.
+
+    See Also
+    --------
+    load : Load the arrays and metadata for one dataset.
+
+    Examples
+    --------
+    >>> "rds" in available()
+    True
+    """
     resource = files("ibist").joinpath("_data", "index.json")
     return tuple(json.loads(resource.read_text(encoding="utf-8"))["datasets"])
 
@@ -63,10 +83,41 @@ def available() -> tuple[str, ...]:
 def load(name: str) -> Dataset:
     """Load a named dataset without R or a network connection.
 
-    Names are listed by ``available()``. The exported JSON data represent
-    missing values as null; metadata preserve variable descriptions, units,
-    factor levels, ordered status, numeric value labels, and source hashes.
-    See ``docs/datasets.md`` for the common preparation workflow.
+    Parameters
+    ----------
+    name : str
+        One of the names returned by available(). Unknown names raise
+        ValueError; files are not downloaded on demand.
+
+    Returns
+    -------
+    Dataset
+        data maps variable names to NumPy arrays. metadata preserves
+        variable descriptions, units, factor levels, ordered status,
+        numeric value labels, missing-value counts, and source hashes.
+        Each load returns independent arrays and metadata.
+
+    Notes
+    -----
+    Data are bundled exports of the R data-preparation workflow. Numeric
+    missing values become NaN; missing integer values become None in object
+    arrays. Categorical arrays retain factor labels. Dataset.to_frame()
+    restores pandas categories and nullable integers, and places metadata
+    in frame.attrs["ibist"]. See docs/datasets.md for provenance, source
+    references, and the shared preparation workflow.
+
+    See Also
+    --------
+    available : List dataset names.
+    Dataset.to_frame : Convert to a pandas DataFrame with types and metadata.
+
+    Examples
+    --------
+    >>> dataset = load("rds")
+    >>> dataset.name
+    'rds'
+    >>> dataset.to_frame().attrs["ibist"]["name"]
+    'rds'
     """
     if not isinstance(name, str) or name not in available():
         message = f"Unknown dataset {name!r}; choose from {available()}."

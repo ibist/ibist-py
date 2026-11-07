@@ -29,11 +29,12 @@ def rr_2x2_ci(x, *, conf_level=0.95, method="koopman",
         exponentiates log-Wald limits and requires positive event counts.
         Requested order and repeated methods are retained, matching R.
     side : {"two.sided", "lower", "upper"}, optional
-        Omitted or None selects two-sided limits.
+        Omitted or None selects two-sided limits. One-sided bounds use the
+        full error probability. Lower bounds have upper endpoint inf;
+        upper bounds have lower endpoint 0.
     alternative : {"two.sided", "less", "greater"}, optional
-        Compatibility alias; conflicting values with side are rejected.
-        Two limits, an upper bound with lower limit zero, or a lower bound
-        with upper limit infinity. One-sided bounds use the full tail error.
+        Compatibility alias: greater selects lower, less selects upper.
+        Conflicting side and alternative values are rejected.
     tol : float, default 1e-8
         Positive absolute root tolerance on the log risk-ratio scale.
 
@@ -42,6 +43,18 @@ def rr_2x2_ci(x, *, conf_level=0.95, method="koopman",
     CIResult
         Scalar observed risk ratio, method-specific intervals, side,
         and copied group metadata in samples and sample_proportions.
+
+    Raises
+    ------
+    ValueError
+        If counts or options are invalid, or Katz is requested with a
+        zero event count.
+
+    See Also
+    --------
+    prop_2s_ci : Confidence intervals for a difference of independent risks.
+    or_2x2_ci : Confidence intervals for an independent-table odds ratio.
+    rate_2s_ci : Confidence intervals for a Poisson rate ratio.
 
     Notes
     -----

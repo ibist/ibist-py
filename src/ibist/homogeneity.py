@@ -37,6 +37,23 @@ def or_homogeneity_test(x, *, method="zelen", correct=False,
         return df=K-1. Zelen's statistic is the sum of upper-left counts;
         it is not compared with a chi-square distribution.
 
+    Raises
+    ------
+    ValueError
+        If tables or options are invalid, an asymptotic method lacks
+        its required margins or estimate, or exact search exceeds max_tables.
+
+    Warns
+    -----
+    RuntimeWarning
+        For asymptotic methods when a fitted Breslow--Day or adjusted
+        Woolf cell is below five.
+
+    See Also
+    --------
+    or_common_test : Test a specified common null odds ratio across strata.
+    or_common_ci : Confidence limits for a common odds ratio.
+
     Notes
     -----
     The null is equality of the stratum odds ratios, not that a common

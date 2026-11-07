@@ -41,11 +41,12 @@ def prop_1s_ci(x, n, *, conf_level=0.95, method="wilson", correct=False,
         Use mid-p tails for Clopper--Pearson only. Other methods in a mixed
         request are unchanged. Mid-p is not coverage-exact.
     side : {"two.sided", "lower", "upper"}, optional
-        Omitted or None selects two-sided limits.
+        Omitted or None selects two-sided limits. One-sided bounds use the
+        full error probability. Lower bounds have upper endpoint 1;
+        upper bounds have lower endpoint 0.
     alternative : {"two.sided", "less", "greater"}, optional
-        Compatibility alias; conflicting values with side are rejected.
-        Two limits, an upper bound with lower limit zero, or a lower bound
-        with upper limit one. A one-sided bound uses the full tail error.
+        Compatibility alias: greater selects lower, less selects upper.
+        Conflicting side and alternative values are rejected.
     tol : float, default 1e-8
         Positive numerical endpoint tolerance, below one. Mid-p uses this
         tolerance on the logit scale, implying a tighter absolute probability
@@ -59,6 +60,17 @@ def prop_1s_ci(x, n, *, conf_level=0.95, method="wilson", correct=False,
         and per-interval inputs. Rows follow input order and then method order.
         Scalar to_frame() output retains the method index; vectors have a
         zero-based (input, method) MultiIndex. No hypothesis test is fabricated.
+
+    Raises
+    ------
+    ValueError
+        If counts, options, or method-specific flags are invalid, or a
+        Blaker inversion exceeds one million ordering changes.
+
+    See Also
+    --------
+    prop_2s_ci : Intervals for an independent proportion difference.
+    prop_paired_ci : Intervals for a paired proportion difference.
 
     Notes
     -----
@@ -309,11 +321,12 @@ def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
         selected methods are unchanged. An entirely inapplicable flag is
         an error; this flag never switches Mee and Miettinen--Nurminen.
     side : {"two.sided", "lower", "upper"}, optional
-        Omitted or None selects two-sided limits.
+        Omitted or None selects two-sided limits. One-sided bounds use the
+        full error probability. Lower bounds have upper endpoint 1;
+        upper bounds have lower endpoint -1.
     alternative : {"two.sided", "less", "greater"}, optional
-        Compatibility alias; conflicting values with side are rejected.
-        Two limits, an upper bound with lower limit -1, or a lower bound
-        with upper limit 1, respectively.
+        Compatibility alias: greater selects lower, less selects upper.
+        Conflicting side and alternative values are rejected.
     tol : float, default 1e-8
         Positive numerical tolerance below one. Score inversion uses this
         tolerance on a logit-scaled distance to the observed difference.
@@ -335,6 +348,18 @@ def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
         method labels, side, correct, null_value=0, and fresh
         sample_proportions and samples tables. Each interval row represents
         one requested method. No statistic or p-value is manufactured.
+
+    Raises
+    ------
+    ValueError
+        If counts or options are invalid, or Chan--Zhang enumeration
+        exceeds one million possible tables.
+
+    See Also
+    --------
+    prop_1s_ci : Intervals for one binomial probability.
+    prop_paired_ci : Intervals for a paired proportion difference.
+    rr_2x2_ci : Intervals for a ratio of independent binomial risks.
 
     Notes
     -----

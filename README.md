@@ -27,6 +27,10 @@ vector output, and correction options.
 The distribution and import names are both `ibist`; the GitHub repository
 remains `ibist/ibist-py`.
 
+See the [function reference](docs/api-reference.md) for R counterparts,
+shared result conventions, and access to complete help with `help()` or
+`python -m pydoc`.
+
 ## Installation
 
 After publication, install the first alpha from PyPI with:

@@ -25,6 +25,7 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
     conf_level : float, default 0.95
         Confidence level strictly between zero and one.
     method : str or sequence of str, default "wald"
+        Requested order and repetitions are retained.
         ``"wald"``: log-Wald interval, requiring positive cells.
         ``"gart"``: log-Wald interval after adding 0.5 to every cell.
         ``"cornfield"``: invert the two one-sided conditional tails.
@@ -36,7 +37,9 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
         table. This option does not change Wald or Gart intervals.
     side : {"two.sided", "lower", "upper"}, optional
         Interval form; omitted or None selects two-sided limits. One-sided
-        BP uses the same ordered conditional tail as Cornfield.
+        bounds use the full error probability. Lower bounds have upper
+        endpoint inf; upper bounds have lower endpoint 0. BP uses the same
+        one-sided conditional tail as Cornfield.
     alternative : {"two.sided", "less", "greater"}, optional
         Compatibility alias; greater selects lower, less selects upper.
         Conflicting side and alternative values are rejected.
@@ -50,6 +53,18 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
         Sample estimate and a confidence interval for each requested method.
         Gart uses the adjusted estimate to construct its limits, but the
         common reported estimate remains the unadjusted sample odds ratio.
+
+    Raises
+    ------
+    ValueError
+        If counts or options are invalid, a conditional method has an empty
+        margin, or a numerical interval cannot be bracketed.
+
+    See Also
+    --------
+    or_paired_ci : Conditional matched-pair odds-ratio intervals.
+    or_common_ci : Conditional common odds-ratio intervals across strata.
+    indep_test : Independence tests, including conditional Fisher inference.
 
     Notes
     -----

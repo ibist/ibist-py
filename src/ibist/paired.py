@@ -19,22 +19,69 @@ def or_paired_ci(x, *, conf_level=0.95, method="wald", side=None,
                  alternative=None) -> CIResult:
     """Estimate the conditional matched-pair odds ratio b/c.
 
-    x is a 2 by 2 table; b=x[0,1] and c=x[1,0] are discordant counts.
-    Methods are wald (default), wilson, clopper-pearson, midp, and blaker.
-    Request one name or a sequence; order and repetitions are retained.
-    Wald requires both discordant counts positive. Other methods transform
-    binomial intervals for b successes in b+c discordant pairs by p/(1-p).
-    With no discordant pairs, warn and return nan with [0, inf].
+    Parameters
+    ----------
+    x : array_like, shape (2, 2)
+        Nonnegative integer pair counts. Rows describe the first member,
+        columns the second, with the positive category first in both.
+        Thus b=x[0, 1] is positive only for the first member and c=x[1, 0]
+        only for the second. For matched case-control data, put cases in
+        rows, controls in columns, and exposure present first.
+    conf_level : float, default 0.95
+        Confidence level strictly between zero and one.
+    method : str or sequence of str, default "wald"
+        "wald", "wilson", "clopper-pearson", "midp", or "blaker".
+        Requested order and repetitions are retained. Wald requires both
+        discordant counts positive; the remaining methods permit zeros.
+    side : {"two.sided", "lower", "upper"}, optional
+        Omitted or None selects two-sided limits. One-sided bounds use the
+        full error probability. Lower bounds have upper endpoint inf;
+        upper bounds have lower endpoint 0.
+    alternative : {"two.sided", "greater", "less"}, optional
+        Compatibility alias: greater selects lower, less selects upper.
+        Conflicting side and alternative values raise an error.
 
-    conf_level defaults to 0.95. side is two.sided (default), lower, or upper;
-    omitted/None selects two-sided limits. alternative is the compatibility
-    alias (greater means lower, less means upper); conflicts raise an error.
-    One-sided Blaker bounds use inclusive binomial tails, matching R.
-    This estimates a conditional odds ratio, not a marginal odds ratio.
+    Returns
+    -------
+    CIResult
+        Unadjusted ratio b/c in estimate, one conf_int row per requested
+        method, method labels, side, conf_level, and null_value=1.
+        Summaries round display values only.
 
-    Returns CIResult with the unadjusted ratio estimate, interval rows,
-    side, conf_level, method labels, and null_value=1. Formatting preserves
-    full precision. Numerical definitions follow ibist-R or.paired.ci().
+    Raises
+    ------
+    ValueError
+        If counts or options are invalid, or Wald is requested with a
+        zero discordant count.
+
+    Warns
+    -----
+    RuntimeWarning
+        When no discordant pairs exist and a transformed method is used;
+        the odds ratio is unidentified.
+
+    See Also
+    --------
+    prop_paired_ci : Confidence intervals for a paired proportion difference.
+    prop_1s_ci : Binomial intervals underlying the transformed methods.
+
+    Notes
+    -----
+    Concordant pairs contain no information about this conditional OR.
+    Transposing the table or reversing both category orders reciprocates
+    b/c. Reversing just one category order changes the discordant pairs.
+    This is a conditional matched-pair OR, not a marginal OR or the
+    cross-product ratio of the pair-count table.
+
+    Wald uses exp(log(b/c) +/- z*sqrt(1/b+1/c)). Other methods transform
+    binomial limits for b successes in b+c discordant pairs by p/(1-p).
+    Clopper--Pearson and two-sided Blaker intervals have at least nominal
+    conditional coverage; Wald, Wilson, and mid-p lack that guarantee.
+    One-sided Blaker bounds use inclusive exact binomial tails, matching R.
+    With one nonzero discordant count, the estimate is zero or infinity.
+    With no discordant pairs, transformed methods warn and return nan with
+    [0, inf]; requesting Wald raises an error. Definitions follow R
+    or.paired.ci().
 
     References
     ----------
@@ -42,6 +89,17 @@ def or_paired_ci(x, *, conf_level=0.95, method="wald", side=None,
     2850--2875, doi:10.1002/sim.6148.
     Blaker (2000), Canadian Journal of Statistics 28, 783--798,
     doi:10.2307/3315916.
+
+    Examples
+    --------
+    >>> twins = [[51, 30], [10, 41]]
+    >>> or_paired_ci(twins).estimate
+    3.0
+    >>> result = or_paired_ci(twins, method=["wilson", "clopper-pearson"])
+    >>> result.methods
+    ('wilson', 'clopper-pearson')
+    >>> or_paired_ci([[8, 4], [0, 6]], method="wilson").estimate
+    inf
     """
     side, alternative = _ci_orientation(side, alternative)
     tab = _validate_table(x)
@@ -88,35 +146,89 @@ def or_paired_ci(x, *, conf_level=0.95, method="wald", side=None,
 def prop_paired_ci(b, c, n, *, conf_level=0.95, method="score", side=None,
                    alternative=None, tol=1e-8, precision=1e-5, grid_one=30,
                    grid_two=20) -> CIResult:
-    """Intervals for the paired proportion difference (b-c)/n.
+    """Calculate intervals for the paired proportion difference (b-c)/n.
 
-    b and c are nonnegative discordant counts favorable to groups 1 and 2;
-    n is the positive total number of matched pairs, with b+c <= n. Methods
-    are score (default, Tango), wald, waldcc, agresti-min, and wang. Request
-    one name or a sequence; order and repetitions are retained. Waldcc adds
-    1/n to the Wald margin; Agresti--Min uses b+0.5, c+0.5, and n+2.
+    Parameters
+    ----------
+    b : nonnegative integer
+        Discordant pairs positive only for group 1.
+    c : nonnegative integer
+        Discordant pairs positive only for group 2.
+    n : positive integer
+        Total number of pairs, including concordant pairs. Require b+c <= n
+        and each count <= 2**53-1.
+    conf_level : float, default 0.95
+        Confidence level strictly between zero and one.
+    method : str or sequence of str, default "score"
+        "score" (Tango), "wald", "waldcc", "agresti-min", or "wang".
+        Requested order and repetitions are retained.
+    side : {"two.sided", "lower", "upper"}, optional
+        Omitted or None selects two-sided limits. One-sided bounds use the
+        full error probability. Lower bounds have upper endpoint 1;
+        upper bounds have lower endpoint -1.
+    alternative : {"two.sided", "greater", "less"}, optional
+        Compatibility alias: greater selects lower, less selects upper.
+        Conflicting side and alternative values raise an error.
+    tol : positive finite float, default 1e-8
+        Root-finding tolerance for score limits.
+    precision : positive finite float, default 1e-5
+        Endpoint precision for Wang's method.
+    grid_one : integer >= 2, default 30
+        First nuisance-parameter search grid size for Wang's method.
+    grid_two : integer >= 2, default 20
+        Second nuisance-parameter search grid size for Wang's method.
 
-    conf_level defaults to 0.95. side is two.sided (default), lower, or upper;
-    None selects the default. alternative is a compatibility alias; greater
-    means lower and less means upper. Conflicting arguments are errors.
-    tol=1e-8 controls score roots. Wang uses precision=1e-5, grid_one=30,
-    and grid_two=20, matching R's numerical inductive-order construction.
-    Wang's finite nuisance grids approximate the supremum; the grid settings
-    do not certify exact nominal coverage. The method enumerates O(n^2)
+    Returns
+    -------
+    CIResult
+        Observed scalar difference (b-c)/n in estimate, one conf_int row per
+        requested method, method labels, side, conf_level, and null_value=0.
+        All limits are restricted to [-1, 1].
+
+    Raises
+    ------
+    ValueError
+        If counts or options are invalid, b+c exceeds n, or Wang
+        enumeration exceeds one million states.
+
+    See Also
+    --------
+    or_paired_ci : Confidence intervals for a conditional matched-pair OR.
+    prop_2s_ci : Confidence intervals for independent proportion differences.
+
+    Notes
+    -----
+    Wald uses the paired multinomial variance; Waldcc adds 1/n to its
+    margin. Agresti--Min computes a Wald interval using b+0.5, c+0.5, and
+    n+2 internally, retaining (b-c)/n as the reported estimate. Tango score
+    inversion fits the multinomial likelihood under a candidate difference.
+    Python's constrained fits are more accurate than R's current coarse
+    optimization, so score limits can differ slightly.
+
+    Wang uses the C++ core shared with R and its numerical inductive-order
+    construction. Finite nuisance grids approximate the supremum; their
+    settings do not certify exact nominal coverage. Enumeration uses O(n^2)
     states and can be expensive even for moderate n. At most one million
-    states can be enumerated. Wang rounds endpoints at its requested
-    precision, as R does; other methods keep full numerical precision.
-
-    Returns CIResult with the observed scalar difference, interval rows,
-    side, conf_level, method labels, and null_value=0. Limits are in [-1,1].
-    Score uses accurate constrained likelihood fits; R's existing fits use
-    a coarser optimization tolerance and can differ in the last few digits.
+    states are permitted. Wang rounds endpoints at precision, as R does;
+    other methods retain full numerical precision. Definitions follow R
+    prop.paired.ci().
 
     References
     ----------
     Tango (1998), Statistics in Medicine 17, 891--908.
     Agresti and Min (2005), Statistics in Medicine 24, 729--740.
     Wang (2012), Statistics & Probability Letters 82, 1623--1628.
+
+    Examples
+    --------
+    >>> result = prop_paired_ci(8, 25, 180)
+    >>> round(result.estimate, 4)
+    -0.0944
+    >>> prop_paired_ci(8, 25, 180, method=["waldcc", "agresti-min"]).methods
+    ('waldcc', 'agresti-min')
+    >>> result = prop_paired_ci(3, 0, 4, method="wang", precision=0.0001)
+    >>> result.conf_int.shape
+    (1, 2)
     """
     side, alternative = _ci_orientation(side, alternative)
     b, c, n = (_count(value, name) for value, name in
