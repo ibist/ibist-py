@@ -2,3 +2,5 @@ include AGENTS.md
 include CHANGELOG.md
 recursive-include docs *.md
 recursive-include tests *.py *.json
+recursive-include src/ibist/_native *.cpp *.h *.json
+recursive-include tools *.py
