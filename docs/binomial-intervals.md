@@ -1,7 +1,7 @@
 # Binomial proportion intervals
 
-`prop_1s_ci()` is available in the development checkout, after release
-0.1.0a1. It is a native Python implementation and does not require R.
+`prop_1s_ci()` and `prop_2s_ci()` are available in the development checkout,
+after release 0.1.0a1. Both are native Python implementations requiring no R.
 The authoritative [shared specification](https://github.com/ibist/ibist-R/blob/main/BINOMIAL_INTERVALS.md)
 defines the statistical methods; this guide documents the Python interface.
 
@@ -118,6 +118,82 @@ show counts and estimates alongside interval rows. Existing scalar odds-ratio
 summaries and their DataFrame layout are preserved; their `midp` metadata now
 also records the flag passed to `or_2x2_ci()`.
 
+## Differences of independent proportions
+
+```python
+ibist.prop_2s_ci(x, n=None, conf_level=0.95, method="newcombe", correct=False,
+                alternative="two.sided", tol=1e-8)
+```
+
+Provide two success counts `x` and two trial counts `n`. A scalar `n` is
+not recycled for this interface. Alternatively, provide a 2x2 table with
+independent samples in rows and successes/failures in columns, omitting `n`.
+The reported estimate is the first proportion minus the second. All-zero
+success or failure columns are valid; each sample must still have positive
+trials. Each trial count is restricted to `2**53-1`, as for `prop_1s_ci()`.
+
+All six implemented methods are **approximate**:
+
+| Method | Construction |
+| --- | --- |
+| `newcombe` (default) | Combine distances to separate Wilson bounds in quadrature |
+| `wald` | Normal interval using the unpooled binomial variance |
+| `agresti-caffo` | Wald after adding one success and one failure per sample |
+| `miettinen-nurminen` | Constrained score inversion with variance factor N/(N-1) |
+| `mee` | The same score inversion without the N/(N-1) factor |
+| `brown-li` | Adjusted proportions (x+0.5)/(n+1), normal margin using original n |
+
+Newcombe is a hybrid Wilson interval; it does not invert the pooled score
+statistic for testing equality. Correction uses corrected component Wilson
+bounds. Wald correction adds `1/(2*n1)+1/(2*n2)` to its margin. `correct=True`
+affects only Newcombe and Wald, including in a mixed method request; it is
+an error if neither method is selected. In particular, `correct` never
+switches between Mee and Miettinen--Nurminen. Their fixed variance factor
+is part of the method definition.
+
+Brown--Li uses the **original** sample sizes as variance denominators, not
+n+1 or posterior variances, and is not a posterior-quantile interval.
+Agresti--Caffo and Brown--Li use adjusted centers internally, while reporting
+the observed difference as their common point estimate.
+
+`alternative="greater"` gives a lower confidence bound with upper endpoint
+one; `alternative="less"` gives an upper bound with lower endpoint minus
+one. All limits are restricted to [-1,1]. Method sequences preserve order
+and repetitions. The return value is `CIResult`, with a scalar `estimate`,
+one interval per requested method, `alternative`, `correct`, and a
+`null_value` of zero for reference. It supplies no test statistic or p-value.
+
+`sample_proportions` is a fresh two-element NumPy array, and `samples` is a
+fresh DataFrame with `x` and `n`, indexed by sample 0 and 1 in comparison
+order. `to_frame()` retains its ordinary method index and lower/upper
+columns; its attributes record immutable sample counts and options.
+The sample metadata are distinct from `prop_1s_ci()`'s per-interval `inputs`.
+
+```python
+comparison = ibist.prop_2s_ci([12, 4], [40, 30],
+                             method=["newcombe", "miettinen-nurminen", "mee"])
+print(comparison)
+print(comparison.sample_proportions)
+print(comparison.samples)
+
+# Equivalent orientation: independent groups in rows, events first.
+comparison = ibist.prop_2s_ci([[12, 28], [4, 26]], method="mee")
+```
+
+Score inversion maximizes the constrained binomial likelihood with
+`p1-p2=delta`. Python solves the nuisance equation on a logit scale and
+constructs success/failure probabilities separately, preserving tiny failure
+probabilities when a success probability rounds to one. The outer inversion
+uses a logit-scaled distance from the observed difference to a parameter
+boundary. `tol` applies on that transformed scale, yielding good relative
+accuracy for narrow intervals; floating-point precision still limits the
+attainable endpoint accuracy. Independent likelihood maximization and
+closed-form zero-event limits check this construction.
+
+Chan--Zhang exact intervals remain available only in R. Python explicitly
+rejects `method="chan-zhang"`; it never substitutes an approximate method.
+There is no mid-p option for the approximate difference intervals.
+
 ## Validation
 
 Independent checks include:
@@ -150,6 +226,21 @@ inversion precision and Python's outward Blaker rounding. Closed-form and
 independent defining-equation checks use tighter method-specific tolerances.
 No R installation or DescTools dependency is needed to run the Python tests.
 
+For `prop_2s_ci()`, independent checks cover direct Wald, Agresti--Caffo,
+and Brown--Li formulas, Newcombe using independently obtained SciPy Wilson
+bounds, and Mee/Miettinen--Nurminen score equations evaluated using a
+separate constrained likelihood optimizer. Analytic zero-event limits check
+the variance factor and remain accurate for trillion-trial examples.
+Boundary counts, row reversal, success/failure complementation, confidence
+levels below 50%, correction flags, and copied group metadata are also tested.
+
+The additional 255 R comparisons are in `tests/reference/prop_2s_r.json`.
+Regenerate with `Rscript data-raw/export-python-prop-2s-reference.R` in the R
+repository. They use absolute endpoint tolerance `2e-8` for the numerically
+inverted score methods. Formula-based comparisons use tighter tolerances.
+These comparisons supplement the defining-equation checks rather than
+establishing correctness on their own.
+
 ## References
 
 - Wilson, E. B. (1927). Probable inference, the law of succession, and
@@ -166,3 +257,17 @@ No R installation or DescTools dependency is needed to run the Python tests.
   a binomial proportion. *Statistical Science*, 16, 101--133.
 - SAS Institute Inc. (2016). *SAS/STAT 14.2 User's Guide*. FREQ procedure.
   https://support.sas.com/documentation/onlinedoc/stat/142/freq.pdf
+
+- Newcombe, R. G. (1998). Interval estimation for the difference between
+  independent proportions: comparison of eleven methods.
+  *Statistics in Medicine*, 17, 873--890.
+- Miettinen, O., and Nurminen, M. (1985). Comparative analysis of two rates.
+  *Statistics in Medicine*, 4, 213--226.
+- Mee, R. W. (1984). Confidence bounds for the difference between two
+  probabilities. *Biometrics*, 40, 1175--1176.
+- Agresti, A., and Caffo, B. (2000). Simple and effective confidence intervals
+  for proportions and differences of proportions result from adding two
+  successes and two failures. *The American Statistician*, 54, 280--288.
+- Brown, L., and Li, X. (2005). Confidence intervals for two sample binomial
+  distribution. *Journal of Statistical Planning and Inference*, 130,
+  359--375. https://doi.org/10.1016/j.jspi.2003.09.039

@@ -32,8 +32,11 @@ implements contingency-table independence, nominal association, and odds-ratio
 homogeneity tests; see [contingency-table methods](contingency-tables.md).
 `prop_1s_ci()` now implements the one-proportion interval family, including
 vector inputs and multiple methods; see [binomial intervals](binomial-intervals.md).
-Independent-proportion differences and risk-ratio intervals remain pending
-in Python.
+`prop_2s_ci()` now provides six approximate independent-proportion interval
+methods, including score inversion and one-sided bounds. Chan--Zhang exact
+intervals and risk-ratio intervals remain pending in Python. Complete risk
+ratios and basic one- and two-sample rate methods before the more expensive
+Chan--Zhang port.
 
 ## Subsequent stages
 

@@ -24,7 +24,9 @@ class CIResult:
     method; ``inputs`` records each row's zero-based input index, x, and n.
     ``to_frame`` uses a (input, method) MultiIndex for vector inputs and the
     existing method index for scalar inputs. Formatting never modifies stored
-    values. Returned interval arrays, DataFrames, and input tables are copies.
+    values. Two-sample differences have a scalar estimate and expose group
+    counts through ``samples`` and ``sample_proportions``. Returned interval
+    arrays, DataFrames, input tables, and sample proportions are copies.
     """
 
     estimate: float | np.ndarray
@@ -36,6 +38,23 @@ class CIResult:
     correct: bool = False
     midp: bool = False
     _input_data: tuple[tuple[int, int, int], ...] = ()
+    _sample_counts: tuple[tuple[int, int], ...] = ()
+
+    @property
+    def sample_proportions(self) -> np.ndarray | None:
+        """Fresh group proportions for an independent two-sample result."""
+        if not self._sample_counts:
+            return None
+        return np.array([x / n for x, n in self._sample_counts])
+
+    @property
+    def samples(self) -> pd.DataFrame | None:
+        """Fresh group counts and trial sizes, in the reported comparison order."""
+        if not self._sample_counts:
+            return None
+        frame = pd.DataFrame(self._sample_counts, columns=["x", "n"])
+        frame.index.name = "sample"
+        return frame
 
     @property
     def inputs(self) -> pd.DataFrame | None:
@@ -70,6 +89,9 @@ class CIResult:
         if self._input_data:
             frame.attrs.update(alternative=self.alternative, correct=self.correct,
                                midp=self.midp, inputs=self._input_data)
+        if self._sample_counts:
+            frame.attrs.update(alternative=self.alternative, correct=self.correct,
+                               samples=self._sample_counts)
         return frame
 
     def summary(self, digits: int = 3) -> str:
@@ -89,6 +111,10 @@ class CIResult:
         if self._input_data and np.ndim(self.estimate) == 0:
             _, count, size = self._input_data[0]
             headers.append(f"Data: x={count}, n={size}")
+        if self._sample_counts:
+            counts = tuple(x for x, _ in self._sample_counts)
+            trials = tuple(n for _, n in self._sample_counts)
+            headers.append(f"Data: x={counts}, n={trials}")
         if self.alternative != "two.sided":
             bound = "lower" if self.alternative == "greater" else "upper"
             headers.append(f"Bound: {bound}")

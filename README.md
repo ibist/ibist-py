@@ -11,7 +11,8 @@ The released alpha includes all seven teaching datasets and
 including exact and mid-p conditional options. This is an early alpha;
 public interfaces may change during development.
 The development checkout additionally provides `prop_1s_ci()` for scalar
-and vector binomial counts, plus `indep_test()`, `nominal_assoc()`, and
+and vector binomial counts, `prop_2s_ci()` for independent-proportion
+differences, plus `indep_test()`, `nominal_assoc()`, and
 `or_homogeneity_test()` for contingency tables.
 These additions are unreleased; use the editable development installation
 below to try them. See [contingency-table methods](docs/contingency-tables.md)
@@ -68,6 +69,8 @@ The development checkout also supports:
 result = ibist.prop_1s_ci(5, 40, method=["wilson", "clopper-pearson", "blaker"])
 print(result)
 print(ibist.prop_1s_ci([0, 5, 40], 40, method=["wilson", "wald"]).to_frame())
+print(ibist.prop_2s_ci([9, 3], [10, 10],
+                       method=["newcombe", "mee", "brown-li"]))
 
 table = [[109, 68, 14], [72, 79, 37], [9, 42, 139]]
 print(ibist.indep_test(table, method="lr"))

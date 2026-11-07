@@ -1,0 +1,6281 @@
+{
+  "source": "R source in ibist-R; independently checked in Python tests",
+  "r_revision": "b5451e708b4ddab3f4475d975a6b3969f03b3084",
+  "source_md5": {
+    "R/ci.R": "f07f2da728454c635f7953745b52eeb3",
+    "R/prop_1s_ci.R": "857232afb875ce5d10fb8cfbd1277e7c",
+    "R/prop_2s_ci.R": "cb37d9b854b716895ce19732174536ef"
+  },
+  "cases": [
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.0109031738498782, 0.0216272788560506],
+        [0.0109920056283847, 0.0217117124204467],
+        [0.0109095146530299, 0.0216345215479583],
+        [0.0109096466498963, 0.0216343971750237],
+        [0.0108817278413232, 0.021608492009745],
+        [0.0109364489819846, 0.0216604936129018]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.0108049401458266, 0.0217205348809356],
+        [0.0108667153759244, 0.0218370026729069]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [-1, 0.0198350354581091],
+        [-1, 0.0198717848301484],
+        [-1, 0.0198381431743772],
+        [-1, 0.0198380607049618],
+        [-1, 0.0197673530932667],
+        [-1, 0.0198198214771093]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [-1, 0.0199291786366328],
+        [-1, 0.0199970750826086]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.0127939375906268, 1],
+        [0.012831933218683, 1],
+        [0.0127966941331405, 1],
+        [0.0127967798919964, 1],
+        [0.0127228667578015, 1],
+        [0.0127771211177772, 1]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.0126965240654357, 1],
+        [0.0127066429662227, 1]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.00794430117125538, 0.0243543948769104],
+        [0.00815467063100815, 0.0245490474178232],
+        [0.0079587998711013, 0.0243715912012067],
+        [0.0079590051899659, 0.0243714036996173],
+        [0.00804252486926006, 0.0244476949818082],
+        [0.00809796582801804, 0.0244989767668684]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.00784479027014347, 0.0244463034837077],
+        [0.00802938037854791, 0.0246743376702834]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [-1, 0.0230931314015734],
+        [-1, 0.0232311563819459],
+        [-1, 0.0231051517233728],
+        [-1, 0.0231049933272956],
+        [-1, 0.0231289363053114],
+        [-1, 0.0231805524329212]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [-1, 0.0231856642532819],
+        [-1, 0.0233564466344062]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.00932524200076104, 1],
+        [0.00947256166688542, 1],
+        [0.0093355708226223, 1],
+        [0.00933574177284702, 1],
+        [0.00936128354575678, 1],
+        [0.00941639016196522, 1]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.0092263244535723, 1],
+        [0.00934727141442517, 1]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.00521160211103296, 0.0267930949329145],
+        [0.00557892735985501, 0.0271247906889763],
+        [0.00523602326727977, 0.0268232521238239],
+        [0.00523629737606338, 0.026823008754021],
+        [0.00546508584373384, 0.0270251340073344],
+        [0.00552118025603901, 0.0270757623388475]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.0051109362905142, 0.0268837881253941],
+        [0.00545363710739477, 0.0272500809414366]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [-1, 0.0258093321496305],
+        [-1, 0.0260813805577366],
+        [-1, 0.0258337764526695],
+        [-1, 0.0258335555586503],
+        [-1, 0.0259810369414483],
+        [-1, 0.0260319299810396]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [-1, 0.0259005170793602],
+        [-1, 0.0262066708101968]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.00632402697667443, 1],
+        [0.00662233749109479, 1],
+        [0.0063441569149294, 1],
+        [0.00634440289507349, 1],
+        [0.00650918290961993, 1],
+        [0.00656501261384683, 1]
+      ]
+    },
+    {
+      "x": [1366, 383],
+      "n": [15571, 5366],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.0163518590244157,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.0877271851518849, 0.0713753261274692],
+      "conf_int": [
+        [0.00622382795981208, 1],
+        [0.00649704723863455, 1]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [0.0460596904904369, 0.174762471577291],
+        [0.0438554759340547, 0.173461597236677],
+        [0.0459918196452513, 0.17483612161471],
+        [0.0460195769670988, 0.174805183880166],
+        [0.0462650680529428, 0.174830266632655],
+        [0.0447741431100288, 0.174454886391906]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [0.0413523578460594, 0.179785110619049],
+        [0.0383473458527539, 0.178969727317978]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [-1, 0.151850966635579],
+        [-1, 0.151216037439013],
+        [-1, 0.151883465134457],
+        [-1, 0.15186328308591],
+        [-1, 0.152763370531154],
+        [-1, 0.152196518497795]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [-1, 0.156869725508044],
+        [-1, 0.156724167520314]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [0.0669935203128262, 1],
+        [0.066101035731719, 1],
+        [0.0669634682899113, 1],
+        [0.0669822500899198, 1],
+        [0.0683319641544443, 1],
+        [0.0670325110041398, 1]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [0.0621845731709951, 1],
+        [0.0605929056504181, 1]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [0.0151435338717691, 0.210176991312497],
+        [0.00955080781398368, 0.207766265356748],
+        [0.0149605634681932, 0.210374081579857],
+        [0.0150007986594865, 0.210326756254023],
+        [0.0122359155349834, 0.208859419150615],
+        [0.0104497237451316, 0.208779305756803]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [0.0106181585153016, 0.215169281006913],
+        [0.00404267773268287, 0.213274395438049]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [-1, 0.193737993100429],
+        [-1, 0.191832364479344],
+        [-1, 0.193867085354402],
+        [-1, 0.193827312479866],
+        [-1, 0.193053490311269],
+        [-1, 0.192836230781689]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [-1, 0.198749923360009],
+        [-1, 0.197340494560645]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [0.029286068339536, 1],
+        [0.0254847086913874, 1],
+        [0.0291667061459034, 1],
+        [0.029201360520373, 1],
+        [0.0280418443743292, 1],
+        [0.026392798720246, 1]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [0.0246725776931258, 1],
+        [0.0199765786100866, 1]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [-0.0113402806651329, 0.242073268445516],
+        [-0.0215910975870756, 0.238908170757807],
+        [-0.0117100151583554, 0.242468589292656],
+        [-0.0116599815353727, 0.242407021979907],
+        [-0.0186558757770124, 0.239751210462611],
+        [-0.0207101119094948, 0.23993914141143]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [-0.0156781671619076, 0.24700037389736],
+        [-0.0270992276683764, 0.244416300839108]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [-1, 0.229204268599833],
+        [-1, 0.226292868617455],
+        [-1, 0.229507926603177],
+        [-1, 0.22945202834367],
+        [-1, 0.227237227260919],
+        [-1, 0.227316575888722]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [-1, 0.234161926044767],
+        [-1, 0.231800998698756]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [-0.000800859690479799, 1],
+        [-0.00897579544672335, 1],
+        [-0.00108406523868687, 1],
+        [-0.00103782335513926, 1],
+        [-0.00614189257532045, 1],
+        [-0.00808754638678717, 1]
+      ]
+    },
+    {
+      "x": [38, 267],
+      "n": [100, 984],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.108658536585366,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.38, 0.271341463414634],
+      "conf_int": [
+        [-0.00521687798170108, 1],
+        [-0.0144839255280242, 1]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [0.104305939763775, 0.289665594654128],
+        [0.106827461617443, 0.293172538382557],
+        [0.104677620703311, 0.291507083745792],
+        [0.105001799079744, 0.291208530326358],
+        [0.101483926862959, 0.286727455250862],
+        [0.103493317898178, 0.290525113678939]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [0.0946125554728411, 0.298419307713463],
+        [0.093434604474586, 0.306565395525414]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [-1, 0.259732808102966],
+        [-1, 0.261188319531508],
+        [-1, 0.260556362304082],
+        [-1, 0.260357044860359],
+        [-1, 0.254932305866972],
+        [-1, 0.258423026560765]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [-1, 0.268746440886289],
+        [-1, 0.274581176674365]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [0.137634276737925, 1],
+        [0.138811680468492, 1],
+        [0.137805774891777, 1],
+        [0.138016052657304, 1],
+        [0.133279076246849, 1],
+        [0.135595405016352, 1]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [0.127986132130192, 1],
+        [0.125418823325635, 1]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [0.052431472402365, 0.333872654036906],
+        [0.0575048991490372, 0.342495100850963],
+        [0.0528297132453852, 0.338172939857949],
+        [0.0533338492908776, 0.337729463582115],
+        [0.0524529266380537, 0.335758455475767],
+        [0.0539889918858376, 0.34002943969128]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [0.0427678720028899, 0.34218627843818],
+        [0.04411204200618, 0.35588795799382]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [-1, 0.313644583582944],
+        [-1, 0.319585658362251],
+        [-1, 0.316667210319591],
+        [-1, 0.31628970931941],
+        [-1, 0.312984438401208],
+        [-1, 0.317035571308049]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [-1, 0.322167615190441],
+        [-1, 0.332978515505108]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [0.0765641915440721, 1],
+        [0.0804143416377496, 1],
+        [0.0770199422719287, 1],
+        [0.0774399529211826, 1],
+        [0.0752269437126134, 1],
+        [0.0769828602690678, 1]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [0.0668714912518743, 1],
+        [0.0670214844948925, 1]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [0.00537086925007857, 0.371808431775774],
+        [0.012729693362095, 0.387270306637905],
+        [0.00510303600664182, 0.379265147364118],
+        [0.00577283138179116, 0.378700488341987],
+        [0.00794240214095351, 0.380268979972868],
+        [0.00904878047718971, 0.384969651099927]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [-0.00416126433470068, 0.379695419114883],
+        [-0.000663163780762116, 0.400663163780762]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [-1, 0.356700956777256],
+        [-1, 0.369132278725859],
+        [-1, 0.362776897148044],
+        [-1, 0.362259999358493],
+        [-1, 0.362238172039793],
+        [-1, 0.366764780913914]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [-1, 0.364762929272792],
+        [-1, 0.382525135868716]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [0.0243925204398442, 1],
+        [0.0308677212741415, 1],
+        [0.0244984809843044, 1],
+        [0.0251011219338946, 1],
+        [0.0259732100740278, 1],
+        [0.0272536506632033, 1]
+      ]
+    },
+    {
+      "x": [56, 48],
+      "n": [70, 80],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.2,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.8, 0.6],
+      "conf_int": [
+        [0.0147955507196402, 1],
+        [0.0174748641312843, 1]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.327338765228273, 0.761917753073872],
+        [0.378028757595732, 0.821971242404268],
+        [0.333117201046076, 0.780640591189429],
+        [0.340679840841089, 0.777212417395937],
+        [0.277686473286934, 0.722313526713066],
+        [0.3109933840449, 0.779915706864191]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.250742355323308, 0.802321872972152],
+        [0.278028757595732, 0.921971242404269]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [-1, 0.71891147750586],
+        [-1, 0.745773073727708],
+        [-1, 0.729281836807958],
+        [-1, 0.726517710902714],
+        [-1, 0.645997858863123],
+        [-1, 0.699430005510785]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [-1, 0.768335197258776],
+        [-1, 0.845773073727708]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.429562987928343, 1],
+        [0.454226926272292, 1],
+        [0.432624338412104, 1],
+        [0.437261249835156, 1],
+        [0.354002141136877, 1],
+        [0.391479085398306, 1]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.351677048304497, 1],
+        [0.354226926272292, 1]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.170522723934503, 0.809017973535488],
+        [0.260524279777149, 0.939475720222851],
+        [0.170025016421262, 0.840649543942914],
+        [0.182126499452643, 0.836950330889022],
+        [0.1600008011004, 0.8399991988996],
+        [0.186877142491399, 0.904031948417692]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.101287225885701, 0.838668969768061],
+        [0.160524279777149, 1]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [-1, 0.789623507372129],
+        [-1, 0.884897005289389],
+        [-1, 0.815406555127663],
+        [-1, 0.811743801089802],
+        [-1, 0.785336322443619],
+        [-1, 0.846382188237319]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [-1, 0.823827321339351],
+        [-1, 0.984897005289389]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.242112400884945, 1],
+        [0.315102994710611, 1],
+        [0.246642038872937, 1],
+        [0.25669242404935, 1],
+        [0.214663677556381, 1],
+        [0.244526902671771, 1]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.168860924704591, 1],
+        [0.215102994710611, 1]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.0430269666153446, 0.837405067894736],
+        [0.153853277462855, 1],
+        [0.0218091155809345, 0.879161594639316],
+        [0.037174680093626, 0.875666063504415],
+        [0.0531653098644772, 0.946834690135523],
+        [0.0742039564496225, 1]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [-0.0170095386178983, 0.860017935643789],
+        [0.0538532774628551, 1]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [-1, 0.827207027790581],
+        [-1, 1],
+        [-1, 0.865093732101446],
+        [-1, 0.861484197156175],
+        [-1, 0.903556606026762],
+        [-1, 0.97106225337279]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [-1, 0.852404068360684],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.0923459789243589, 1],
+        [0.197064728608142, 1],
+        [0.0811246807687526, 1],
+        [0.0953140375268747, 1],
+        [0.0964433939732383, 1],
+        [0.1198468375363, 1]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.6,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.0284836040651626, 1],
+        [0.0970647286081422, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.839815086024558, 1],
+        [1, 1],
+        [0.8547733266409, 1],
+        [0.858931317905539, 1],
+        [0.754190658357138, 0.988233584067105],
+        [0.835685103447962, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.753329536740805, 1],
+        [0.925, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 0.948062519253393],
+        [-1, 0.993157761167882]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.925532331488583, 1],
+        [1, 1],
+        [0.931727539185698, 1],
+        [0.933852753369456, 1],
+        [0.794361723170849, 1],
+        [0.86831410030398, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.83860622472393, 1],
+        [0.925, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.679086037141915, 1],
+        [1, 1],
+        [0.715618660465121, 1],
+        [0.722467200136521, 1],
+        [0.692243237883191, 1],
+        [0.785368234894532, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.601393128100169, 1],
+        [0.925, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.755985916743429, 1],
+        [1, 1],
+        [0.781320925872566, 1],
+        [0.787058029914572, 1],
+        [0.721016699675267, 1],
+        [0.808739514662798, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.673508539276601, 1],
+        [0.925, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.529746782464329, 1],
+        [1, 1],
+        [0.59299016216133, 1],
+        [0.601145904869945, 1],
+        [0.636007139009214, 1],
+        [0.739690394342807, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.462540593678701, 1],
+        [0.925, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.589315682885749, 1],
+        [1, 1],
+        [0.64108681219768, 1],
+        [0.648849500282676, 1],
+        [0.658787870289254, 1],
+        [0.758194071374054, 1]
+      ]
+    },
+    {
+      "x": [10, 0],
+      "n": [10, 20],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.517814564631004, 1],
+        [0.925, 1]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [0.0373474017855621, 0.283005213067301],
+        [0.044402000421813, 0.28893133291152],
+        [0.0378038463729159, 0.28734219184205],
+        [0.0387796246997259, 0.286489443110206],
+        [0.0302954882610933, 0.276252130786526],
+        [0.0352379064086232, 0.284195610507191]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [0.0154118656523492, 0.300323501218922],
+        [0.0152353337551463, 0.318097999578187]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-1, 0.244275977453419],
+        [-1, 0.24696038405887],
+        [-1, 0.246332589813214],
+        [-1, 0.245767747950238],
+        [-1, 0.234036198823276],
+        [-1, 0.241464577142783]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-1, 0.262685226628541],
+        [-1, 0.276127050725537]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [0.0832985265665729, 1],
+        [0.0863729492744629, 1],
+        [0.0835924398619788, 1],
+        [0.0842074849399335, 1],
+        [0.0725114202243433, 1],
+        [0.0779689397730314, 1]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [0.0615973050292535, 1],
+        [0.0572062826077963, 1]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-0.0356860458982346, 0.340581843392941],
+        [-0.0203210042663321, 0.353654337599665],
+        [-0.0365079884060862, 0.34975954194935],
+        [-0.0349275290731218, 0.348480531814422],
+        [-0.0348053025731681, 0.341352921620787],
+        [-0.030657217442008, 0.350090734357822]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-0.0573858430462547, 0.356349100180136],
+        [-0.0494876709329988, 0.382821004266332]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-1, 0.314162730274317],
+        [-1, 0.32359166689902],
+        [-1, 0.320919764869731],
+        [-1, 0.319834913848003],
+        [-1, 0.311114776055204],
+        [-1, 0.319483635403675]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-1, 0.330630076885758],
+        [-1, 0.352758333565686]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-0.00154222904438359, 1],
+        [0.00974166643431373, 1],
+        [-0.00145760757571616, 1],
+        [-0.000163189589217433, 1],
+        [-0.00456715700758537, 1],
+        [-5.01184878606842e-05, 1]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-0.0234422729948332, 1],
+        [-0.0194250002323529, 1]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-0.102436087534404, 0.39043583415707],
+        [-0.0790767888206575, 0.412410122153991],
+        [-0.106967199646807, 0.404988706041637],
+        [-0.104830808667792, 0.403360561088724],
+        [-0.0939040427970544, 0.400451661844673],
+        [-0.090477056134655, 0.409910573050469]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-0.123339364482686, 0.404926265889275],
+        [-0.108243455487324, 0.441576788820657]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-1, 0.370543234417844],
+        [-1, 0.388608689161999],
+        [-1, 0.38283302151114],
+        [-1, 0.381340551026832],
+        [-1, 0.376511300635653],
+        [-1, 0.385678101421768]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-1, 0.385537585542895],
+        [-1, 0.417775355828666]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-0.075490310324117, 1],
+        [-0.0552753558286658, 1],
+        [-0.0781948786514952, 1],
+        [-0.0762804673950186, 1],
+        [-0.0699636815880336, 1],
+        [-0.0662445845059535, 1]
+      ]
+    },
+    {
+      "x": [12, 4],
+      "n": [40, 30],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.166666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.3, 0.133333333333333],
+      "conf_int": [
+        [-0.096774783760531, 1],
+        [-0.0844420224953325, 1]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.247257127120675, 0.353778964874124],
+        [0, 0],
+        [-0.27293871091632, 0.384867662260816],
+        [-0.24725712747477, 0.353778964875778],
+        [-0.227963373744708, 0.342249088030422],
+        [-0.249829585844814, 0.333162919178148]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.377885853803232, 0.535675812625422],
+        [-0.266666666666667, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-1, 0.19100970177512],
+        [-1, 0],
+        [-1, 0.212498339571629],
+        [-1, 0.191009701775182],
+        [-1, 0.244377974472645],
+        [-1, 0.233098242435013]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-1, 0.405216473159258],
+        [-1, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.12408651213604, 1],
+        [0, 1],
+        [-0.139343073964036, 1],
+        [-0.124086509794035, 1],
+        [-0.130092260186931, 1],
+        [-0.14976490910168, 1]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.266388106263571, 1],
+        [-0.266666666666667, 1]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.434482464783175, 0.561497031755045],
+        [0, 0],
+        [-0.467532169823168, 0.594059117857276],
+        [-0.434482464977532, 0.561497031756431],
+        [-0.378889495617076, 0.49317520990279],
+        [-0.40413838083301, 0.487471714166343]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.537056017467523, 0.690011893558043],
+        [-0.266666666666667, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-1, 0.474195574157513],
+        [-1, 0],
+        [-1, 0.507554900780622],
+        [-1, 0.47419557415767],
+        [-1, 0.423072742876787],
+        [-1, 0.415798056364216]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-1, 0.626137068920875],
+        [-1, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.351116500765101, 1],
+        [0, 1],
+        [-0.382109575576662, 1],
+        [-0.351116500767108, 1],
+        [-0.308787028591073, 1],
+        [-0.332464723030883, 1]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.466998432358628, 1],
+        [-0.266666666666667, 1]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.570258321027009, 0.688631842745253],
+        [0, 0],
+        [-0.602630238251826, 0.716519512786913],
+        [-0.570258321034271, 0.688631842744725],
+        [-0.515900790798447, 0.630186505084162],
+        [-0.544220479259208, 0.627553812592541]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.649591084514388, 0.781351803117915],
+        [-0.266666666666667, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-1, 0.643362143380587],
+        [-1, 0],
+        [-1, 0.673381301941542],
+        [-1, 0.643362143323566],
+        [-1, 0.574684477732451],
+        [-1, 0.570807830824806]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-1, 0.749015253509544],
+        [-1, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.51977999459089, 1],
+        [0, 1],
+        [-0.552973618871814, 1],
+        [-0.519779995800498, 1],
+        [-0.460398763446736, 1],
+        [-0.487474497491472, 1]
+      ]
+    },
+    {
+      "x": [0, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 0],
+      "conf_int": [
+        [-0.607924661498217, 1],
+        [-0.266666666666667, 1]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.568380210255165],
+        [-1, -1],
+        [-1, -0.615132337888207],
+        [-1, -0.646221032975757],
+        [-0.942249088030422, -0.372036626255292],
+        [-1, -0.500170414155186]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.344449624562304],
+        [-1, -0.733333333333333]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.772223423797995],
+        [-1, -1],
+        [-1, -0.787501661432352],
+        [-1, -0.808990298216464],
+        [-1, -0.469907739813069],
+        [-1, -0.60023509089832]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.515063908047339],
+        [-1, -0.733333333333333]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-0.844377974472645, 1],
+        [-0.983098242435013, 1]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.29003244519641],
+        [-1, -1],
+        [-1, -0.291339129863444],
+        [-1, -0.351184870209737],
+        [-1, -0.221110504382924],
+        [-1, -0.34586161916699]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.125617029471849],
+        [-1, -0.733333333333333]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.40996250995373],
+        [-1, -1],
+        [-1, -0.442474608879741],
+        [-1, -0.494552804565687],
+        [-1, -0.291212971408927],
+        [-1, -0.417535276969117]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.218888506740401],
+        [-1, -0.733333333333333]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.105903602767987],
+        [-1, -1],
+        [-1, -0.0267771292128098],
+        [-1, -0.0932772834514598],
+        [-1, -0.0840992092015524],
+        [-1, -0.205779520740792]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 0.0161098451034691],
+        [-1, -0.733333333333333]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.172905029448149],
+        [-1, -1],
+        [-1, -0.127950295881041],
+        [-1, -0.192970917139986],
+        [-1, -0.139601236553263],
+        [-1, -0.262525502508527]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.0353258352958298],
+        [-1, -0.733333333333333]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [0, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.568380210255165, 1],
+        [1, 1],
+        [0.615132337888207, 1],
+        [0.646221032975757, 1],
+        [0.372036626255292, 0.942249088030422],
+        [0.500170414155186, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.344449624562304, 1],
+        [0.733333333333333, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 0.844377974472645],
+        [-1, 0.983098242435013]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.772223423797995, 1],
+        [1, 1],
+        [0.787501661432352, 1],
+        [0.808990298216464, 1],
+        [0.46990773981307, 1],
+        [0.60023509089832, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.515063908047339, 1],
+        [0.733333333333333, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.29003244519641, 1],
+        [1, 1],
+        [0.291339129863444, 1],
+        [0.351184870209737, 1],
+        [0.221110504382924, 1],
+        [0.34586161916699, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.125617029471849, 1],
+        [0.733333333333333, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.40996250995373, 1],
+        [1, 1],
+        [0.442474608879741, 1],
+        [0.494552804565687, 1],
+        [0.291212971408927, 1],
+        [0.417535276969117, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.218888506740401, 1],
+        [0.733333333333333, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.105903602767987, 1],
+        [1, 1],
+        [0.0267771292128098, 1],
+        [0.0932772834514598, 1],
+        [0.0840992092015527, 1],
+        [0.205779520740792, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-0.0161098451034689, 1],
+        [0.733333333333333, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.172905029448149, 1],
+        [1, 1],
+        [0.127950295881041, 1],
+        [0.192970917139986, 1],
+        [0.139601236553264, 1],
+        [0.262525502508527, 1]
+      ]
+    },
+    {
+      "x": [3, 0],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 0],
+      "conf_int": [
+        [0.0353258352958297, 1],
+        [0.733333333333333, 1]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.353778964874124, 0.247257127120675],
+        [0, 0],
+        [-0.384867662260816, 0.27293871091632],
+        [-0.353778964875778, 0.24725712747477],
+        [-0.342249088030422, 0.227963373744708],
+        [-0.333162919178148, 0.249829585844814]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.535675812625422, 0.377885853803232],
+        [-0.266666666666667, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-1, 0.12408651213604],
+        [-1, 0],
+        [-1, 0.139343073964036],
+        [-1, 0.124086509794035],
+        [-1, 0.130092260186931],
+        [-1, 0.14976490910168]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-1, 0.266388106263571],
+        [-1, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.19100970177512, 1],
+        [0, 1],
+        [-0.212498339571629, 1],
+        [-0.191009701775182, 1],
+        [-0.244377974472645, 1],
+        [-0.233098242435013, 1]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.405216473159258, 1],
+        [-0.266666666666667, 1]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.561497031755045, 0.434482464783175],
+        [0, 0],
+        [-0.594059117857276, 0.467532169823168],
+        [-0.561497031756431, 0.434482464977532],
+        [-0.49317520990279, 0.378889495617076],
+        [-0.487471714166343, 0.40413838083301]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.690011893558043, 0.537056017467523],
+        [-0.266666666666667, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-1, 0.351116500765101],
+        [-1, 0],
+        [-1, 0.382109575576663],
+        [-1, 0.351116500767108],
+        [-1, 0.308787028591073],
+        [-1, 0.332464723030883]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-1, 0.466998432358628],
+        [-1, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.474195574157513, 1],
+        [0, 1],
+        [-0.507554900780622, 1],
+        [-0.47419557415767, 1],
+        [-0.423072742876787, 1],
+        [-0.415798056364216, 1]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.626137068920875, 1],
+        [-0.266666666666667, 1]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.688631842745253, 0.570258321027009],
+        [0, 0],
+        [-0.716519512786913, 0.602630238251826],
+        [-0.688631842744725, 0.570258321034271],
+        [-0.630186505084162, 0.515900790798448],
+        [-0.627553812592541, 0.544220479259208]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.781351803117915, 0.649591084514388],
+        [-0.266666666666667, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-1, 0.51977999459089],
+        [-1, 0],
+        [-1, 0.552973618871814],
+        [-1, 0.519779995800498],
+        [-1, 0.460398763446736],
+        [-1, 0.487474497491473]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-1, 0.607924661498217],
+        [-1, 0.266666666666667]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.643362143380587, 1],
+        [0, 1],
+        [-0.673381301941542, 1],
+        [-0.643362143323566, 1],
+        [-0.574684477732451, 1],
+        [-0.570807830824806, 1]
+      ]
+    },
+    {
+      "x": [3, 5],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [1, 1],
+      "conf_int": [
+        [-0.749015253509544, 1],
+        [-0.266666666666667, 1]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.50539783232191, 0.232509520076227],
+        [-0.550722055473697, 0.28405538880703],
+        [-0.553531076796952, 0.277905007913181],
+        [-0.531570984889469, 0.253282607701543],
+        [-0.470258477200786, 0.241687048629357],
+        [-0.560774645604466, 0.310774645604466]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.631111981083173, 0.352768551982156],
+        [-0.817388722140364, 0.550722055473697]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-1, 0.120981598748835],
+        [-1, 0.14077441281726],
+        [-1, 0.143389144771398],
+        [-1, 0.126276882244312],
+        [-1, 0.119488910081919],
+        [-1, 0.161182159699188]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-1, 0.266966161335311],
+        [-1, 0.407441079483927]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.397003094079132, 1],
+        [-0.407441079483927, 1],
+        [-0.425557093703096, 1],
+        [-0.407956425814869, 1],
+        [-0.348060338653348, 1],
+        [-0.411182159699188, 1]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.553214296603288, 1],
+        [-0.674107746150594, 1]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.620683340111715, 0.370718837670667],
+        [-0.771674298256323, 0.505007631589656],
+        [-0.697147860833844, 0.460052595745821],
+        [-0.67490989489898, 0.429173540145519],
+        [-0.658699075049913, 0.430127646478484],
+        [-0.791459808347629, 0.541459808347629]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.706865758985956, 0.459004923252982],
+        [-1, 0.771674298256323]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-1, 0.311718355496495],
+        [-1, 0.402379291830889],
+        [-1, 0.380374124213395],
+        [-1, 0.351477648479099],
+        [-1, 0.342600380600348],
+        [-1, 0.434310702454174]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-1, 0.41368803954865],
+        [-1, 0.669045958497556]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.574248602649641, 1],
+        [-0.669045958497556, 1],
+        [-0.638128885157961, 1],
+        [-0.61533016118672, 1],
+        [-0.571171809171777, 1],
+        [-0.684310702454174, 1]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.677145428649449, 1],
+        [-0.935712625164223, 1]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.68465360182908, 0.461937767841332],
+        [-0.972255566636603, 0.705588899969937],
+        [-0.781981502952075, 0.588094779259508],
+        [-0.762413809681504, 0.557064401662988],
+        [-0.829766151151519, 0.601194722580091],
+        [-1, 0.750876657693923]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.746227845163725, 0.528799692325798],
+        [-1, 0.972255566636603]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-1, 0.428554782240702],
+        [-1, 0.62433525566896],
+        [-1, 0.5405982569059],
+        [-1, 0.50915419826543],
+        [-1, 0.531897008663877],
+        [-1, 0.666043800045647]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-1, 0.503305481717102],
+        [-1, 0.891001922335627]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.662296716046949, 1],
+        [-0.891001922335627, 1],
+        [-0.751788149806134, 1],
+        [-0.731002520214132, 1],
+        [-0.760468437235306, 1],
+        [-0.916043800045647, 1]
+      ]
+    },
+    {
+      "x": [2, 4],
+      "n": [3, 5],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": -0.133333333333333,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0.666666666666667, 0.8],
+      "conf_int": [
+        [-0.732669697388294, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.120992029334434],
+        [-1, -1],
+        [-1, 0.243104993545987],
+        [-1, -0.0981847399323506],
+        [-0.826602760898374, 0.159936094231708],
+        [-1, 0.284786853662306]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 0.264579873261244],
+        [-1, 0]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, -0.41362217469316],
+        [-1, -1],
+        [-1, -0.17073652906417],
+        [-1, -0.476926911525987],
+        [-1, -0.00939316949398195],
+        [-1, 0.0153856447363447]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 0.162426304495118],
+        [-1, 0]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-0.657273497172685, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.8,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 0.122108720681942],
+        [-1, -1],
+        [-1, 0.586901370809841],
+        [-1, 0.315239544029098],
+        [-1, 0.421057156050781],
+        [-1, 0.700227919088827]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 0.336968149117127],
+        [-1, 0]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 0.0325654775800024],
+        [-1, -1],
+        [-1, 0.460268101448692],
+        [-1, 0.149938782020191],
+        [-1, 0.29977112286531],
+        [-1, 0.507263021899334]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 0.311314548107805],
+        [-1, 0]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-0.966437789531976, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 0.228983344299947],
+        [-1, -1],
+        [-1, 0.73804491336041],
+        [-1, 0.536763418927903],
+        [-1, 0.658103827860322],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "two.sided",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 0.366281438132571],
+        [-1, 0]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 0.193652606858338],
+        [-1, -1],
+        [-1, 0.68807970536993],
+        [-1, 0.460326905025372],
+        [-1, 0.562078380870795],
+        [-1, 0.924591313902123]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 0.356737388797723],
+        [-1, 0]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [0, 1],
+      "n": [1, 1],
+      "options": {
+        "conf_level": 0.99,
+        "method": ["newcombe", "wald"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": -1,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc"
+      ],
+      "sample_proportions": [0, 1],
+      "conf_int": [
+        [-1, 1],
+        [-1, 1]
+      ]
+    },
+    {
+      "x": [5, 2],
+      "n": [12, 23],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.329710144927536,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.416666666666667, 0.0869565217391304],
+      "conf_int": [
+        [0.0421817303321447, 0.600898178898608],
+        [0.0279355789226014, 0.631484710932471],
+        [0.0451199329853918, 0.615621736627309],
+        [0.0490515286952646, 0.612191934593656],
+        [0.0197395528205641, 0.597403304322293],
+        [0.0127700752353611, 0.625050437585152]
+      ]
+    },
+    {
+      "x": [11, 36],
+      "n": [55, 45],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.6,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.2, 0.8],
+      "conf_int": [
+        [-0.724195644058054, -0.414537143406138],
+        [-0.75758703368071, -0.44241296631929],
+        [-0.734198196438463, -0.420201678132522],
+        [-0.733644250373662, -0.421193564803758],
+        [-0.734477334422056, -0.41893811910538],
+        [-0.747452780219498, -0.428789455805347]
+      ]
+    },
+    {
+      "x": [13, 14],
+      "n": [93, 93],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.010752688172043,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.139784946236559, 0.150537634408602],
+      "conf_int": [
+        [-0.113860288551524, 0.0923921287990957],
+        [-0.111989515664842, 0.090484139320756],
+        [-0.115283487439344, 0.0934721921481043],
+        [-0.114988403584802, 0.0931780500363017],
+        [-0.11278803951816, 0.0917354079392127],
+        [-0.112956828928622, 0.0916802331839407]
+      ]
+    },
+    {
+      "x": [89, 76],
+      "n": [96, 96],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.135416666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.927083333333333, 0.791666666666667],
+      "conf_int": [
+        [0.0369584626458833, 0.234327157800058],
+        [0.0389555407099796, 0.231877792623354],
+        [0.0387260925003931, 0.236908453518749],
+        [0.0389880198563238, 0.236630123844741],
+        [0.0349882008142687, 0.230317921634711],
+        [0.0364281566955142, 0.231613080417888]
+      ]
+    },
+    {
+      "x": [8, 38],
+      "n": [35, 58],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.426600985221675,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.228571428571429, 0.655172413793103],
+      "conf_int": [
+        [-0.580137371033999, -0.220140342284226],
+        [-0.611847129539882, -0.241354840903468],
+        [-0.590224491351107, -0.222424080532428],
+        [-0.589465077696092, -0.22359473985943],
+        [-0.590269397959098, -0.223244115554415],
+        [-0.603012944696603, -0.229849578843887]
+      ]
+    },
+    {
+      "x": [1, 5],
+      "n": [18, 6],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.777777777777778,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0555555555555556, 0.833333333333333],
+      "conf_int": [
+        [-0.921825994020863, -0.332480140969946],
+        [-1, -0.46135981697817],
+        [-0.942230461053315, -0.346501136211322],
+        [-0.940810889122049, -0.355418888804546],
+        [-0.977598467339428, -0.322401532660572],
+        [-1, -0.355605420380026]
+      ]
+    },
+    {
+      "x": [21, 35],
+      "n": [26, 39],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.0897435897435898,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.807692307692308, 0.897435897435897],
+      "conf_int": [
+        [-0.286220871210097, 0.0812784657516332],
+        [-0.268672052559662, 0.0891848730724825],
+        [-0.292840148911504, 0.0836010413466485],
+        [-0.291151758537246, 0.0822060300134065],
+        [-0.274356017377979, 0.089687027830941],
+        [-0.275052972474057, 0.0926455650666496]
+      ]
+    },
+    {
+      "x": [16, 46],
+      "n": [70, 55],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.607792207792208,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.228571428571429, 0.836363636363636],
+      "conf_int": [
+        [-0.7194841886678, -0.445104949686916],
+        [-0.746483794352427, -0.469100621231988],
+        [-0.727660161204501, -0.45041812579387],
+        [-0.727255543365834, -0.451113899028413],
+        [-0.727634368475421, -0.449266216319901],
+        [-0.73806326489573, -0.45786228842419]
+      ]
+    },
+    {
+      "x": [46, 27],
+      "n": [95, 44],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.129425837320574,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.484210526315789, 0.613636363636364],
+      "conf_int": [
+        [-0.291495255112455, 0.0482118166158804],
+        [-0.304919687051188, 0.0460680124100392],
+        [-0.295772884772028, 0.0497177271302483],
+        [-0.295216228383033, 0.0490759123343731],
+        [-0.296734310968842, 0.0484151715694699],
+        [-0.302371671756288, 0.0488994495340661]
+      ]
+    },
+    {
+      "x": [29, 60],
+      "n": [52, 73],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.26422550052687,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.557692307692308, 0.821917808219178],
+      "conf_int": [
+        [-0.416109495438832, -0.101121328267611],
+        [-0.425237923650391, -0.10321307740335],
+        [-0.421272591295344, -0.102064789434926],
+        [-0.420672576045894, -0.102712841064478],
+        [-0.416967037221232, -0.0985885183343237],
+        [-0.422458634246608, -0.0994689537187158]
+      ]
+    },
+    {
+      "x": [56, 8],
+      "n": [58, 94],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.880410858400587,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.96551724137931, 0.0851063829787234],
+      "conf_int": [
+        [0.769402144581477, 0.928718607601173],
+        [0.807013880930005, 0.953807835871169],
+        [0.780154390664836, 0.934839546591991],
+        [0.780582679103978, 0.934712545000549],
+        [0.775994885083399, 0.936505114916601],
+        [0.790585075161742, 0.945721793705341]
+      ]
+    },
+    {
+      "x": [46, 15],
+      "n": [76, 39],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.220647773279352,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.605263157894737, 0.384615384615385],
+      "conf_int": [
+        [0.0280526369403706, 0.390572163684366],
+        [0.0325263332644336, 0.408769213294271],
+        [0.0270227058177076, 0.396689417316461],
+        [0.0278659083395743, 0.39598980266805],
+        [0.0276877386087689, 0.396952661641387],
+        [0.028064274440767, 0.404727933351441]
+      ]
+    },
+    {
+      "x": [4, 39],
+      "n": [88, 66],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.545454545454546,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0454545454545455, 0.590909090909091],
+      "conf_int": [
+        [-0.659277783241817, -0.408298002320601],
+        [-0.671803224936704, -0.419105865972387],
+        [-0.662952173793791, -0.413802325644541],
+        [-0.662606226160622, -0.414240658916707],
+        [-0.658865027103521, -0.406494450020662],
+        [-0.666190207753617, -0.411790674352705]
+      ]
+    },
+    {
+      "x": [59, 23],
+      "n": [96, 29],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.178520114942529,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.614583333333333, 0.793103448275862],
+      "conf_int": [
+        [-0.326011113537549, 0.0205791078359469],
+        [-0.35519639641436, -0.00184383347069791],
+        [-0.332824324500267, 0.0211392802628068],
+        [-0.332282122519107, 0.0202790164860439],
+        [-0.33792839177073, 0.0140310909149037],
+        [-0.348736482357605, 0.00887393940227912]
+      ]
+    },
+    {
+      "x": [73, 16],
+      "n": [80, 41],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.522256097560976,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.9125, 0.390243902439024],
+      "conf_int": [
+        [0.348991956157188, 0.663140450116089],
+        [0.360612017994969, 0.683900177126982],
+        [0.353307966534146, 0.668556074750882],
+        [0.3540155128698, 0.668029288056678],
+        [0.347464963686902, 0.666715410674981],
+        [0.352123625448779, 0.676976903651751]
+      ]
+    },
+    {
+      "x": [30, 47],
+      "n": [86, 81],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.231409704277921,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.348837209302326, 0.580246913580247],
+      "conf_int": [
+        [-0.368559747547249, -0.0801129413825423],
+        [-0.378709777426874, -0.084109631128969],
+        [-0.372468675178407, -0.0801371585969474],
+        [-0.372069609928315, -0.0805961189981653],
+        [-0.37180537500323, -0.0802756764754121],
+        [-0.37609793491767, -0.0812892251608275]
+      ]
+    },
+    {
+      "x": [43, 38],
+      "n": [53, 39],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.163038219641993,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.811320754716981, 0.974358974358974],
+      "conf_int": [
+        [-0.289713272303335, -0.028383195377964],
+        [-0.279468898582552, -0.0466075407014345],
+        [-0.293664803522136, -0.0359495831795966],
+        [-0.292884072867374, -0.0368306051779491],
+        [-0.275809436217705, -0.0266295881725384],
+        [-0.279043645301148, -0.0348452435877414]
+      ]
+    },
+    {
+      "x": [29, 69],
+      "n": [47, 91],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.141220481646014,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.617021276595745, 0.758241758241758],
+      "conf_int": [
+        [-0.303106213784933, 0.017217085838976],
+        [-0.305696338535869, 0.0232553752438417],
+        [-0.306737852704917, 0.0183179508671504],
+        [-0.306148792349359, 0.0177624496567359],
+        [-0.302617933734279, 0.0217313855666244],
+        [-0.305652312144362, 0.0239494135936371]
+      ]
+    },
+    {
+      "x": [31, 8],
+      "n": [33, 31],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.681329423264907,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.939393939393939, 0.258064516129032],
+      "conf_int": [
+        [0.46050666312294, 0.810066104309924],
+        [0.507106336350588, 0.855552510179227],
+        [0.474097917258868, 0.820914246013104],
+        [0.475943685552924, 0.82009113460855],
+        [0.463540344606478, 0.819576538510405],
+        [0.481673830745229, 0.840017345725359]
+      ]
+    },
+    {
+      "x": [13, 14],
+      "n": [61, 20],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.486885245901639,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.213114754098361, 0.7],
+      "conf_int": [
+        [-0.662819763128481, -0.238090299154969],
+        [-0.712486625828691, -0.261283865974588],
+        [-0.673918690894067, -0.239941527198143],
+        [-0.673010286261145, -0.241495247669152],
+        [-0.67964057571187, -0.239551343480049],
+        [-0.700277906400641, -0.245190603583998]
+      ]
+    },
+    {
+      "x": [33, 24],
+      "n": [70, 66],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.107792207792208,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.471428571428571, 0.363636363636364],
+      "conf_int": [
+        [-0.0570279308110043, 0.264158778747858],
+        [-0.0569602534644478, 0.272544669048863],
+        [-0.0586299655814969, 0.268044316829741],
+        [-0.058020955273934, 0.267479433710261],
+        [-0.0579999055975135, 0.267150232394899],
+        [-0.0586942060926046, 0.271012894341501]
+      ]
+    },
+    {
+      "x": [1, 2],
+      "n": [14, 46],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.0279503105590062,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.0714285714285714, 0.0434782608695652],
+      "conf_int": [
+        [-0.0896026719018676, 0.273236312394347],
+        [-0.119264959547353, 0.175165580665365],
+        [-0.0929727746889404, 0.277812575437803],
+        [-0.0917900528936418, 0.275184650741935],
+        [-0.113423998346072, 0.238423998346072],
+        [-0.123193944275525, 0.216810965552121]
+      ]
+    },
+    {
+      "x": [64, 22],
+      "n": [71, 33],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.234741784037559,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.901408450704225, 0.666666666666667],
+      "conf_int": [
+        [0.0711252355407238, 0.412508607891308],
+        [0.0595938647259666, 0.409889703349151],
+        [0.0729643538169653, 0.417155494016453],
+        [0.0736851486709128, 0.416283794324466],
+        [0.0604572837308353, 0.40607891979167],
+        [0.0577034183821833, 0.410433836519778]
+      ]
+    },
+    {
+      "x": [44, 73],
+      "n": [66, 75],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.306666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.973333333333333],
+      "conf_int": [
+        [-0.428314366156315, -0.185669117898215],
+        [-0.426097123786898, -0.187236209546436],
+        [-0.431035142552409, -0.192709021845252],
+        [-0.430587062896147, -0.193103374415538],
+        [-0.419743077938949, -0.178805432374267],
+        [-0.423804337970455, -0.182047979390111]
+      ]
+    },
+    {
+      "x": [34, 6],
+      "n": [76, 39],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.293522267206478,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.447368421052632, 0.153846153846154],
+      "conf_int": [
+        [0.114824497208527, 0.431659044091714],
+        [0.134403725893421, 0.452640808519535],
+        [0.116738623172175, 0.439267181769379],
+        [0.117578404871777, 0.438686115716533],
+        [0.118461050346931, 0.43751143245482],
+        [0.124601439337387, 0.446502456766509]
+      ]
+    },
+    {
+      "x": [24, 6],
+      "n": [40, 64],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.50625,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.6, 0.09375],
+      "conf_int": [
+        [0.324701702700177, 0.651659769449608],
+        [0.338475312457434, 0.674024687542566],
+        [0.329836006221608, 0.658303091348454],
+        [0.330705200600318, 0.657664813637983],
+        [0.323181576405862, 0.655173401949116],
+        [0.328750193537165, 0.666371757682347]
+      ]
+    },
+    {
+      "x": [0, 61],
+      "n": [25, 83],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.734939759036145,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0, 0.734939759036145],
+      "conf_int": [
+        [-0.817955859798768, -0.566076206286923],
+        [-0.829892435394732, -0.639987082677557],
+        [-0.81828433410719, -0.590929656639995],
+        [-0.817955859740873, -0.592097964316277],
+        [-0.810671823316196, -0.574077632021494],
+        [-0.822340674966614, -0.603483500857562]
+      ]
+    },
+    {
+      "x": [22, 7],
+      "n": [70, 10],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": -0.385714285714286,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.314285714285714, 0.7],
+      "conf_int": [
+        [-0.600860506831121, -0.0610665281749217],
+        [-0.689848138784639, -0.0815804326439326],
+        [-0.613541298680969, -0.058724803756381],
+        [-0.612547216162893, -0.0606150927954705],
+        [-0.634862937936633, -0.0595815065078114],
+        [-0.673489518964948, -0.056344027770007]
+      ]
+    },
+    {
+      "x": [70, 1],
+      "n": [83, 23],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.799895233106338,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.843373493975904, 0.0434782608695652],
+      "conf_int": [
+        [0.60918005947562, 0.872117115324836],
+        [0.685616199286915, 0.914174266925762],
+        [0.61926157092589, 0.881935730545272],
+        [0.620428426246215, 0.881655919103675],
+        [0.622904926749665, 0.887683308544453],
+        [0.650179363828551, 0.903392064742878]
+      ]
+    },
+    {
+      "x": [24, 4],
+      "n": [41, 36],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.474254742547425,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.585365853658537, 0.111111111111111],
+      "conf_int": [
+        [0.266442757025953, 0.626841793738739],
+        [0.291827411227576, 0.656682073867275],
+        [0.272672811833376, 0.637401621371795],
+        [0.274097144006105, 0.636481141638986],
+        [0.267351469171071, 0.632281333766505],
+        [0.276853972340731, 0.646569451082693]
+      ]
+    },
+    {
+      "x": [4, 1],
+      "n": [6, 5],
+      "options": {
+        "conf_level": 0.2,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.466666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.2],
+      "conf_int": [
+        [-1, 0.215695808905997],
+        [-1, 0.245531529108901],
+        [-1, 0.208015427173674],
+        [-1, 0.220878218789573],
+        [-1, 0.135809279154854],
+        [-1, 0.161196703820276]
+      ]
+    },
+    {
+      "x": [4, 1],
+      "n": [6, 5],
+      "options": {
+        "conf_level": 0.2,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.466666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.2],
+      "conf_int": [
+        [-1, 0.357845966338994],
+        [-1, 0.428864862442234],
+        [-1, 0.208015427173674],
+        [-1, 0.220878218789573],
+        [-1, 0.135809279154854],
+        [-1, 0.161196703820276]
+      ]
+    },
+    {
+      "x": [4, 1],
+      "n": [6, 5],
+      "options": {
+        "conf_level": 0.2,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.466666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.2],
+      "conf_int": [
+        [0.641113459426604, 1],
+        [0.687801804224432, 1],
+        [0.662702577659879, 1],
+        [0.655212617819645, 1],
+        [0.542762149416575, 1],
+        [0.62451758189401, 1]
+      ]
+    },
+    {
+      "x": [4, 1],
+      "n": [6, 5],
+      "options": {
+        "conf_level": 0.2,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.466666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.2],
+      "conf_int": [
+        [0.545080486733289, 1],
+        [0.504468470891099, 1],
+        [0.662702577659879, 1],
+        [0.655212617819645, 1],
+        [0.542762149416575, 1],
+        [0.62451758189401, 1]
+      ]
+    },
+    {
+      "x": [4, 1],
+      "n": [6, 5],
+      "options": {
+        "conf_level": 0.5,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": false
+      },
+      "estimate": 0.466666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.2],
+      "conf_int": [
+        [-1, 0.466666666666667],
+        [-1, 0.466666666666667],
+        [-1, 0.466666666666658],
+        [-1, 0.466666666666658],
+        [-1, 0.339285714285714],
+        [-1, 0.392857142857143]
+      ]
+    },
+    {
+      "x": [4, 1],
+      "n": [6, 5],
+      "options": {
+        "conf_level": 0.5,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "less",
+        "correct": true
+      },
+      "estimate": 0.466666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.2],
+      "conf_int": [
+        [-1, 0.466666666666667],
+        [-1, 0.65],
+        [-1, 0.466666666666658],
+        [-1, 0.466666666666658],
+        [-1, 0.339285714285714],
+        [-1, 0.392857142857143]
+      ]
+    },
+    {
+      "x": [4, 1],
+      "n": [6, 5],
+      "options": {
+        "conf_level": 0.5,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": false
+      },
+      "estimate": 0.466666666666667,
+      "methods": [
+        "newcombe",
+        "wald",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.2],
+      "conf_int": [
+        [0.466666666666667, 1],
+        [0.466666666666667, 1],
+        [0.466666666666658, 1],
+        [0.466666666666658, 1],
+        [0.339285714285714, 1],
+        [0.392857142857143, 1]
+      ]
+    },
+    {
+      "x": [4, 1],
+      "n": [6, 5],
+      "options": {
+        "conf_level": 0.5,
+        "method": ["newcombe", "wald", "miettinen-nurminen", "mee", "agresti-caffo", "brown-li"],
+        "alternative": "greater",
+        "correct": true
+      },
+      "estimate": 0.466666666666667,
+      "methods": [
+        "newcombe-cc",
+        "wald-cc",
+        "miettinen-nurminen",
+        "mee",
+        "agresti-caffo",
+        "brown-li"
+      ],
+      "sample_proportions": [0.666666666666667, 0.2],
+      "conf_int": [
+        [0.466666666666667, 1],
+        [0.283333333333333, 1],
+        [0.466666666666658, 1],
+        [0.466666666666658, 1],
+        [0.339285714285714, 1],
+        [0.392857142857143, 1]
+      ]
+    },
+    {
+      "x": [9, 3],
+      "n": [10, 10],
+      "options": {
+        "conf_level": 0.95,
+        "method": ["mee", "newcombe", "mee"],
+        "alternative": "two.sided",
+        "correct": false
+      },
+      "estimate": 0.6,
+      "methods": [
+        "mee",
+        "newcombe",
+        "mee"
+      ],
+      "sample_proportions": [0.9, 0.3],
+      "conf_int": [
+        [0.182126499452643, 0.836950330889022],
+        [0.170522723934503, 0.809017973535488],
+        [0.182126499452643, 0.836950330889022]
+      ]
+    }
+  ]
+}

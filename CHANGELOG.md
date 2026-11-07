@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Add `prop_2s_ci()` with Newcombe, Wald, Agresti--Caffo,
+  Miettinen--Nurminen, Mee, and Brown--Li intervals for independent samples.
+  Support count vectors, 2x2 tables, one-sided bounds, and applicable
+  continuity corrections. Preserve observed estimates and group metadata.
+- Validate two-proportion intervals against independent formulas and
+  constrained likelihood fits, analytic zero-event limits, and 255 R cases.
+
 - Add `prop_1s_ci()` with Wilson, Wald, Agresti--Coull, Clopper--Pearson,
   mid-p, and Blaker intervals, including correction and one-sided options.
 - Extend `CIResult` for vector binomial inputs with explicit input metadata
