@@ -1,0 +1,2592 @@
+{
+  "source": "ibist-R source; supplemental to independent Python checks",
+  "r_revision": "33125308502c6d23f36d1e4badf13af8aaf989d9",
+  "source_md5": {
+    "R/ci.R": "64851bf438d2c71762919b63e45bcfca",
+    "R/prop_1s_ci.R": "509514cbb35670a60a71397fabf2617e",
+    "R/prop_2s_ci.R": "4a72c1e28a9191411cb76fd1c93b255d",
+    "R/rr_2x2_ci.R": "393dc1a924678617760a71521ecfb76c",
+    "R/rate_1s_ci.R": "edc6cc9f060829bc527f813f69a4247f",
+    "R/rate_2s_ci.R": "54c4dd893e799bd9522055185a3b01c2",
+    "R/rate_test.R": "63a5ef9bce3c0d9bc8b702eaa85d2586"
+  },
+  "cases": [
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 2.30258509299405],
+        [0, 1.64237441514982],
+        [0, 2.27950046365649],
+        [0, 2.30258509299405],
+        [0, 2.30258509299405]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 2.30258509299405],
+        [0, 2.54410815246856],
+        [0.00261808464888848, 1.31949100852893],
+        [0, 1.40619380243682],
+        [0, 2.30258509299405]
+      ],
+      "negative_wh_lower": true
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 3.68887945411394],
+        [0, 3.84145882069412],
+        [0, 3.66801183217375],
+        [0, 3.68887945411394],
+        [0, 3.68887945411394]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 3.68887945411394],
+        [0, 4.78925867512705],
+        [-0.00156112872954043, 2.46393620996737],
+        [0, 1.88590382434968],
+        [0, 3.68887945411394]
+      ],
+      "negative_wh_lower": true
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 5.29831736654804],
+        [0, 6.63489660102121],
+        [0, 5.33642674090506],
+        [0, 5.29831736654804],
+        [0, 5.29831736654804]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 5.29831736654804],
+        [0, 7.60201056411142],
+        [-0.041577890902865, 3.95240219156955],
+        [0, 2.32138636771845],
+        [0, 5.29831736654804]
+      ],
+      "negative_wh_lower": true
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.230258509299405],
+        [0, 0.164237441514982],
+        [0, 0.227950046365649],
+        [0, 0.230258509299405],
+        [0, 0.230258509299405]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.230258509299405],
+        [0, 0.254410815246856],
+        [0.000261808464888848, 0.131949100852893],
+        [0, 0.140619380243682],
+        [0, 0.230258509299405]
+      ],
+      "negative_wh_lower": true
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.368887945411394],
+        [0, 0.384145882069412],
+        [0, 0.366801183217375],
+        [0, 0.368887945411394],
+        [0, 0.368887945411394]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.368887945411394],
+        [0, 0.478925867512705],
+        [-0.000156112872954043, 0.246393620996737],
+        [0, 0.188590382434968],
+        [0, 0.368887945411394]
+      ],
+      "negative_wh_lower": true
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.529831736654804],
+        [0, 0.663489660102121],
+        [0, 0.533642674090506],
+        [0, 0.529831736654804],
+        [0, 0.529831736654804]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.529831736654804],
+        [0, 0.760201056411142],
+        [-0.0041577890902865, 0.395240219156955],
+        [0, 0.232138636771845],
+        [0, 0.529831736654804]
+      ],
+      "negative_wh_lower": true
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 8.92474842245754e-05],
+        [0, 6.36579230678224e-05],
+        [0, 8.83527311494765e-05],
+        [0, 8.92474842245754e-05],
+        [0, 8.92474842245754e-05]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 8.92474842245754e-05],
+        [0, 9.86088431189365e-05],
+        [1.01476149181724e-07, 5.11430623460826e-05],
+        [0, 5.45036357533653e-05],
+        [0, 8.92474842245754e-05]
+      ],
+      "negative_wh_lower": true
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.000142979823802866],
+        [0, 0.000148893752740082],
+        [0, 0.000142171001247045],
+        [0, 0.000142979823802866],
+        [0, 0.000142979823802866]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.000142979823802866],
+        [0, 0.000185630181206475],
+        [-6.05088654860633e-08, 9.55014034871074e-05],
+        [0, 7.30970474554139e-05],
+        [0, 0.000142979823802866]
+      ],
+      "negative_wh_lower": true
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.000205361138238296],
+        [0, 0.000257166534923303],
+        [0, 0.000206838245771514],
+        [0, 0.000205361138238296],
+        [0, 0.000205361138238296]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 0,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.000205361138238296],
+        [0, 0.000294651572252381],
+        [-1.61154615902577e-06, 0.000153193883394169],
+        [0, 8.99762158030407e-05],
+        [0, 0.000205361138238296]
+      ],
+      "negative_wh_lower": true
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.105360515657826, 3.88972016986743],
+        [0.299108745394166, 3.34326566975565],
+        [0.0984223722073223, 3.8736136149325],
+        [0, 2.2815515655446],
+        [0.27760624185201, 3.60222447927916]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.105360515657826, 3.88972016986743],
+        [0.0982662626812556, 4.09260191131015],
+        [0.288347507947256, 3.10696058248968],
+        [0, 3.06957370732461],
+        [0.27760624185201, 3.60222447927916]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.0253178079842899, 5.5716433909389],
+        [0.176524554935153, 5.66493426575897],
+        [0.0130721329015044, 5.56375558247526],
+        [0, 2.95996398454005],
+        [0.140863494093218, 7.09907138423133]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.0253178079842899, 5.5716433909389],
+        [0.0522001455670731, 6.49504066635439],
+        [0.0906945827052438, 4.66207301732695],
+        [0, 3.90045583817765],
+        [0.140863494093218, 7.09907138423133]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.00501254182354429, 7.43012950028012],
+        [0.117405464112158, 8.51749113690905],
+        [2.77606603218167e-05, 7.47045118943881],
+        [0, 3.5758293035489],
+        [0.0760906943430453, 13.1422115231545]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.00501254182354429, 7.43012950028012],
+        [0.0328860369097921, 9.3954181702337],
+        [0.0170572460392159, 6.46005466283686],
+        [0, 4.65473372910168],
+        [0.0760906943430453, 13.1422115231545]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.1,
+      "conf_int": [
+        [0.0105360515657826, 0.388972016986743],
+        [0.0299108745394166, 0.334326566975565],
+        [0.00984223722073223, 0.38736136149325],
+        [0, 0.22815515655446],
+        [0.027760624185201, 0.360222447927916]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.1,
+      "conf_int": [
+        [0.0105360515657826, 0.388972016986743],
+        [0.00982662626812556, 0.409260191131015],
+        [0.0288347507947256, 0.310696058248968],
+        [0, 0.306957370732461],
+        [0.027760624185201, 0.360222447927916]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.1,
+      "conf_int": [
+        [0.00253178079842899, 0.55716433909389],
+        [0.0176524554935153, 0.566493426575897],
+        [0.00130721329015044, 0.556375558247526],
+        [0, 0.295996398454005],
+        [0.0140863494093218, 0.709907138423133]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.1,
+      "conf_int": [
+        [0.00253178079842899, 0.55716433909389],
+        [0.00522001455670731, 0.649504066635439],
+        [0.00906945827052438, 0.466207301732695],
+        [0, 0.390045583817765],
+        [0.0140863494093218, 0.709907138423133]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.1,
+      "conf_int": [
+        [0.000501254182354429, 0.743012950028012],
+        [0.0117405464112158, 0.851749113690905],
+        [2.77606603218167e-06, 0.747045118943881],
+        [0, 0.35758293035489],
+        [0.00760906943430453, 1.31422115231545]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.1,
+      "conf_int": [
+        [0.000501254182354429, 0.743012950028012],
+        [0.00328860369097921, 0.93954181702337],
+        [0.00170572460392159, 0.646005466283685],
+        [0, 0.465473372910168],
+        [0.00760906943430453, 1.31422115231545]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 3.87596899224806e-05,
+      "conf_int": [
+        [4.08374091697001e-06, 0.00015076434766928],
+        [1.15933622245801e-05, 0.000129583940688204],
+        [3.81482062819079e-06, 0.000150140062594283],
+        [0, 8.84322312226589e-05],
+        [1.07599318547291e-05, 0.000139621103848029]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 3.87596899224806e-05,
+      "conf_int": [
+        [4.08374091697001e-06, 0.00015076434766928],
+        [3.8087698713665e-06, 0.000158627981058533],
+        [1.11762599979557e-05, 0.00012042482877867],
+        [0, 0.000118975725090101],
+        [1.07599318547291e-05, 0.000139621103848029]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 3.87596899224806e-05,
+      "conf_int": [
+        [9.81310386987981e-07, 0.00021595517019143],
+        [6.84203701299043e-06, 0.000219571095572053],
+        [5.06671817887765e-07, 0.000215649441181212],
+        [0, 0.000114727286222483],
+        [5.45982535245029e-06, 0.000275157805590362]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 3.87596899224806e-05,
+      "conf_int": [
+        [9.81310386987981e-07, 0.00021595517019143],
+        [2.0232614560881e-06, 0.000251745762261798],
+        [3.51529390330402e-06, 0.000180700504547556],
+        [0, 0.000151180458844095],
+        [5.45982535245029e-06, 0.000275157805590362]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 3.87596899224806e-05,
+      "conf_int": [
+        [1.94284566804042e-07, 0.000287989515514733],
+        [4.55059938419218e-06, 0.000330135315384072],
+        [1.07599458611693e-09, 0.000289552371683675],
+        [0, 0.000138598035021275],
+        [2.94925171872269e-06, 0.000509388043533122]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 1,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 3.87596899224806e-05,
+      "conf_int": [
+        [1.94284566804042e-07, 0.000287989515514733],
+        [1.27465259340279e-06, 0.000364163494970299],
+        [6.61133567411471e-07, 0.000250389715613832],
+        [0, 0.000180416036011693],
+        [2.94925171872269e-06, 0.000509388043533122]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 5,
+      "conf_int": [
+        [2.43259102596266, 9.27467389335162],
+        [2.84021077264058, 8.80216364250924],
+        [2.43475910128925, 9.26590568102783],
+        [2.134363582771, 7.86563641722901],
+        [2.81879821434029, 8.86902789735554]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 5,
+      "conf_int": [
+        [2.43259102596266, 9.27467389335162],
+        [2.48128698079601, 9.43685851777576],
+        [2.79121663840847, 8.62829077072327],
+        [1.78141859268953, 8.50550483002839],
+        [2.81879821434029, 8.86902789735554]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 5,
+      "conf_int": [
+        [1.62348639011842, 11.6683320793227],
+        [2.13570113757345, 11.7057576831207],
+        [1.61134771574719, 11.6681641233986],
+        [0.617387297117093, 9.38261270288291],
+        [2.08113906631863, 12.0126523040207]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 5,
+      "conf_int": [
+        [1.62348639011842, 11.6683320793227],
+        [1.84079860727856, 12.4024183791196],
+        [1.89638763044309, 10.9595587506604],
+        [0.342288526950968, 10.0965229808865],
+        [2.08113906631863, 12.0126523040207]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 5,
+      "conf_int": [
+        [1.07792824065232, 14.149759411023],
+        [1.67064860203415, 14.9642479989871],
+        [1.04684264137547, 14.1798361768946],
+        [0, 10.7597294211713],
+        [1.58010614979992, 15.821721852779]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 5,
+      "conf_int": [
+        [1.07792824065232, 14.149759411023],
+        [1.42507018816805, 15.709283653461],
+        [1.27116044483525, 13.4094557321721],
+        [0, 11.5408551799904],
+        [1.58010614979992, 15.821721852779]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.5,
+      "conf_int": [
+        [0.243259102596266, 0.927467389335162],
+        [0.284021077264058, 0.880216364250924],
+        [0.243475910128925, 0.926590568102783],
+        [0.2134363582771, 0.7865636417229],
+        [0.281879821434029, 0.886902789735554]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.5,
+      "conf_int": [
+        [0.243259102596266, 0.927467389335162],
+        [0.248128698079601, 0.943685851777576],
+        [0.279121663840847, 0.862829077072327],
+        [0.178141859268953, 0.850550483002839],
+        [0.281879821434029, 0.886902789735554]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.5,
+      "conf_int": [
+        [0.162348639011842, 1.16683320793227],
+        [0.213570113757345, 1.17057576831207],
+        [0.161134771574719, 1.16681641233986],
+        [0.0617387297117093, 0.938261270288291],
+        [0.208113906631863, 1.20126523040207]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.5,
+      "conf_int": [
+        [0.162348639011842, 1.16683320793227],
+        [0.184079860727856, 1.24024183791196],
+        [0.189638763044309, 1.09595587506604],
+        [0.0342288526950968, 1.00965229808865],
+        [0.208113906631863, 1.20126523040207]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.5,
+      "conf_int": [
+        [0.107792824065232, 1.4149759411023],
+        [0.167064860203415, 1.49642479989871],
+        [0.104684264137547, 1.41798361768946],
+        [0, 1.07597294211713],
+        [0.158010614979992, 1.5821721852779]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.5,
+      "conf_int": [
+        [0.107792824065232, 1.4149759411023],
+        [0.142507018816805, 1.5709283653461],
+        [0.127116044483525, 1.34094557321721],
+        [0, 1.15408551799904],
+        [0.158010614979992, 1.5821721852779]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.000193798449612403,
+      "conf_int": [
+        [9.42864738745219e-05, 0.000359483484238435],
+        [0.000110085688862038, 0.000341169133430591],
+        [9.4370507801909e-05, 0.00035914363104759],
+        [8.27272706500386e-05, 0.000304869628574768],
+        [0.000109255744741872, 0.000343760771215331]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.000193798449612403,
+      "conf_int": [
+        [9.42864738745219e-05, 0.000359483484238435],
+        [9.61739139843414e-05, 0.000365769709991308],
+        [0.000108186691411181, 0.000334429874834235],
+        [6.9047232274788e-05, 0.000329670729846062],
+        [0.000109255744741872, 0.000343760771215331]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.000193798449612403,
+      "conf_int": [
+        [6.29258290743574e-05, 0.00045226093330708],
+        [8.27791138594362e-05, 0.000453711538105452],
+        [6.24553378196587e-05, 0.000452254423387542],
+        [2.39297401983369e-05, 0.000363667159026469],
+        [8.06643048960711e-05, 0.000465606678450414]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.000193798449612403,
+      "conf_int": [
+        [6.29258290743574e-05, 0.00045226093330708],
+        [7.1348783227851e-05, 0.00048071389066355],
+        [7.35033965288019e-05, 0.000424789098862805],
+        [1.32669971686422e-05, 0.00039133810003436],
+        [8.06643048960711e-05, 0.000465606678450414]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.000193798449612403,
+      "conf_int": [
+        [4.1780164366369e-05, 0.000548440287248954],
+        [6.47538217842692e-05, 0.00058000961236384],
+        [4.05752961773437e-05, 0.000549606053368009],
+        [0, 0.000417043776014391],
+        [6.12444244108498e-05, 0.000613245033053451]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 5,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.000193798449612403,
+      "conf_int": [
+        [4.1780164366369e-05, 0.000548440287248954],
+        [5.52352786111648e-05, 0.000608886963312443],
+        [4.92697846835368e-05, 0.00051974634620822],
+        [0, 0.000447319968216682],
+        [6.12444244108498e-05, 0.000613245033053451]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 411,
+      "conf_int": [
+        [385.242453880493, 438.217373518079],
+        [385.827144946771, 437.815229468379],
+        [385.243199575301, 438.216534702866],
+        [385.018932188484, 436.981067811516],
+        [385.82308584809, 437.819835556728]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 411,
+      "conf_int": [
+        [385.242453880493, 438.217373518079],
+        [385.342945430101, 438.331020353215],
+        [385.727394683237, 437.700739276906],
+        [384.534740567077, 437.496866577227],
+        [385.82308584809, 437.819835556728]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 411,
+      "conf_int": [
+        [372.220850896703, 452.721443577582],
+        [373.139719157048, 452.701739663646],
+        [372.220008657715, 452.722104669395],
+        [371.265385678161, 450.734614321839],
+        [373.125685290312, 452.718766515819]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 411,
+      "conf_int": [
+        [372.220850896703, 452.721443577582],
+        [372.663867771597, 453.22587362794],
+        [372.695842150007, 452.197952223534],
+        [370.789562506881, 451.258776448925],
+        [373.125685290312, 452.718766515819]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 411,
+      "conf_int": [
+        [360.658950696983, 466.160162303983],
+        [361.992043703448, 466.642852897573],
+        [360.654664533159, 466.16440475338],
+        [358.779864965516, 463.220135034484],
+        [361.961164207007, 466.68266295937]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 1,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 411,
+      "conf_int": [
+        [360.658950696983, 466.160162303983],
+        [361.523753480334, 467.174543469616],
+        [361.122912555127, 465.632670825509],
+        [358.311638704408, 463.751889452155],
+        [361.961164207007, 466.68266295937]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 41.1,
+      "conf_int": [
+        [38.5242453880493, 43.8217373518079],
+        [38.5827144946771, 43.7815229468379],
+        [38.5243199575301, 43.8216534702866],
+        [38.5018932188484, 43.6981067811516],
+        [38.582308584809, 43.7819835556728]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 41.1,
+      "conf_int": [
+        [38.5242453880493, 43.8217373518079],
+        [38.5342945430101, 43.8331020353215],
+        [38.5727394683237, 43.7700739276906],
+        [38.4534740567077, 43.7496866577227],
+        [38.582308584809, 43.7819835556728]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 41.1,
+      "conf_int": [
+        [37.2220850896703, 45.2721443577582],
+        [37.3139719157048, 45.2701739663646],
+        [37.2220008657715, 45.2722104669395],
+        [37.1265385678161, 45.0734614321839],
+        [37.3125685290312, 45.2718766515819]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 41.1,
+      "conf_int": [
+        [37.2220850896703, 45.2721443577582],
+        [37.2663867771597, 45.322587362794],
+        [37.2695842150007, 45.2197952223534],
+        [37.0789562506881, 45.1258776448925],
+        [37.3125685290312, 45.2718766515819]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 41.1,
+      "conf_int": [
+        [36.0658950696983, 46.6160162303983],
+        [36.1992043703448, 46.6642852897573],
+        [36.0654664533159, 46.616440475338],
+        [35.8779864965516, 46.3220135034484],
+        [36.1961164207007, 46.668266295937]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 10,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 41.1,
+      "conf_int": [
+        [36.0658950696983, 46.6160162303983],
+        [36.1523753480334, 46.7174543469616],
+        [36.1122912555127, 46.5632670825509],
+        [35.8311638704408, 46.3751889452155],
+        [36.1961164207007, 46.668266295937]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.0159302325581395,
+      "conf_int": [
+        [0.0149318780573834, 0.0169851695162046],
+        [0.0149545405018128, 0.0169695825375341],
+        [0.014931906960283, 0.0169851370039871],
+        [0.0149232144259102, 0.0169372506903688],
+        [0.0149543831724066, 0.0169697610680902]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.0159302325581395,
+      "conf_int": [
+        [0.0149318780573834, 0.0169851695162046],
+        [0.0149357730786861, 0.0169895744322952],
+        [0.0149506742125286, 0.0169651449332134],
+        [0.0149044473088014, 0.0169572428905902],
+        [0.0149543831724066, 0.0169697610680902]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.0159302325581395,
+      "conf_int": [
+        [0.0144271647634381, 0.0175473427743249],
+        [0.0144627798122887, 0.0175465790567305],
+        [0.0144271321185161, 0.0175473683980386],
+        [0.0143901312278357, 0.0174703338884434],
+        [0.0144622358639656, 0.0175472390122411]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.0159302325581395,
+      "conf_int": [
+        [0.0144271647634381, 0.0175473427743249],
+        [0.0144443359601394, 0.0175668943266644],
+        [0.0144455752771321, 0.0175270524117649],
+        [0.0143716884692589, 0.0174906502499584],
+        [0.0144622358639656, 0.0175472390122411]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": false
+      },
+      "estimate": 0.0159302325581395,
+      "conf_int": [
+        [0.0139790290967823, 0.0180682233451156],
+        [0.0140306993683507, 0.0180869322828517],
+        [0.0139788629664015, 0.0180683877811387],
+        [0.0139061963164929, 0.0179542687997862],
+        [0.0140295024886437, 0.0180884753085027]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_1s_ci",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "exact",
+          "score",
+          "wh",
+          "wald",
+          "log"
+        ],
+        "correct": true
+      },
+      "estimate": 0.0159302325581395,
+      "conf_int": [
+        [0.0139790290967823, 0.0180682233451156],
+        [0.0140125485845091, 0.0181075404445588],
+        [0.0139970121145398, 0.0180477779389732],
+        [0.0138880480117988, 0.01797487943613],
+        [0.0140295024886437, 0.0180884753085027]
+      ],
+      "negative_wh_lower": false
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [151, 55],
+      "exposure": [57518.1, 74573.5],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "log",
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 3.55954307505732,
+      "conf_int": [
+        [2.90895993773964, 4.35562784444321],
+        [2.90995217896901, 4.35414265387606],
+        [2.87883266649063, 4.41738033990577]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [151, 55],
+      "exposure": [57518.1, 74573.5],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "log",
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 3.55954307505732,
+      "conf_int": [
+        [2.61417817984778, 4.84678014714602],
+        [2.61734999605651, 4.84090661251977],
+        [2.59795485340244, 4.93954701331869]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [151, 55],
+      "exposure": [57518.1, 74573.5],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "log",
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 3.55954307505732,
+      "conf_int": [
+        [2.37252486858776, 5.34044851160213],
+        [2.37901441606981, 5.32588067461998],
+        [2.36943606099812, 5.4776561387158]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [9, 12],
+      "exposure": [1817.6, 7496.3],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "log",
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 3.09321357834507,
+      "conf_int": [
+        [1.7578639743247, 5.44295257255837],
+        [1.77067524911407, 5.40357146012261],
+        [1.5863917491749, 5.94636665933702]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [9, 12],
+      "exposure": [1817.6, 7496.3],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "log",
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 3.09321357834507,
+      "conf_int": [
+        [1.30336276014957, 7.34098789208947],
+        [1.33617209940193, 7.16073194878187],
+        [1.15106466619417, 7.99860848106457]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [9, 12],
+      "exposure": [1817.6, 7496.3],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "log",
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 3.09321357834507,
+      "conf_int": [
+        [0.993398470465086, 9.63155322433587],
+        [1.04809110577012, 9.12894898981893],
+        [0.848751370429027, 10.5251000984902]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [0, 2],
+      "exposure": [1, 3],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 2.46356162272473],
+        [0, 6.48683298050514]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [0, 2],
+      "exposure": [1, 3],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 5.76218823104118],
+        [0, 15.9736659610103]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [0, 2],
+      "exposure": [1, 3],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 9.95234490153182],
+        [0, 39.4264068711928]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [2, 0],
+      "exposure": [3, 1],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [0.405916373585163, "Inf"],
+        [0.154158431858088, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [2, 0],
+      "exposure": [3, 1],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [0.173545181084671, "Inf"],
+        [0.0626030369259552, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [2, 0],
+      "exposure": [3, 1],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [0.100478832867427, "Inf"],
+        [0.0253637112625309, "Inf"]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [12, 5],
+      "exposure": [100, 80],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "log",
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 1.92,
+      "conf_int": [
+        [0.970607876957436, 3.79803223064267],
+        [0.982893767986309, 3.75055791385519],
+        [0.873389945912792, 4.51289949949192]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [12, 5],
+      "exposure": [100, 80],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "log",
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 1.92,
+      "conf_int": [
+        [0.676417146782845, 5.44989141321025],
+        [0.705652499916044, 5.22410109854157],
+        [0.629636715338253, 6.95678489494421]
+      ]
+    },
+    {
+      "function_name": "rate_2s_ci",
+      "x": [12, 5],
+      "exposure": [100, 80],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "log",
+          "score",
+          "exact"
+        ]
+      },
+      "estimate": 1.92,
+      "conf_int": [
+        [0.487353931274844, 7.56411257493488],
+        [0.532994902510238, 6.9163888484453],
+        [0.4678473785974, 10.6785972240125]
+      ]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [151, 55],
+      "exposure": [57518.1, 74573.5],
+      "options": {
+        "r": 1,
+        "correct": false,
+        "alternative": "two.sided"
+      },
+      "estimate": 3.55954307505732,
+      "statistic": 74.1998537275614,
+      "p_value": 7.05955302786855e-18,
+      "conf_int": [2.61417817984778, 4.84678014714602]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [151, 55],
+      "exposure": [57518.1, 74573.5],
+      "options": {
+        "r": 1,
+        "correct": false,
+        "alternative": "less"
+      },
+      "estimate": 3.55954307505732,
+      "statistic": 74.1998537275614,
+      "p_value": 1,
+      "conf_int": [0, 4.61211543766091]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [151, 55],
+      "exposure": [57518.1, 74573.5],
+      "options": {
+        "r": 1,
+        "correct": false,
+        "alternative": "greater"
+      },
+      "estimate": 3.55954307505732,
+      "statistic": 74.1998537275614,
+      "p_value": 3.52977651393428e-18,
+      "conf_int": [2.74718772208669, "Inf"]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [151, 55],
+      "exposure": [57518.1, 74573.5],
+      "options": {
+        "r": 1,
+        "correct": true,
+        "alternative": "two.sided"
+      },
+      "estimate": 3.55954307505732,
+      "statistic": 72.9943355724899,
+      "p_value": 1.30022468781964e-17,
+      "conf_int": [2.61417817984778, 4.84678014714602]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [151, 55],
+      "exposure": [57518.1, 74573.5],
+      "options": {
+        "r": 1,
+        "correct": true,
+        "alternative": "less"
+      },
+      "estimate": 3.55954307505732,
+      "statistic": 72.9943355724899,
+      "p_value": 1,
+      "conf_int": [0, 4.61211543766091]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [151, 55],
+      "exposure": [57518.1, 74573.5],
+      "options": {
+        "r": 1,
+        "correct": true,
+        "alternative": "greater"
+      },
+      "estimate": 3.55954307505732,
+      "statistic": 72.9943355724899,
+      "p_value": 6.50112343909819e-18,
+      "conf_int": [2.74718772208669, "Inf"]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [9, 12],
+      "exposure": [1817.6, 7496.3],
+      "options": {
+        "r": 1,
+        "correct": false,
+        "alternative": "two.sided"
+      },
+      "estimate": 3.09321357834507,
+      "statistic": 7.28486720314466,
+      "p_value": 0.00695378711395223,
+      "conf_int": [1.30336276014957, 7.34098789208947]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [9, 12],
+      "exposure": [1817.6, 7496.3],
+      "options": {
+        "r": 1,
+        "correct": false,
+        "alternative": "less"
+      },
+      "estimate": 3.09321357834507,
+      "statistic": 7.28486720314466,
+      "p_value": 0.996523106443024,
+      "conf_int": [0, 6.38864896731249]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [9, 12],
+      "exposure": [1817.6, 7496.3],
+      "options": {
+        "r": 1,
+        "correct": false,
+        "alternative": "greater"
+      },
+      "estimate": 3.09321357834507,
+      "statistic": 7.28486720314466,
+      "p_value": 0.00347689355697611,
+      "conf_int": [1.49765158333363, "Inf"]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [9, 12],
+      "exposure": [1817.6, 7496.3],
+      "options": {
+        "r": 1,
+        "correct": true,
+        "alternative": "two.sided"
+      },
+      "estimate": 3.09321357834507,
+      "statistic": 5.87452054713895,
+      "p_value": 0.0153615558575636,
+      "conf_int": [1.30336276014957, 7.34098789208947]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [9, 12],
+      "exposure": [1817.6, 7496.3],
+      "options": {
+        "r": 1,
+        "correct": true,
+        "alternative": "less"
+      },
+      "estimate": 3.09321357834507,
+      "statistic": 5.87452054713895,
+      "p_value": 0.992319222071218,
+      "conf_int": [0, 6.38864896731249]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [9, 12],
+      "exposure": [1817.6, 7496.3],
+      "options": {
+        "r": 1,
+        "correct": true,
+        "alternative": "greater"
+      },
+      "estimate": 3.09321357834507,
+      "statistic": 5.87452054713895,
+      "p_value": 0.0076807779287818,
+      "conf_int": [1.49765158333363, "Inf"]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [12, 5],
+      "exposure": [100, 80],
+      "options": {
+        "r": 1,
+        "correct": false,
+        "alternative": "two.sided"
+      },
+      "estimate": 1.92,
+      "statistic": 1.55588235294118,
+      "p_value": 0.212269142891972,
+      "conf_int": [0.676417146782845, 5.44989141321025]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [12, 5],
+      "exposure": [100, 80],
+      "options": {
+        "r": 1,
+        "correct": false,
+        "alternative": "less"
+      },
+      "estimate": 1.92,
+      "statistic": 1.55588235294118,
+      "p_value": 0.893865428554014,
+      "conf_int": [0, 4.60832932087973]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [12, 5],
+      "exposure": [100, 80],
+      "options": {
+        "r": 1,
+        "correct": false,
+        "alternative": "greater"
+      },
+      "estimate": 1.92,
+      "statistic": 1.55588235294118,
+      "p_value": 0.106134571445986,
+      "conf_int": [0.799942830321915, "Inf"]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [12, 5],
+      "exposure": [100, 80],
+      "options": {
+        "r": 1,
+        "correct": true,
+        "alternative": "two.sided"
+      },
+      "estimate": 1.92,
+      "statistic": 1.00661764705882,
+      "p_value": 0.315714511888105,
+      "conf_int": [0.676417146782845, 5.44989141321025]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [12, 5],
+      "exposure": [100, 80],
+      "options": {
+        "r": 1,
+        "correct": true,
+        "alternative": "less"
+      },
+      "estimate": 1.92,
+      "statistic": 1.00661764705882,
+      "p_value": 0.842142744055948,
+      "conf_int": [0, 4.60832932087973]
+    },
+    {
+      "function_name": "rate_test",
+      "x": [12, 5],
+      "exposure": [100, 80],
+      "options": {
+        "r": 1,
+        "correct": true,
+        "alternative": "greater"
+      },
+      "estimate": 1.92,
+      "statistic": 1.00661764705882,
+      "p_value": 0.157857255944052,
+      "conf_int": [0.799942830321915, "Inf"]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "r": 0.0119,
+        "correct": false,
+        "alternative": "two.sided"
+      },
+      "estimate": 0.0159302325581395,
+      "statistic": 5.93425875809376,
+      "p_value": 2.95175991710701e-09,
+      "conf_int": [0.0144627798122887, 0.0175465790567305]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "r": 0.0119,
+        "correct": false,
+        "alternative": "less"
+      },
+      "estimate": 0.0159302325581395,
+      "statistic": 5.93425875809376,
+      "p_value": 0.99999999852412,
+      "conf_int": [0, 0.0172762224470806]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "r": 0.0119,
+        "correct": false,
+        "alternative": "greater"
+      },
+      "estimate": 0.0159302325581395,
+      "statistic": 5.93425875809376,
+      "p_value": 1.47587995855351e-09,
+      "conf_int": [0.014689108694551, "Inf"]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "r": 0.0119,
+        "correct": true,
+        "alternative": "two.sided"
+      },
+      "estimate": 0.0159302325581395,
+      "statistic": 5.9057231802995,
+      "p_value": 3.51103106669485e-09,
+      "conf_int": [0.0144443359601394, 0.0175668943266644]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "r": 0.0119,
+        "correct": true,
+        "alternative": "less"
+      },
+      "estimate": 0.0159302325581395,
+      "statistic": 5.96279433588802,
+      "p_value": 0.999999998760198,
+      "conf_int": [0, 0.0172963875959771]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 411,
+      "exposure": 25800,
+      "options": {
+        "r": 0.0119,
+        "correct": true,
+        "alternative": "greater"
+      },
+      "estimate": 0.0159302325581395,
+      "statistic": 5.9057231802995,
+      "p_value": 1.75551553334743e-09,
+      "conf_int": [0.0146705146305639, "Inf"]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "r": 0.1,
+        "correct": false,
+        "alternative": "two.sided"
+      },
+      "estimate": 0,
+      "statistic": -1,
+      "p_value": 0.317310507862914,
+      "conf_int": [0, 0.384145882069412]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "r": 0.1,
+        "correct": false,
+        "alternative": "less"
+      },
+      "estimate": 0,
+      "statistic": -1,
+      "p_value": 0.158655253931457,
+      "conf_int": [0, 0.270554345409541]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "r": 0.1,
+        "correct": false,
+        "alternative": "greater"
+      },
+      "estimate": 0,
+      "statistic": -1,
+      "p_value": 0.841344746068543,
+      "conf_int": [0, "Inf"]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "r": 0.1,
+        "correct": true,
+        "alternative": "two.sided"
+      },
+      "estimate": 0,
+      "statistic": -0.5,
+      "p_value": 0.617075077451974,
+      "conf_int": [0, 0.478925867512705]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "r": 0.1,
+        "correct": true,
+        "alternative": "less"
+      },
+      "estimate": 0,
+      "statistic": -0.5,
+      "p_value": 0.308537538725987,
+      "conf_int": [0, 0.363680173591733]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 0,
+      "exposure": 10,
+      "options": {
+        "r": 0.1,
+        "correct": true,
+        "alternative": "greater"
+      },
+      "estimate": 0,
+      "statistic": -1.5,
+      "p_value": 0.933192798731142,
+      "conf_int": [0, "Inf"]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "r": 1.1,
+        "correct": false,
+        "alternative": "two.sided"
+      },
+      "estimate": 1,
+      "statistic": -0.0953462589245593,
+      "p_value": 0.924039800681422,
+      "conf_int": [0.176524554935153, 5.66493426575897]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "r": 1.1,
+        "correct": false,
+        "alternative": "less"
+      },
+      "estimate": 1,
+      "statistic": -0.0953462589245593,
+      "p_value": 0.462019900340711,
+      "conf_int": [0, 4.48245123335729]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "r": 1.1,
+        "correct": false,
+        "alternative": "greater"
+      },
+      "estimate": 1,
+      "statistic": -0.0953462589245593,
+      "p_value": 0.537980099659289,
+      "conf_int": [0.223092220738119, "Inf"]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "r": 1.1,
+        "correct": true,
+        "alternative": "two.sided"
+      },
+      "estimate": 1,
+      "statistic": 0.381385035698237,
+      "p_value": 0.702917563245367,
+      "conf_int": [0.0522001455670731, 6.49504066635439]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "r": 1.1,
+        "correct": true,
+        "alternative": "less"
+      },
+      "estimate": 1,
+      "statistic": 0.381385035698237,
+      "p_value": 0.648541218377317,
+      "conf_int": [0, 5.27935503009806]
+    },
+    {
+      "function_name": "rate_test",
+      "x": 1,
+      "exposure": 1,
+      "options": {
+        "r": 1.1,
+        "correct": true,
+        "alternative": "greater"
+      },
+      "estimate": 1,
+      "statistic": -0.572077553547355,
+      "p_value": 0.716365282366446,
+      "conf_int": [0.0687417181780852, "Inf"]
+    }
+  ]
+}

@@ -8,8 +8,11 @@ from .contingency import (NominalAssociationResult, TestResult, indep_test,
 from .homogeneity import or_homogeneity_test
 from .odds_ratio import or_2x2_ci
 from .proportions import prop_1s_ci, prop_2s_ci
+from .rates import rate_1s_ci, rate_2s_ci, rate_test
+from .risk_ratio import rr_2x2_ci
 from .results import CIResult, ConfidenceInterval
 
 __all__ = ["CIResult", "ConfidenceInterval", "NominalAssociationResult",
            "TestResult", "datasets", "indep_test", "nominal_assoc",
-           "or_2x2_ci", "or_homogeneity_test", "prop_1s_ci", "prop_2s_ci"]
+           "or_2x2_ci", "or_homogeneity_test", "prop_1s_ci", "prop_2s_ci",
+           "rate_1s_ci", "rate_2s_ci", "rate_test", "rr_2x2_ci"]

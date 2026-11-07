@@ -1,0 +1,6663 @@
+{
+  "source": "ibist-R source; supplemental to independent Python checks",
+  "r_revision": "33125308502c6d23f36d1e4badf13af8aaf989d9",
+  "source_md5": {
+    "R/ci.R": "64851bf438d2c71762919b63e45bcfca",
+    "R/prop_1s_ci.R": "509514cbb35670a60a71397fabf2617e",
+    "R/prop_2s_ci.R": "4a72c1e28a9191411cb76fd1c93b255d",
+    "R/rr_2x2_ci.R": "393dc1a924678617760a71521ecfb76c",
+    "R/rate_1s_ci.R": "edc6cc9f060829bc527f813f69a4247f",
+    "R/rate_2s_ci.R": "54c4dd893e799bd9522055185a3b01c2",
+    "R/rate_test.R": "63a5ef9bce3c0d9bc8b702eaa85d2586"
+  },
+  "cases": [
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [1.3519711462539, 1.44988252655603],
+        [1.35233203309173, 1.45027891151636]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [0, 1.24333693862846],
+        [0, 1.24688307512076]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [1.56808583458774, "Inf"],
+        [1.57292906455646, "Inf"]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [1.16593368869876, 1.65932362521896],
+        [1.17343478352103, 1.67138272744566]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [0, 1.56808583458774],
+        [0, 1.57292906455646]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [1.24333693862846, "Inf"],
+        [1.24688307512076, "Inf"]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [1.05345523257855, 1.80418743319799],
+        [1.06856023014417, 1.83542169513119]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [0, 1.73631185202505],
+        [0, 1.75731673727331]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [1.10463448259245, "Inf"],
+        [1.11605300704307, "Inf"]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [0.958908065759773, 1.93951651303139],
+        [0.981494231599906, 1.99823755027474]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [0, 1.88429127211588],
+        [0, 1.93061067291974]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [38, 62],
+        [267, 717]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.40044943820225,
+      "conf_int": [
+        [0.996325843217674, "Inf"],
+        [1.01587474702753, "Inf"]
+      ],
+      "sample_proportions": [0.38, 0.271341463414634]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [2.50936675610957, 3.45380669242247],
+        [2.49942439037776, 3.44257040843871]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [0, 1.81095328470235],
+        [0, 1.72349762207706]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [5.12032622208323, "Inf"],
+        [4.99243186310571, "Inf"]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [1.4686146199173, 6.86536247215724],
+        [1.30523481752521, 6.59225782894673]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [0, 5.12032622208323],
+        [0, 4.99243186310571]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [1.81095328470235, "Inf"],
+        [1.72349762207706, "Inf"]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [1.10852234862172, 10.5253347890676],
+        [0.850206327060069, 10.1204192095321]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [0, 8.67213860368765],
+        [0, 8.29332199598677]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [1.25738786337481, "Inf"],
+        [1.03751481596979, "Inf"]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [0.876561121120808, 14.9519624607346],
+        [0.576134221100118, 14.9347914588625]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [0, 13.0281151727474],
+        [0, 12.7567056588707]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [11, 4],
+        [2, 6]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.93333333333333,
+      "conf_int": [
+        [0.962950680500796, "Inf"],
+        [0.674503643380773, "Inf"]
+      ],
+      "sample_proportions": [0.733333333333333, 0.25]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0.314988021440874, 0.400558657627232],
+        [0.315294911800087, 0.400957162184008]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0, 0.236386265423234],
+        [0, 0.238522944168096]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0.525087352594633, "Inf"],
+        [0.530010869718793, "Inf"]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0.190440196994043, 0.642329087132899],
+        [0.193598848799316, 0.65299847530326]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0, 0.525087352594633],
+        [0, 0.530010869718793]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0.236386265423234, "Inf"],
+        [0.238522944168096, "Inf"]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0.137421722408476, 0.881911613882445],
+        [0.140328901393247, 0.900881798626436]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0, 0.760491087655127],
+        [0, 0.775807244655211]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0.159644771247701, "Inf"],
+        [0.162952529713233, "Inf"]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0.103730694735465, 1.17623621339682],
+        [0.104779526187856, 1.20653106275519]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0, 1.04760275559342],
+        [0, 1.07187550150495]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [4, 11],
+        [6, 2]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.355555555555556,
+      "conf_int": [
+        [0.116007451860155, "Inf"],
+        [0.117942571603626, "Inf"]
+      ],
+      "sample_proportions": [0.266666666666667, 0.75]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": "NA",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 0]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.0209467639210206]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0.191009701647407, "Inf"]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.353778964874124]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.191009701647407]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.561497031942438]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.474195574174163]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.829362075123911]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, 0.676486803198959]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [0, 3],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0,
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [0, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [78.900118583016, "Inf"]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [0, 8.05889359954078]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        ["Inf", "Inf"]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [4.04437280188814, "Inf"]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [8.05889359954078, "Inf"]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [2.08254217304323, "Inf"]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [2.84805754734098, "Inf"]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [1.20574599440595, "Inf"]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "less"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [0, "Inf"]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [0, 5]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": "Inf",
+      "conf_int": [
+        [1.47822543508853, "Inf"]
+      ],
+      "sample_proportions": [1, 0]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.979053236054221, 1.01283695143902],
+        [1, 1]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0, 0.808990298166626],
+        [0, 1]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [1.14166526173338, "Inf"],
+        [1, "Inf"]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.646221035125772, 1.32847488303002],
+        [1, 1]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0, 1.14166526173338],
+        [0, 1]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.808990298166626, "Inf"],
+        [1, "Inf"]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.438502968244945, 1.76829176424955],
+        [1, 1]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0, 1.5411086876146],
+        [0, 1]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.525804425841991, "Inf"],
+        [1, "Inf"]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.311368157229254, 2.32697932031386],
+        [1, 1]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0, 2.0823788869455],
+        [0, 1]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [3, 0],
+        [5, 0]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1,
+      "conf_int": [
+        [0.356637856457661, "Inf"],
+        [1, "Inf"]
+      ],
+      "sample_proportions": [1, 1]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [0.735206497523659, 0.932214821191468],
+        [0.740634360901452, 0.937634656322469]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [0, 0.519094271488732],
+        [0, 0.563225656011147]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [1.19232351228159, "Inf"],
+        [1.23297729255199, "Inf"]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [0.387674290707228, 1.45989143291184],
+        [0.458932863524074, 1.51317218625817]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [0, 1.19232351228159],
+        [0, 1.23297729255199]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [0.519094271488732, "Inf"],
+        [0.563225656011147, "Inf"]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [0.248002048063066, 2.05520966812445],
+        [0.334661688658389, 2.07506406612712]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [0, 1.74933087039347],
+        [0, 1.79197101422905]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [0.304147565446718, "Inf"],
+        [0.387531069939327, "Inf"]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [0.171096719592738, 2.8044843315583],
+        [0.251250495615534, 2.76395253566818]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [0, 2.47665203927966],
+        [0, 2.46091799201401]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [2, 1],
+        [4, 1]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.833333333333333,
+      "conf_int": [
+        [0.197904378905945, "Inf"],
+        [0.282189185782705, "Inf"]
+      ],
+      "sample_proportions": [0.666666666666667, 0.8]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0.793551925501149, 0.832098864234487],
+        [0.793611948508526, 0.832155175362594]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0, 0.750401549519958],
+        [0, 0.75109697717076]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0.878699074980711, "Inf"],
+        [0.879258351789133, "Inf"]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0.719151402865739, 0.91505168200796],
+        [0.720798233112714, 0.916217964809706]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0, 0.878699074980711],
+        [0, 0.879258351789133]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0.750401549519958, "Inf"],
+        [0.75109697717076, "Inf"]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0.672559918246807, 0.974104637404014],
+        [0.676452935749575, 0.976281209348536]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0, 0.946186942157591],
+        [0, 0.947908277252311]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0.693963859513955, "Inf"],
+        [0.696700626030273, "Inf"]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0.631907538836603, 1.03143813775738],
+        [0.638563182304994, 1.0342097829648]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0, 1.00774327588427],
+        [0, 1.010340386131]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [75, 55],
+        [93, 38]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.812655086848635,
+      "conf_int": [
+        [0.64818660025658, "Inf"],
+        [0.653649303983516, "Inf"]
+      ],
+      "sample_proportions": [0.576923076923077, 0.709923664122137]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [0.930032005338018, 1.00029700734721],
+        [0.930143491805229, 1.00041448224079]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [0, 0.85358093097091],
+        [0, 0.854726886925465]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [1.0873207480614, "Inf"],
+        [1.08868579425549, "Inf"]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [0.799852019788382, 1.15647985118684],
+        [0.802352174044226, 1.15975135341589]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [0, 1.0873207480614],
+        [0, 1.08868579425549]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [0.85358093097091, "Inf"],
+        [0.854726886925465, "Inf"]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [0.722553931207782, 1.27054505138956],
+        [0.727805998064156, 1.27853991618511]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [0, 1.21640040109772],
+        [0, 1.22192276428368]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [0.757632137897097, "Inf"],
+        [0.76152850815368, "Inf"]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [0.658037766441533, 1.38258326220197],
+        [0.666147932729345, 1.39688044358466]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [0, 1.33617288784557],
+        [0, 1.34767614146595]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [44, 57],
+        [70, 85]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.964639321074965,
+      "conf_int": [
+        [0.683535559997729, "Inf"],
+        [0.690469313162859, "Inf"]
+      ],
+      "sample_proportions": [0.435643564356436, 0.451612903225806]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [1.01033955553182, 1.07442323812475],
+        [1.01037576583887, 1.0744569198948]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [0, 0.94033297025301],
+        [0, 0.940756095975021]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [1.15363942767111, "Inf"],
+        [1.15397097924137, "Inf"]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [0.890839415553365, 1.21656756080715],
+        [0.891845953419079, 1.21725644337757]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [0, 1.15363942767111],
+        [0, 1.15397097924137]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [0.94033297025301, "Inf"],
+        [0.940756095975021, "Inf"]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [0.818973329702985, 1.32042240190276],
+        [0.82135913409884, 1.3217180989783]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [0, 1.27110897851516],
+        [0, 1.27212699318254]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [0.851701734619873, "Inf"],
+        [0.853378034675353, "Inf"]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [0.75813982359167, 1.42257189317405],
+        [0.762207075426123, 1.42429172898016]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [0, 1.38023958942277],
+        [0, 1.38181421283353]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [64, 63],
+        [74, 79]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.04192381357736,
+      "conf_int": [
+        [0.782293357055126, "Inf"],
+        [0.785637622783929, "Inf"]
+      ],
+      "sample_proportions": [0.503937007874016, 0.483660130718954]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [1.23246188465021, 1.32771613949176],
+        [1.23214512618549, 1.32737792217542]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [0, 1.13333421350069],
+        [0, 1.13011705879182]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [1.45121353956304, "Inf"],
+        [1.44721489220166, "Inf"]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [1.06635640335683, 1.55356239687149],
+        [1.05937807852857, 1.54385131291968]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [0, 1.45121353956304],
+        [0, 1.44721489220166]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [1.13333421350069, "Inf"],
+        [1.13011705879182, "Inf"]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [0.973495468288229, 1.72985380656654],
+        [0.958872191059922, 1.70567282341015]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [0, 1.6450664367622],
+        [0, 1.62850157916907]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [1.01516073255181, "Inf"],
+        [1.00431111540535, "Inf"]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [0.89862257230701, 1.91101365149236],
+        [0.87591439924911, 1.86721697784251]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [0, 1.83509103510704],
+        [0, 1.80001074404379]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [99, 89],
+        [35, 50]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.27887537993921,
+      "conf_int": [
+        [0.927969544769128, "Inf"],
+        [0.908618041768125, "Inf"]
+      ],
+      "sample_proportions": [0.526595744680851, 0.411764705882353]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0.629626637467771, 0.679008005399159],
+        [0.629654169889462, 0.679037262659061]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0, 0.576529063836832],
+        [0, 0.57680761546321]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0.74090839805449, "Inf"],
+        [0.741249998234245, "Inf"]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0.539609241432952, 0.790652661475685],
+        [0.540206981835146, 0.79147189562626]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0, 0.74090839805449],
+        [0, 0.741249998234245]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0.576529063836832, "Inf"],
+        [0.57680761546321, "Inf"]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0.487052143916903, 0.873671024450715],
+        [0.488265064658505, 0.875669129108469]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0, 0.834119545690387],
+        [0, 0.835501377377512]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0.510823227361438, "Inf"],
+        [0.511739005488696, "Inf"]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0.443655513523151, 0.956269986536324],
+        [0.445449981989267, 0.959835360267014]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0, 0.921936427745601],
+        [0, 0.924807103291987]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [48, 100],
+        [62, 63]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.653879686137751,
+      "conf_int": [
+        [0.460758666573167, "Inf"],
+        [0.462321972248748, "Inf"]
+      ],
+      "sample_proportions": [0.324324324324324, 0.496]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [1.18344665958951, 1.2217993150841],
+        [1.18320845803749, 1.22153269394449]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [0, 1.14246362394171],
+        [0, 1.140219647688]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [1.27087269032143, "Inf"],
+        [1.26758718653472, "Inf"]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [1.11360070861038, 1.31133904162458],
+        [1.10909514447084, 1.30315944709507]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [0, 1.27087269032143],
+        [0, 1.26758718653472]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [1.14246362394171, "Inf"],
+        [1.140219647688, "Inf"]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [1.07069533540261, 1.38101347396433],
+        [1.06275538147731, 1.35998164811485]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [0, 1.34749123237802],
+        [0, 1.33328700397837]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [1.09048174751432, "Inf"],
+        [1.08403352836393, "Inf"]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [1.03198187974623, 1.45279533306088],
+        [1.02236676931917, 1.41370774033172]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [0, 1.42268247605355],
+        [0, 1.39169266542439]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [97, 8],
+        [73, 22]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.20221787345075,
+      "conf_int": [
+        [1.04772953368092, "Inf"],
+        [1.03853950743047, "Inf"]
+      ],
+      "sample_proportions": [0.923809523809524, 0.768421052631579]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0.495121372742864, 0.525737233648691],
+        [0.495189669027623, 0.525808708994844]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0, 0.461163790187425],
+        [0, 0.461870492127891]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0.562919258011049, "Inf"],
+        [0.563740366654342, "Inf"]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0.436877029417492, 0.591941485686019],
+        [0.438426985346204, 0.593884613132089]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0, 0.562919258011049],
+        [0, 0.563740366654342]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0.461163790187425, "Inf"],
+        [0.461870492127891, "Inf"]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0.401296309425718, 0.638951077268815],
+        [0.404585817806258, 0.643559485082305]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0, 0.616755958421088],
+        [0, 0.61998971844461]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0.417538908094872, "Inf"],
+        [0.419966707241872, "Inf"]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0.3709869699883, 0.684342627330279],
+        [0.376132144112652, 0.692243523066232]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0, 0.665613981675371],
+        [0, 0.672093336061933]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [53, 80],
+        [82, 23]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.510269576379974,
+      "conf_int": [
+        [0.383035073369286, "Inf"],
+        [0.387409049618973, "Inf"]
+      ],
+      "sample_proportions": [0.398496240601504, 0.780952380952381]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0.446497925524255, 0.540763270339417],
+        [0.446914015737956, 0.541342196986996]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0, 0.354769697864363],
+        [0, 0.357744364621074]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0.667325438508912, "Inf"],
+        [0.676274566617211, "Inf"]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0.298106938773376, 0.772826313546107],
+        [0.302896281889366, 0.798733525663525]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0, 0.667325438508912],
+        [0, 0.676274566617211]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0.354769697864363, "Inf"],
+        [0.357744364621074, "Inf"]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0.228476382674162, 0.950821784826153],
+        [0.234332969024395, 1.03243438663844]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0, 0.866043047320612],
+        [0, 0.916412581321749]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0.258340407717424, "Inf"],
+        [0.264000538703783, "Inf"]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0.180772888357182, 1.12573561370531],
+        [0.185630397870914, 1.30330709796843]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0, 1.05349460974564],
+        [0, 1.18592690677774]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [6, 23],
+        [53, 73]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.491867273910215,
+      "conf_int": [
+        [0.1985435064681, "Inf"],
+        [0.204003647915552, "Inf"]
+      ],
+      "sample_proportions": [0.206896551724138, 0.420634920634921]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [7.51501107579476, 8.89598033456294],
+        [7.51313968570809, 8.89430249637829]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [0, 6.19777680883705],
+        [0, 6.17633664444564]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [10.8332377843366, "Inf"],
+        [10.8193806311265, "Inf"]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [5.38354731278886, 12.5464354511124],
+        [5.33454694533784, 12.5266752260253]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [0, 10.8332377843366],
+        [0, 10.8193806311265]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [6.19777680883705, "Inf"],
+        [6.17633664444564, "Inf"]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [4.36218630710072, 15.6838892237984],
+        [4.25568081107653, 15.7023376584787]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [0, 14.1483664133472],
+        [0, 14.1379158615736]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [4.80472305952008, "Inf"],
+        [4.72659037700588, "Inf"]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [3.6317335226542, 19.1018841306389],
+        [3.46647150662649, 19.2772786202026]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [0, 17.6488667685749],
+        [0, 17.740246739044]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [30, 12],
+        [9, 94]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 8.17460317460317,
+      "conf_int": [
+        [3.90814569385898, "Inf"],
+        [3.76680990096721, "Inf"]
+      ],
+      "sample_proportions": [0.714285714285714, 0.087378640776699]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0.112210107632142, 0.143529751365708],
+        [0.112265464455488, 0.143632492718312]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0, 0.0841159654201398],
+        [0, 0.0843356413417219]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0.189185945429439, "Inf"],
+        [0.191199927449222, "Inf"]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0.0679988436523731, 0.230096993475843],
+        [0.0680932715779731, 0.23680707553398]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0, 0.189185945429439],
+        [0, 0.191199927449222]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0.0841159654201398, "Inf"],
+        [0.0843356413417219, "Inf"]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0.0495420619994401, 0.304080293782855],
+        [0.0489590820516262, 0.32935602201278]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0, 0.268141258960975],
+        [0, 0.282565306877323]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0.0572727714590423, "Inf"],
+        [0.0570663422347231, "Inf"]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0.0377816062736987, 0.381421901373022],
+        [0.0362886973999405, 0.444352364820549]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0, 0.349032013736498],
+        [0, 0.393586877519516]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [4, 47],
+        [63, 39]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.126984126984127,
+      "conf_int": [
+        [0.0420773087727495, "Inf"],
+        [0.0409692736900795, "Inf"]
+      ],
+      "sample_proportions": [0.0784313725490196, 0.617647058823529]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [1.2659343118764, 1.48772074131195],
+        [1.26504061436629, 1.48676359096406]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [0, 1.05762422028735],
+        [0, 1.04875632418638]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [1.80445834386309, "Inf"],
+        [1.79337781632901, "Inf"]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [0.930241166862632, 2.08926540964864],
+        [0.911546252647673, 2.06332516980636]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [0, 1.80445834386309],
+        [0, 1.79337781632901]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [1.05762422028735, "Inf"],
+        [1.04875632418638, "Inf"]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [0.771277626873902, 2.61972959998073],
+        [0.734296981974288, 2.56138370809274]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [0, 2.35885719165987],
+        [0, 2.31662931149742]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [0.840107609312703, "Inf"],
+        [0.81187625365704, "Inf"]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [0.657396559875252, 3.20711956158177],
+        [0.603424097046172, 3.11690622853383]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [0, 2.95643166271065],
+        [0, 2.87865822619459]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [36, 69],
+        [9, 27]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.37142857142857,
+      "conf_int": [
+        [0.700568680699888, "Inf"],
+        [0.65336562340606, "Inf"]
+      ],
+      "sample_proportions": [0.342857142857143, 0.25]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0.853091292429709, 0.916253311609008],
+        [0.853595287857262, 0.916762767824793]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0, 0.780346117009201],
+        [0, 0.785697046422891]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0.990441167148076, "Inf"],
+        [0.995987425765414, "Inf"]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0.726632573251671, 1.04716898217297],
+        [0.738474474805144, 1.05967694943648]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0, 0.990441167148076],
+        [0, 0.995987425765414]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0.780346117009201, "Inf"],
+        [0.785697046422891, "Inf"]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0.64607086500961, 1.13867727644811],
+        [0.671155228634542, 1.16596630006191]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0, 1.09540531234971],
+        [0, 1.1153320550472]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0.683053242952856, "Inf"],
+        [0.701624574634063, "Inf"]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0.576754381955494, 1.22847081833382],
+        [0.615372049048399, 1.27166058307058]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0, 1.19114881672573],
+        [0, 1.2277368013727]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [23, 12],
+        [52, 18]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.884615384615385,
+      "conf_int": [
+        [0.604299912949761, "Inf"],
+        [0.637387734751684, "Inf"]
+      ],
+      "sample_proportions": [0.657142857142857, 0.742857142857143]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0.273709579272965, 0.304012208095374],
+        [0.273784927136917, 0.304102099244357]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0, 0.241690750895888],
+        [0, 0.242357389773403]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0.342337580901861, "Inf"],
+        [0.34353634177049, "Inf"]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0.21994123888663, 0.373165178588184],
+        [0.221236157858572, 0.376333470485523]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0, 0.342337580901861],
+        [0, 0.34353634177049]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0.241690750895888, "Inf"],
+        [0.242357389773403, "Inf"]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0.189958687827617, 0.42423868382121],
+        [0.192215796624599, 0.433151554377214]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0, 0.399989390570278],
+        [0, 0.405765706988594]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0.203360400098904, "Inf"],
+        [0.20518878172753, "Inf"]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0.166268507296397, 0.474237326940772],
+        [0.16918123743085, 0.492126504972693]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0, 0.453569043401711],
+        [0, 0.467325825121078]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [20, 74],
+        [73, 26]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 0.288545613523754,
+      "conf_int": [
+        [0.175477838416886, "Inf"],
+        [0.178159576484412, "Inf"]
+      ],
+      "sample_proportions": [0.212765957446809, 0.737373737373737]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [4.39927162071034, 5.01170736548271],
+        [4.3980016518177, 5.01044204838976]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [0, 3.79395917439287],
+        [0, 3.7802329770678]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [5.84271921634907, "Inf"],
+        [5.82925246640421, "Inf"]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [3.40654171863725, 6.55740980540304],
+        [3.37565811404977, 6.52789223927614]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [0, 5.84271921634907],
+        [0, 5.82925246640421]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [3.79395917439287, "Inf"],
+        [3.7802329770678, "Inf"]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [2.90257143831015, 7.83187402669105],
+        [2.83497419633587, 7.77288641061913]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [0, 7.21281783822297],
+        [0, 7.16754197778657]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [3.12364051036201, "Inf"],
+        [3.0744057688742, "Inf"]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [2.52754797993923, 9.18559785534143],
+        [2.41951938038166, 9.10756598348843]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [0, 8.61364101552276],
+        [0, 8.54129986666853]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [87, 52],
+        [14, 91]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 4.69424460431655,
+      "conf_int": [
+        [2.67102157280319, "Inf"],
+        [2.57992726506978, "Inf"]
+      ],
+      "sample_proportions": [0.62589928057554, 0.133333333333333]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [1.97680264141916, 2.25099029612919],
+        [1.97577487005715, 2.2499097653811]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [0, 1.7096484467551],
+        [0, 1.69912262619124]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [2.62864482719547, "Inf"],
+        [2.61624152713497, "Inf"]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [1.54070363770827, 2.95785416748836],
+        [1.51786166160555, 2.92866951368548]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [0, 2.62864482719547],
+        [0, 2.61624152713497]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [1.7096484467551, "Inf"],
+        [1.69912262619124, "Inf"]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [1.32301940552156, 3.55301222666068],
+        [1.275502371603, 3.48514849780284]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [0, 3.26276552483219],
+        [0, 3.21461705539212]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [1.41825832203965, "Inf"],
+        [1.38284439413388, "Inf"]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [1.1619660159219, 4.19388611583264],
+        [1.0891704823815, 4.08137683332766]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [0, 3.92218939396858],
+        [0, 3.82845345400219]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [67, 65],
+        [13, 41]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.10839160839161,
+      "conf_int": [
+        [1.22354532285484, "Inf"],
+        [1.1611255635586, "Inf"]
+      ],
+      "sample_proportions": [0.507575757575758, 0.240740740740741]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [2.11134801404242, 2.25117670476603],
+        [2.11105950933755, 2.25087167558619]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [0, 1.9625559089141],
+        [0, 1.95959447042832]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [2.42841512388116, "Inf"],
+        [2.42485071618218, "Inf"]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [1.85993816192775, 2.57227299275511],
+        [1.85347015292129, 2.56369062515276]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [0, 2.42841512388116],
+        [0, 2.42485071618218]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [1.9625559089141, "Inf"],
+        [1.95959447042832, "Inf"]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [1.71463216697615, 2.81463828239767],
+        [1.7009709962055, 2.79353620117265]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [0, 2.69885967279529],
+        [0, 2.68432056815245]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [1.78028120047827, "Inf"],
+        [1.77017756799266, "Inf"]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [1.59470733316272, 3.05780646452555],
+        [1.57342518794056, 3.01998728091053]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [0, 2.95654072832563],
+        [0, 2.9261222001805]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [95, 34],
+        [50, 98]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 2.17984496124031,
+      "conf_int": [
+        [1.64202035727011, "Inf"],
+        [1.62389802269763, "Inf"]
+      ],
+      "sample_proportions": [0.736434108527132, 0.337837837837838]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [1.04598516069051, 1.1374243768901],
+        [1.04614902413985, 1.13758424198368]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [0, 0.947360306029589],
+        [0, 0.949171291218931]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [1.25214147449193, "Inf"],
+        [1.25381230515283, "Inf"]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [0.878447428700981, 1.34476803340656],
+        [0.882570610659342, 1.34842768414759]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [0, 1.25214147449193],
+        [0, 1.25381230515283]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [0.947360306029589, "Inf"],
+        [0.949171291218931, "Inf"]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [0.779823967146751, 1.50084799688691],
+        [0.788908990484331, 1.50851702665662]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [0, 1.4262218975942],
+        [0, 1.43192234443114]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [0.824499132381372, "Inf"],
+        [0.831108369288619, "Inf"]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [0.698111753785595, 1.65843728361927],
+        [0.712518898027254, 1.67024713017868]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [0, 1.59263948714275],
+        [0, 1.60274102811525]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [30, 25],
+        [41, 41]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.09090909090909,
+      "conf_int": [
+        [0.7303230055203, "Inf"],
+        [0.74252959383437, "Inf"]
+      ],
+      "sample_proportions": [0.545454545454545, 0.5]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [1.24003533549704, 1.31550547848246],
+        [1.23975778835068, 1.31520250140787]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [0, 1.16031769177402],
+        [0, 1.15757829342738]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [1.41223888831001, "Inf"],
+        [1.40857214897403, "Inf"]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [1.10550420623725, 1.49175485165551],
+        [1.09970219690573, 1.48270372557823]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [0, 1.41223888831001],
+        [0, 1.40857214897403]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [1.16031769177402, "Inf"],
+        [1.15757829342738, "Inf"]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [1.02773641653392, 1.6278211817215],
+        [1.01607225019252, 1.60474074955767]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [0, 1.56249473382158],
+        [0, 1.54685530456417]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [1.06292418706475, "Inf"],
+        [1.05409506601401, "Inf"]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [0.963022655925764, 1.76689178548756],
+        [0.945673190080417, 1.72420299262163]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [0, 1.70867881803536],
+        [0, 1.67477410491891]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [90, 40],
+        [45, 38]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.27692307692308,
+      "conf_int": [
+        [0.988638319963514, "Inf"],
+        [0.973583565443084, "Inf"]
+      ],
+      "sample_proportions": [0.692307692307692, 0.542168674698795]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [4.06383458397129, 4.78518102290114],
+        [4.06219993676842, 4.78359107775796]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [0, 3.37781843777157],
+        [0, 3.35999327110859]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [5.79925836644589, "Inf"],
+        [5.78331615741094, "Inf"]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [2.9554267255263, 6.69736765534777],
+        [2.91541187998694, 6.66523433858044]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [0, 5.79925836644589],
+        [0, 5.78331615741094]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [3.37781843777157, "Inf"],
+        [3.35999327110859, "Inf"]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [2.42875826367125, 8.34408094896073],
+        [2.34232841512754, 8.29597730535846]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [0, 7.53789736275697],
+        [0, 7.49406664174919]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [2.65638744172608, "Inf"],
+        [2.59297178721895, "Inf"]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [2.05584195166591, 10.1398371471592],
+        [1.92025589712972, 10.1194342913566]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [0, 9.37627323636657],
+        [0, 9.33687354413684]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [96, 100],
+        [9, 72]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 4.40816326530612,
+      "conf_int": [
+        [2.19645751760339, "Inf"],
+        [2.08120023064859, "Inf"]
+      ],
+      "sample_proportions": [0.489795918367347, 0.111111111111111]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [1.37004415792729, 1.47828126423915],
+        [1.36968842064061, 1.47789673691756]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [0, 1.25751076999127],
+        [0, 1.25395729521036]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.2,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [1.61889714851632, "Inf"],
+        [1.61429584180452, "Inf"]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [1.18144658382834, 1.73572482448465],
+        [1.17384723072749, 1.72446464452107]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [0, 1.61889714851632],
+        [0, 1.61429584180452]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.8,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [1.25751076999127, "Inf"],
+        [1.25395729521036, "Inf"]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [1.07576009286241, 1.9375838306754],
+        [1.06022500773793, 1.90927211929988]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [0, 1.84040301791749],
+        [0, 1.82109012369711]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.95,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [1.12322841883713, "Inf"],
+        [1.11156390401423, "Inf"]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "two.sided"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [0.990151962969222, 2.14577357828696],
+        [0.966631250189386, 2.09413677352343]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "less"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [0, 2.05843680895573],
+        [0, 2.01718543684671]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    },
+    {
+      "x": [
+        [75, 48],
+        [33, 44]
+      ],
+      "options": {
+        "conf_level": 0.99,
+        "method": [
+          "koopman",
+          "katz"
+        ],
+        "alternative": "greater"
+      },
+      "estimate": 1.42276422764228,
+      "conf_int": [
+        [1.02376295023953, "Inf"],
+        [1.00350617770812, "Inf"]
+      ],
+      "sample_proportions": [0.609756097560976, 0.428571428571429]
+    }
+  ]
+}

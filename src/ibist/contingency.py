@@ -21,7 +21,9 @@ class TestResult:
     Observed counts, expected counts, and residual diagnostics are DataFrames;
     input DataFrame labels are preserved. Fisher has no chi-square statistic,
     degrees of freedom, or Pearson residuals. Confidence limits, when present,
-    refer to the conditional odds ratio. Stored values retain full precision.
+    refer to the conditional odds ratio for Fisher tests. Rate tests use
+    estimate_name to identify their rate or rate ratio and expose copied
+    samples/sample_rates metadata. Stored values retain full precision.
     """
 
     statistic: float | None
@@ -39,6 +41,24 @@ class TestResult:
     null_value: float | None = None
     n_strata: int | None = None
     n_resamples: int | None = None
+    estimate_name: str = "Conditional odds ratio"
+    _rate_data: tuple[tuple[int, float], ...] = ()
+
+    @property
+    def samples(self):
+        """Fresh event counts and exposures for a rate test, otherwise None."""
+        if not self._rate_data:
+            return None
+        frame = pd.DataFrame(self._rate_data, columns=["x", "exposure"])
+        frame.index.name = "sample"
+        return frame
+
+    @property
+    def sample_rates(self):
+        """Fresh sample rates for a Poisson test, otherwise None."""
+        if not self._rate_data:
+            return None
+        return np.array([x / t for x, t in self._rate_data])
 
     def summary(self, digits: int = 3) -> str:
         """Round only the displayed summary; retain tiny p-values."""
@@ -52,7 +72,11 @@ class TestResult:
             lines.append(f"Strata: {self.n_strata}")
         lines.append(f"p-value: {self.p_value:.{max(1, digits)}g}")
         if self.estimate is not None:
-            lines.append(f"Conditional odds ratio: {self.estimate:.{digits}f}")
+            estimate = f"{self.estimate:.{digits}f}"
+            if (self._rate_data and np.isfinite(self.estimate)
+                    and 0 < abs(self.estimate) < 0.5 * 10**-digits):
+                estimate = f"{self.estimate:.{digits}e}"
+            lines.append(f"{self.estimate_name}: {estimate}")
         if self.conf_int is not None:
             lower, upper = self.conf_int
             lines.append(f"{100 * self.conf_level:g}% confidence interval: "
