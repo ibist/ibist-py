@@ -43,6 +43,7 @@ each function and its guide.
 | `rate_test()` | `rate.test()` | [Risk ratios and rates][rates] |
 | `indep_test()` | `indep.test()` | [Tables][tables] |
 | `nominal_assoc()` | `nominal.assoc()` | [Tables][tables] |
+| `ordinal_assoc()` | `ordinal.assoc()` | [Ordinal association][ordinal] |
 
 ## Shared conventions
 
@@ -52,8 +53,9 @@ bounds. `alternative` remains a compatibility alias: `"greater"` selects
 `"lower"`, and `"less"` selects `"upper"`. Conflicting values are errors.
 Hypothesis tests use `alternative` to specify the alternative hypothesis.
 
-Tests return `TestResult`, corresponding to R's `htest`; nominal association
-returns `NominalAssociationResult`. Dotted fields become snake_case, such
+Tests return `TestResult`, corresponding to R's `htest`; nominal and ordinal
+association return `NominalAssociationResult` and `OrdinalAssociationResult`.
+Dotted fields become snake_case, such
 as `p.value` to `p_value` and `conf.int` to `conf_int`. Result fields retain
 full precision. Use `summary()` for display and `to_frame()` where provided
 for pandas output. Function-specific Returns sections describe the fields
@@ -72,5 +74,6 @@ values, and the common R export workflow.
 [odds]: odds-ratio.md
 [rates]: risk-ratios-and-rates.md
 [tables]: contingency-tables.md
+[ordinal]: ordinal-association.md
 [pep257]: https://peps.python.org/pep-0257/
 [numpydoc]: https://numpydoc.readthedocs.io/en/latest/format.html

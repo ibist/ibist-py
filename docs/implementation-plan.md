@@ -47,7 +47,7 @@ including non-unit null odds ratios and all alternatives. See
 ## Subsequent stages
 
 1. Complete basic odds-ratio, rate, and paired-data intervals.
-2. Add ordinal association, kappa, trend tests, and exact stratified inference.
+2. Ordinal association is implemented; add kappa and trend tests next.
 3. Add power calculations, logistic goodness of fit, and computationally
    demanding paired methods.
 

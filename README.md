@@ -31,6 +31,11 @@ See the [function reference](docs/api-reference.md) for R counterparts,
 shared result conventions, and access to complete help with `help()` or
 `python -m pydoc`.
 
+`ordinal_assoc()` provides seven ordinal association measures with
+multinomial standard errors, confidence intervals, and tests. See
+[ordinal association](docs/ordinal-association.md) for category ordering,
+Pearson scores, Spearman midranks, and result fields.
+
 ## Installation
 
 After publication, install the first alpha from PyPI with:
