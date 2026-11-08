@@ -45,6 +45,11 @@ tests. See [association tests](docs/association-tests.md).
 custom weights, confidence intervals, and FCE/delta test-variance choices.
 See [agreement tests](docs/agreement-tests.md) for result fields and examples.
 
+`trend_test()` provides asymptotic and exact Cochran--Armitage inference.
+`power_p1s_test()` and `power_p2s_test()` compute proportion power and solve
+sample sizes or other design parameters. See
+[trend and power](docs/trend-and-power.md) for exact rules and allocation.
+
 ## Installation
 
 After publication, install the first alpha from PyPI with:

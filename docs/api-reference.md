@@ -46,6 +46,9 @@ each function and its guide.
 | `ordinal_assoc()` | `ordinal.assoc()` | [Ordinal association][ordinal] |
 | `assoc_test()` | `assoc.test()` | [Association tests][association] |
 | `agreement_test()` | `agreement.test()` | [Agreement tests][agreement] |
+| `trend_test()` | `trend.test()` | [Trend and power][design] |
+| `power_p1s_test()` | `power.p1s.test()` | [Trend and power][design] |
+| `power_p2s_test()` | `power.p2s.test()` | [Trend and power][design] |
 
 ## Shared conventions
 
@@ -64,6 +67,9 @@ full precision. Use `summary()` for display and `to_frame()` where provided
 for pandas output. Function-specific Returns sections describe the fields
 and any differences from R.
 
+Power calculations return `PowerResult`, corresponding to R's `power.htest`,
+with resolved design parameters and full-precision power values.
+
 ## Datasets
 
 `ibist.datasets.available()` lists the bundled datasets.
@@ -80,5 +86,6 @@ values, and the common R export workflow.
 [ordinal]: ordinal-association.md
 [association]: association-tests.md
 [agreement]: agreement-tests.md
+[design]: trend-and-power.md
 [pep257]: https://peps.python.org/pep-0257/
 [numpydoc]: https://numpydoc.readthedocs.io/en/latest/format.html

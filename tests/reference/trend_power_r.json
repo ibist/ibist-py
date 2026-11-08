@@ -1,0 +1,615 @@
+{
+  "source": "ibist-R working sources; independent Python checks also used",
+  "r_revision": "ba3a71a8f45be440071dfaebc1faaacbd9c1732f",
+  "source_md5": {
+    "R/ca_trend_test.R": "2d7131633ec14316e3ca9ddebf8d7f6c",
+    "R/trend_test.R": "3a23ece7ed2377ce5dc04775742f6e9f",
+    "R/power_p1s.R": "67dbc22caa63e929964b2ae6d3b1bde0",
+    "R/power_p2s.R": "3e1e05599fb8444635721c1eeaa82e47"
+  },
+  "cases": [
+    {
+      "kind": "trend",
+      "args": {
+        "x": [
+          [106, 99],
+          [109, 95],
+          [128, 76],
+          [130, 74]
+        ]
+      },
+      "result": {
+        "statistic": 2.93735608548368,
+        "chisq": 8.62806077292798,
+        "score_statistic": 1228,
+        "p_value": 0.00331023772639524,
+        "method": "Asymptotic Cochran-Armitage trend test",
+        "alternative": "two.sided"
+      }
+    },
+    {
+      "kind": "trend",
+      "args": {
+        "x": [
+          [8, 12],
+          [12, 8],
+          [16, 4]
+        ],
+        "scores": [1, 2, 4],
+        "alternative": "greater"
+      },
+      "result": {
+        "statistic": 2.53546276418555,
+        "chisq": 6.42857142857143,
+        "score_statistic": 96,
+        "p_value": 0.00561494332645834,
+        "method": "Asymptotic Cochran-Armitage trend test",
+        "alternative": "greater"
+      }
+    },
+    {
+      "kind": "trend",
+      "args": {
+        "x": [
+          [2, 0],
+          [1, 1],
+          [0, 2]
+        ],
+        "scores": [0, 1, 3],
+        "exact": true,
+        "alternative": "two.sided"
+      },
+      "result": {
+        "statistic": -1.96396101212393,
+        "chisq": 3.85714285714286,
+        "score_statistic": 1,
+        "p_value": 0.2,
+        "method": "Exact conditional Cochran-Armitage trend test",
+        "alternative": "two.sided"
+      }
+    },
+    {
+      "kind": "trend",
+      "args": {
+        "x": [
+          [2, 0],
+          [1, 1],
+          [0, 2]
+        ],
+        "scores": [0, 1, 3],
+        "exact": true,
+        "alternative": "greater"
+      },
+      "result": {
+        "statistic": -1.96396101212393,
+        "chisq": 3.85714285714286,
+        "score_statistic": 1,
+        "p_value": 1,
+        "method": "Exact conditional Cochran-Armitage trend test",
+        "alternative": "greater"
+      }
+    },
+    {
+      "kind": "trend",
+      "args": {
+        "x": [
+          [2, 0],
+          [1, 1],
+          [0, 2]
+        ],
+        "scores": [0, 1, 3],
+        "exact": true,
+        "alternative": "less"
+      },
+      "result": {
+        "statistic": -1.96396101212393,
+        "chisq": 3.85714285714286,
+        "score_statistic": 1,
+        "p_value": 0.1,
+        "method": "Exact conditional Cochran-Armitage trend test",
+        "alternative": "less"
+      }
+    },
+    {
+      "kind": "trend",
+      "args": {
+        "x": [
+          [8, 12],
+          [0, 0],
+          [16, 4]
+        ]
+      },
+      "result": {
+        "statistic": 2.58198889747161,
+        "chisq": 6.66666666666667,
+        "score_statistic": 56,
+        "p_value": 0.00982327450751925,
+        "method": "Asymptotic Cochran-Armitage trend test",
+        "alternative": "two.sided"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 50,
+        "p0": 0.1,
+        "p1": 0.25
+      },
+      "result": {
+        "n": 50,
+        "p0": 0.1,
+        "p1": 0.25,
+        "sig_level": 0.05,
+        "power": 0.86249263327594,
+        "alternative": "two.sided",
+        "method":
+          "One-sample proportion power calculation (normal approximation)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 40,
+        "p0": 0.4,
+        "p1": 0.2,
+        "alternative": "less",
+        "correct": true
+      },
+      "result": {
+        "n": 40,
+        "p0": 0.4,
+        "p1": 0.2,
+        "sig_level": 0.05,
+        "power": 0.828971631406217,
+        "alternative": "less",
+        "method":
+          "One-sample proportion power calculation (normal approximation)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 40,
+        "p0": 0.3,
+        "p1": 0.5,
+        "strict": true,
+        "correct": true
+      },
+      "result": {
+        "n": 40,
+        "p0": 0.3,
+        "p1": 0.5,
+        "sig_level": 0.05,
+        "power": 0.717483648329031,
+        "alternative": "two.sided",
+        "method":
+          "One-sample proportion power calculation (normal approximation)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "p0": 0.1,
+        "p1": 0.25,
+        "power": 0.8
+      },
+      "result": {
+        "n": 40.3158860842504,
+        "p0": 0.1,
+        "p1": 0.25,
+        "sig_level": 0.05,
+        "power": 0.8,
+        "alternative": "two.sided",
+        "method":
+          "One-sample proportion power calculation (normal approximation)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 50,
+        "p1": 0.25,
+        "power": 0.8
+      },
+      "result": {
+        "n": 50,
+        "p0": 0.111290448802165,
+        "p1": 0.25,
+        "sig_level": 0.05,
+        "power": 0.8,
+        "alternative": "two.sided",
+        "method":
+          "One-sample proportion power calculation (normal approximation)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 50,
+        "p0": 0.25,
+        "power": 0.8,
+        "alternative": "less"
+      },
+      "result": {
+        "n": 50,
+        "p0": 0.25,
+        "p1": 0.111771285026288,
+        "sig_level": 0.05,
+        "power": 0.8,
+        "alternative": "less",
+        "method":
+          "One-sample proportion power calculation (normal approximation)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 50,
+        "p0": 0.1,
+        "p1": 0.25,
+        "sig_level": null,
+        "power": 0.8
+      },
+      "result": {
+        "n": 50,
+        "p0": 0.1,
+        "p1": 0.25,
+        "sig_level": 0.0202998927167495,
+        "power": 0.8,
+        "alternative": "two.sided",
+        "method":
+          "One-sample proportion power calculation (normal approximation)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 35,
+        "p0": 0.1,
+        "p1": 0.25,
+        "exact": true,
+        "exact_method": "quantile"
+      },
+      "result": {
+        "n": 35,
+        "p0": 0.1,
+        "p1": 0.25,
+        "sig_level": 0.05,
+        "achieved_sig_level": 0.0199902336271636,
+        "power": 0.677718234529812,
+        "alternative": "two.sided",
+        "method": "One-sample proportion power calculation (exact binomial)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 35,
+        "p0": 0.1,
+        "p1": 0.25,
+        "exact": true,
+        "exact_method": "cp"
+      },
+      "result": {
+        "n": 35,
+        "p0": 0.1,
+        "p1": 0.25,
+        "sig_level": 0.05,
+        "achieved_sig_level": 0.0199902336271635,
+        "power": 0.677718234529811,
+        "alternative": "two.sided",
+        "method":
+          "One-sample proportion power calculation (exact Clopper--Pearson)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 35,
+        "p0": 0.1,
+        "p1": 0.25,
+        "exact": true,
+        "exact_method": "midp"
+      },
+      "result": {
+        "n": 35,
+        "p0": 0.1,
+        "p1": 0.25,
+        "sig_level": 0.05,
+        "achieved_sig_level": 0.045021788677096,
+        "power": 0.677760612896912,
+        "alternative": "two.sided",
+        "method":
+          "One-sample proportion power calculation (deterministic mid-p test)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 35,
+        "p0": 0.1,
+        "p1": 0.25,
+        "exact": true,
+        "exact_method": "midp-rand"
+      },
+      "result": {
+        "n": 35,
+        "p0": 0.1,
+        "p1": 0.25,
+        "sig_level": 0.05,
+        "achieved_sig_level": 0.0131472249114091,
+        "power": 0.601707746800767,
+        "alternative": "two.sided",
+        "method":
+         "One-sample proportion power calculation (randomized mid-p boundaries)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 35,
+        "p0": 0.9,
+        "p1": 0.75,
+        "exact": true,
+        "exact_method": "midp-rand",
+        "alternative": "less"
+      },
+      "result": {
+        "n": 35,
+        "p0": 0.9,
+        "p1": 0.75,
+        "sig_level": 0.05,
+        "achieved_sig_level": 0.0131472249114091,
+        "power": 0.601707746800767,
+        "alternative": "less",
+        "method":
+         "One-sample proportion power calculation (randomized mid-p boundaries)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "p0": 0.01,
+        "p1": 0.99,
+        "power": 0.8,
+        "exact": true,
+        "alternative": "greater",
+        "size_rule": "minimal",
+        "max_n": 100
+      },
+      "result": {
+        "n": 1,
+        "p0": 0.01,
+        "p1": 0.99,
+        "sig_level": 0.05,
+        "achieved_sig_level": 0.01,
+        "power": 0.99,
+        "alternative": "greater",
+        "method": "One-sample proportion power calculation (exact binomial)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "p0": 0.1,
+        "p1": 0.25,
+        "power": 0.8,
+        "exact": true,
+        "max_n": 500
+      },
+      "result": {
+        "n": 71,
+        "p0": 0.1,
+        "p1": 0.25,
+        "sig_level": 0.05,
+        "achieved_sig_level": 0.0451347940397276,
+        "power": 0.929094115120653,
+        "alternative": "two.sided",
+        "method": "One-sample proportion power calculation (exact binomial)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 50,
+        "p0": 0.1,
+        "power": 0.8,
+        "exact": true,
+        "exact_method": "cp"
+      },
+      "result": {
+        "n": 50,
+        "p0": 0.1,
+        "p1": 0.241428268326223,
+        "sig_level": 0.05,
+        "achieved_sig_level": 0.0296917109119116,
+        "power": 0.8,
+        "alternative": "two.sided",
+        "method":
+          "One-sample proportion power calculation (exact Clopper--Pearson)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 50,
+        "p1": 0.25,
+        "power": 0.8,
+        "exact": true,
+        "exact_method": "cp"
+      },
+      "result": {
+        "n": 50,
+        "p0": 0.100302232651171,
+        "p1": 0.25,
+        "sig_level": 0.05,
+        "achieved_sig_level": 0.0300679404333515,
+        "power": 0.8,
+        "alternative": "two.sided",
+        "method":
+          "One-sample proportion power calculation (exact Clopper--Pearson)"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 50,
+        "p0": 0.1,
+        "p1": 0.25,
+        "power": 0.8,
+        "sig_level": null,
+        "exact": true,
+        "exact_method": "cp"
+      },
+      "result": {
+        "n": 50,
+        "p0": 0.1,
+        "p1": 0.25,
+        "sig_level": 0.0490758755094982,
+        "achieved_sig_level": 0.0296917109119116,
+        "power": 0.8,
+        "alternative": "two.sided",
+        "method":
+          "One-sample proportion power calculation (exact Clopper--Pearson)"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 100,
+        "p1": 0.3,
+        "p2": 0.5,
+        "group_rate": 2
+      },
+      "result": {
+        "n": 100,
+        "p1": 0.3,
+        "p2": 0.5,
+        "sig_level": 0.05,
+        "power": 0.919289903292449,
+        "alternative": "two.sided",
+        "note": "n is number in the 1st group; no continuity correction",
+        "method": "Two-sample proportions power calculation"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 100,
+        "p1": 0.3,
+        "p2": 0.5,
+        "group_rate": 1.5,
+        "correct": true,
+        "strict": true,
+        "alternative": "one.sided"
+      },
+      "result": {
+        "n": 100,
+        "p1": 0.3,
+        "p2": 0.5,
+        "sig_level": 0.05,
+        "power": 0.921505461341863,
+        "alternative": "one.sided",
+        "note": "n is number in the 1st group; continuity correction applied",
+        "method": "Two-sample proportions power calculation"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 100,
+        "p1": 0.3,
+        "p2": 0.5,
+        "group_rate": 1.5,
+        "correct": true,
+        "strict": true
+      },
+      "result": {
+        "n": 100,
+        "p1": 0.3,
+        "p2": 0.5,
+        "sig_level": 0.05,
+        "power": 0.861729134591547,
+        "alternative": "two.sided",
+        "note": "n is number in the 1st group; continuity correction applied",
+        "method": "Two-sample proportions power calculation"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "p1": 0.3,
+        "p2": 0.5,
+        "power": 0.8,
+        "group_rate": 1.5
+      },
+      "result": {
+        "n": 77.9143459197732,
+        "p1": 0.3,
+        "p2": 0.5,
+        "sig_level": 0.05,
+        "power": 0.8,
+        "alternative": "two.sided",
+        "note": "n is number in the 1st group; no continuity correction",
+        "method": "Two-sample proportions power calculation"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 100,
+        "p2": 0.5,
+        "power": 0.8
+      },
+      "result": {
+        "n": 100,
+        "p1": 0.30677828887833,
+        "p2": 0.5,
+        "sig_level": 0.05,
+        "power": 0.8,
+        "alternative": "two.sided",
+        "note": "n is number in the 1st group; no continuity correction",
+        "method": "Two-sample proportions power calculation"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 100,
+        "p1": 0.3,
+        "power": 0.8
+      },
+      "result": {
+        "n": 100,
+        "p1": 0.3,
+        "p2": 0.492656429333353,
+        "sig_level": 0.05,
+        "power": 0.8,
+        "alternative": "two.sided",
+        "note": "n is number in the 1st group; no continuity correction",
+        "method": "Two-sample proportions power calculation"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 100,
+        "p1": 0.3,
+        "p2": 0.5,
+        "group_rate": 2,
+        "sig_level": null,
+        "power": 0.8
+      },
+      "result": {
+        "n": 100,
+        "p1": 0.3,
+        "p2": 0.5,
+        "sig_level": 0.012675714352687,
+        "power": 0.8,
+        "alternative": "two.sided",
+        "note": "n is number in the 1st group; no continuity correction",
+        "method": "Two-sample proportions power calculation"
+      }
+    }
+  ]
+}

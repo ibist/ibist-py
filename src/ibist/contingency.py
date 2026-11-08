@@ -29,6 +29,7 @@ class TestResult:
     Unsupported method-specific fields remain None.
     Agreement tests add null_std_error (the selected test standard error),
     test_variance, weight_method, n, and a copied weights array.
+    Trend tests add score_statistic and use chisq for the squared signed Z.
     """
 
     statistic: float | None
@@ -57,6 +58,7 @@ class TestResult:
     weight_method: str | None = None
     n: int | None = None
     _weight_data: tuple[tuple[float, ...], ...] = ()
+    score_statistic: float | None = None
 
     @property
     def weights(self):

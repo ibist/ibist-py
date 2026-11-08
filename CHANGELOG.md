@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Add `trend_test()` and one-/two-sample proportion power functions matching
+  R's new trend entry point and existing power interfaces. Add `PowerResult`
+  following R's `power.htest`, and fix exact sample-size minimality in R
+  before translating it. Use focused formula checks and 30 R references.
+
 - Add `agreement_test()` matching R's `agreement.test()` for unweighted and
   weighted Cohen's kappa, FCE/delta test variances, and Wald intervals.
   Extend `TestResult` with copied agreement weights and kappa metadata.
