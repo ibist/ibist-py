@@ -3,6 +3,7 @@
 from dataclasses import dataclass
 import math
 from numbers import Integral
+from typing import TYPE_CHECKING
 import warnings
 
 import numpy as np
@@ -12,6 +13,9 @@ from scipy.stats import chi2, hypergeom, random_table
 from scipy.stats.contingency import odds_ratio
 
 from .odds_ratio import _probability
+
+if TYPE_CHECKING:
+    from .asymcheck import AsymCheckResult
 
 
 @dataclass(frozen=True)
@@ -30,6 +34,7 @@ class TestResult:
     Agreement tests add null_std_error (the selected test standard error),
     test_variance, weight_method, n, and a copied weights array.
     Trend tests add score_statistic and use chisq for the squared signed Z.
+    Optional diagnostics contains a separate AsymCheckResult.
     """
 
     statistic: float | None
@@ -59,6 +64,7 @@ class TestResult:
     n: int | None = None
     _weight_data: tuple[tuple[float, ...], ...] = ()
     score_statistic: float | None = None
+    diagnostics: "AsymCheckResult | None" = None
 
     @property
     def weights(self):
@@ -184,7 +190,8 @@ def _expected(tab):
     return np.outer(tab.sum(axis=1).astype(float), tab.sum(axis=0)) / tab.sum()
 
 
-def indep_test(x, *, method="pearson", correct=False, **options):
+def indep_test(x, *, method="pearson", correct=False, asymcheck=False,
+               **options):
     """Test row/column independence in a two-dimensional integer count table.
 
     Parameters
@@ -195,6 +202,9 @@ def indep_test(x, *, method="pearson", correct=False, **options):
         Pearson chi-square, likelihood-ratio G-square, or conditional Fisher.
     correct : bool, default False
         R's capped Yates correction, only for Pearson on a 2 by 2 table.
+    asymcheck : bool, default False
+        Attach shared approximation diagnostics in result.diagnostics.
+        Exact Fisher inference is marked not applicable.
     **options
         Fisher only: ``alternative`` ("two.sided", "less", "greater"),
         ``conf_int`` (True), ``conf_level`` (0.95), ``simulate_p_value``
@@ -258,6 +268,7 @@ def indep_test(x, *, method="pearson", correct=False, **options):
     if not isinstance(method, str) or method not in ("pearson", "lr", "fisher"):
         raise ValueError("method must be pearson, lr, or fisher.")
     correct = _flag(correct, "correct")
+    asymcheck = _flag(asymcheck, "asymcheck")
     tab, observed = _table(x)
     if correct and (method != "pearson" or tab.shape != (2, 2)):
         raise ValueError("correct=True is only available for Pearson on a 2 x 2 table.")
@@ -265,7 +276,12 @@ def indep_test(x, *, method="pearson", correct=False, **options):
     expected_frame = pd.DataFrame(expected, index=observed.index,
                                   columns=observed.columns)
     if method == "fisher":
-        return _fisher(tab, observed, expected_frame, options)
+        result = _fisher(tab, observed, expected_frame, options)
+        if asymcheck:
+            from dataclasses import replace
+            from .asymcheck import _indep
+            result = replace(result, diagnostics=_indep(x, method, correct))
+        return result
     if options:
         raise ValueError("Additional options are available only for Fisher's method.")
     if np.any(expected < 5):
@@ -295,7 +311,14 @@ def indep_test(x, *, method="pearson", correct=False, **options):
                       residuals=pd.DataFrame(residuals, index=observed.index,
                                               columns=observed.columns),
                       stdres=pd.DataFrame(stdres, index=observed.index,
-                                          columns=observed.columns))
+                                          columns=observed.columns),
+                      diagnostics=_independence_check(x, method, correct)
+                      if asymcheck else None)
+
+
+def _independence_check(x, method, correct):
+    from .asymcheck import _indep
+    return _indep(x, method, correct)
 
 
 def nominal_assoc(x, *, measure=("phi", "contingency", "cramer-v")):

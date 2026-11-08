@@ -3,6 +3,7 @@
 __version__ = "0.1.0a1"
 
 from . import datasets
+from .asymcheck import AsymCheckResult, asymcheck
 from .agreement import agreement_test
 from .association import AssociationTestResults, assoc_test
 from .contingency import (NominalAssociationResult, TestResult, indep_test,
@@ -21,6 +22,7 @@ from .trend import trend_test
 from .results import CIResult, ConfidenceInterval
 
 __all__ = ["CIResult", "ConfidenceInterval", "NominalAssociationResult",
+           "AsymCheckResult", "asymcheck",
            "PowerResult", "power_p1s_test", "power_p2s_test", "trend_test",
            "power_r1s_test", "power_r2s_test",
            "agreement_test",

@@ -15,7 +15,8 @@ from .risk_ratio import _alternative, _methods
 
 
 def rate_1s_ci(x, exposure=1.0, *, conf_level=0.95, method="exact",
-               correct=True, alternative=None, side=None) -> CIResult:
+               correct=True, alternative=None, side=None,
+               asymcheck=False) -> CIResult:
     """Estimate a Poisson rate and return one or more confidence intervals.
 
     Parameters
@@ -38,6 +39,10 @@ def rate_1s_ci(x, exposure=1.0, *, conf_level=0.95, method="exact",
     alternative : {"two.sided", "less", "greater"}, optional
         Compatibility alias: greater selects lower, less selects upper.
         Conflicting side and alternative values raise an error.
+    asymcheck : bool, default False
+        Attach shared diagnostics in result.diagnostics. Approximate
+        methods report events and plug-in skewness without a universal
+        accuracy cutoff. Exact methods are marked not applicable.
 
     Returns
     -------
@@ -84,6 +89,7 @@ def rate_1s_ci(x, exposure=1.0, *, conf_level=0.95, method="exact",
     counts, exposures = _rate_inputs(x, exposure, lengths=(1,))
     conf_level = _probability(conf_level, "conf_level")
     correct = _flag(correct, "correct")
+    asymcheck = _flag(asymcheck, "asymcheck")
     _alternative(alternative)
     methods = _methods(method, ("exact", "score", "wh", "wald", "log"))
     count, time = int(counts[0]), float(exposures[0])
@@ -94,9 +100,14 @@ def rate_1s_ci(x, exposure=1.0, *, conf_level=0.95, method="exact",
         limits = _one_rate_limits(count, time, name, tail, z, correct)
         lower, upper = _bounds(limits, alternative)
         intervals.append(ConfidenceInterval(name, lower, upper))
+    diagnostics = None
+    if asymcheck:
+        from .asymcheck import _rate
+        diagnostics = _rate(count, time, conf_level, methods, correct,
+                             alternative, side)
     return CIResult(count / time, tuple(intervals), conf_level,
                     "Poisson rate", alternative=alternative, correct=correct,
-                    _rate_data=((count, time),))
+                    _rate_data=((count, time),), diagnostics=diagnostics)
 
 
 def rate_2s_ci(x, exposure=(1.0, 1.0), *, conf_level=0.95, method="log",

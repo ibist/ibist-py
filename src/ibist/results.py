@@ -1,9 +1,13 @@
 """Structured results for confidence interval procedures."""
 
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 
 import numpy as np
 import pandas as pd
+
+if TYPE_CHECKING:
+    from .asymcheck import AsymCheckResult
 
 
 @dataclass(frozen=True)
@@ -27,6 +31,7 @@ class CIResult:
     values. Two-sample differences have a scalar estimate and expose group
     counts through ``samples`` and ``sample_proportions``. Returned interval
     arrays, DataFrames, input tables, and sample proportions are copies.
+    Optional diagnostics stores a separate AsymCheckResult.
     """
 
     estimate: float | np.ndarray
@@ -40,6 +45,7 @@ class CIResult:
     _input_data: tuple[tuple[int, int, int], ...] = ()
     _sample_counts: tuple[tuple[int, int], ...] = ()
     _rate_data: tuple[tuple[int, float], ...] = ()
+    diagnostics: "AsymCheckResult | None" = None
 
     @property
     def side(self) -> str:
