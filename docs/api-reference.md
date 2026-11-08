@@ -49,6 +49,8 @@ each function and its guide.
 | `trend_test()` | `trend.test()` | [Trend and power][design] |
 | `power_p1s_test()` | `power.p1s.test()` | [Trend and power][design] |
 | `power_p2s_test()` | `power.p2s.test()` | [Trend and power][design] |
+| `power_r1s_test()` | `power.r1s.test()` | [Trend and power][design] |
+| `power_r2s_test()` | `power.r2s.test()` | [Trend and power][design] |
 
 ## Shared conventions
 

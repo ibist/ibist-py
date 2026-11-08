@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Add one-/two-sample Poisson rate power in step with the new R interfaces,
+  including per-subject exposure, unequal allocation, solve-one-missing
+  designs, optional continuity correction, and 19 R comparison cases.
+  Verify four published Minitab powers and two rounded sample sizes in
+  both packages; record matching settings and validation scope.
+
 - Add `trend_test()` and one-/two-sample proportion power functions matching
   R's new trend entry point and existing power interfaces. Add `PowerResult`
   following R's `power.htest`, and fix exact sample-size minimality in R

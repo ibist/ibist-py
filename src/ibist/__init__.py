@@ -16,11 +16,13 @@ from .proportions import prop_1s_ci, prop_2s_ci
 from .rates import rate_1s_ci, rate_2s_ci, rate_test
 from .risk_ratio import rr_2x2_ci
 from .power import PowerResult, power_p1s_test, power_p2s_test
+from .rate_power import power_r1s_test, power_r2s_test
 from .trend import trend_test
 from .results import CIResult, ConfidenceInterval
 
 __all__ = ["CIResult", "ConfidenceInterval", "NominalAssociationResult",
            "PowerResult", "power_p1s_test", "power_p2s_test", "trend_test",
+           "power_r1s_test", "power_r2s_test",
            "agreement_test",
            "AssociationTestResults", "assoc_test",
            "OrdinalAssociationResult", "ordinal_assoc",

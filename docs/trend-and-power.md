@@ -1,4 +1,4 @@
-# Trend tests and proportion power
+# Trend tests and power
 
 ## Cochran--Armitage trend tests
 
@@ -89,6 +89,41 @@ first. Two-sample p1/p2 inversion stays within [0, p2] / [p1, 1]; Python
 does not extend to inadmissible probabilities. Two-sample methods are normal
 approximations only; the one-sample exact options do not apply to them.
 
+## Poisson rate power
+
+`power_r1s_test()` and `power_r2s_test()` match R's `power.r1s.test()` and
+`power.r2s.test()`. Omit exactly one of `n`, the relevant rates (`r0`/`r1`
+or `r1`/`r2`), `power`, or `sig_level`. Exposure is fixed per-subject
+follow-up. `group_rate` is n2/n1; separate exposure values allow different
+follow-up durations independently of allocation. Sizes remain continuous.
+
+```python
+from ibist import power_r1s_test, power_r2s_test
+
+one = power_r1s_test(r0=.1, r1=.2, power=.8, exposure=2)
+two = power_r2s_test(r1=.1, r2=.2, power=.8, group_rate=2, exposure=(2, 3))
+```
+
+The examples require approximately 49.62 subjects and 83.25 subjects in
+group 1, respectively. Round up for recruitment and recompute power.
+`PowerResult` retains the rates, per-subject exposure, and allocation.
+The test is the normal score approximation used by `rate_test()`; the
+two-sample calculation substitutes the expected pooled rate in the null
+variance. Function help gives the full formula and its derivation from
+Poisson means and variances. These calculations are approximate and may
+be inaccurate with few expected events.
+
+Defaults match proportion power: level .05, no continuity correction,
+and dominant-tail two-sided power. Set `strict=True` to include both tails.
+One-sample alternatives are `two.sided`, `less`, and `greater`; two-sample
+alternatives are `two.sided` and `one.sided`, using the difference's direction.
+Rate inversions prefer r1>r0 or r0<r1 for one sample (reverse for `less`),
+and r1<r2 or r2>r1 for two samples, then try the other branch. Positive
+roots are sought within 100 doublings/halvings of 1 for n or the other
+rate; levels use logit coordinates between -36 and 36. The root tolerance
+is `sqrt(machine epsilon)` on those transformed scales. Equal rates
+cannot determine n; unreachable targets raise `ValueError`.
+
 ## Focused validation
 
 Independent checks cover direct combinatorial trend tails, closed-form
@@ -101,7 +136,23 @@ for one-sample solved parameters. Exact null size derived from a
 fitted p0 allows `5e-8` because it inherits that root's numerical error.
 Full regression suites and package checks are reserved for before a push.
 
+Rate-power checks cover closed-form sample sizes, every design inverse,
+directional tails, null power, and unit/allocation invariance. A separate
+export supplies 19 representative R cases; comparison allows `5e-8`
+relative or `1e-10` absolute error.
+Four published Minitab powers and two rounded sample sizes also match;
+these use the uncorrected normal method and full two-sided power where
+applicable. The [published validation report][rv] records inputs, results,
+sources, and which options the examples cover.
+
+[rv]: https://github.com/ibist/ibist-R/blob/main/RATE_POWER_VALIDATION.md
+
 References are listed in the function help: Cochran (1954) and Armitage
 (1955) for trend inference; the R package's documented rejection rules and
 base R `power.prop.test()` conventions for power; Clopper and Pearson (1934)
 for inclusive binomial inference. Book sources remain unchanged.
+Rate power uses the Poisson mean and variance documented in the
+[R stats reference][poisson];
+the planning formulas are derived explicitly in each function's help.
+
+[poisson]: https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Poisson.html

@@ -1,4 +1,4 @@
-"""R-compatible power and design calculations for binomial proportions."""
+"""R-compatible power and design calculations for proportions and rates."""
 
 from dataclasses import dataclass
 from functools import lru_cache
@@ -31,6 +31,12 @@ class PowerResult:
         Exact null rejection probability; None for normal calculations.
     note : str or None
         Two-sample allocation/correction description, matching R.
+    r0, r1, r2 : float or None
+        Null/alternative rates or rates in the two groups.
+    exposure : float or tuple of float or None
+        Exposure per subject, scalar for one sample and pair for two.
+    group_rate : float or None
+        Second-to-first sample-size ratio for two-sample rate designs.
 
     Notes
     -----
@@ -49,18 +55,25 @@ class PowerResult:
     p2: float | None = None
     achieved_sig_level: float | None = None
     note: str | None = None
+    r0: float | None = None
+    r1: float | None = None
+    r2: float | None = None
+    exposure: float | tuple[float, float] | None = None
+    group_rate: float | None = None
 
     def summary(self, digits=5):
         """Display resolved parameters without changing their precision."""
         _digits(digits)
-        fields = ("n", "p0", "p1", "p2", "sig_level", "achieved_sig_level",
-                  "power", "alternative")
+        fields = ("n", "p0", "p1", "p2", "r0", "r1", "r2", "sig_level",
+                  "achieved_sig_level", "power", "exposure", "group_rate",
+                  "alternative")
         lines = [self.method]
         for name in fields:
             value = getattr(self, name)
             if value is not None:
                 text = (value if isinstance(value, str) else
-                        f"{value:.{digits}g}")
+                        ", ".join(f"{v:.{digits}g}" for v in value)
+                        if isinstance(value, tuple) else f"{value:.{digits}g}")
                 lines.append(f"{name}: {text}")
         if self.note:
             lines.append(self.note)

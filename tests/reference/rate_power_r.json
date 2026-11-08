@@ -1,0 +1,404 @@
+{
+  "source": "R/power_rates.R",
+  "source_md5": "82ccd7c96aacd045267371d9e0183be7",
+  "cases": [
+    {
+      "kind": "one",
+      "args": {
+        "n": 100,
+        "r0": 0.1,
+        "r1": 0.2
+      },
+      "result": {
+        "n": 100,
+        "r0": 0.1,
+        "r1": 0.2,
+        "power": 0.802383085788466,
+        "sig_level": 0.05,
+        "exposure": 1,
+        "alternative": "two.sided",
+        "method": "One-sample Poisson rate power calculation",
+        "note": "no continuity correction"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": null,
+        "r0": 0.1,
+        "r1": 0.2,
+        "power": 0.8
+      },
+      "result": {
+        "n": 99.2373577182934,
+        "r0": 0.1,
+        "r1": 0.2,
+        "power": 0.8,
+        "sig_level": 0.05,
+        "exposure": 1,
+        "alternative": "two.sided",
+        "method": "One-sample Poisson rate power calculation",
+        "note": "no continuity correction"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 100,
+        "r0": null,
+        "r1": 0.2,
+        "power": 0.8
+      },
+      "result": {
+        "n": 100,
+        "r0": 0.100291715365611,
+        "r1": 0.2,
+        "power": 0.8,
+        "sig_level": 0.05,
+        "exposure": 1,
+        "alternative": "two.sided",
+        "method": "One-sample Poisson rate power calculation",
+        "note": "no continuity correction"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 100,
+        "r0": 0.1,
+        "r1": null,
+        "power": 0.8
+      },
+      "result": {
+        "n": 100,
+        "r0": 0.1,
+        "r1": 0.199578242318832,
+        "power": 0.8,
+        "sig_level": 0.05,
+        "exposure": 1,
+        "alternative": "two.sided",
+        "method": "One-sample Poisson rate power calculation",
+        "note": "no continuity correction"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 100,
+        "r0": 0.1,
+        "r1": 0.2,
+        "sig_level": null,
+        "power": 0.8
+      },
+      "result": {
+        "n": 100,
+        "r0": 0.1,
+        "r1": 0.2,
+        "power": 0.8,
+        "sig_level": 0.048604412888549,
+        "exposure": 1,
+        "alternative": "two.sided",
+        "method": "One-sample Poisson rate power calculation",
+        "note": "no continuity correction"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 100,
+        "r1": 0.1,
+        "r2": 0.2
+      },
+      "result": {
+        "n": 100,
+        "r1": 0.1,
+        "r2": 0.2,
+        "power": 0.446613465026184,
+        "sig_level": 0.05,
+        "exposure": [1, 1],
+        "group_rate": 1,
+        "alternative": "two.sided",
+        "method": "Two-sample Poisson rates power calculation",
+        "note": "n is number in the 1st group; no continuity correction"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": null,
+        "r1": 0.1,
+        "r2": 0.2,
+        "power": 0.8
+      },
+      "result": {
+        "n": 235.466392035404,
+        "r1": 0.1,
+        "r2": 0.2,
+        "power": 0.8,
+        "sig_level": 0.05,
+        "exposure": [1, 1],
+        "group_rate": 1,
+        "alternative": "two.sided",
+        "method": "Two-sample Poisson rates power calculation",
+        "note": "n is number in the 1st group; no continuity correction"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 100,
+        "r1": null,
+        "r2": 0.2,
+        "power": 0.8
+      },
+      "result": {
+        "n": 100,
+        "r1": 0.057762604053264,
+        "r2": 0.2,
+        "power": 0.8,
+        "sig_level": 0.05,
+        "exposure": [1, 1],
+        "group_rate": 1,
+        "alternative": "two.sided",
+        "method": "Two-sample Poisson rates power calculation",
+        "note": "n is number in the 1st group; no continuity correction"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 100,
+        "r1": 0.1,
+        "r2": null,
+        "power": 0.8
+      },
+      "result": {
+        "n": 100,
+        "r1": 0.1,
+        "r2": 0.270537514621559,
+        "power": 0.8,
+        "sig_level": 0.05,
+        "exposure": [1, 1],
+        "group_rate": 1,
+        "alternative": "two.sided",
+        "method": "Two-sample Poisson rates power calculation",
+        "note": "n is number in the 1st group; no continuity correction"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 100,
+        "r1": 0.1,
+        "r2": 0.2,
+        "sig_level": null,
+        "power": 0.8
+      },
+      "result": {
+        "n": 100,
+        "r1": 0.1,
+        "r2": 0.2,
+        "power": 0.8,
+        "sig_level": 0.325056207166573,
+        "exposure": [1, 1],
+        "group_rate": 1,
+        "alternative": "two.sided",
+        "method": "Two-sample Poisson rates power calculation",
+        "note": "n is number in the 1st group; no continuity correction"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 31.5,
+        "r0": 0.2,
+        "r1": 0.1,
+        "exposure": 3,
+        "alternative": "less",
+        "correct": true
+      },
+      "result": {
+        "n": 31.5,
+        "r0": 0.2,
+        "r1": 0.1,
+        "power": 0.720813852784743,
+        "sig_level": 0.05,
+        "exposure": 3,
+        "alternative": "less",
+        "method": "One-sample Poisson rate power calculation",
+        "note": "continuity correction applied"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 40,
+        "r0": 0.1,
+        "r1": 0.2,
+        "exposure": 2,
+        "alternative": "greater"
+      },
+      "result": {
+        "n": 40,
+        "r0": 0.1,
+        "r1": 0.2,
+        "power": 0.798679220554839,
+        "sig_level": 0.05,
+        "exposure": 2,
+        "alternative": "greater",
+        "method": "One-sample Poisson rate power calculation",
+        "note": "no continuity correction"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 15,
+        "r0": 1.5,
+        "r1": 2.5,
+        "strict": true,
+        "correct": true
+      },
+      "result": {
+        "n": 15,
+        "r0": 1.5,
+        "r1": 2.5,
+        "power": 0.802268197389106,
+        "sig_level": 0.05,
+        "exposure": 1,
+        "alternative": "two.sided",
+        "method": "One-sample Poisson rate power calculation",
+        "note": "continuity correction applied"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 10,
+        "r0": 0.1,
+        "r1": 0.1,
+        "strict": true
+      },
+      "result": {
+        "n": 10,
+        "r0": 0.1,
+        "r1": 0.1,
+        "power": 0.05,
+        "sig_level": 0.05,
+        "exposure": 1,
+        "alternative": "two.sided",
+        "method": "One-sample Poisson rate power calculation",
+        "note": "no continuity correction"
+      }
+    },
+    {
+      "kind": "one",
+      "args": {
+        "n": 50,
+        "r0": 0.2,
+        "power": 0.8,
+        "alternative": "less"
+      },
+      "result": {
+        "n": 50,
+        "r0": 0.2,
+        "r1": 0.0655070984203009,
+        "power": 0.8,
+        "sig_level": 0.05,
+        "exposure": 1,
+        "alternative": "less",
+        "method": "One-sample Poisson rate power calculation",
+        "note": "no continuity correction"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 50,
+        "r1": 0.1,
+        "r2": 0.2,
+        "group_rate": 2,
+        "exposure": [2, 3],
+        "strict": true,
+        "correct": true
+      },
+      "result": {
+        "n": 50,
+        "r1": 0.1,
+        "r2": 0.2,
+        "power": 0.486889442044306,
+        "sig_level": 0.05,
+        "exposure": [2, 3],
+        "group_rate": 2,
+        "alternative": "two.sided",
+        "method": "Two-sample Poisson rates power calculation",
+        "note": "n is number in the 1st group; continuity correction applied"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "r1": 0.1,
+        "r2": 0.2,
+        "power": 0.8,
+        "group_rate": 0.5,
+        "exposure": [1, 2],
+        "alternative": "one.sided"
+      },
+      "result": {
+        "n": 185.476716856816,
+        "r1": 0.1,
+        "r2": 0.2,
+        "power": 0.8,
+        "sig_level": 0.05,
+        "exposure": [1, 2],
+        "group_rate": 0.5,
+        "alternative": "one.sided",
+        "method": "Two-sample Poisson rates power calculation",
+        "note": "n is number in the 1st group; no continuity correction"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 15,
+        "r1": 1.5,
+        "r2": 2.5,
+        "correct": true
+      },
+      "result": {
+        "n": 15,
+        "r1": 1.5,
+        "r2": 2.5,
+        "power": 0.439367999693603,
+        "sig_level": 0.05,
+        "exposure": [1, 1],
+        "group_rate": 1,
+        "alternative": "two.sided",
+        "method": "Two-sample Poisson rates power calculation",
+        "note": "n is number in the 1st group; continuity correction applied"
+      }
+    },
+    {
+      "kind": "two",
+      "args": {
+        "n": 10,
+        "r1": 0.1,
+        "r2": 0.1,
+        "strict": true
+      },
+      "result": {
+        "n": 10,
+        "r1": 0.1,
+        "r2": 0.1,
+        "power": 0.05,
+        "sig_level": 0.05,
+        "exposure": [1, 1],
+        "group_rate": 1,
+        "alternative": "two.sided",
+        "method": "Two-sample Poisson rates power calculation",
+        "note": "n is number in the 1st group; no continuity correction"
+      }
+    }
+  ]
+}

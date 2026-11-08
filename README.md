@@ -49,6 +49,8 @@ See [agreement tests](docs/agreement-tests.md) for result fields and examples.
 `power_p1s_test()` and `power_p2s_test()` compute proportion power and solve
 sample sizes or other design parameters. See
 [trend and power](docs/trend-and-power.md) for exact rules and allocation.
+`power_r1s_test()` and `power_r2s_test()` provide normal-approximation
+Poisson rate power with explicit follow-up and unequal group allocation.
 
 ## Installation
 
