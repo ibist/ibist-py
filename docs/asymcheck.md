@@ -33,6 +33,7 @@ settings; they never evaluate printed data names or use significance.
 | Conditional Fisher | Not applicable; no chi-square approximation |
 | Mantel–Haenszel | Sum of conditional hypergeometric variances |
 | One-rate intervals | Events and plug-in Poisson skewness |
+| GLM goodness of fit | Expected counts, rank, df, method standardization |
 
 Use raw stratified counts with `method="mantel-haenszel"`. Input is a list
 of 2-by-2 tables or a 2-by-2-by-K NumPy array. R also accepts a function
@@ -40,6 +41,12 @@ pre-check of `stats::mantelhaen.test` with a count array; this adapter is
 R-specific. Its result does not retain the inputs needed for a post-check.
 R's existing `mantelhaen.asymcheck()` keeps its original output and print
 method without deprecation warnings, using the shared calculation.
+
+Use `asymcheck(glm_gof, fit, method=...)` before GLM GOF inference, or
+`asymcheck(result)` afterward. It also accepts GLMGOFResults collections.
+All five GLM GOF methods are asymptotic. Degenerate standardization or
+nonpositive test df is reported as a failed criterion in pre-checks;
+inference rejects these unestimable tests. See [GLM GOF](glm-gof.md).
 
 Other procedures are not yet supported. Unknown functions or result objects
 raise clear errors. Additional Fisher inference options are not accepted

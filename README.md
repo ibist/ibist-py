@@ -56,6 +56,11 @@ Poisson rate power with explicit follow-up and unequal group allocation.
 Supported tests and intervals also accept `asymcheck=True` to attach them.
 See [approximation diagnostics](docs/asymcheck.md) for methods and criteria.
 
+`glm_gof(fit)` checks binomial and Poisson GLMs, with additional
+Hosmer-Lemeshow, Osius-Rojek, and Stukel methods for binary logistic models.
+It accepts fitted statsmodels GLM results and supports shared diagnostics.
+See [GLM goodness of fit](docs/glm-gof.md) for scope and published checks.
+
 ## Installation
 
 After publication, install the first alpha from PyPI with:

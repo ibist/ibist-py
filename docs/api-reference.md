@@ -52,6 +52,7 @@ each function and its guide.
 | `power_r1s_test()` | `power.r1s.test()` | [Trend and power][design] |
 | `power_r2s_test()` | `power.r2s.test()` | [Trend and power][design] |
 | `asymcheck()` | `asymcheck()` | [Approximation diagnostics][asym] |
+| `glm_gof()` | `glm.gof()` | [GLM goodness of fit][glm] |
 
 ## Shared conventions
 
@@ -91,5 +92,6 @@ values, and the common R export workflow.
 [agreement]: agreement-tests.md
 [design]: trend-and-power.md
 [asym]: asymcheck.md
+[glm]: glm-gof.md
 [pep257]: https://peps.python.org/pep-0257/
 [numpydoc]: https://numpydoc.readthedocs.io/en/latest/format.html

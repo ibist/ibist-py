@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Add `glm_gof()` matching R's `glm.gof()` for binomial/Poisson Pearson
+  and deviance tests and logistic Hosmer-Lemeshow, Osius-Rojek, and Stukel
+  methods. Add ordered GLMGOFResults and pre/attached/post diagnostics.
+  Require statsmodels for fitted GLM objects; validate published SAS
+  examples, independent formulas, and eight representative R cases.
+
 - Add shared `asymcheck()` pre/post diagnostics and optional attachment to
   independence tests and one-rate intervals. Add stratified Mantel-Haenszel
   screening, preserve the legacy R wrapper, and compare 14 R cases.
