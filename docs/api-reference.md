@@ -45,6 +45,7 @@ each function and its guide.
 | `nominal_assoc()` | `nominal.assoc()` | [Tables][tables] |
 | `ordinal_assoc()` | `ordinal.assoc()` | [Ordinal association][ordinal] |
 | `assoc_test()` | `assoc.test()` | [Association tests][association] |
+| `agreement_test()` | `agreement.test()` | [Agreement tests][agreement] |
 
 ## Shared conventions
 
@@ -78,5 +79,6 @@ values, and the common R export workflow.
 [tables]: contingency-tables.md
 [ordinal]: ordinal-association.md
 [association]: association-tests.md
+[agreement]: agreement-tests.md
 [pep257]: https://peps.python.org/pep-0257/
 [numpydoc]: https://numpydoc.readthedocs.io/en/latest/format.html

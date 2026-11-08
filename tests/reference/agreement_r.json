@@ -1,0 +1,3133 @@
+{
+  "source": "ibist-R working sources; independent Python checks also used",
+  "r_revision": "ba3a71a8f45be440071dfaebc1faaacbd9c1732f",
+  "source_md5": {
+    "R/cohen_kappa_test.R": "29d0c2d51e874919c806afe0f59cdf4a",
+    "R/agreement_test.R": "f01d2983e5b28ec01d949c682205b97a"
+  },
+  "cases": [
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.344875346260388,
+      "estimate_name": "kappa",
+      "statistic": 5.63662547078636,
+      "p_value": 1.73414698342686e-08,
+      "conf_int": [
+        0.225793392457309,
+        0.463957300063467
+      ],
+      "std_error": 0.0723966873719835,
+      "null_std_error": 0.0611847191281054,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.344875346260388,
+      "estimate_name": "kappa",
+      "statistic": 4.76368959381213,
+      "p_value": 1.90084840734922e-06,
+      "conf_int": [
+        0.225793392457309,
+        0.463957300063467
+      ],
+      "std_error": 0.0723966873719835,
+      "null_std_error": 0.0723966873719835,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.508160071540353,
+      "estimate_name": "weighted kappa",
+      "statistic": 6.87663036853768,
+      "p_value": 6.12848512514059e-12,
+      "conf_int": [
+        0.400408373399596,
+        0.615911769681111
+      ],
+      "std_error": 0.0655083810347684,
+      "null_std_error": 0.0738966680345819,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.666666666666667,
+          0.333333333333333,
+          0
+        ],
+        [
+          0.666666666666667,
+          1,
+          0.666666666666667,
+          0.333333333333333
+        ],
+        [
+          0.333333333333333,
+          0.666666666666667,
+          1,
+          0.666666666666667
+        ],
+        [
+          0,
+          0.333333333333333,
+          0.666666666666667,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "greater",
+      "test_variance": "fce",
+      "estimate": 0.508160071540353,
+      "estimate_name": "weighted kappa",
+      "statistic": 6.87663036853768,
+      "p_value": 3.0642425625703e-12,
+      "conf_int": [
+        0.424207703268954,
+        1
+      ],
+      "std_error": 0.0655083810347684,
+      "null_std_error": 0.0738966680345819,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.666666666666667,
+          0.333333333333333,
+          0
+        ],
+        [
+          0.666666666666667,
+          1,
+          0.666666666666667,
+          0.333333333333333
+        ],
+        [
+          0.333333333333333,
+          0.666666666666667,
+          1,
+          0.666666666666667
+        ],
+        [
+          0,
+          0.333333333333333,
+          0.666666666666667,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "less",
+      "test_variance": "fce",
+      "estimate": 0.508160071540353,
+      "estimate_name": "weighted kappa",
+      "statistic": 6.87663036853768,
+      "p_value": 0.999999999996936,
+      "conf_int": [
+        -1,
+        0.592112439811753
+      ],
+      "std_error": 0.0655083810347684,
+      "null_std_error": 0.0738966680345819,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.666666666666667,
+          0.333333333333333,
+          0
+        ],
+        [
+          0.666666666666667,
+          1,
+          0.666666666666667,
+          0.333333333333333
+        ],
+        [
+          0.333333333333333,
+          0.666666666666667,
+          1,
+          0.666666666666667
+        ],
+        [
+          0,
+          0.333333333333333,
+          0.666666666666667,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.508160071540353,
+      "estimate_name": "weighted kappa",
+      "statistic": 7.75717646373597,
+      "p_value": 8.68410588352819e-15,
+      "conf_int": [
+        0.400408373399596,
+        0.615911769681111
+      ],
+      "std_error": 0.0655083810347684,
+      "null_std_error": 0.0655083810347684,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.666666666666667,
+          0.333333333333333,
+          0
+        ],
+        [
+          0.666666666666667,
+          1,
+          0.666666666666667,
+          0.333333333333333
+        ],
+        [
+          0.333333333333333,
+          0.666666666666667,
+          1,
+          0.666666666666667
+        ],
+        [
+          0,
+          0.333333333333333,
+          0.666666666666667,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "greater",
+      "test_variance": "delta",
+      "estimate": 0.508160071540353,
+      "estimate_name": "weighted kappa",
+      "statistic": 7.75717646373597,
+      "p_value": 4.34205294176409e-15,
+      "conf_int": [
+        0.424207703268954,
+        1
+      ],
+      "std_error": 0.0655083810347684,
+      "null_std_error": 0.0655083810347684,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.666666666666667,
+          0.333333333333333,
+          0
+        ],
+        [
+          0.666666666666667,
+          1,
+          0.666666666666667,
+          0.333333333333333
+        ],
+        [
+          0.333333333333333,
+          0.666666666666667,
+          1,
+          0.666666666666667
+        ],
+        [
+          0,
+          0.333333333333333,
+          0.666666666666667,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "less",
+      "test_variance": "delta",
+      "estimate": 0.508160071540353,
+      "estimate_name": "weighted kappa",
+      "statistic": 7.75717646373597,
+      "p_value": 0.999999999999996,
+      "conf_int": [
+        -1,
+        0.592112439811753
+      ],
+      "std_error": 0.0655083810347684,
+      "null_std_error": 0.0655083810347684,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.666666666666667,
+          0.333333333333333,
+          0
+        ],
+        [
+          0.666666666666667,
+          1,
+          0.666666666666667,
+          0.333333333333333
+        ],
+        [
+          0.333333333333333,
+          0.666666666666667,
+          1,
+          0.666666666666667
+        ],
+        [
+          0,
+          0.333333333333333,
+          0.666666666666667,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.660722891566265,
+      "estimate_name": "weighted kappa",
+      "statistic": 6.20425148072923,
+      "p_value": 5.49578443725684e-10,
+      "conf_int": [
+        0.559329455089601,
+        0.762116328042929
+      ],
+      "std_error": 0.0616428324170001,
+      "null_std_error": 0.106495182153481,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.888888888888889,
+          0.555555555555556,
+          0
+        ],
+        [
+          0.888888888888889,
+          1,
+          0.888888888888889,
+          0.555555555555556
+        ],
+        [
+          0.555555555555556,
+          0.888888888888889,
+          1,
+          0.888888888888889
+        ],
+        [
+          0,
+          0.555555555555556,
+          0.888888888888889,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.660722891566265,
+      "estimate_name": "weighted kappa",
+      "statistic": 10.7185680096044,
+      "p_value": 8.32827285463978e-27,
+      "conf_int": [
+        0.559329455089601,
+        0.762116328042929
+      ],
+      "std_error": 0.0616428324170001,
+      "null_std_error": 0.0616428324170001,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.888888888888889,
+          0.555555555555556,
+          0
+        ],
+        [
+          0.888888888888889,
+          1,
+          0.888888888888889,
+          0.555555555555556
+        ],
+        [
+          0.555555555555556,
+          0.888888888888889,
+          1,
+          0.888888888888889
+        ],
+        [
+          0,
+          0.555555555555556,
+          0.888888888888889,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": [
+        [1, 0.2, 0.6, 0.2],
+        [0.2, 1, 0.1, 0.6],
+        [0.6, 0.1, 1, 0.1],
+        [0.2, 0.6, 0.1, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.268337615746352,
+      "estimate_name": "weighted kappa",
+      "statistic": 3.72695887937087,
+      "p_value": 0.000193804062609494,
+      "conf_int": [
+        0.13265936093172,
+        0.404015870560984
+      ],
+      "std_error": 0.0824865219564216,
+      "null_std_error": 0.0719990814043133,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6,
+          0.2
+        ],
+        [
+          0.2,
+          1,
+          0.1,
+          0.6
+        ],
+        [
+          0.6,
+          0.1,
+          1,
+          0.1
+        ],
+        [
+          0.2,
+          0.6,
+          0.1,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [10, 4, 1, 0],
+        [5, 10, 12, 2],
+        [2, 4, 12, 5],
+        [0, 2, 6, 13]
+      ],
+      "weights": [
+        [1, 0.2, 0.6, 0.2],
+        [0.2, 1, 0.1, 0.6],
+        [0.6, 0.1, 1, 0.1],
+        [0.2, 0.6, 0.1, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.268337615746352,
+      "estimate_name": "weighted kappa",
+      "statistic": 3.25310862164993,
+      "p_value": 0.00114149853067423,
+      "conf_int": [
+        0.13265936093172,
+        0.404015870560984
+      ],
+      "std_error": 0.0824865219564216,
+      "null_std_error": 0.0824865219564216,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6,
+          0.2
+        ],
+        [
+          0.2,
+          1,
+          0.1,
+          0.6
+        ],
+        [
+          0.6,
+          0.1,
+          1,
+          0.1
+        ],
+        [
+          0.2,
+          0.6,
+          0.1,
+          1
+        ]
+      ],
+      "n": 88,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.5,
+      "estimate_name": "kappa",
+      "statistic": 3,
+      "p_value": 0.00269979606326019,
+      "conf_int": [
+        0.24356338652313,
+        0.75643661347687
+      ],
+      "std_error": 0.155902391115581,
+      "null_std_error": 0.166666666666667,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.5,
+      "estimate_name": "kappa",
+      "statistic": 3.20713490294909,
+      "p_value": 0.00134064111722948,
+      "conf_int": [
+        0.24356338652313,
+        0.75643661347687
+      ],
+      "std_error": 0.155902391115581,
+      "null_std_error": 0.155902391115581,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.571428571428571,
+      "estimate_name": "weighted kappa",
+      "statistic": 3.46410161513775,
+      "p_value": 0.00053200550513925,
+      "conf_int": [
+        0.353880207283506,
+        0.788976935573636
+      ],
+      "std_error": 0.132260014253222,
+      "null_std_error": 0.164957219768464,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.5,
+          0
+        ],
+        [
+          0.5,
+          1,
+          0.5
+        ],
+        [
+          0,
+          0.5,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.571428571428571,
+      "estimate_name": "weighted kappa",
+      "statistic": 4.32049379893857,
+      "p_value": 1.55680431351153e-05,
+      "conf_int": [
+        0.353880207283506,
+        0.788976935573636
+      ],
+      "std_error": 0.132260014253222,
+      "null_std_error": 0.132260014253222,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.5,
+          0
+        ],
+        [
+          0.5,
+          1,
+          0.5
+        ],
+        [
+          0,
+          0.5,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.666666666666667,
+      "estimate_name": "weighted kappa",
+      "statistic": 3.00000000000001,
+      "p_value": 0.00269979606326013,
+      "conf_int": [
+        0.494357458714566,
+        0.838975874618767
+      ],
+      "std_error": 0.104756560175785,
+      "null_std_error": 0.222222222222222,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.75,
+          0
+        ],
+        [
+          0.75,
+          1,
+          0.75
+        ],
+        [
+          0,
+          0.75,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.666666666666667,
+      "estimate_name": "weighted kappa",
+      "statistic": 6.3639610306789,
+      "p_value": 1.96616044154328e-10,
+      "conf_int": [
+        0.494357458714566,
+        0.838975874618767
+      ],
+      "std_error": 0.104756560175785,
+      "null_std_error": 0.104756560175785,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.75,
+          0
+        ],
+        [
+          0.75,
+          1,
+          0.75
+        ],
+        [
+          0,
+          0.75,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": [
+        [1, 0.2, 0.6],
+        [0.2, 1, 0.1],
+        [0.6, 0.1, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.41304347826087,
+      "estimate_name": "weighted kappa",
+      "statistic": 2.23400613475842,
+      "p_value": 0.0254826694103158,
+      "conf_int": [
+        0.12514013816024,
+        0.700946818361499
+      ],
+      "std_error": 0.175032802544395,
+      "null_std_error": 0.184889142350334,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6
+        ],
+        [
+          0.2,
+          1,
+          0.1
+        ],
+        [
+          0.6,
+          0.1,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": [
+        [1, 0.2, 0.6],
+        [0.2, 1, 0.1],
+        [0.6, 0.1, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "greater",
+      "test_variance": "fce",
+      "estimate": 0.41304347826087,
+      "estimate_name": "weighted kappa",
+      "statistic": 2.23400613475842,
+      "p_value": 0.0127413347051579,
+      "conf_int": [
+        0.188729916138441,
+        1
+      ],
+      "std_error": 0.175032802544395,
+      "null_std_error": 0.184889142350334,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6
+        ],
+        [
+          0.2,
+          1,
+          0.1
+        ],
+        [
+          0.6,
+          0.1,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": [
+        [1, 0.2, 0.6],
+        [0.2, 1, 0.1],
+        [0.6, 0.1, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "less",
+      "test_variance": "fce",
+      "estimate": 0.41304347826087,
+      "estimate_name": "weighted kappa",
+      "statistic": 2.23400613475842,
+      "p_value": 0.987258665294842,
+      "conf_int": [
+        -1,
+        0.637357040383298
+      ],
+      "std_error": 0.175032802544395,
+      "null_std_error": 0.184889142350334,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6
+        ],
+        [
+          0.2,
+          1,
+          0.1
+        ],
+        [
+          0.6,
+          0.1,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": [
+        [1, 0.2, 0.6],
+        [0.2, 1, 0.1],
+        [0.6, 0.1, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.41304347826087,
+      "estimate_name": "weighted kappa",
+      "statistic": 2.35980611780529,
+      "p_value": 0.0182844883756388,
+      "conf_int": [
+        0.12514013816024,
+        0.700946818361499
+      ],
+      "std_error": 0.175032802544395,
+      "null_std_error": 0.175032802544395,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6
+        ],
+        [
+          0.2,
+          1,
+          0.1
+        ],
+        [
+          0.6,
+          0.1,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": [
+        [1, 0.2, 0.6],
+        [0.2, 1, 0.1],
+        [0.6, 0.1, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "greater",
+      "test_variance": "delta",
+      "estimate": 0.41304347826087,
+      "estimate_name": "weighted kappa",
+      "statistic": 2.35980611780529,
+      "p_value": 0.00914224418781939,
+      "conf_int": [
+        0.188729916138441,
+        1
+      ],
+      "std_error": 0.175032802544395,
+      "null_std_error": 0.175032802544395,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6
+        ],
+        [
+          0.2,
+          1,
+          0.1
+        ],
+        [
+          0.6,
+          0.1,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 0],
+        [0, 4, 0],
+        [0, 4, 0]
+      ],
+      "weights": [
+        [1, 0.2, 0.6],
+        [0.2, 1, 0.1],
+        [0.6, 0.1, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "less",
+      "test_variance": "delta",
+      "estimate": 0.41304347826087,
+      "estimate_name": "weighted kappa",
+      "statistic": 2.35980611780529,
+      "p_value": 0.990857755812181,
+      "conf_int": [
+        -1,
+        0.637357040383298
+      ],
+      "std_error": 0.175032802544395,
+      "null_std_error": 0.175032802544395,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6
+        ],
+        [
+          0.2,
+          1,
+          0.1
+        ],
+        [
+          0.6,
+          0.1,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [1, 8],
+        [9, 2]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": -0.7,
+      "estimate_name": "kappa",
+      "statistic": -3.14626602482846,
+      "p_value": 0.00165369516370034,
+      "conf_int": [
+        -0.961345450503044,
+        -0.438654549496956
+      ],
+      "std_error": 0.158886752122385,
+      "null_std_error": 0.22248595461287,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "n": 20,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [1, 8],
+        [9, 2]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": -0.7,
+      "estimate_name": "kappa",
+      "statistic": -4.40565365362126,
+      "p_value": 1.05465361230739e-05,
+      "conf_int": [
+        -0.961345450503044,
+        -0.438654549496956
+      ],
+      "std_error": 0.158886752122385,
+      "null_std_error": 0.158886752122385,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "n": 20,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [1, 8],
+        [9, 2]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": -0.7,
+      "estimate_name": "weighted kappa",
+      "statistic": -3.14626602482846,
+      "p_value": 0.00165369516370034,
+      "conf_int": [
+        -0.961345450503044,
+        -0.438654549496956
+      ],
+      "std_error": 0.158886752122385,
+      "null_std_error": 0.22248595461287,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "n": 20,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [1, 8],
+        [9, 2]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": -0.7,
+      "estimate_name": "weighted kappa",
+      "statistic": -4.40565365362126,
+      "p_value": 1.05465361230739e-05,
+      "conf_int": [
+        -0.961345450503044,
+        -0.438654549496956
+      ],
+      "std_error": 0.158886752122385,
+      "null_std_error": 0.158886752122385,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "n": 20,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [1, 8],
+        [9, 2]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": -0.7,
+      "estimate_name": "weighted kappa",
+      "statistic": -3.14626602482846,
+      "p_value": 0.00165369516370034,
+      "conf_int": [
+        -0.961345450503044,
+        -0.438654549496956
+      ],
+      "std_error": 0.158886752122385,
+      "null_std_error": 0.22248595461287,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "n": 20,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [1, 8],
+        [9, 2]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": -0.7,
+      "estimate_name": "weighted kappa",
+      "statistic": -4.40565365362126,
+      "p_value": 1.05465361230739e-05,
+      "conf_int": [
+        -0.961345450503044,
+        -0.438654549496956
+      ],
+      "std_error": 0.158886752122385,
+      "null_std_error": 0.158886752122385,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "n": 20,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [1, 8],
+        [9, 2]
+      ],
+      "weights": [
+        [1, 0.2],
+        [0.2, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": -0.7,
+      "estimate_name": "weighted kappa",
+      "statistic": -3.14626602482846,
+      "p_value": 0.00165369516370034,
+      "conf_int": [
+        -0.961345450503043,
+        -0.438654549496958
+      ],
+      "std_error": 0.158886752122384,
+      "null_std_error": 0.22248595461287,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2
+        ],
+        [
+          0.2,
+          1
+        ]
+      ],
+      "n": 20,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [1, 8],
+        [9, 2]
+      ],
+      "weights": [
+        [1, 0.2],
+        [0.2, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": -0.7,
+      "estimate_name": "weighted kappa",
+      "statistic": -4.40565365362129,
+      "p_value": 1.05465361230727e-05,
+      "conf_int": [
+        -0.961345450503043,
+        -0.438654549496958
+      ],
+      "std_error": 0.158886752122384,
+      "null_std_error": 0.158886752122384,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2
+        ],
+        [
+          0.2,
+          1
+        ]
+      ],
+      "n": 20,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.338925393417619,
+      "estimate_name": "kappa",
+      "statistic": 17.6606422880708,
+      "p_value": 8.42752139792772e-70,
+      "conf_int": [
+        0.303698625859814,
+        0.374152160975424
+      ],
+      "std_error": 0.0214163540029353,
+      "null_std_error": 0.0191910004114943,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.338925393417619,
+      "estimate_name": "kappa",
+      "statistic": 15.8255412369055,
+      "p_value": 2.07407902256172e-56,
+      "conf_int": [
+        0.303698625859814,
+        0.374152160975424
+      ],
+      "std_error": 0.0214163540029353,
+      "null_std_error": 0.0214163540029353,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.575570287486392,
+      "estimate_name": "weighted kappa",
+      "statistic": 27.3944368510054,
+      "p_value": 3.19470811511023e-165,
+      "conf_int": [
+        0.54338966008184,
+        0.607750914890945
+      ],
+      "std_error": 0.0195644322858048,
+      "null_std_error": 0.0210104807270484,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.8,
+          0.6,
+          0.4,
+          0.2,
+          0
+        ],
+        [
+          0.8,
+          1,
+          0.8,
+          0.6,
+          0.4,
+          0.2
+        ],
+        [
+          0.6,
+          0.8,
+          1,
+          0.8,
+          0.6,
+          0.4
+        ],
+        [
+          0.4,
+          0.6,
+          0.8,
+          1,
+          0.8,
+          0.6
+        ],
+        [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1,
+          0.8
+        ],
+        [
+          0,
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.575570287486392,
+      "estimate_name": "weighted kappa",
+      "statistic": 29.4192174389852,
+      "p_value": 3.11864541003767e-190,
+      "conf_int": [
+        0.54338966008184,
+        0.607750914890945
+      ],
+      "std_error": 0.0195644322858048,
+      "null_std_error": 0.0195644322858048,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.8,
+          0.6,
+          0.4,
+          0.2,
+          0
+        ],
+        [
+          0.8,
+          1,
+          0.8,
+          0.6,
+          0.4,
+          0.2
+        ],
+        [
+          0.6,
+          0.8,
+          1,
+          0.8,
+          0.6,
+          0.4
+        ],
+        [
+          0.4,
+          0.6,
+          0.8,
+          1,
+          0.8,
+          0.6
+        ],
+        [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1,
+          0.8
+        ],
+        [
+          0,
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.763488291387132,
+      "estimate_name": "weighted kappa",
+      "statistic": 25.7880030082316,
+      "p_value": 1.20885685340138e-146,
+      "conf_int": [
+        0.732230594854331,
+        0.794745987919933
+      ],
+      "std_error": 0.0190033301569412,
+      "null_std_error": 0.029606336370576,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36,
+          0
+        ],
+        [
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36
+        ],
+        [
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64
+        ],
+        [
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84
+        ],
+        [
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96
+        ],
+        [
+          0,
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "greater",
+      "test_variance": "fce",
+      "estimate": 0.763488291387132,
+      "estimate_name": "weighted kappa",
+      "statistic": 25.7880030082316,
+      "p_value": 6.04428426700692e-147,
+      "conf_int": [
+        0.739134543873944,
+        1
+      ],
+      "std_error": 0.0190033301569412,
+      "null_std_error": 0.029606336370576,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36,
+          0
+        ],
+        [
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36
+        ],
+        [
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64
+        ],
+        [
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84
+        ],
+        [
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96
+        ],
+        [
+          0,
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "less",
+      "test_variance": "fce",
+      "estimate": 0.763488291387132,
+      "estimate_name": "weighted kappa",
+      "statistic": 25.7880030082316,
+      "p_value": 1,
+      "conf_int": [
+        -1,
+        0.787842038900321
+      ],
+      "std_error": 0.0190033301569412,
+      "null_std_error": 0.029606336370576,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36,
+          0
+        ],
+        [
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36
+        ],
+        [
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64
+        ],
+        [
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84
+        ],
+        [
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96
+        ],
+        [
+          0,
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.763488291387132,
+      "estimate_name": "weighted kappa",
+      "statistic": 40.1765524822112,
+      "p_value": 0,
+      "conf_int": [
+        0.732230594854331,
+        0.794745987919933
+      ],
+      "std_error": 0.0190033301569412,
+      "null_std_error": 0.0190033301569412,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36,
+          0
+        ],
+        [
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36
+        ],
+        [
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64
+        ],
+        [
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84
+        ],
+        [
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96
+        ],
+        [
+          0,
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "greater",
+      "test_variance": "delta",
+      "estimate": 0.763488291387132,
+      "estimate_name": "weighted kappa",
+      "statistic": 40.1765524822112,
+      "p_value": 0,
+      "conf_int": [
+        0.739134543873944,
+        1
+      ],
+      "std_error": 0.0190033301569412,
+      "null_std_error": 0.0190033301569412,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36,
+          0
+        ],
+        [
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36
+        ],
+        [
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64
+        ],
+        [
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84
+        ],
+        [
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96
+        ],
+        [
+          0,
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "less",
+      "test_variance": "delta",
+      "estimate": 0.763488291387132,
+      "estimate_name": "weighted kappa",
+      "statistic": 40.1765524822112,
+      "p_value": 1,
+      "conf_int": [
+        -1,
+        0.787842038900321
+      ],
+      "std_error": 0.0190033301569412,
+      "null_std_error": 0.0190033301569412,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36,
+          0
+        ],
+        [
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64,
+          0.36
+        ],
+        [
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84,
+          0.64
+        ],
+        [
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96,
+          0.84
+        ],
+        [
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1,
+          0.96
+        ],
+        [
+          0,
+          0.36,
+          0.64,
+          0.84,
+          0.96,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": [
+        [1, 0.2, 0.6, 0.2, 0.2, 0.6],
+        [0.2, 1, 0.1, 0.6, 0.6, 0.1],
+        [0.6, 0.1, 1, 0.1, 0.1, 0.2],
+        [0.2, 0.6, 0.1, 1, 0.2, 0.6],
+        [0.2, 0.6, 0.1, 0.2, 1, 0.1],
+        [0.6, 0.1, 0.2, 0.6, 0.1, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.301271149351664,
+      "estimate_name": "weighted kappa",
+      "statistic": 13.6710461642433,
+      "p_value": 1.51205550504871e-42,
+      "conf_int": [
+        0.26202149386129,
+        0.340520804842038
+      ],
+      "std_error": 0.023862096205556,
+      "null_std_error": 0.0220371686067187,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6,
+          0.2,
+          0.2,
+          0.6
+        ],
+        [
+          0.2,
+          1,
+          0.1,
+          0.6,
+          0.6,
+          0.1
+        ],
+        [
+          0.6,
+          0.1,
+          1,
+          0.1,
+          0.1,
+          0.2
+        ],
+        [
+          0.2,
+          0.6,
+          0.1,
+          1,
+          0.2,
+          0.6
+        ],
+        [
+          0.2,
+          0.6,
+          0.1,
+          0.2,
+          1,
+          0.1
+        ],
+        [
+          0.6,
+          0.1,
+          0.2,
+          0.6,
+          0.1,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [581, 134, 12, 6, 0, 2],
+        [91, 73, 18, 31, 3, 1],
+        [4, 18, 15, 19, 3, 3],
+        [1, 8, 7, 24, 11, 6],
+        [0, 0, 2, 4, 3, 5],
+        [0, 0, 0, 9, 11, 13]
+      ],
+      "weights": [
+        [1, 0.2, 0.6, 0.2, 0.2, 0.6],
+        [0.2, 1, 0.1, 0.6, 0.6, 0.1],
+        [0.6, 0.1, 1, 0.1, 0.1, 0.2],
+        [0.2, 0.6, 0.1, 1, 0.2, 0.6],
+        [0.2, 0.6, 0.1, 0.2, 1, 0.1],
+        [0.6, 0.1, 0.2, 0.6, 0.1, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.301271149351664,
+      "estimate_name": "weighted kappa",
+      "statistic": 12.625510632277,
+      "p_value": 1.52747385744478e-36,
+      "conf_int": [
+        0.26202149386129,
+        0.340520804842038
+      ],
+      "std_error": 0.023862096205556,
+      "null_std_error": 0.023862096205556,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6,
+          0.2,
+          0.2,
+          0.6
+        ],
+        [
+          0.2,
+          1,
+          0.1,
+          0.6,
+          0.6,
+          0.1
+        ],
+        [
+          0.6,
+          0.1,
+          1,
+          0.1,
+          0.1,
+          0.2
+        ],
+        [
+          0.2,
+          0.6,
+          0.1,
+          1,
+          0.2,
+          0.6
+        ],
+        [
+          0.2,
+          0.6,
+          0.1,
+          0.2,
+          1,
+          0.1
+        ],
+        [
+          0.6,
+          0.1,
+          0.2,
+          0.6,
+          0.1,
+          1
+        ]
+      ],
+      "n": 1118,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [18, 11, 22, 0, 16],
+        [12, 14, 30, 14, 24],
+        [17, 9, 0, 16, 19],
+        [16, 17, 22, 0, 8],
+        [0, 16, 21, 1, 25]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": -0.0435589080903948,
+      "estimate_name": "kappa",
+      "statistic": -1.6593567422126,
+      "p_value": 0.0970439275690457,
+      "conf_int": [
+        -0.0835870714888865,
+        -0.00353074469190309
+      ],
+      "std_error": 0.0243353954069937,
+      "null_std_error": 0.026250478262024,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "n": 348,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [18, 11, 22, 0, 16],
+        [12, 14, 30, 14, 24],
+        [17, 9, 0, 16, 19],
+        [16, 17, 22, 0, 8],
+        [0, 16, 21, 1, 25]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": -0.0435589080903948,
+      "estimate_name": "kappa",
+      "statistic": -1.78994042882396,
+      "p_value": 0.0734634885833109,
+      "conf_int": [
+        -0.0835870714888865,
+        -0.00353074469190309
+      ],
+      "std_error": 0.0243353954069937,
+      "null_std_error": 0.0243353954069937,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "n": 348,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [18, 11, 22, 0, 16],
+        [12, 14, 30, 14, 24],
+        [17, 9, 0, 16, 19],
+        [16, 17, 22, 0, 8],
+        [0, 16, 21, 1, 25]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": -0.00524174862262529,
+      "estimate_name": "weighted kappa",
+      "statistic": -0.143430979541642,
+      "p_value": 0.88594981777501,
+      "conf_int": [
+        -0.0668119159850291,
+        0.0563284187397785
+      ],
+      "std_error": 0.0374320038899244,
+      "null_std_error": 0.0365454425492748,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.75,
+          0.5,
+          0.25,
+          0
+        ],
+        [
+          0.75,
+          1,
+          0.75,
+          0.5,
+          0.25
+        ],
+        [
+          0.5,
+          0.75,
+          1,
+          0.75,
+          0.5
+        ],
+        [
+          0.25,
+          0.5,
+          0.75,
+          1,
+          0.75
+        ],
+        [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1
+        ]
+      ],
+      "n": 348,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [18, 11, 22, 0, 16],
+        [12, 14, 30, 14, 24],
+        [17, 9, 0, 16, 19],
+        [16, 17, 22, 0, 8],
+        [0, 16, 21, 1, 25]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": -0.00524174862262529,
+      "estimate_name": "weighted kappa",
+      "statistic": -0.14003387684078,
+      "p_value": 0.888633224241816,
+      "conf_int": [
+        -0.0668119159850291,
+        0.0563284187397785
+      ],
+      "std_error": 0.0374320038899244,
+      "null_std_error": 0.0374320038899244,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.75,
+          0.5,
+          0.25,
+          0
+        ],
+        [
+          0.75,
+          1,
+          0.75,
+          0.5,
+          0.25
+        ],
+        [
+          0.5,
+          0.75,
+          1,
+          0.75,
+          0.5
+        ],
+        [
+          0.25,
+          0.5,
+          0.75,
+          1,
+          0.75
+        ],
+        [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1
+        ]
+      ],
+      "n": 348,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [18, 11, 22, 0, 16],
+        [12, 14, 30, 14, 24],
+        [17, 9, 0, 16, 19],
+        [16, 17, 22, 0, 8],
+        [0, 16, 21, 1, 25]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.0649539386176656,
+      "estimate_name": "weighted kappa",
+      "statistic": 1.22163840082683,
+      "p_value": 0.221844400163766,
+      "conf_int": [
+        -0.0192644522665454,
+        0.149172329501877
+      ],
+      "std_error": 0.051201146110672,
+      "null_std_error": 0.0531695291943208,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.9375,
+          0.75,
+          0.4375,
+          0
+        ],
+        [
+          0.9375,
+          1,
+          0.9375,
+          0.75,
+          0.4375
+        ],
+        [
+          0.75,
+          0.9375,
+          1,
+          0.9375,
+          0.75
+        ],
+        [
+          0.4375,
+          0.75,
+          0.9375,
+          1,
+          0.9375
+        ],
+        [
+          0,
+          0.4375,
+          0.75,
+          0.9375,
+          1
+        ]
+      ],
+      "n": 348,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [18, 11, 22, 0, 16],
+        [12, 14, 30, 14, 24],
+        [17, 9, 0, 16, 19],
+        [16, 17, 22, 0, 8],
+        [0, 16, 21, 1, 25]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": 0.0649539386176656,
+      "estimate_name": "weighted kappa",
+      "statistic": 1.2686032159762,
+      "p_value": 0.204582616744305,
+      "conf_int": [
+        -0.0192644522665454,
+        0.149172329501877
+      ],
+      "std_error": 0.051201146110672,
+      "null_std_error": 0.051201146110672,
+      "weight_method": "quadratic",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.9375,
+          0.75,
+          0.4375,
+          0
+        ],
+        [
+          0.9375,
+          1,
+          0.9375,
+          0.75,
+          0.4375
+        ],
+        [
+          0.75,
+          0.9375,
+          1,
+          0.9375,
+          0.75
+        ],
+        [
+          0.4375,
+          0.75,
+          0.9375,
+          1,
+          0.9375
+        ],
+        [
+          0,
+          0.4375,
+          0.75,
+          0.9375,
+          1
+        ]
+      ],
+      "n": 348,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [18, 11, 22, 0, 16],
+        [12, 14, 30, 14, 24],
+        [17, 9, 0, 16, 19],
+        [16, 17, 22, 0, 8],
+        [0, 16, 21, 1, 25]
+      ],
+      "weights": [
+        [1, 0.2, 0.6, 0.2, 0.2],
+        [0.2, 1, 0.1, 0.6, 0.6],
+        [0.6, 0.1, 1, 0.1, 0.1],
+        [0.2, 0.6, 0.1, 1, 0.2],
+        [0.2, 0.6, 0.1, 0.2, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": -0.0142012006337487,
+      "estimate_name": "weighted kappa",
+      "statistic": -0.455672770770658,
+      "p_value": 0.648625305247191,
+      "conf_int": [
+        -0.0613077559786275,
+        0.0329053547111301
+      ],
+      "std_error": 0.0286387521497489,
+      "null_std_error": 0.0311653483479623,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          1,
+          0.1,
+          0.6,
+          0.6
+        ],
+        [
+          0.6,
+          0.1,
+          1,
+          0.1,
+          0.1
+        ],
+        [
+          0.2,
+          0.6,
+          0.1,
+          1,
+          0.2
+        ],
+        [
+          0.2,
+          0.6,
+          0.1,
+          0.2,
+          1
+        ]
+      ],
+      "n": 348,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [18, 11, 22, 0, 16],
+        [12, 14, 30, 14, 24],
+        [17, 9, 0, 16, 19],
+        [16, 17, 22, 0, 8],
+        [0, 16, 21, 1, 25]
+      ],
+      "weights": [
+        [1, 0.2, 0.6, 0.2, 0.2],
+        [0.2, 1, 0.1, 0.6, 0.6],
+        [0.6, 0.1, 1, 0.1, 0.1],
+        [0.2, 0.6, 0.1, 1, 0.2],
+        [0.2, 0.6, 0.1, 0.2, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "estimate": -0.0142012006337487,
+      "estimate_name": "weighted kappa",
+      "statistic": -0.495873582741741,
+      "p_value": 0.619983605501273,
+      "conf_int": [
+        -0.0613077559786275,
+        0.0329053547111301
+      ],
+      "std_error": 0.0286387521497489,
+      "null_std_error": 0.0286387521497489,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          1,
+          0.1,
+          0.6,
+          0.6
+        ],
+        [
+          0.6,
+          0.1,
+          1,
+          0.1,
+          0.1
+        ],
+        [
+          0.2,
+          0.6,
+          0.1,
+          1,
+          0.2
+        ],
+        [
+          0.2,
+          0.6,
+          0.1,
+          0.2,
+          1
+        ]
+      ],
+      "n": 348,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0],
+        [0, 4]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 1,
+      "estimate_name": "kappa",
+      "statistic": 2.82842712474619,
+      "p_value": 0.00467773498104727,
+      "conf_int": [
+        1,
+        1
+      ],
+      "std_error": 0,
+      "null_std_error": 0.353553390593274,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "n": 8,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0],
+        [0, 4]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "error": true
+    },
+    {
+      "x": [
+        [1, 0, 0],
+        [0, 2, 0],
+        [0, 0, 3]
+      ],
+      "weights": "quadratic",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "delta",
+      "error": true
+    },
+    {
+      "x": [
+        [4, 0, 1],
+        [0, 0, 0],
+        [2, 0, 5]
+      ],
+      "weights": "linear",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.5,
+      "estimate_name": "weighted kappa",
+      "statistic": 1.75662013130736,
+      "p_value": 0.078982579263783,
+      "conf_int": [
+        0.0945381129764301,
+        0.90546188702357
+      ],
+      "std_error": 0.246503324295817,
+      "null_std_error": 0.284637521276656,
+      "weight_method": "linear",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.5,
+          0
+        ],
+        [
+          0.5,
+          1,
+          0.5
+        ],
+        [
+          0,
+          0.5,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [4, 0, 1],
+        [0, 0, 0],
+        [2, 0, 5]
+      ],
+      "weights": [
+        [1, 0.2, 0.6],
+        [0.2, 1, 0.1],
+        [0.6, 0.1, 1]
+      ],
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": 0.5,
+      "estimate_name": "weighted kappa",
+      "statistic": 1.75662013130736,
+      "p_value": 0.0789825792637822,
+      "conf_int": [
+        0.0945381129764299,
+        0.90546188702357
+      ],
+      "std_error": 0.246503324295817,
+      "null_std_error": 0.284637521276655,
+      "weight_method": "custom",
+      "method": "Asymptotic test for weighted Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0.2,
+          0.6
+        ],
+        [
+          0.2,
+          1,
+          0.1
+        ],
+        [
+          0.6,
+          0.1,
+          1
+        ]
+      ],
+      "n": 12,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [0, 4, 0],
+        [2, 0, 0],
+        [0, 0, 0]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "estimate": -0.8,
+      "estimate_name": "kappa",
+      "statistic": -2.44948974278318,
+      "p_value": 0.0143058784354296,
+      "conf_int": [
+        -1.48375281269453,
+        -0.116247187305466
+      ],
+      "std_error": 0.41569219381653,
+      "null_std_error": 0.32659863237109,
+      "weight_method": "unweighted",
+      "method": "Asymptotic test for Cohen's kappa",
+      "weight_matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "n": 6,
+      "null_value": 0
+    },
+    {
+      "x": [
+        [1, 0],
+        [0, 0]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "error": true
+    },
+    {
+      "x": [
+        [0, 0],
+        [0, 0]
+      ],
+      "weights": "unweighted",
+      "conf_level": 0.9,
+      "alternative": "two.sided",
+      "test_variance": "fce",
+      "error": true
+    }
+  ]
+}

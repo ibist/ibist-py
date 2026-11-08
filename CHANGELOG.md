@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Add `agreement_test()` matching R's `agreement.test()` for unweighted and
+  weighted Cohen's kappa, FCE/delta test variances, and Wald intervals.
+  Extend `TestResult` with copied agreement weights and kappa metadata.
+  Validate independent variances, the SAS example, and 60 R cases.
+
 - Add `assoc_test()` matching R's `assoc.test()`, with nominal Pearson,
   ordinal multinomial, and CMH methods. Multiple measures return an ordered
   `AssociationTestResults` collection identifying shared, unadjusted tests.

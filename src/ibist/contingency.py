@@ -27,6 +27,8 @@ class TestResult:
     Association wrappers add measure and test_method identifiers, std_error
     for multinomial estimation, and chisq for CMH's squared signed statistic.
     Unsupported method-specific fields remain None.
+    Agreement tests add null_std_error (the selected test standard error),
+    test_variance, weight_method, n, and a copied weights array.
     """
 
     statistic: float | None
@@ -50,6 +52,16 @@ class TestResult:
     test_method: str | None = None
     std_error: float | None = None
     chisq: float | None = None
+    null_std_error: float | None = None
+    test_variance: str | None = None
+    weight_method: str | None = None
+    n: int | None = None
+    _weight_data: tuple[tuple[float, ...], ...] = ()
+
+    @property
+    def weights(self):
+        """Fresh agreement-weight matrix, or None for other tests."""
+        return np.array(self._weight_data) if self._weight_data else None
 
     @property
     def samples(self):

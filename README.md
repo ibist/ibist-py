@@ -41,6 +41,10 @@ association inference. Single measures return `TestResult`; multiple measures
 return an ordered collection with a combined summary identifying shared
 tests. See [association tests](docs/association-tests.md).
 
+`agreement_test()` provides two-rater Cohen's kappa inference with named or
+custom weights, confidence intervals, and FCE/delta test-variance choices.
+See [agreement tests](docs/agreement-tests.md) for result fields and examples.
+
 ## Installation
 
 After publication, install the first alpha from PyPI with:

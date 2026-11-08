@@ -47,8 +47,8 @@ including non-unit null odds ratios and all alternatives. See
 ## Subsequent stages
 
 1. Complete basic odds-ratio, rate, and paired-data intervals.
-2. Ordinal association and unified association tests are implemented; add
-   agreement and trend tests next.
+2. Ordinal association, unified association tests, and agreement tests are
+   implemented; add trend tests next.
 3. Add power calculations, logistic goodness of fit, and computationally
    demanding paired methods.
 
