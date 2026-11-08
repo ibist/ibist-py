@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Add `assoc_test()` matching R's `assoc.test()`, with nominal Pearson,
+  ordinal multinomial, and CMH methods. Multiple measures return an ordered
+  `AssociationTestResults` collection identifying shared, unadjusted tests.
+  Extend `TestResult` with optional association metadata and validate
+  independent formulas plus 274 R comparison calls.
+
 - Add `ordinal_assoc()` with all seven R measures, multinomial standard
   errors, Wald confidence intervals, tests, score handling, and a native
   `OrdinalAssociationResult`. Check independent formulas, the published SAS

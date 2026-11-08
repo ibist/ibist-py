@@ -3,6 +3,7 @@
 __version__ = "0.1.0a1"
 
 from . import datasets
+from .association import AssociationTestResults, assoc_test
 from .contingency import (NominalAssociationResult, TestResult, indep_test,
                           nominal_assoc)
 from .common_odds import or_common_ci, or_common_test
@@ -16,6 +17,7 @@ from .risk_ratio import rr_2x2_ci
 from .results import CIResult, ConfidenceInterval
 
 __all__ = ["CIResult", "ConfidenceInterval", "NominalAssociationResult",
+           "AssociationTestResults", "assoc_test",
            "OrdinalAssociationResult", "ordinal_assoc",
            "TestResult", "datasets", "indep_test", "nominal_assoc",
            "or_2x2_ci", "or_common_ci", "or_common_test", "or_paired_ci",

@@ -24,6 +24,9 @@ class TestResult:
     refer to the conditional odds ratio for Fisher tests. Rate tests use
     estimate_name to identify their rate or rate ratio and expose copied
     samples/sample_rates metadata. Stored values retain full precision.
+    Association wrappers add measure and test_method identifiers, std_error
+    for multinomial estimation, and chisq for CMH's squared signed statistic.
+    Unsupported method-specific fields remain None.
     """
 
     statistic: float | None
@@ -43,6 +46,10 @@ class TestResult:
     n_resamples: int | None = None
     estimate_name: str = "Conditional odds ratio"
     _rate_data: tuple[tuple[int, float], ...] = ()
+    measure: str | None = None
+    test_method: str | None = None
+    std_error: float | None = None
+    chisq: float | None = None
 
     @property
     def samples(self):
