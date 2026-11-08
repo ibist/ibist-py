@@ -1,6 +1,6 @@
 {
  "source": "R/asymcheck.R",
- "source_md5": "552d57707c07af52d459686169983dff",
+ "source_md5": "7a9f03b868fbc57c5db8449da2788878",
  "cases": [
   {
    "kind": "indep",

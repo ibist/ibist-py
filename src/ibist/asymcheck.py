@@ -68,7 +68,8 @@ def asymcheck(object, *args, method=None, **kwargs):
     Parameters
     ----------
     object : callable, supported result, or count data
-        indep_test or rate_1s_ci for pre-checks; their results for post-checks.
+        indep_test, rate_1s_ci, or glm_gof for pre-checks; their results for
+        post-checks, including GLMGOFResults collections.
         Raw data require an explicit method. No inference is run by a
         pre-check, and result data names are never evaluated.
     *args, **kwargs
@@ -113,6 +114,10 @@ def asymcheck(object, *args, method=None, **kwargs):
     Passing criteria does not assess independence, common-effect
     homogeneity, or all approximation assumptions. No p-value or interval
     decision is used and the selected inference method is never changed.
+    All GLM GOF methods have asymptotic reference laws. Their pre-checks
+    report nonpositive df or degenerate standardization as failed criteria;
+    inference rejects these unestimable tests. Details retain convergence,
+    rank, and fitted-value boundary distance.
 
     References
     ----------
@@ -134,8 +139,18 @@ def asymcheck(object, *args, method=None, **kwargs):
     from .contingency import TestResult, indep_test
     from .rates import rate_1s_ci
     from .results import CIResult
+    from .glm_gof import GLMGOFResults, glm_gof, _combine, _precheck
 
     if callable(object):
+        if object is glm_gof:
+            if method is not None:
+                kwargs["method"] = method
+            try:
+                bound = inspect.signature(object).bind(*args, **kwargs)
+            except TypeError as exc:
+                raise ValueError(str(exc)) from None
+            bound.apply_defaults()
+            return _precheck(**bound.arguments)
         if object is not indep_test and object is not rate_1s_ci:
             raise ValueError("Unsupported inference function.")
         if method is not None:
@@ -153,9 +168,16 @@ def asymcheck(object, *args, method=None, **kwargs):
                 raise ValueError("Extra Fisher options are unsupported here.")
             return _indep(**values)
         return _rate(**values)
+    if isinstance(object, GLMGOFResults):
+        if args or kwargs or method is not None:
+            raise ValueError("Post-checks do not accept input overrides.")
+        return _combine([result._gof_diagnostics for result in object])
     if isinstance(object, (TestResult, CIResult)):
         if args or kwargs or method is not None:
             raise ValueError("Post-checks do not accept input overrides.")
+        if (isinstance(object, TestResult) and
+                object._gof_diagnostics is not None):
+            return object._gof_diagnostics
         if isinstance(object, TestResult) and object.observed is not None:
             label = object.method.lower()
             selected = ("fisher" if "fisher" in label else

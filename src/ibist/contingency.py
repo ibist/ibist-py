@@ -65,6 +65,16 @@ class TestResult:
     _weight_data: tuple[tuple[float, ...], ...] = ()
     score_statistic: float | None = None
     diagnostics: "AsymCheckResult | None" = None
+    family: str | None = None
+    link: str | None = None
+    _gof_diagnostics: "AsymCheckResult | None" = None
+
+    @property
+    def groups(self):
+        """Copied GLM goodness-of-fit groups, otherwise None."""
+        if self._gof_diagnostics is None:
+            return None
+        return self._gof_diagnostics.details["groups"]
 
     @property
     def weights(self):
