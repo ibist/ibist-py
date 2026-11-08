@@ -36,6 +36,11 @@ multinomial standard errors, confidence intervals, and tests. See
 [ordinal association](docs/ordinal-association.md) for category ordering,
 Pearson scores, Spearman midranks, and result fields.
 
+`assoc_test()` combines nominal Pearson, ordinal multinomial, and CMH
+association inference. Single measures return `TestResult`; multiple measures
+return an ordered collection with a combined summary identifying shared
+tests. See [association tests](docs/association-tests.md).
+
 ## Installation
 
 After publication, install the first alpha from PyPI with:

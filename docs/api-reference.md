@@ -44,6 +44,7 @@ each function and its guide.
 | `indep_test()` | `indep.test()` | [Tables][tables] |
 | `nominal_assoc()` | `nominal.assoc()` | [Tables][tables] |
 | `ordinal_assoc()` | `ordinal.assoc()` | [Ordinal association][ordinal] |
+| `assoc_test()` | `assoc.test()` | [Association tests][association] |
 
 ## Shared conventions
 
@@ -55,7 +56,8 @@ Hypothesis tests use `alternative` to specify the alternative hypothesis.
 
 Tests return `TestResult`, corresponding to R's `htest`; nominal and ordinal
 association return `NominalAssociationResult` and `OrdinalAssociationResult`.
-Dotted fields become snake_case, such
+`assoc_test()` returns one `TestResult` or an ordered `AssociationTestResults`
+collection for multiple measures. Dotted fields become snake_case, such
 as `p.value` to `p_value` and `conf.int` to `conf_int`. Result fields retain
 full precision. Use `summary()` for display and `to_frame()` where provided
 for pandas output. Function-specific Returns sections describe the fields
@@ -75,5 +77,6 @@ values, and the common R export workflow.
 [rates]: risk-ratios-and-rates.md
 [tables]: contingency-tables.md
 [ordinal]: ordinal-association.md
+[association]: association-tests.md
 [pep257]: https://peps.python.org/pep-0257/
 [numpydoc]: https://numpydoc.readthedocs.io/en/latest/format.html
