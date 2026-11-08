@@ -49,8 +49,9 @@ including non-unit null odds ratios and all alternatives. See
 1. Complete basic odds-ratio, rate, and paired-data intervals.
 2. Ordinal association, unified association tests, and agreement tests are
    implemented, along with trend tests and proportion/rate power calculations.
-3. Discuss names and interfaces for logistic goodness of fit,
-   Mantel--Haenszel diagnostics, and CLT demonstrations before translation.
+3. Discuss names and interfaces for logistic goodness of fit and CLT
+   demonstrations before translation. Mantel--Haenszel diagnostics now
+   use the shared asymcheck interface.
 
 Add dependencies and compiled bindings when an implemented feature requires
 them. Record any feature or option available in only one language. Check

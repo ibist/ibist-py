@@ -52,6 +52,10 @@ sample sizes or other design parameters. See
 `power_r1s_test()` and `power_r2s_test()` provide normal-approximation
 Poisson rate power with explicit follow-up and unequal group allocation.
 
+`asymcheck()` provides pre- and post-inference approximation diagnostics.
+Supported tests and intervals also accept `asymcheck=True` to attach them.
+See [approximation diagnostics](docs/asymcheck.md) for methods and criteria.
+
 ## Installation
 
 After publication, install the first alpha from PyPI with:

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Add shared `asymcheck()` pre/post diagnostics and optional attachment to
+  independence tests and one-rate intervals. Add stratified Mantel-Haenszel
+  screening, preserve the legacy R wrapper, and compare 14 R cases.
+
 - Add one-/two-sample Poisson rate power in step with the new R interfaces,
   including per-subject exposure, unequal allocation, solve-one-missing
   designs, optional continuity correction, and 19 R comparison cases.

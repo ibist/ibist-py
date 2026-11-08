@@ -1,0 +1,683 @@
+{
+ "source": "R/asymcheck.R",
+ "source_md5": "552d57707c07af52d459686169983dff",
+ "cases": [
+  {
+   "kind": "indep",
+   "args": {
+    "x": [
+     [
+      12,
+      8
+     ],
+     [
+      5,
+      15
+     ]
+    ],
+    "method": "pearson"
+   },
+   "result": {
+    "procedure": "independence",
+    "method": "pearson",
+    "applicable": true,
+    "condition_met": true,
+    "checks": [
+     {
+      "method": "pearson",
+      "criterion": "minimum expected count",
+      "value": 8.5,
+      "threshold": 1,
+      "comparison": ">=",
+      "condition_met": true
+     },
+     {
+      "method": "pearson",
+      "criterion": "fraction expected >= 5",
+      "value": 1,
+      "threshold": 0.8,
+      "comparison": ">=",
+      "condition_met": true
+     }
+    ],
+    "notes": [
+     "Expected-count rules are approximation screening heuristics.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "expected": [
+     [
+      8.5,
+      11.5
+     ],
+     [
+      8.5,
+      11.5
+     ]
+    ]
+   }
+  },
+  {
+   "kind": "indep",
+   "args": {
+    "x": [
+     [
+      12,
+      8
+     ],
+     [
+      5,
+      15
+     ]
+    ],
+    "method": "lr"
+   },
+   "result": {
+    "procedure": "independence",
+    "method": "lr",
+    "applicable": true,
+    "condition_met": true,
+    "checks": [
+     {
+      "method": "lr",
+      "criterion": "minimum expected count",
+      "value": 8.5,
+      "threshold": 1,
+      "comparison": ">=",
+      "condition_met": true
+     },
+     {
+      "method": "lr",
+      "criterion": "fraction expected >= 5",
+      "value": 1,
+      "threshold": 0.8,
+      "comparison": ">=",
+      "condition_met": true
+     }
+    ],
+    "notes": [
+     "Expected-count rules are approximation screening heuristics.",
+     "Pearson screening rules do not establish G-squared accuracy.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "expected": [
+     [
+      8.5,
+      11.5
+     ],
+     [
+      8.5,
+      11.5
+     ]
+    ]
+   }
+  },
+  {
+   "kind": "indep",
+   "args": {
+    "x": [
+     [
+      12,
+      8
+     ],
+     [
+      5,
+      15
+     ]
+    ],
+    "method": "fisher"
+   },
+   "result": {
+    "procedure": "independence",
+    "method": "fisher",
+    "applicable": false,
+    "condition_met": null,
+    "checks": [
+     {
+      "method": "fisher",
+      "criterion": "minimum expected count",
+      "value": 8.5,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "fisher",
+      "criterion": "fraction expected >= 5",
+      "value": 1,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "notes": [
+     "Conditional Fisher inference needs no asymptotic check.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "expected": [
+     [
+      8.5,
+      11.5
+     ],
+     [
+      8.5,
+      11.5
+     ]
+    ]
+   }
+  },
+  {
+   "kind": "indep",
+   "args": {
+    "x": [
+     [
+      1,
+      5,
+      5,
+      5,
+      5
+     ],
+     [
+      1,
+      5,
+      5,
+      5,
+      5
+     ]
+    ]
+   },
+   "result": {
+    "procedure": "independence",
+    "method": "pearson",
+    "applicable": true,
+    "condition_met": true,
+    "checks": [
+     {
+      "method": "pearson",
+      "criterion": "minimum expected count",
+      "value": 1,
+      "threshold": 1,
+      "comparison": ">=",
+      "condition_met": true
+     },
+     {
+      "method": "pearson",
+      "criterion": "fraction expected >= 5",
+      "value": 0.8,
+      "threshold": 0.8,
+      "comparison": ">=",
+      "condition_met": true
+     }
+    ],
+    "notes": [
+     "Expected-count rules are approximation screening heuristics.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "expected": [
+     [
+      1,
+      5,
+      5,
+      5,
+      5
+     ],
+     [
+      1,
+      5,
+      5,
+      5,
+      5
+     ]
+    ]
+   }
+  },
+  {
+   "kind": "indep",
+   "args": {
+    "x": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      20
+     ]
+    ]
+   },
+   "result": {
+    "procedure": "independence",
+    "method": "pearson",
+    "applicable": true,
+    "condition_met": false,
+    "checks": [
+     {
+      "method": "pearson",
+      "criterion": "minimum expected count",
+      "value": 0.0454545454545455,
+      "threshold": 1,
+      "comparison": ">=",
+      "condition_met": false
+     },
+     {
+      "method": "pearson",
+      "criterion": "fraction expected >= 5",
+      "value": 0.25,
+      "threshold": 0.8,
+      "comparison": ">=",
+      "condition_met": false
+     }
+    ],
+    "notes": [
+     "Expected-count rules are approximation screening heuristics.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "expected": [
+     [
+      0.0454545454545455,
+      0.954545454545455
+     ],
+     [
+      0.954545454545455,
+      20.0454545454545
+     ]
+    ]
+   }
+  },
+  {
+   "kind": "mh",
+   "args": {
+    "x": [
+     [
+      [
+       88,
+       48
+      ],
+      [
+       469,
+       653
+      ]
+     ],
+     [
+      [
+       27,
+       34
+      ],
+      [
+       480,
+       1324
+      ]
+     ]
+    ]
+   },
+   "result": {
+    "procedure": "stratified independence",
+    "method": "mantel-haenszel",
+    "applicable": true,
+    "condition_met": true,
+    "checks": [
+     {
+      "method": "mantel-haenszel",
+      "criterion": "sum of variances",
+      "value": 41.6369241343733,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true
+     }
+    ],
+    "notes": [
+     "Legacy variance-sum heuristic; common-effect homogeneity is unchecked.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "variance_sum": 41.6369241343733,
+    "variance": [
+     29.9507994093558,
+     11.6861247250175
+    ]
+   }
+  },
+  {
+   "kind": "mh",
+   "args": {
+    "x": [
+     [
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    ]
+   },
+   "result": {
+    "procedure": "stratified independence",
+    "method": "mantel-haenszel",
+    "applicable": true,
+    "condition_met": false,
+    "checks": [
+     {
+      "method": "mantel-haenszel",
+      "criterion": "sum of variances",
+      "value": 0.333333333333333,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": false
+     }
+    ],
+    "notes": [
+     "Legacy variance-sum heuristic; common-effect homogeneity is unchecked.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "variance_sum": 0.333333333333333,
+    "variance": 0.333333333333333
+   }
+  },
+  {
+   "kind": "mh",
+   "args": {
+    "x": [
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       0
+      ]
+     ]
+    ]
+   },
+   "result": {
+    "procedure": "stratified independence",
+    "method": "mantel-haenszel",
+    "applicable": true,
+    "condition_met": false,
+    "checks": [
+     {
+      "method": "mantel-haenszel",
+      "criterion": "sum of variances",
+      "value": 0,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": false
+     }
+    ],
+    "notes": [
+     "Legacy variance-sum heuristic; common-effect homogeneity is unchecked.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "variance_sum": 0,
+    "variance": 0
+   }
+  },
+  {
+   "kind": "rate",
+   "args": {
+    "x": 12,
+    "exposure": 100,
+    "method": "wald"
+   },
+   "result": {
+    "procedure": "one-sample Poisson rate interval",
+    "method": "wald",
+    "applicable": true,
+    "condition_met": null,
+    "checks": [
+     {
+      "method": "wald",
+      "criterion": "observed events",
+      "value": 12,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "wald",
+      "criterion": "plug-in skewness",
+      "value": 0.288675134594813,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "notes": [
+     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Criteria do not verify all sampling assumptions."
+    ]
+   }
+  },
+  {
+   "kind": "rate",
+   "args": {
+    "x": 12,
+    "exposure": 100,
+    "method": [
+     "exact",
+     "wald",
+     "wald"
+    ],
+    "conf_level": 0.99,
+    "side": "lower",
+    "correct": false
+   },
+   "result": {
+    "procedure": "one-sample Poisson rate interval",
+    "method": [
+     "exact",
+     "wald",
+     "wald"
+    ],
+    "applicable": true,
+    "condition_met": null,
+    "checks": [
+     {
+      "method": "exact",
+      "criterion": "observed events",
+      "value": 12,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "exact",
+      "criterion": "plug-in skewness",
+      "value": null,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "wald",
+      "criterion": "observed events",
+      "value": 12,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "wald",
+      "criterion": "plug-in skewness",
+      "value": 0.288675134594813,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "wald",
+      "criterion": "observed events",
+      "value": 12,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "wald",
+      "criterion": "plug-in skewness",
+      "value": 0.288675134594813,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "notes": [
+     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Criteria do not verify all sampling assumptions."
+    ]
+   }
+  },
+  {
+   "kind": "rate",
+   "args": {
+    "x": 0,
+    "method": "exact"
+   },
+   "result": {
+    "procedure": "one-sample Poisson rate interval",
+    "method": "exact",
+    "applicable": false,
+    "condition_met": null,
+    "checks": [
+     {
+      "method": "exact",
+      "criterion": "observed events",
+      "value": 0,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "exact",
+      "criterion": "plug-in skewness",
+      "value": null,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "notes": [
+     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Zero events: plug-in skewness is undefined.",
+     "No asymptotic interval is being assessed.",
+     "Criteria do not verify all sampling assumptions."
+    ]
+   }
+  },
+  {
+   "kind": "rate",
+   "args": {
+    "x": 0,
+    "method": "log"
+   },
+   "result": {
+    "procedure": "one-sample Poisson rate interval",
+    "method": "log",
+    "applicable": false,
+    "condition_met": null,
+    "checks": [
+     {
+      "method": "log",
+      "criterion": "observed events",
+      "value": 0,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "log",
+      "criterion": "plug-in skewness",
+      "value": null,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "notes": [
+     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Zero events: plug-in skewness is undefined.",
+     "Zero-event log/uncorrected Wald uses exact fallback.",
+     "No asymptotic interval is being assessed.",
+     "Criteria do not verify all sampling assumptions."
+    ]
+   }
+  },
+  {
+   "kind": "rate",
+   "args": {
+    "x": 0,
+    "method": "wald",
+    "correct": false
+   },
+   "result": {
+    "procedure": "one-sample Poisson rate interval",
+    "method": "wald",
+    "applicable": false,
+    "condition_met": null,
+    "checks": [
+     {
+      "method": "wald",
+      "criterion": "observed events",
+      "value": 0,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "wald",
+      "criterion": "plug-in skewness",
+      "value": null,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "notes": [
+     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Zero events: plug-in skewness is undefined.",
+     "Zero-event log/uncorrected Wald uses exact fallback.",
+     "No asymptotic interval is being assessed.",
+     "Criteria do not verify all sampling assumptions."
+    ]
+   }
+  },
+  {
+   "kind": "rate",
+   "args": {
+    "x": 0,
+    "method": "wald",
+    "correct": true
+   },
+   "result": {
+    "procedure": "one-sample Poisson rate interval",
+    "method": "wald",
+    "applicable": true,
+    "condition_met": null,
+    "checks": [
+     {
+      "method": "wald",
+      "criterion": "observed events",
+      "value": 0,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "wald",
+      "criterion": "plug-in skewness",
+      "value": null,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "notes": [
+     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Zero events: plug-in skewness is undefined.",
+     "Criteria do not verify all sampling assumptions."
+    ]
+   }
+  }
+ ]
+}

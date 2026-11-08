@@ -1,6 +1,8 @@
 """Focused statistical and interface checks for shared diagnostics."""
 
 import math
+import json
+from pathlib import Path
 import warnings
 
 import numpy as np
@@ -105,3 +107,40 @@ def test_invalid_inputs_and_postcheck_overrides():
         asymcheck(rate_1s_ci(2), method="wald")
     with pytest.raises(ValueError):
         indep_test([[1, 1], [1, 1]], asymcheck=1)
+
+
+CASES = json.loads((Path(__file__).parent / "reference" /
+                    "asymcheck_r.json").read_text())["cases"]
+
+
+@pytest.mark.parametrize("case", CASES)
+def test_representative_r_diagnostics(case):
+    args = case["args"]
+    if case["kind"] == "mh":
+        check = asymcheck(args["x"], method="mantel-haenszel")
+    else:
+        fun = indep_test if case["kind"] == "indep" else rate_1s_ci
+        check = asymcheck(fun, **args)
+    expected = case["result"]
+    assert check.procedure == expected["procedure"]
+    method = expected["method"]
+    expected_method = tuple(method) if isinstance(method, list) else method
+    assert check.method == expected_method
+    assert check.applicable == expected["applicable"]
+    assert check.condition_met == expected["condition_met"]
+    assert list(check.notes) == expected["notes"]
+    assert len(check._checks) == len(expected["checks"])
+    for actual, reference in zip(check._checks, expected["checks"]):
+        for value, name in zip(actual, check.checks.columns):
+            target = reference[name]
+            numeric = isinstance(target, (int, float))
+            if numeric and not isinstance(target, bool):
+                assert value == pytest.approx(target, rel=1e-12, abs=1e-14)
+            else:
+                assert value == target
+    if "expected" in expected:
+        np.testing.assert_allclose(check.details["expected"],
+                                   expected["expected"], rtol=1e-12)
+    if "variance_sum" in expected:
+        assert check.details["variance_sum"] == pytest.approx(
+            expected["variance_sum"], rel=1e-12)

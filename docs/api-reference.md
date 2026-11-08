@@ -51,6 +51,7 @@ each function and its guide.
 | `power_p2s_test()` | `power.p2s.test()` | [Trend and power][design] |
 | `power_r1s_test()` | `power.r1s.test()` | [Trend and power][design] |
 | `power_r2s_test()` | `power.r2s.test()` | [Trend and power][design] |
+| `asymcheck()` | `asymcheck()` | [Approximation diagnostics][asym] |
 
 ## Shared conventions
 
@@ -89,5 +90,6 @@ values, and the common R export workflow.
 [association]: association-tests.md
 [agreement]: agreement-tests.md
 [design]: trend-and-power.md
+[asym]: asymcheck.md
 [pep257]: https://peps.python.org/pep-0257/
 [numpydoc]: https://numpydoc.readthedocs.io/en/latest/format.html
