@@ -1,0 +1,1431 @@
+{
+ "r_revision": "8d11ff071a1399ae33fcc5ee08aa04feaecb0f57",
+ "source_md5": {
+  "R/ci.R": "64851bf438d2c71762919b63e45bcfca",
+  "R/asymcheck.R": "471539890a8d5362030230e95bdc2623",
+  "R/asymcheck_book.R": "529c48abdb25e0822716cf152c88ce6b",
+  "R/prop_1s_ci.R": "20719122c154837f76d3ad23a4ad9697",
+  "R/prop_2s_ci.R": "18dcef11922117a1f024b57ddd3e4751",
+  "R/rr_2x2_ci.R": "8ea0dce432b5cf3eaaf1d576729a5139",
+  "R/or_2x2_ci.R": "d768add184a6838abf40cb708a853121",
+  "R/rate_1s_ci.R": "d1cd9a76089554bb215ef7864d40c481",
+  "R/rate_2s_ci.R": "df3176498771eee0a8cd9ae91657b7cb",
+  "R/rate_test.R": "8aee90f9867ab7fa08dc2a7c3d131dac",
+  "R/indep_test.R": "d4cdaca1abd63698b9b8c74a2373b304"
+ },
+ "cases": [
+  {
+   "kind": "p1",
+   "args": {
+    "x": [
+     0,
+     16
+    ],
+    "n": 40,
+    "correct": true,
+    "midp": true,
+    "method": [
+     "wald",
+     "wilson",
+     "agresti-coull",
+     "clopper-pearson",
+     "wald"
+    ],
+    "side": "lower"
+   },
+   "result": {
+    "procedure": "one-proportion interval",
+    "method": [
+     "wald",
+     "wilson",
+     "agresti-coull",
+     "clopper-pearson",
+     "wald"
+    ],
+    "applicable": true,
+    "checks": [
+     {
+      "method": "wald",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 0,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": false,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "wilson",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 0,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": false,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "agresti-coull",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 0,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": false,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "clopper-pearson",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 0,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "wald",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 0,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": false,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "wald",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 9.6,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 1,
+      "sample": 0
+     },
+     {
+      "method": "wilson",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 9.6,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 1,
+      "sample": 0
+     },
+     {
+      "method": "agresti-coull",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 9.6,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 1,
+      "sample": 0
+     },
+     {
+      "method": "clopper-pearson",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 9.6,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null,
+      "input": 1,
+      "sample": 0
+     },
+     {
+      "method": "wald",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 9.6,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 1,
+      "sample": 0
+     }
+    ],
+    "details": {
+     "counts": [
+      {
+       "x": 0,
+       "n": 40
+      },
+      {
+       "x": 16,
+       "n": 40
+      }
+     ],
+     "sample_proportions": [
+      0,
+      0.4
+     ],
+     "methods": [
+      {
+       "method": "wald",
+       "applicable": true
+      },
+      {
+       "method": "wilson",
+       "applicable": true
+      },
+      {
+       "method": "agresti-coull",
+       "applicable": true
+      },
+      {
+       "method": "clopper-pearson",
+       "applicable": false
+      },
+      {
+       "method": "wald",
+       "applicable": true
+      }
+     ],
+     "conf_level": 0.95,
+     "side": "lower",
+     "alternative": "greater",
+     "correct": true,
+     "midp": true,
+     "tol": 1e-08,
+     "nuisance_tol": null,
+     "exposure": null,
+     "original_events": null,
+     "source": "Book chapter 11"
+    },
+    "notes": [
+     "The book's approximation guidelines are not coverage guarantees.",
+     "Criteria use original observations; pseudo-counts are not sample size.",
+     "Ch. 11 binomial-normal guideline; Wald can under-cover even if met.",
+     "Exact methods need no asymptotic approximation check.",
+     "Mid-p does not guarantee nominal coverage.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": false
+   }
+  },
+  {
+   "kind": "p1",
+   "args": {
+    "x": 10,
+    "n": 20
+   },
+   "result": {
+    "procedure": "one-proportion interval",
+    "method": "wilson",
+    "applicable": true,
+    "checks": [
+     {
+      "method": "wilson",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 5,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     }
+    ],
+    "details": {
+     "counts": [
+      {
+       "x": 10,
+       "n": 20
+      }
+     ],
+     "sample_proportions": 0.5,
+     "methods": [
+      {
+       "method": "wilson",
+       "applicable": true
+      }
+     ],
+     "conf_level": 0.95,
+     "side": "two.sided",
+     "alternative": "two.sided",
+     "correct": false,
+     "midp": false,
+     "tol": 1e-08,
+     "nuisance_tol": null,
+     "exposure": null,
+     "original_events": null,
+     "source": "Book chapter 11"
+    },
+    "notes": [
+     "The book's approximation guidelines are not coverage guarantees.",
+     "Criteria use original observations; pseudo-counts are not sample size.",
+     "Ch. 11 binomial-normal guideline; Wald can under-cover even if met.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": true
+   }
+  },
+  {
+   "kind": "p2",
+   "args": {
+    "x": [
+     [
+      38,
+      62
+     ],
+     [
+      267,
+      717
+     ]
+    ],
+    "method": [
+     "newcombe",
+     "wald",
+     "miettinen-nurminen",
+     "mee",
+     "agresti-caffo",
+     "brown-li",
+     "chan-zhang"
+    ],
+    "side": "upper"
+   },
+   "result": {
+    "procedure": "independent proportion-difference interval",
+    "method": [
+     "newcombe",
+     "wald",
+     "miettinen-nurminen",
+     "mee",
+     "agresti-caffo",
+     "brown-li",
+     "chan-zhang"
+    ],
+    "applicable": true,
+    "checks": [
+     {
+      "method": "newcombe",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "newcombe",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     },
+     {
+      "method": "wald",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "wald",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     },
+     {
+      "method": "miettinen-nurminen",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "miettinen-nurminen",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     },
+     {
+      "method": "mee",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "mee",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     },
+     {
+      "method": "agresti-caffo",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "agresti-caffo",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     },
+     {
+      "method": "brown-li",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "brown-li",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     },
+     {
+      "method": "chan-zhang",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "chan-zhang",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null,
+      "input": 0,
+      "sample": 1
+     }
+    ],
+    "details": {
+     "counts": [
+      {
+       "x": 38,
+       "n": 100
+      },
+      {
+       "x": 267,
+       "n": 984
+      }
+     ],
+     "sample_proportions": [
+      0.38,
+      0.271341463414634
+     ],
+     "methods": [
+      {
+       "method": "newcombe",
+       "applicable": true
+      },
+      {
+       "method": "wald",
+       "applicable": true
+      },
+      {
+       "method": "miettinen-nurminen",
+       "applicable": true
+      },
+      {
+       "method": "mee",
+       "applicable": true
+      },
+      {
+       "method": "agresti-caffo",
+       "applicable": true
+      },
+      {
+       "method": "brown-li",
+       "applicable": true
+      },
+      {
+       "method": "chan-zhang",
+       "applicable": false
+      }
+     ],
+     "conf_level": 0.95,
+     "side": "upper",
+     "alternative": "less",
+     "correct": false,
+     "midp": false,
+     "tol": 1e-08,
+     "nuisance_tol": 1e-10,
+     "exposure": null,
+     "original_events": null,
+     "source": "Book chapter 12"
+    },
+    "notes": [
+     "The book's approximation guidelines are not coverage guarantees.",
+     "Criteria use original observations; pseudo-counts are not sample size.",
+     "Check n_i * p.hat_i * (1-p.hat_i) >= 5 in each original sample.",
+     "Exact methods need no asymptotic approximation check.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": true
+   }
+  },
+  {
+   "kind": "rr",
+   "args": {
+    "x": [
+     [
+      38,
+      62
+     ],
+     [
+      267,
+      717
+     ]
+    ],
+    "method": [
+     "katz",
+     "koopman"
+    ]
+   },
+   "result": {
+    "procedure": "risk-ratio interval",
+    "method": [
+     "katz",
+     "koopman"
+    ],
+    "applicable": true,
+    "checks": [
+     {
+      "method": "katz",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "katz",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     },
+     {
+      "method": "koopman",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "koopman",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     }
+    ],
+    "details": {
+     "counts": [
+      {
+       "x": 38,
+       "n": 100
+      },
+      {
+       "x": 267,
+       "n": 984
+      }
+     ],
+     "sample_proportions": [
+      0.38,
+      0.271341463414634
+     ],
+     "methods": [
+      {
+       "method": "katz",
+       "applicable": true
+      },
+      {
+       "method": "koopman",
+       "applicable": true
+      }
+     ],
+     "conf_level": 0.95,
+     "side": "two.sided",
+     "alternative": "two.sided",
+     "correct": null,
+     "midp": false,
+     "tol": 1e-08,
+     "nuisance_tol": null,
+     "exposure": null,
+     "original_events": null,
+     "source": "Book chapter 15"
+    },
+    "notes": [
+     "The book's approximation guidelines are not coverage guarantees.",
+     "Criteria use original observations; pseudo-counts are not sample size.",
+     "Check n_i * p.hat_i * (1-p.hat_i) >= 5 in each original sample.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": true
+   }
+  },
+  {
+   "kind": "or",
+   "args": {
+    "x": [
+     [
+      38,
+      62
+     ],
+     [
+      267,
+      717
+     ]
+    ],
+    "method": [
+     "wald",
+     "gart",
+     "cornfield",
+     "bp"
+    ],
+    "midp": true,
+    "side": "upper",
+    "tol": 1e-07
+   },
+   "result": {
+    "procedure": "odds-ratio interval",
+    "method": [
+     "wald",
+     "gart",
+     "cornfield",
+     "bp"
+    ],
+    "applicable": true,
+    "checks": [
+     {
+      "method": "wald",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "wald",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     },
+     {
+      "method": "gart",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "gart",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     },
+     {
+      "method": "cornfield",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "cornfield",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null,
+      "input": 0,
+      "sample": 1
+     },
+     {
+      "method": "bp",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 23.56,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "bp",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 194.551829268293,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null,
+      "input": 0,
+      "sample": 1
+     }
+    ],
+    "details": {
+     "counts": [
+      {
+       "x": 38,
+       "n": 100
+      },
+      {
+       "x": 267,
+       "n": 984
+      }
+     ],
+     "sample_proportions": [
+      0.38,
+      0.271341463414634
+     ],
+     "methods": [
+      {
+       "method": "wald",
+       "applicable": true
+      },
+      {
+       "method": "gart",
+       "applicable": true
+      },
+      {
+       "method": "cornfield",
+       "applicable": false
+      },
+      {
+       "method": "bp",
+       "applicable": false
+      }
+     ],
+     "conf_level": 0.95,
+     "side": "upper",
+     "alternative": "less",
+     "correct": null,
+     "midp": true,
+     "tol": 1e-07,
+     "nuisance_tol": null,
+     "exposure": null,
+     "original_events": null,
+     "source": "Book chapter 15"
+    },
+    "notes": [
+     "The book's approximation guidelines are not coverage guarantees.",
+     "Criteria use original observations; pseudo-counts are not sample size.",
+     "Check n_i * p.hat_i * (1-p.hat_i) >= 5 in each original sample.",
+     "Exact methods need no asymptotic approximation check.",
+     "Mid-p does not guarantee nominal coverage.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": true
+   }
+  },
+  {
+   "kind": "or",
+   "args": {
+    "x": [
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "method": "gart"
+   },
+   "result": {
+    "procedure": "odds-ratio interval",
+    "method": "gart",
+    "applicable": true,
+    "checks": [
+     {
+      "method": "gart",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 1,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": false,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "gart",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 1,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": false,
+      "input": 0,
+      "sample": 1
+     }
+    ],
+    "details": {
+     "counts": [
+      {
+       "x": 2,
+       "n": 4
+      },
+      {
+       "x": 2,
+       "n": 4
+      }
+     ],
+     "sample_proportions": [
+      0.5,
+      0.5
+     ],
+     "methods": [
+      {
+       "method": "gart",
+       "applicable": true
+      }
+     ],
+     "conf_level": 0.95,
+     "side": "two.sided",
+     "alternative": "two.sided",
+     "correct": null,
+     "midp": false,
+     "tol": 1e-08,
+     "nuisance_tol": null,
+     "exposure": null,
+     "original_events": null,
+     "source": "Book chapter 15"
+    },
+    "notes": [
+     "The book's approximation guidelines are not coverage guarantees.",
+     "Criteria use original observations; pseudo-counts are not sample size.",
+     "Check n_i * p.hat_i * (1-p.hat_i) >= 5 in each original sample.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": false
+   }
+  },
+  {
+   "kind": "rate2",
+   "args": {
+    "x": [
+     151,
+     55
+    ],
+    "exposure": [
+     57518.1,
+     74573.5
+    ],
+    "method": [
+     "log",
+     "score",
+     "exact"
+    ]
+   },
+   "result": {
+    "procedure": "Poisson rate-ratio interval",
+    "method": [
+     "log",
+     "score",
+     "exact"
+    ],
+    "applicable": true,
+    "checks": [
+     {
+      "method": "log",
+      "criterion": "observed events",
+      "value": 151,
+      "threshold": 10,
+      "comparison": ">",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "log",
+      "criterion": "observed events",
+      "value": 55,
+      "threshold": 10,
+      "comparison": ">",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     },
+     {
+      "method": "score",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 40.3155339805825,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": true,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "exact",
+      "criterion": "n * p.hat * (1-p.hat)",
+      "value": 40.3155339805825,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null,
+      "input": 0,
+      "sample": 0
+     }
+    ],
+    "details": {
+     "counts": [
+      {
+       "x": 151,
+       "n": 206
+      }
+     ],
+     "sample_proportions": 0.733009708737864,
+     "methods": [
+      {
+       "method": "log",
+       "applicable": true
+      },
+      {
+       "method": "score",
+       "applicable": true
+      },
+      {
+       "method": "exact",
+       "applicable": false
+      }
+     ],
+     "conf_level": 0.95,
+     "side": "two.sided",
+     "alternative": "two.sided",
+     "correct": null,
+     "midp": false,
+     "tol": 1e-08,
+     "nuisance_tol": null,
+     "exposure": [
+      57518.1,
+      74573.5
+     ],
+     "original_events": [
+      151,
+      55
+     ],
+     "source": "Book chapter 22 (and 11 for conditional score)"
+    },
+    "notes": [
+     "The book's approximation guidelines are not coverage guarantees.",
+     "Criteria use original observations; pseudo-counts are not sample size.",
+     "Log-Wald: both y_i > 10; score: conditional-binomial CI guideline.",
+     "Exact methods need no asymptotic approximation check.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": true
+   }
+  },
+  {
+   "kind": "rate2",
+   "args": {
+    "x": [
+     10,
+     11
+    ]
+   },
+   "result": {
+    "procedure": "Poisson rate-ratio interval",
+    "method": "log",
+    "applicable": true,
+    "checks": [
+     {
+      "method": "log",
+      "criterion": "observed events",
+      "value": 10,
+      "threshold": 10,
+      "comparison": ">",
+      "condition_met": false,
+      "input": 0,
+      "sample": 0
+     },
+     {
+      "method": "log",
+      "criterion": "observed events",
+      "value": 11,
+      "threshold": 10,
+      "comparison": ">",
+      "condition_met": true,
+      "input": 0,
+      "sample": 1
+     }
+    ],
+    "details": {
+     "counts": [
+      {
+       "x": 10,
+       "n": 21
+      }
+     ],
+     "sample_proportions": 0.476190476190476,
+     "methods": [
+      {
+       "method": "log",
+       "applicable": true
+      }
+     ],
+     "conf_level": 0.95,
+     "side": "two.sided",
+     "alternative": "two.sided",
+     "correct": null,
+     "midp": false,
+     "tol": 1e-08,
+     "nuisance_tol": null,
+     "exposure": [
+      1,
+      1
+     ],
+     "original_events": [
+      10,
+      11
+     ],
+     "source": "Book chapter 22 (and 11 for conditional score)"
+    },
+    "notes": [
+     "The book's approximation guidelines are not coverage guarantees.",
+     "Criteria use original observations; pseudo-counts are not sample size.",
+     "Log-Wald: both y_i > 10; score: conditional-binomial CI guideline.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": false
+   }
+  },
+  {
+   "kind": "rate-test",
+   "args": {
+    "x": 411,
+    "exposure": 25800,
+    "r": 0.0119
+   },
+   "result": {
+    "procedure": "Poisson rate test",
+    "method": "normal",
+    "applicable": true,
+    "checks": [
+     {
+      "method": "normal",
+      "criterion": "null expected events",
+      "value": 307.02,
+      "threshold": 10,
+      "comparison": ">=",
+      "condition_met": true
+     }
+    ],
+    "details": {
+     "x": 411,
+     "exposure": 25800,
+     "r": 0.0119,
+     "pi0": null,
+     "correct": true,
+     "alternative": "two.sided",
+     "source": "Book Ch. 21"
+    },
+    "notes": [
+     "Book null-distribution guideline; not an accuracy guarantee.",
+     "This checks the test approximation, not its accompanying interval.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": true
+   }
+  },
+  {
+   "kind": "rate-test",
+   "args": {
+    "x": [
+     9,
+     12
+    ],
+    "exposure": [
+     1817.6,
+     7496.3
+    ]
+   },
+   "result": {
+    "procedure": "Poisson rate test",
+    "method": "normal",
+    "applicable": true,
+    "checks": [
+     {
+      "method": "normal",
+      "criterion": "n * pi0 * (1-pi0)",
+      "value": 3.29838560048294,
+      "threshold": 5,
+      "comparison": ">=",
+      "condition_met": false
+     }
+    ],
+    "details": {
+     "x": [
+      9,
+      12
+     ],
+     "exposure": [
+      1817.6,
+      7496.3
+     ],
+     "r": 1,
+     "pi0": 0.195149185625785,
+     "correct": true,
+     "alternative": "two.sided",
+     "source": "Book Ch. 22"
+    },
+    "notes": [
+     "Book null-distribution guideline; not an accuracy guarantee.",
+     "This checks the test approximation, not its accompanying interval.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": false
+   }
+  },
+  {
+   "kind": "rate1",
+   "args": {
+    "x": 49,
+    "method": "wald"
+   },
+   "result": {
+    "procedure": "one-sample Poisson rate interval",
+    "method": "wald",
+    "applicable": true,
+    "checks": [
+     {
+      "method": "wald",
+      "criterion": "observed events",
+      "value": 49,
+      "threshold": 50,
+      "comparison": ">=",
+      "condition_met": false
+     },
+     {
+      "method": "wald",
+      "criterion": "plug-in skewness",
+      "value": 0.142857142857143,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "details": {
+     "x": 49,
+     "exposure": 1,
+     "conf_level": 0.95,
+     "side": "two.sided",
+     "correct": true,
+     "approximate": true,
+     "exact_fallback": false
+    },
+    "notes": [
+     "Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+     "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+     "WH is recommended even for small counts; no binary cutoff is given.",
+     "Corrected score/WH have no separate observed-count cutoff in the book.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": false
+   }
+  },
+  {
+   "kind": "rate1",
+   "args": {
+    "x": 50,
+    "method": "wald"
+   },
+   "result": {
+    "procedure": "one-sample Poisson rate interval",
+    "method": "wald",
+    "applicable": true,
+    "checks": [
+     {
+      "method": "wald",
+      "criterion": "observed events",
+      "value": 50,
+      "threshold": 50,
+      "comparison": ">=",
+      "condition_met": true
+     },
+     {
+      "method": "wald",
+      "criterion": "plug-in skewness",
+      "value": 0.14142135623731,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "details": {
+     "x": 50,
+     "exposure": 1,
+     "conf_level": 0.95,
+     "side": "two.sided",
+     "correct": true,
+     "approximate": true,
+     "exact_fallback": false
+    },
+    "notes": [
+     "Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+     "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+     "WH is recommended even for small counts; no binary cutoff is given.",
+     "Corrected score/WH have no separate observed-count cutoff in the book.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": true
+   }
+  },
+  {
+   "kind": "rate1",
+   "args": {
+    "x": 9,
+    "method": "log"
+   },
+   "result": {
+    "procedure": "one-sample Poisson rate interval",
+    "method": "log",
+    "applicable": true,
+    "checks": [
+     {
+      "method": "log",
+      "criterion": "observed events",
+      "value": 9,
+      "threshold": 10,
+      "comparison": ">=",
+      "condition_met": false
+     },
+     {
+      "method": "log",
+      "criterion": "plug-in skewness",
+      "value": 0.333333333333333,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "details": {
+     "x": 9,
+     "exposure": 1,
+     "conf_level": 0.95,
+     "side": "two.sided",
+     "correct": true,
+     "approximate": true,
+     "exact_fallback": false
+    },
+    "notes": [
+     "Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+     "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+     "WH is recommended even for small counts; no binary cutoff is given.",
+     "Corrected score/WH have no separate observed-count cutoff in the book.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": false
+   }
+  },
+  {
+   "kind": "rate1",
+   "args": {
+    "x": 10,
+    "method": "log"
+   },
+   "result": {
+    "procedure": "one-sample Poisson rate interval",
+    "method": "log",
+    "applicable": true,
+    "checks": [
+     {
+      "method": "log",
+      "criterion": "observed events",
+      "value": 10,
+      "threshold": 10,
+      "comparison": ">=",
+      "condition_met": true
+     },
+     {
+      "method": "log",
+      "criterion": "plug-in skewness",
+      "value": 0.316227766016838,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "details": {
+     "x": 10,
+     "exposure": 1,
+     "conf_level": 0.95,
+     "side": "two.sided",
+     "correct": true,
+     "approximate": true,
+     "exact_fallback": false
+    },
+    "notes": [
+     "Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+     "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+     "WH is recommended even for small counts; no binary cutoff is given.",
+     "Corrected score/WH have no separate observed-count cutoff in the book.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": true
+   }
+  },
+  {
+   "kind": "rate1",
+   "args": {
+    "x": 3,
+    "method": [
+     "wh",
+     "score",
+     "exact"
+    ]
+   },
+   "result": {
+    "procedure": "one-sample Poisson rate interval",
+    "method": [
+     "wh",
+     "score",
+     "exact"
+    ],
+    "applicable": true,
+    "checks": [
+     {
+      "method": "wh",
+      "criterion": "observed events",
+      "value": 3,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "wh",
+      "criterion": "plug-in skewness",
+      "value": 0.577350269189626,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "score",
+      "criterion": "observed events",
+      "value": 3,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "score",
+      "criterion": "plug-in skewness",
+      "value": 0.577350269189626,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "exact",
+      "criterion": "observed events",
+      "value": 3,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     },
+     {
+      "method": "exact",
+      "criterion": "plug-in skewness",
+      "value": null,
+      "threshold": null,
+      "comparison": null,
+      "condition_met": null
+     }
+    ],
+    "details": {
+     "x": 3,
+     "exposure": 1,
+     "conf_level": 0.95,
+     "side": "two.sided",
+     "correct": true,
+     "approximate": [
+      true,
+      true,
+      false
+     ],
+     "exact_fallback": [
+      false,
+      false,
+      false
+     ]
+    },
+    "notes": [
+     "Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+     "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+     "WH is recommended even for small counts; no binary cutoff is given.",
+     "Corrected score/WH have no separate observed-count cutoff in the book.",
+     "Criteria do not verify all sampling assumptions."
+    ],
+    "condition_met": null
+   }
+  }
+ ]
+}

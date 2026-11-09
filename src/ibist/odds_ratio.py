@@ -14,7 +14,8 @@ from .results import CIResult, ConfidenceInterval, _ci_orientation
 
 def or_2x2_ci(x, *, conf_level: float = 0.95,
               method: str | Sequence[str] = "wald", midp: bool = False,
-              tol: float = 1e-8, side=None, alternative=None) -> CIResult:
+              tol: float = 1e-8, side=None, alternative=None,
+              asymcheck=False) -> CIResult:
     """Estimate an odds ratio and calculate one or more confidence intervals.
 
     Parameters
@@ -47,6 +48,10 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
         Absolute root-finding tolerance on the log odds-ratio scale. BP
         limits can occur at jumps in the probability-ordered p-value.
 
+    asymcheck : bool, default False
+        Attach the book's approximation checks in result.diagnostics.
+        See asymcheck() for criteria, sources, and interpretation.
+
     Returns
     -------
     CIResult
@@ -68,6 +73,17 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
 
     Notes
     -----
+    Approximation checks follow book Chapter 15: each original sample must
+    satisfy n_i*p_hat_i*(1-p_hat_i) >= 5. Gart's pseudo-counts never increase
+    these quantities. Positive cells or adjusted variance alone do not
+    establish adequacy. Conditional exact/mid-p methods need no asymptotic
+    check; mid-p does not guarantee coverage. Positive original row totals
+    are needed to define the observed sample proportions for this check.
+
+    Original counts and settings are retained for asymcheck(result), even
+    when attached diagnostics are not requested. Pre-checks run no inference;
+    diagnostics do not change methods, p-values, or confidence limits.
+
     The 0.5 adjustment is the Haldane--Anscombe correction, used here with
     Gart's interval construction. Conditional methods use Fisher's noncentral
     hypergeometric distribution with fixed margins. They require positive
@@ -94,6 +110,8 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
     >>> round(result.estimate, 3)
     8.556
     """
+    from .contingency import _flag
+    asymcheck = _flag(asymcheck, "asymcheck")
     side, alternative = _ci_orientation(side, alternative)
     tab = _validate_table(x)
     conf_level = _probability(conf_level, "conf_level")
@@ -145,8 +163,11 @@ def or_2x2_ci(x, *, conf_level: float = 0.95,
         if side == "upper":
             lower = 0.0
         intervals.append(ConfidenceInterval(label, float(lower), float(upper)))
-    return CIResult(estimate, tuple(intervals), conf_level, "odds ratio", 1.0,
+    result = CIResult(estimate, tuple(intervals), conf_level, "odds ratio", 1.0,
                     midp=bool(midp), alternative=alternative)
+    from ._asymcheck_book import _attach
+    return _attach(result, "or", asymcheck, x=tab, method=methods,
+                   conf_level=conf_level, midp=bool(midp), side=side, tol=tol)
 
 
 def _validate_table(x):

@@ -14,7 +14,8 @@ from .results import CIResult, ConfidenceInterval, _ci_orientation
 
 
 def rr_2x2_ci(x, *, conf_level=0.95, method="koopman",
-              alternative=None, side=None, tol=1e-8) -> CIResult:
+              alternative=None, side=None, tol=1e-8,
+              asymcheck=False) -> CIResult:
     """Calculate confidence intervals for the first risk divided by the second.
 
     Parameters
@@ -38,6 +39,10 @@ def rr_2x2_ci(x, *, conf_level=0.95, method="koopman",
     tol : float, default 1e-8
         Positive absolute root tolerance on the log risk-ratio scale.
 
+    asymcheck : bool, default False
+        Attach the book's approximation checks in result.diagnostics.
+        See asymcheck() for criteria, sources, and interpretation.
+
     Returns
     -------
     CIResult
@@ -58,6 +63,16 @@ def rr_2x2_ci(x, *, conf_level=0.95, method="koopman",
 
     Notes
     -----
+    Approximation checks follow book Chapter 15: each original sample must
+    satisfy n_i*p_hat_i*(1-p_hat_i) >= 5. Positive events and nonzero variance
+    alone do not establish adequacy. Both methods are asymptotic and passing
+    this guideline does not guarantee coverage. Root tolerance must be
+    strictly between zero and one, matching R.
+
+    Original counts and settings are retained for asymcheck(result), even
+    when attached diagnostics are not requested. Pre-checks run no inference;
+    diagnostics do not change methods, p-values, or confidence limits.
+
     Katz uses variance 1/x1 - 1/n1 + 1/x2 - 1/n2 on the log scale, without
     pseudo-counts. Koopman fits binomial probabilities under p1=r*p2 and
     inverts their Pearson statistic, without a finite-sample factor or
@@ -79,6 +94,8 @@ def rr_2x2_ci(x, *, conf_level=0.95, method="koopman",
     >>> round(result.estimate, 3)
     1.4
     """
+    from .contingency import _flag
+    asymcheck = _flag(asymcheck, "asymcheck")
     side, alternative = _ci_orientation(side, alternative)
     table = _validate_table(x)
     if any(isinstance(v, (bool, np.bool_))
@@ -88,8 +105,8 @@ def rr_2x2_ci(x, *, conf_level=0.95, method="koopman",
     conf_level = _probability(conf_level, "conf_level")
     _alternative(alternative)
     if (isinstance(tol, (bool, np.bool_)) or not isinstance(tol, Real)
-            or not math.isfinite(tol) or tol <= 0):
-        raise ValueError("tol must be a positive finite number.")
+            or not math.isfinite(tol) or not 0 < tol < 1):
+        raise ValueError("tol must be a finite number between zero and one.")
     methods = _methods(method, ("koopman", "katz"))
     proportions = counts / sizes
     estimate = (float(proportions[0] / proportions[1])
@@ -117,9 +134,12 @@ def rr_2x2_ci(x, *, conf_level=0.95, method="koopman",
             upper = math.inf
         intervals.append(ConfidenceInterval(name, lower, upper))
     samples = tuple((int(a), int(b)) for a, b in zip(counts, sizes))
-    return CIResult(estimate, tuple(intervals), conf_level, "risk ratio",
+    result = CIResult(estimate, tuple(intervals), conf_level, "risk ratio",
                     null_value=1.0, alternative=alternative,
                     _sample_counts=samples)
+    from ._asymcheck_book import _attach
+    return _attach(result, "rr", asymcheck, x=table, method=methods,
+                   conf_level=conf_level, side=side, tol=tol)
 
 
 def _methods(method, choices):

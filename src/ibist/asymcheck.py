@@ -9,6 +9,10 @@ import numpy as np
 import pandas as pd
 
 
+_CHECK_COLUMNS = ("method", "criterion", "value", "threshold", "comparison",
+                  "condition_met")
+
+
 @dataclass(frozen=True, repr=False)
 class AsymCheckResult:
     """Method-specific approximation diagnostics, matching ibist_asymcheck.
@@ -27,13 +31,12 @@ class AsymCheckResult:
     notes: tuple[str, ...]
     _checks: tuple
     _details: dict
+    _check_columns: tuple[str, ...] = _CHECK_COLUMNS
 
     @property
     def checks(self):
         """Fresh criterion table, with None for unassessed conditions."""
-        return pd.DataFrame(self._checks, columns=(
-            "method", "criterion", "value", "threshold", "comparison",
-            "condition_met"))
+        return pd.DataFrame(self._checks, columns=self._check_columns)
 
     @property
     def details(self):
@@ -68,7 +71,8 @@ def asymcheck(object, *args, method=None, **kwargs):
     Parameters
     ----------
     object : callable, supported result, or count data
-        indep_test, rate_1s_ci, or glm_gof for pre-checks; their results for
+        indep_test, proportion/risk-ratio/odds-ratio CI functions, rate_1s_ci,
+        rate_2s_ci, rate_test, or glm_gof for pre-checks; their results for
         post-checks, including GLMGOFResults collections.
         Raw data require an explicit method. No inference is run by a
         pre-check, and result data names are never evaluated.
@@ -101,14 +105,30 @@ def asymcheck(object, *args, method=None, **kwargs):
 
     Notes
     -----
-    Matches R asymcheck(). Expected-count screening reports minimum >=1
-    and fraction >=5 of at least .8. These Pearson heuristics do not prove
+    Matches R asymcheck(). Following the book, 2x2 tests require all expected
+    counts >=5; larger tables use minimum >=1 and fraction >=5 of at least .8.
+    These Pearson heuristics do not prove
     G-squared accuracy. Mantel-Haenszel retains R's legacy sum of conditional
     hypergeometric variances >=5 heuristic, with empty strata contributing
     zero. Raw stratified inputs are lists of 2x2 tables or 2x2xK arrays.
 
-    Approximate one-rate intervals report events and plug-in Poisson
-    skewness 1/sqrt(x), undefined at zero, without a universal cutoff.
+    Proportion, RR, and OR approximate intervals check the book's original
+    sample quantity n_i*p_hat_i*(1-p_hat_i) >=5 in each sample. Corrections
+    and pseudo-counts never increase it. Exact/mid-p methods need no
+    asymptotic check; mid-p does not guarantee coverage. CI criterion rows
+    identify zero-based input/sample indices, one-based in R. Original
+    counts and settings are retained even without attached diagnostics.
+
+    One-rate tests check null expected events r*T >=10. Two-rate equality
+    tests check n*pi0*(1-pi0) >=5 with n=x1+x2, pi0=T1/(T1+T2). The check
+    concerns the test, not its accompanying interval. Rate-ratio log-Wald
+    intervals check both observed counts >10; conditional score uses the
+    binomial CI guideline after conditioning on the total.
+
+    One-rate intervals follow book Ch. 21: Wald observed x >=50; log-Wald
+    and uncorrected score x >=10. WH is recommended even for small counts;
+    no binary cutoff is invented for WH or corrected score. Skewness
+    1/sqrt(x) is descriptive, not a pass/fail approximation criterion.
     Exact procedures and zero-event log/uncorrected Wald exact fallbacks
     are not applicable. Multiple CI methods retain order and repetitions.
     Passing criteria does not assess independence, common-effect
@@ -126,6 +146,9 @@ def asymcheck(object, *args, method=None, **kwargs):
     NIST/SEMATECH e-Handbook, 1.3.6.6.19, Poisson Distribution (skewness).
     https://www.itl.nist.gov/div898/handbook/eda/section3/eda366j.htm
     The variance-sum threshold preserves ibist-R's existing diagnostic.
+    Companion textbook, Chapters 11--12 (proportions), 14 (contingency tables),
+    15 (RR/OR and MH), and 21--22 (rates), inferential summaries and practical
+    notes. Book guidelines do not guarantee coverage or approximation accuracy.
 
     Examples
     --------
@@ -140,6 +163,13 @@ def asymcheck(object, *args, method=None, **kwargs):
     from .rates import rate_1s_ci
     from .results import CIResult
     from .glm_gof import GLMGOFResults, glm_gof, _combine, _precheck
+    from .proportions import prop_1s_ci, prop_2s_ci
+    from .risk_ratio import rr_2x2_ci
+    from .odds_ratio import or_2x2_ci
+    from .rates import rate_2s_ci, rate_test
+    from ._asymcheck_book import _book_ci, _rate_test
+    adapters = {prop_1s_ci: "p1", prop_2s_ci: "p2", rr_2x2_ci: "rr",
+                or_2x2_ci: "or", rate_2s_ci: "rate2"}
 
     if callable(object):
         if object is glm_gof:
@@ -151,7 +181,7 @@ def asymcheck(object, *args, method=None, **kwargs):
                 raise ValueError(str(exc)) from None
             bound.apply_defaults()
             return _precheck(**bound.arguments)
-        if object is not indep_test and object is not rate_1s_ci:
+        if object not in (*adapters, indep_test, rate_1s_ci, rate_test):
             raise ValueError("Unsupported inference function.")
         if method is not None:
             kwargs["method"] = method
@@ -163,6 +193,10 @@ def asymcheck(object, *args, method=None, **kwargs):
         values = bound.arguments
         from .contingency import _flag
         _flag(values.pop("asymcheck"), "asymcheck")
+        if object in adapters:
+            return _book_ci(adapters[object], **values)
+        if object is rate_test:
+            return _rate_test(**values)
         if object is indep_test:
             if values.pop("options"):
                 raise ValueError("Extra Fisher options are unsupported here.")
@@ -178,6 +212,12 @@ def asymcheck(object, *args, method=None, **kwargs):
         if (isinstance(object, TestResult) and
                 object._gof_diagnostics is not None):
             return object._gof_diagnostics
+        if object._asymcheck_context:
+            context = dict(object._asymcheck_context)
+            family = context.pop("family")
+            if family == "rate-test":
+                return _rate_test(**context)
+            return _book_ci(family, **context)
         if isinstance(object, TestResult) and object.observed is not None:
             label = object.method.lower()
             selected = ("fisher" if "fisher" in label else
@@ -204,10 +244,11 @@ def asymcheck(object, *args, method=None, **kwargs):
     return asymcheck(function, object, *args, method=method, **kwargs)
 
 
-def _result(procedure, method, applicable, rows, details, notes):
+def _result(procedure, method, applicable, rows, details, notes,
+            columns=_CHECK_COLUMNS):
     notes = tuple(notes) + ("Criteria do not verify all sampling assumptions.",)
     return AsymCheckResult(procedure, method, bool(applicable), notes,
-                           tuple(rows), deepcopy(details))
+                           tuple(rows), deepcopy(details), tuple(columns))
 
 
 def _indep(x, method="pearson", correct=False):
@@ -220,10 +261,12 @@ def _indep(x, method="pearson", correct=False):
         raise ValueError("Correction requires a 2 x 2 Pearson test.")
     expected = _expected(tab)
     applicable = method != "fisher"
+    thresholds = (5., 1.) if tab.shape == (2, 2) else (1., .8)
     rows = []
     for criterion, value, threshold in [
-        ("minimum expected count", float(expected.min()), 1.),
-        ("fraction expected >= 5", float(np.mean(expected >= 5)), .8),
+        ("minimum expected count", float(expected.min()), thresholds[0]),
+        ("fraction expected >= 5", float(np.mean(expected >= 5)),
+         thresholds[1]),
     ]:
         rows.append((method, criterion, value,
                      threshold if applicable else None,
@@ -289,11 +332,21 @@ def _rate(x, exposure=1., conf_level=.95, method="exact", correct=True,
                         for m, f in zip(methods, fallback))
     rows = []
     for m, approx in zip(methods, approximate):
-        rows += [(m, "observed events", float(x), None, None, None),
+        threshold = (50. if m == "wald" else 10. if m == "log" or
+                     (m == "score" and not correct) else None)
+        if not approx:
+            threshold = None
+        rows += [(m, "observed events", float(x), threshold,
+                  ">=" if threshold is not None else None,
+                  bool(x >= threshold) if threshold is not None else None),
                  (m, "plug-in skewness", 1/math.sqrt(x) if x and approx
                   else None, None, None, None)]
-    notes = ["No universal event-count cutoff is asserted for interval "
-             "accuracy."]
+    notes = ["Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+             "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+             "WH is recommended even for small counts; no binary cutoff is "
+             "given.",
+             "Corrected score/WH have no separate observed-count cutoff in "
+             "the book."]
     if not x:
         notes.append("Zero events: plug-in skewness is undefined.")
     if any(fallback):

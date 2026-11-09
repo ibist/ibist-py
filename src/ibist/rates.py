@@ -40,9 +40,10 @@ def rate_1s_ci(x, exposure=1.0, *, conf_level=0.95, method="exact",
         Compatibility alias: greater selects lower, less selects upper.
         Conflicting side and alternative values raise an error.
     asymcheck : bool, default False
-        Attach shared diagnostics in result.diagnostics. Approximate
-        methods report events and plug-in skewness without a universal
-        accuracy cutoff. Exact methods are marked not applicable.
+        Attach the book's approximation checks in result.diagnostics:
+        Wald observed x >= 50; log-Wald and uncorrected score x >= 10.
+        WH and corrected score have no binary cutoff in the book.
+        Exact methods and exact fallbacks are marked not applicable.
 
     Returns
     -------
@@ -111,7 +112,7 @@ def rate_1s_ci(x, exposure=1.0, *, conf_level=0.95, method="exact",
 
 
 def rate_2s_ci(x, exposure=(1.0, 1.0), *, conf_level=0.95, method="log",
-               alternative=None, side=None) -> CIResult:
+               alternative=None, side=None, asymcheck=False) -> CIResult:
     """Estimate a ratio of two independent Poisson rates.
 
     Parameters
@@ -136,6 +137,10 @@ def rate_2s_ci(x, exposure=(1.0, 1.0), *, conf_level=0.95, method="log",
         Compatibility alias: greater selects lower, less selects upper.
         Conflicting side and alternative values raise an error.
 
+    asymcheck : bool, default False
+        Attach the book's approximation checks in result.diagnostics.
+        See asymcheck() for criteria, sources, and interpretation.
+
     Returns
     -------
     CIResult
@@ -157,6 +162,15 @@ def rate_2s_ci(x, exposure=(1.0, 1.0), *, conf_level=0.95, method="log",
 
     Notes
     -----
+    Book Chapter 22 checks both observed counts > 10 for log-Wald.
+    Conditional score uses the Chapter 11 binomial CI guideline after
+    conditioning on the total: n*p_hat*(1-p_hat) >= 5. Exact intervals need
+    no asymptotic check. These are guidelines, not coverage guarantees.
+
+    Original counts and settings are retained for asymcheck(result), even
+    when attached diagnostics are not requested. Pre-checks run no inference;
+    diagnostics do not change methods, p-values, or confidence limits.
+
     Independent counts satisfy Xi ~ Poisson(lambda_i*Ti). Log-Wald limits
     exponentiate log(estimate) +/- z*sqrt(1/x1+1/x2). Conditional methods
     use x1 given x1+x2 as a binomial count, then transform probability p
@@ -181,6 +195,7 @@ def rate_2s_ci(x, exposure=(1.0, 1.0), *, conf_level=0.95, method="log",
     >>> float(result.conf_int[0, 0])
     0.0
     """
+    asymcheck = _flag(asymcheck, "asymcheck")
     side, alternative = _ci_orientation(side, alternative)
     counts, exposures = _rate_inputs(x, exposure, lengths=(2,))
     if not np.any(counts):
@@ -212,14 +227,17 @@ def rate_2s_ci(x, exposure=(1.0, 1.0), *, conf_level=0.95, method="log",
             limits = lower, upper
         lower, upper = _bounds(limits, alternative)
         intervals.append(ConfidenceInterval(name, lower, upper))
-    return CIResult(estimate, tuple(intervals), conf_level,
+    result = CIResult(estimate, tuple(intervals), conf_level,
                     "Poisson rate ratio",
                     alternative=alternative,
                     _rate_data=_metadata(counts, exposures))
+    from ._asymcheck_book import _attach
+    return _attach(result, "rate2", asymcheck, x=counts, exposure=exposures,
+                   method=methods, conf_level=conf_level, side=side)
 
 
 def rate_test(x, exposure=1.0, *, r=1.0, alternative="two.sided",
-              conf_level=0.95, correct=True) -> TestResult:
+              conf_level=0.95, correct=True, asymcheck=False) -> TestResult:
     """Normal-approximation test for one or two Poisson rates.
 
     Parameters
@@ -243,6 +261,10 @@ def rate_test(x, exposure=1.0, *, r=1.0, alternative="two.sided",
     correct : bool, default True
         Apply the directional half-count correction for one sample or
         capped Yates correction for the two-sample conditional test.
+
+    asymcheck : bool, default False
+        Attach the book's approximation checks in result.diagnostics.
+        See asymcheck() for criteria, sources, and interpretation.
 
     Returns
     -------
@@ -274,6 +296,15 @@ def rate_test(x, exposure=1.0, *, r=1.0, alternative="two.sided",
 
     Notes
     -----
+    Approximation checks use the book's null-distribution guidelines:
+    r*T >= 10 for one sample (Chapter 21); n*pi0*(1-pi0) >= 5 for two samples,
+    where n=x1+x2 and pi0=T1/(T1+T2) (Chapter 22). These check the test, not its
+    accompanying confidence interval, and are not accuracy guarantees.
+
+    Original counts and settings are retained for asymcheck(result), even
+    when attached diagnostics are not requested. Pre-checks run no inference;
+    diagnostics do not change methods, p-values, or confidence limits.
+
     One sample uses Z=(x-cc-r*T)/sqrt(r*T) and a matching score interval.
     The directional half-count correction is not capped, following R
     rate.test(). Two samples use the Pearson statistic for the conditional
@@ -298,6 +329,7 @@ def rate_test(x, exposure=1.0, *, r=1.0, alternative="two.sided",
     >>> round(rate_test([12, 5], [100, 80]).estimate, 2)
     1.92
     """
+    asymcheck = _flag(asymcheck, "asymcheck")
     counts, exposures = _rate_inputs(x, exposure)
     conf_level = _probability(conf_level, "conf_level")
     correct = _flag(correct, "correct")
@@ -341,12 +373,16 @@ def rate_test(x, exposure=1.0, *, r=1.0, alternative="two.sided",
     p_value = (2 * norm.sf(abs(signed)) if alternative == "two.sided"
                else norm.cdf(signed) if alternative == "less"
                else norm.sf(signed))
-    return TestResult(float(statistic), float(p_value), description, df=1,
+    result = TestResult(float(statistic), float(p_value), description, df=1,
                       alternative=alternative, estimate=float(estimate),
                       conf_int=_bounds(limits, alternative),
                       conf_level=conf_level, null_value=null,
                       estimate_name=name,
                       _rate_data=_metadata(counts, exposures))
+    from ._asymcheck_book import _attach
+    return _attach(result, "rate-test", asymcheck, x=counts, exposure=exposures,
+                   r=r, conf_level=conf_level, alternative=alternative,
+                   correct=correct)
 
 
 def _positive(value, name):

@@ -1,6 +1,6 @@
 {
  "source": "R/asymcheck.R",
- "source_md5": "7a9f03b868fbc57c5db8449da2788878",
+ "source_md5": "471539890a8d5362030230e95bdc2623",
  "cases": [
   {
    "kind": "indep",
@@ -27,7 +27,7 @@
       "method": "pearson",
       "criterion": "minimum expected count",
       "value": 8.5,
-      "threshold": 1,
+      "threshold": 5,
       "comparison": ">=",
       "condition_met": true
      },
@@ -35,7 +35,7 @@
       "method": "pearson",
       "criterion": "fraction expected >= 5",
       "value": 1,
-      "threshold": 0.8,
+      "threshold": 1,
       "comparison": ">=",
       "condition_met": true
      }
@@ -81,7 +81,7 @@
       "method": "lr",
       "criterion": "minimum expected count",
       "value": 8.5,
-      "threshold": 1,
+      "threshold": 5,
       "comparison": ">=",
       "condition_met": true
      },
@@ -89,7 +89,7 @@
       "method": "lr",
       "criterion": "fraction expected >= 5",
       "value": 1,
-      "threshold": 0.8,
+      "threshold": 1,
       "comparison": ">=",
       "condition_met": true
      }
@@ -254,7 +254,7 @@
       "method": "pearson",
       "criterion": "minimum expected count",
       "value": 0.0454545454545455,
-      "threshold": 1,
+      "threshold": 5,
       "comparison": ">=",
       "condition_met": false
      },
@@ -262,7 +262,7 @@
       "method": "pearson",
       "criterion": "fraction expected >= 5",
       "value": 0.25,
-      "threshold": 0.8,
+      "threshold": 1,
       "comparison": ">=",
       "condition_met": false
      }
@@ -424,15 +424,15 @@
     "procedure": "one-sample Poisson rate interval",
     "method": "wald",
     "applicable": true,
-    "condition_met": null,
+    "condition_met": false,
     "checks": [
      {
       "method": "wald",
       "criterion": "observed events",
       "value": 12,
-      "threshold": null,
-      "comparison": null,
-      "condition_met": null
+      "threshold": 50,
+      "comparison": ">=",
+      "condition_met": false
      },
      {
       "method": "wald",
@@ -444,7 +444,10 @@
      }
     ],
     "notes": [
-     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+     "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+     "WH is recommended even for small counts; no binary cutoff is given.",
+     "Corrected score/WH have no separate observed-count cutoff in the book.",
      "Criteria do not verify all sampling assumptions."
     ]
    }
@@ -471,7 +474,7 @@
      "wald"
     ],
     "applicable": true,
-    "condition_met": null,
+    "condition_met": false,
     "checks": [
      {
       "method": "exact",
@@ -493,9 +496,9 @@
       "method": "wald",
       "criterion": "observed events",
       "value": 12,
-      "threshold": null,
-      "comparison": null,
-      "condition_met": null
+      "threshold": 50,
+      "comparison": ">=",
+      "condition_met": false
      },
      {
       "method": "wald",
@@ -509,9 +512,9 @@
       "method": "wald",
       "criterion": "observed events",
       "value": 12,
-      "threshold": null,
-      "comparison": null,
-      "condition_met": null
+      "threshold": 50,
+      "comparison": ">=",
+      "condition_met": false
      },
      {
       "method": "wald",
@@ -523,7 +526,10 @@
      }
     ],
     "notes": [
-     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+     "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+     "WH is recommended even for small counts; no binary cutoff is given.",
+     "Corrected score/WH have no separate observed-count cutoff in the book.",
      "Criteria do not verify all sampling assumptions."
     ]
    }
@@ -558,7 +564,10 @@
      }
     ],
     "notes": [
-     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+     "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+     "WH is recommended even for small counts; no binary cutoff is given.",
+     "Corrected score/WH have no separate observed-count cutoff in the book.",
      "Zero events: plug-in skewness is undefined.",
      "No asymptotic interval is being assessed.",
      "Criteria do not verify all sampling assumptions."
@@ -595,7 +604,10 @@
      }
     ],
     "notes": [
-     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+     "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+     "WH is recommended even for small counts; no binary cutoff is given.",
+     "Corrected score/WH have no separate observed-count cutoff in the book.",
      "Zero events: plug-in skewness is undefined.",
      "Zero-event log/uncorrected Wald uses exact fallback.",
      "No asymptotic interval is being assessed.",
@@ -634,7 +646,10 @@
      }
     ],
     "notes": [
-     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+     "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+     "WH is recommended even for small counts; no binary cutoff is given.",
+     "Corrected score/WH have no separate observed-count cutoff in the book.",
      "Zero events: plug-in skewness is undefined.",
      "Zero-event log/uncorrected Wald uses exact fallback.",
      "No asymptotic interval is being assessed.",
@@ -653,15 +668,15 @@
     "procedure": "one-sample Poisson rate interval",
     "method": "wald",
     "applicable": true,
-    "condition_met": null,
+    "condition_met": false,
     "checks": [
      {
       "method": "wald",
       "criterion": "observed events",
       "value": 0,
-      "threshold": null,
-      "comparison": null,
-      "condition_met": null
+      "threshold": 50,
+      "comparison": ">=",
+      "condition_met": false
      },
      {
       "method": "wald",
@@ -673,7 +688,10 @@
      }
     ],
     "notes": [
-     "No universal event-count cutoff is asserted for interval accuracy.",
+     "Book Ch. 21: observed-count guidance, not a coverage guarantee.",
+     "Wald: y >= 50; log-Wald and uncorrected score: y >= 10.",
+     "WH is recommended even for small counts; no binary cutoff is given.",
+     "Corrected score/WH have no separate observed-count cutoff in the book.",
      "Zero events: plug-in skewness is undefined.",
      "Criteria do not verify all sampling assumptions."
     ]

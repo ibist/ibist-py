@@ -32,6 +32,8 @@ class CIResult:
     counts through ``samples`` and ``sample_proportions``. Returned interval
     arrays, DataFrames, input tables, and sample proportions are copies.
     Optional diagnostics stores a separate AsymCheckResult.
+    Supported CI functions retain original inputs and settings for
+    asymcheck(result), even without attached diagnostics.
     """
 
     estimate: float | np.ndarray
@@ -46,6 +48,7 @@ class CIResult:
     _sample_counts: tuple[tuple[int, int], ...] = ()
     _rate_data: tuple[tuple[int, float], ...] = ()
     diagnostics: "AsymCheckResult | None" = None
+    _asymcheck_context: tuple = ()
 
     @property
     def side(self) -> str:

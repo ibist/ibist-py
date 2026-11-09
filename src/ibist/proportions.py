@@ -18,7 +18,8 @@ _METHODS = ("wilson", "wald", "agresti-coull", "clopper-pearson", "blaker")
 
 
 def prop_1s_ci(x, n, *, conf_level=0.95, method="wilson", correct=False,
-               midp=False, alternative=None, side=None, tol=1e-8) -> CIResult:
+               midp=False, alternative=None, side=None, tol=1e-8,
+               asymcheck=False) -> CIResult:
     """Estimate binomial probabilities with one or more interval constructions.
 
     Parameters
@@ -52,6 +53,10 @@ def prop_1s_ci(x, n, *, conf_level=0.95, method="wilson", correct=False,
         tolerance on the logit scale, implying a tighter absolute probability
         tolerance. Closed-form limits do not use numerical inversion.
 
+    asymcheck : bool, default False
+        Attach the book's approximation checks in result.diagnostics.
+        See asymcheck() for criteria, sources, and interpretation.
+
     Returns
     -------
     CIResult
@@ -74,6 +79,16 @@ def prop_1s_ci(x, n, *, conf_level=0.95, method="wilson", correct=False,
 
     Notes
     -----
+    The book's Chapter 11 binomial-normal guideline checks
+    n*p_hat*(1-p_hat) >= 5 using original counts. Corrections and pseudo-counts
+    do not increase that quantity. Passing does not guarantee coverage;
+    Wald coverage can be poor even when the guideline passes. Exact and mid-p
+    methods need no asymptotic check; mid-p does not guarantee coverage.
+
+    Original counts and settings are retained for asymcheck(result), even
+    when attached diagnostics are not requested. Pre-checks run no inference;
+    diagnostics do not change methods, p-values, or confidence limits.
+
     Wilson inverts the score equation. Correction uses (x-0.5)/n for the
     lower limit and (x+0.5)/n for the upper limit, clipped to [0,1]. It uses
     the full correction independently of any null probability; R prop.test
@@ -116,6 +131,7 @@ def prop_1s_ci(x, n, *, conf_level=0.95, method="wilson", correct=False,
     >>> prop_1s_ci([0, 5, 40], 40).inputs["input"].tolist()
     [0, 1, 2]
     """
+    asymcheck = _flag(asymcheck, "asymcheck")
     side, alternative = _ci_orientation(side, alternative)
     successes, trials = _binomial_counts(x, n)
     conf_level = _probability(conf_level, "conf_level")
@@ -157,9 +173,14 @@ def prop_1s_ci(x, n, *, conf_level=0.95, method="wilson", correct=False,
             inputs.append((i, count, size))
     estimates = successes / trials
     estimate = float(estimates[0]) if len(estimates) == 1 else estimates.copy()
-    return CIResult(estimate, tuple(intervals), conf_level, "binomial proportion",
+    result = CIResult(estimate, tuple(intervals), conf_level,
+                      "binomial proportion",
                     alternative=alternative, correct=correct, midp=midp,
                     _input_data=tuple(inputs))
+    from ._asymcheck_book import _attach
+    return _attach(result, "p1", asymcheck, x=successes, n=trials,
+                   method=methods, conf_level=conf_level, correct=correct,
+                   midp=midp, side=side, tol=tol)
 
 
 def _binomial_counts(x, n):
@@ -299,7 +320,7 @@ _DIFFERENCE_METHODS = ("newcombe", "wald", "miettinen-nurminen", "mee",
 
 def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
                alternative=None, side=None, tol=1e-8,
-               nuisance_tol=1e-10) -> CIResult:
+               nuisance_tol=1e-10, asymcheck=False) -> CIResult:
     """Estimate the first independent population proportion minus the second.
 
     Parameters
@@ -341,6 +362,10 @@ def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
         The outer search encloses disconnected acceptance sets; it does not
         assume monotone tails or use a fixed nuisance grid.
 
+    asymcheck : bool, default False
+        Attach the book's approximation checks in result.diagnostics.
+        See asymcheck() for criteria, sources, and interpretation.
+
     Returns
     -------
     CIResult
@@ -363,6 +388,15 @@ def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
 
     Notes
     -----
+    Approximation checks use the book's Chapter 12 guideline:
+    n_i*p_hat_i*(1-p_hat_i) >= 5 in each original sample. Pseudo-counts and
+    continuity corrections never increase these quantities. Passing is not
+    a coverage guarantee. Chan--Zhang needs no asymptotic check.
+
+    Original counts and settings are retained for asymcheck(result), even
+    when attached diagnostics are not requested. Pre-checks run no inference;
+    diagnostics do not change methods, p-values, or confidence limits.
+
     The six approximate methods and Chan--Zhang exact unconditional tail
     intervals match R. Newcombe combines separate Wilson distances in
     quadrature, using corrected Wilson limits if requested. It does not
@@ -401,6 +435,7 @@ def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
     >>> prop_2s_ci([[9, 1], [3, 7]]).sample_proportions.tolist()
     [0.9, 0.3]
     """
+    asymcheck = _flag(asymcheck, "asymcheck")
     side, alternative = _ci_orientation(side, alternative)
     counts, sizes = _independent_counts(x, n)
     conf_level = _probability(conf_level, "conf_level")
@@ -467,9 +502,13 @@ def prop_2s_ci(x, n=None, *, conf_level=0.95, method="newcombe", correct=False,
         label = name + ("-cc" if correct and name in ("newcombe", "wald") else "")
         intervals.append(ConfidenceInterval(label, float(lower), float(upper)))
     samples = tuple((int(a), int(b)) for a, b in zip(counts, sizes))
-    return CIResult(estimate, tuple(intervals), conf_level,
+    result = CIResult(estimate, tuple(intervals), conf_level,
                     "difference of independent proportions", null_value=0.0,
                     alternative=alternative, correct=correct, _sample_counts=samples)
+    from ._asymcheck_book import _attach
+    return _attach(result, "p2", asymcheck, x=counts, n=sizes,
+                   method=methods, conf_level=conf_level, correct=correct,
+                   side=side, tol=tol, nuisance_tol=nuisance_tol)
 
 
 def _independent_counts(x, n):

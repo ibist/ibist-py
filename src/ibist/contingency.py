@@ -35,6 +35,7 @@ class TestResult:
     test_variance, weight_method, n, and a copied weights array.
     Trend tests add score_statistic and use chisq for the squared signed Z.
     Optional diagnostics contains a separate AsymCheckResult.
+    Rate tests retain original inputs and settings for asymcheck(result).
     """
 
     statistic: float | None
@@ -68,6 +69,7 @@ class TestResult:
     family: str | None = None
     link: str | None = None
     _gof_diagnostics: "AsymCheckResult | None" = None
+    _asymcheck_context: tuple = ()
 
     @property
     def groups(self):

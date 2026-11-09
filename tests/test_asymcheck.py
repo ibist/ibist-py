@@ -72,12 +72,12 @@ def test_rate_pre_attached_post_with_multiple_methods_and_settings():
     assert pre.details == fit.diagnostics.details
     assert pre.details == asymcheck(fit).details
     assert pre.method == tuple(methods)
-    assert pre.condition_met is None
+    assert pre.condition_met is False
     assert pre.checks.value.iloc[1] == pytest.approx(1/math.sqrt(12))
     assert not asymcheck(rate_1s_ci, 0, method="log").applicable
     assert not asymcheck(rate_1s_ci, 0, method="wald", correct=False).applicable
     assert asymcheck(rate_1s_ci, 0, method="wald").applicable
-    assert "No universal" in str(pre)
+    assert "Book Ch. 21" in str(pre)
 
 
 def test_prechecks_do_not_run_inference(monkeypatch):
