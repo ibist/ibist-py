@@ -75,8 +75,8 @@ One-proportion tests use null n*pi0*(1-pi0) >=5; two-proportion equality
 tests use four pooled expected counts >=5. Use callable pre-checks to
 distinguish rate and proportion CI methods named `wald`.
 
-The existing GLM diagnostics are unchanged and await a separate book-based
-audit. See [GLM GOF](glm-gof.md). Unknown functions/results and post-check
+GLM adequacy is unassessed pending stabilization and translation of the
+R checks. See [GLM GOF](glm-gof.md). Unknown functions/results and post-check
 input overrides raise errors.
 
 ## Results and interpretation

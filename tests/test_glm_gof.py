@@ -41,8 +41,7 @@ def test_published_sas_logistic_statistics(sas_fit):
     # SAS/STAT LOGISTIC, Example 79.19, Output 79.19.1 and 79.19.3.
     published = [538.4877, 606.5035, 13.2967, .8412, 2.2581]
     published_p = [.5586, .0324, .1020, .3590, .3233]
-    with pytest.warns(RuntimeWarning, match="criterion"):
-        results = glm_gof(sas_fit, method=METHODS)
+    results = glm_gof(sas_fit, method=METHODS)
     assert isinstance(results, GLMGOFResults)
     assert results.methods == METHODS
     for fit, stat, p in zip(results, published, published_p):
@@ -53,8 +52,7 @@ def test_published_sas_logistic_statistics(sas_fit):
 
 
 def test_published_grouped_binomial_and_poisson():
-    with pytest.warns(RuntimeWarning):
-        result = glm_gof(age_fit(), method=["pearson", "deviance"])
+    result = glm_gof(age_fit(), method=["pearson", "deviance"])
     np.testing.assert_allclose([r.statistic for r in result],
                                [6.6020, 7.7756], rtol=0, atol=5e-5)
     y = np.array([42, 37, 1, 101, 73, 14])
@@ -62,8 +60,7 @@ def test_published_grouped_binomial_and_poisson():
                   [1, 1, 0, 1], [1, 0, 1, 1], [1, 0, 0, 1]])
     fit = GLM(y, x, family=families.Poisson(),
                  exposure=[500, 1200, 100, 400, 500, 300]).fit(tol=1e-10)
-    with pytest.warns(RuntimeWarning):
-        result = glm_gof(fit, method=["pearson", "deviance"])
+    result = glm_gof(fit, method=["pearson", "deviance"])
     np.testing.assert_allclose([r.statistic for r in result],
                                [2.8416, 2.8207], rtol=0, atol=5e-5)
     assert result[0].df == 2
@@ -162,7 +159,7 @@ def test_family_validation_ties_and_zero_variance():
     with pytest.raises(ValueError, match="degrees of freedom"):
         glm_gof(flat, method="hosmer-lemeshow")
     for method in ("osius-rojek", "stukel", "hosmer-lemeshow"):
-        assert asymcheck(glm_gof, flat, method=method).condition_met is False
+        assert asymcheck(glm_gof, flat, method=method).condition_met is None
 
 
 CASES = json.loads((REFERENCE / "glm_gof_r.json").read_text())["cases"]
@@ -194,3 +191,15 @@ def test_representative_r_glm_reference(case):
                                                rel=2e-7, abs=1e-10)
         np.testing.assert_allclose(result.groups, expected["groups"], rtol=2e-7,
                                    atol=1e-9)
+
+
+def test_glm_adequacy_is_unassessed_pending_r_stabilization(sas_fit):
+    pre = asymcheck(glm_gof, sas_fit, method=METHODS)
+    assert pre.condition_met is None
+    assert pre.checks["threshold"].isna().all()
+    assert pre.checks["condition_met"].isna().all()
+    for method in METHODS:
+        result = glm_gof(sas_fit, method=method, asymcheck=True)
+        assert result.diagnostics.condition_met is None
+        assert asymcheck(result).checks.equals(
+            asymcheck(glm_gof, sas_fit, method=method).checks)

@@ -74,7 +74,7 @@ def glm_gof(fit, *, method="pearson", g=10, asymcheck=False):
         Nondefault g requires that method.
     asymcheck : bool, default False
         Attach method-specific approximation diagnostics. All methods here
-        are asymptotic; passing checks cannot establish finite-sample accuracy.
+        are asymptotic. Adequacy is unassessed pending stabilized R checks.
 
     Returns
     -------
@@ -121,8 +121,9 @@ def glm_gof(fit, *, method="pearson", g=10, asymcheck=False):
     zero increment is an error. No augmented fit is run. Column-scaled SVD
     projections use relative tolerance 1e-10. Projection noise below
     1e-10*max(original column norm, 1) is discarded; standardizing variance
-    <=1e-12 is numerically degenerate. Diagnostics do not treat sparse
-    cells as automatically disqualifying Osius-Rojek or Stukel.
+    <=1e-12 is numerically degenerate. Diagnostics report condition_met=None
+    for all methods until the R checks stabilize. Inference validation
+    remains in place.
 
     References
     ----------
@@ -338,34 +339,9 @@ def _stat(data, method, parts):
 
 def _check(data, method, parts):
     tab = parts["groups"]
-    rows = [(method, "degrees of freedom", parts["df"],
-             0, ">", parts["df"] > 0)]
-    if method in ("pearson", "deviance", "hosmer-lemeshow"):
-        values = [("minimum expected events", float(tab.expected.min()))]
-        if data["family"] == "binomial":
-            values.append(("minimum expected nonevents",
-                           float((tab.n-tab.expected).min())))
-        rows += [(method, name, value, 5, ">=", value >= 5)
-                 for name, value in values]
-    elif method == "osius-rojek":
-        rows.append((method, "standardizing variance", parts["variance"],
-                     1e-12, ">", bool(np.isfinite(parts["variance"]) and
-                                      parts["variance"] > 1e-12)))
-    else:
-        rows.append((method, "estimable added terms", parts["df"],
-                     0, ">", parts["df"] > 0))
-    notes = ["All GOF methods here are asymptotic; passing checks is not a "
-             "guarantee."]
-    if method == "hosmer-lemeshow":
-        notes.append("Risk grouping and probability ties affect "
-                     "Hosmer-Lemeshow results.")
-    if method == "stukel" and parts["df"] == 1:
-        notes.append("Only one Stukel direction is estimable.")
-    if method == "stukel" and parts["df"] == 0:
-        notes.append("No Stukel direction is estimable.")
-    if method in ("osius-rojek", "stukel"):
-        notes.append("Sparse-cell cutoffs do not assess this test's "
-                     "asymptotic accuracy.")
+    rows = [(method, "asymptotic adequacy", None, None, None, None)]
+    notes = ["Adequacy is unassessed pending stabilization of R checks.",
+             "Computability does not establish approximation accuracy."]
     return _result("GLM goodness of fit", method, True, rows,
                    dict(family=data["family"], link=data["link"],
                         rank=data["rank"], converged=True,

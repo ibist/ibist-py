@@ -50,15 +50,15 @@ and numerical tolerances.
 
 ## Approximation diagnostics
 
-Pre-checks do not compute the GOF statistic. They can flag nonpositive df
-or degenerate Osius-Rojek/Stukel calculations; inference rejects those
-unestimable tests. Structural input errors remain errors. Diagnostics
-retain convergence, rank, boundary distance, and grouped counts.
-Pearson/deviance and Hosmer-Lemeshow screen both expected successes and
-failures (or Poisson counts). Osius-Rojek checks standardizing variance;
-Stukel checks estimable added directions. Sparse cells alone do not
-disqualify the latter methods. Passing these checks is no guarantee of
-finite-sample accuracy. Warnings do not select another method.
+All methods currently report `condition_met=None` (unassessed), pending
+stabilization and translation of the R checks. Positive df, positive
+standardizing variance, or estimable score terms do not establish
+asymptotic adequacy.
+
+Pre-checks do not compute the GOF statistic. Diagnostics retain convergence,
+rank, boundary distance, and grouped counts. Inference still rejects
+unestimable tests and invalid inputs. Test statistics, p-values, and
+grouping are unchanged.
 
 ## Validation and compatibility
 
