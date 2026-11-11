@@ -71,10 +71,18 @@ def test_published_grouped_binomial_and_poisson():
 def test_stukel_matches_independent_statsmodels_score_test(sas_fit):
     eta = logit(np.asarray(sas_fit.fittedvalues))
     z = np.c_[eta**2*(eta >= 0), eta**2*(eta < 0)]
-    statistic, p_value, df = sas_fit.score_test(exog_extra=z)
+    score = sas_fit.score_test(exog_extra=z)
+    # Statsmodels 0.15 exposes the constraint count on the result object.
+    if hasattr(score, "k_constraint"):
+        statistic, p_value = score
+        df = score.k_constraint
+    else:
+        statistic, p_value, df = score
     result = glm_gof(sas_fit, method="stukel")
-    assert result.statistic == pytest.approx(float(statistic[0]), rel=1e-9)
-    assert result.p_value == pytest.approx(float(p_value[0]), rel=1e-9)
+    assert result.statistic == pytest.approx(np.asarray(statistic).item(),
+                                             rel=1e-9)
+    assert result.p_value == pytest.approx(np.asarray(p_value).item(),
+                                           rel=1e-9)
     assert result.df == df
 
 
