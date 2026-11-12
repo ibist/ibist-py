@@ -59,7 +59,8 @@ After publication, create a fresh environment outside the source checkout:
 ```sh
 python3 -m venv /tmp/ibist-testpypi
 source /tmp/ibist-testpypi/bin/activate
-python -m pip install "numpy>=1.24" "scipy>=1.10" "pandas>=2.0"
+python -m pip install "numpy>=1.24" "scipy>=1.10" "pandas>=2.0" \
+    "statsmodels>=0.14"
 python -m pip install --index-url https://test.pypi.org/simple/ \
     --no-deps "ibist==0.1.0.dev0"
 python -m pip check

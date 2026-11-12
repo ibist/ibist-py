@@ -1,10 +1,11 @@
 # Production PyPI publishing
 
-The first production release is prepared as `0.1.0a1`, an alpha version.
-The current scope is the seven teaching datasets, structured interval
-results, and `or_2x2_ci()`. Public interfaces may change during development.
-The `0.1.0.dev0` TestPyPI trial passed all 126 tests after installation from
-the index. Production publication is a separate, manually triggered action.
+The package is in alpha development. It provides teaching datasets,
+confidence intervals for proportions, rates, and odds and risk ratios,
+association and agreement tests, power calculations, and GLM goodness-of-fit
+tests. See the [API index](api-reference.md) and [changelog](../CHANGELOG.md) for
+the development scope and release history. Public interfaces may change
+during development. Production publication is a manually triggered action.
 
 ## Publisher configuration
 
@@ -65,7 +66,7 @@ python -m pip check
 
 An explicit version pin permits installation of the alpha. For the latest
 available prerelease, use `python -m pip install --pre ibist` instead.
-NumPy, SciPy, and pandas are installed automatically.
+NumPy, SciPy, pandas, and statsmodels are installed automatically.
 
 ```python
 from importlib.metadata import version
