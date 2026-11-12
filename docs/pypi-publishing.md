@@ -25,6 +25,14 @@ and runs the tests and installed examples. Only checked distributions are
 passed to the publishing job, which uses Trusted Publishing and the explicit
 production upload endpoint. No API token or password is needed in secrets.
 
+Both publishers use the shared `tool.cibuildwheel` configuration in
+`pyproject.toml`. It builds a CPython 3.12 Linux x86-64 wheel inside the
+`manylinux_2_28` container, repairs its native-library dependencies, and
+tests the installed wheel there before the runner checks it again.
+Only the repaired wheel and source archive enter `dist/` for upload.
+Other Python versions and platforms use the source archive and need a
+C++ compiler. Broader wheel coverage remains separate release work.
+
 ## Publish a release
 
 1. Set the version in `src/ibist/__init__.py`. `pyproject.toml` reads it

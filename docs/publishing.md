@@ -7,6 +7,14 @@ only from `main`, using the GitHub environment `testpypi` and Trusted Publishing
 The upload destination is TestPyPI; use the separate
 [production workflow](pypi-publishing.md) for PyPI releases.
 
+The wheel is built and tested with `cibuildwheel` in a `manylinux_2_28`
+container, using the shared configuration in `pyproject.toml`. It targets
+CPython 3.12 on Linux x86-64; other installations use the source archive
+and need a C++ compiler. The native extension makes an ordinary runner-built
+`linux_x86_64` wheel unsuitable for upload. See the
+[cibuildwheel documentation](https://cibuildwheel.pypa.io/en/stable/)
+for portable wheel builds.
+
 ## Account configuration
 
 The pending GitHub publisher in the
