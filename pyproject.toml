@@ -43,3 +43,10 @@ ibist = ["_data/*.json", "_data/*.json.gz"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.cibuildwheel]
+build = "cp312-manylinux_x86_64"
+archs = ["x86_64"]
+manylinux-x86_64-image = "manylinux_2_28"
+test-requires = ["pytest>=7"]
+test-command = "python -m pytest -q {project}/tests"
